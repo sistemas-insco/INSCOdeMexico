@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="inherited_crm_stage_form_view_project_field" model="ir.ui.view">
+            <field name="name">inherited_crm_stage_form_view_project_field</field>
+            <field name="model">crm.stage</field>
+            <field name="inherit_id" ref="crm.crm_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fold']" position="after">
+                    <field name="control_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+		<record id="inherit_crm_lead_view_add_page_ecopulse_lead"
+			model="ir.ui.view">
+			<field name="name">inherit.crm.lead.view.add.page.ecopulse.lead
+			</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='phone']" position="after">
+					<field name="rpu" />
+					<field name="cfe_name" />
+					<field name="rpu_home" />
+				</xpath>
+				<xpath expr="//field[@name='date_deadline']" position="before">
+					<field name="url_locations" />
+					<field name="no_smartsheet" />
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page string="Tecnical Data" name="tecnical_data">
+						<group>
+							<group>
+								<field name="inverter_band" />
+								<field name="inverter_model" />
+								<field name="measurement_sonsumption" />
+								<field name="panel_band" />
+								<field name="panel_potential" />
+								<field name="qty_panel" />
+							</group>
+						</group>
+
+
+					</page>
+					<page string="Documentation" name="documentation">
+						<group>
+							<group>
+								<field name="oficial_id" filename="oficial_id_filename"/>
+								<field name="oficial_id_filename" invisible="1"/>
+								<field name="cfe_receipt" filename="cfe_receipt_filename"/>
+								<field name="cfe_receipt_filename" invisible="1"/>
+								<field name="predial" filename="predial_filename"/>
+								<field name="predial_filename" invisible="1"/>
+								<field name="quotation" filename="quotation_filename"/>
+								<field name="quotation_filename" invisible="1"/>
+							</group>
+						</group>
+
+
+					</page>
+					<page string="Account Data" name="account_data">
+						<group>
+							<group>
+								<field name="inv_name" />
+								<field name="inv_mail" />
+								<field name="inv_home" />
+								<field name="rfc" />
+								<field name="use_cfi" />
+								<field name="bank" />
+							</group>
+							<group>
+								<field name="account_number" />
+								<field name="card_digits" />
+								<field name="way_pay" />
+								<field name="method_pay" />
+								<field name="currency_account_id" />
+								<field name="exchange_rate" />
+							</group>
+						</group>
+
+					</page>
+					<page string="Stages of Contracts and Procedures " name="contract_procedure">
+						<group>
+							<group>
+								<field name="ver_documents" />
+								<field name="sing_documents" />
+								<field name="sing_ecopulse_contract" />
+								<field name="start_process_cfe" />
+								<field name="sing_cfe_agree" />
+							</group>
+							<group>
+								<field name="sing_obteined" />
+								<field name="achieve_order" />
+								<field name="change_meter" />
+								<field name="delivery_agreement" />
+								<field name="done_procedure" />
+							</group>
+						</group>
+
+					</page>
+					<page string="Stages Account " name="stage_account">
+						<group>
+							<field name="data_verification" />
+							<field name="invoiced_collection" />
+							<field name="authorized_collection" />
+							<field name="collection_balance" />
+							<field name="collection_completed" />
+						</group>
+
+					</page>
+					<page string="Stages Design" name="stage_design">
+						<group>
+							<group>
+								<field name="awaiting_project" />
+								<field name="performs_survey" />
+								<field name="short_3d" />
+								<field name="review_authorization" />
+							</group>
+							<group>
+								<field name="engineering" />
+								<field name="list_material" />
+								<field name="proccess_finish" />
+							</group>
+						</group>
+					</page>
+					<page string="Stages Work" name="stage_work">
+						<group>
+							<group>
+								<field name="verify_collection" />
+								<field name="schedule_appointment" />
+								<field name="notice_contractor" />
+
+							</group>
+							<group>
+								<field name="start_work" />
+								<field name="end_work" />
+								<field name="physical_delivery" />
+							</group>
+						</group>
+
+
+					</page>
+					<page string="Short Term Financing" name="short_financing">
+						<group>
+							<field name="rfc_binary_short" filename="rfc_binary_short_filename"/>
+							<field name="rfc_binary_short_filename" invisible="1"/>
+							<field name="fico_calification_short" filename="fico_calification_short_filename"/>
+							<field name="fico_calification_short_filename" invisible="1"/>
+							<field name="curp_binary_short" filename="curp_binary_short_filename"/>
+							<field name="curp_binary_short_filename" invisible="1"/>
+							<field name="auth_installation_short" filename="auth_installation_short_filename"/>
+							<field name="auth_installation_short_filename" invisible="1"/>
+						</group>
+
+					</page>
+					<page string="Long Term Financing" name="long_financing">
+						<group>
+							<group>
+								<field name="rfc_binary_long" filename="rfc_binary_long_filename"/>
+								<field name="rfc_binary_long_filename" invisible="1"/>
+								<field name="fico_calification_long" filename="fico_calification_long_filename"/>
+								<field name="fico_calification_long_filename" invisible="1"/>
+								<field name="auth_installation_long" filename="auth_installation_long_filename"/>
+								<field name="auth_installation_long_filename" invisible="1"/>
+								<field name="rfc_legal_rep" filename="rfc_legal_rep_filename"/>
+								<field name="rfc_legal_rep_filename" invisible="1"/>
+							</group>
+							<group>
+								<field name="constitutive_act" filename="constitutive_act_filename"/>
+								<field name="constitutive_act_filename" invisible="1"/>
+								<field name="power_legal_rep" filename="power_legal_rep_filename"/>
+								<field name="power_legal_rep_filename" invisible="1"/>
+								<field name="two_month_account" filename="two_month_account_filename"/>
+								<field name="two_month_account_filename" invisible="1"/>
+								<field name="guarantee_data" filename="guarantee_data_filename"/>
+								<field name="guarantee_data_filename" invisible="1"/>
+							</group>
+						</group>
+
+
+					</page>
+					<page string="FIDE Financing" name="fide_financing">
+						<group>
+							<field name="rfc_fide" filename="rfc_fide_filename"/>
+							<field name="rfc_fide_filename" invisible="1"/>
+							<field name="credit_request" filename="credit_request_filename"/>
+							<field name="credit_request_filename" invisible="1"/>
+							<field name="auth_request_credit" filename="auth_request_credit_filename"/>
+							<field name="auth_request_credit_filename" invisible="1"/>
+						</group>
+
+					</page>
+					<page string="Infonavit" name="infonavit">
+						<group>
+							<group>
+								<field name="rfc_infonavit" filename="rfc_infonavit_filename"/>
+								<field name="rfc_infonavit_filename" invisible="1"/>
+								<field name="birth_certificate" filename="birth_certificate_filename"/>
+								<field name="birth_certificate_filename" invisible="1"/>
+								<field name="curp_infonavit" filename="curp_infonavit_filename"/>
+								<field name="curp_infonavit_filename" invisible="1"/>
+								<field name="prequalification_infonavit" filename="prequalification_infonavit_filename"/>
+								<field name="prequalification_infonavit_filename" invisible="1"/>
+							</group>
+							<group>
+								<field name="credit_sic" filename="credit_sic_filename"/>
+								<field name="credit_sic_filename" invisible="1"/>
+								<field name="workshop_know" filename="workshop_know_filename"/>
+								<field name="workshop_know_filename" invisible="1"/>
+								<field name="budget_shedule" filename="budget_shedule_filename"/>
+								<field name="budget_shedule_filename" invisible="1"/>
+								<field name="marriage_certificate" filename="marriage_certificate_filename"/>
+								<field name="marriage_certificate_filename" invisible="1"/>
+							</group>
+						</group>
+
+
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

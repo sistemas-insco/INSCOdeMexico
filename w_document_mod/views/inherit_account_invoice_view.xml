@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="w_inherit_account_invoice_form_view">
+            <field name="name">w.inherit.account.invoice.form.view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='comment']" position="after">
+                    <group>
+                        <field name="observations"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

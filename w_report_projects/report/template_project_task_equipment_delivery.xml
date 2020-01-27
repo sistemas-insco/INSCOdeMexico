@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="w_order_equipment_spacing">
+            <div class="row">
+                <div class="col-4 mb4"/>
+                <div class="col-8 mb4 text-left"/>
+            </div>
+        </template>
+        <template id="equipment_delivery_template">
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+            <div style="padding:0;">
+                <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span t-esc="o.company_id.codification_equipment_delivery_1"/>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>QUALITY ASSURANCE MANUAL<br/><br/>
+                            Reception, delivery and review of applications and contracts
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span t-esc="o.company_id.codification_equipment_delivery_2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;"><span t-esc="o.company_id.codification_equipment_delivery_3"/></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div align="center">
+                <table style="width:80%">
+                    <tr>
+                        <td align="center">Delivery of instruments, equipment and documents</td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div>
+                <table>
+                    <tr>
+                        <td style="width:20%;">Customer name: &amp;nbsp;</td>
+                        <td align="left" style="width:80%; border-bottom: 2px solid black;"><span t-esc="o.partner_id.name"/></td>
+                        <td>&amp;nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <br></br>
+            <h8>Description of instruments or equipment</h8>
+            <div style="padding:0;">
+                <t t-set="services_data" t-value="docs[0]._context.get('service_types', '')"/>
+                <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <strong><span t-esc="'Cant'"/></strong>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong><span>Description and identification code</span></strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="services_data" t-as="serv">
+                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td>
+                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><br t-esc="serv['description']"/></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+        <template id="report_equipment_delivery">
+            <t t-call="web.basic_layout">
+                <t t-if="not o" t-set="o" t-value="doc"/>
+                    <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+                <div class="header">
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <div class="text-muted text-right">
+                        page <span class="page"/> to <span class="topage"/>
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-4 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                        </div>
+                        <div class="col-4 mb4  text-left">
+                            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                            <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                            <strong><span style="font-family:'arialfont'; font-size: 15px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                        </div>
+                        <div class="col-4 text-right" name="moto">
+                            <span calss="text-center" style="font-family:'arialfont'; font-size: 14px;">Number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-call="w_report_projects.equipment_delivery_template">
+                            <t t-set="o" t-value="o"/>
+                        </t>
+                    </t>
+                </div>
+                <div class="footer">
+                    <div class="row">
+                        <table style="width:30%;">
+                            <tr>
+                                <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Observations</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <table style="width:100%;">
+                            <t t-set="tags" t-value="docs[0]._context.get('service_types', '')"/>
+                            <tr>
+                                <td style="border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;">Invoice:</td>
+                                <td style="width:80%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;"><span t-if="o.invoice_number"><span t-esc="o.invoice_number"/></span></td>
+                            </tr>
+                            <tr>
+                                <td style="border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Tags:</td>
+                                <td style="width:80%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;"><span t-if="o.number_tags"><span t-esc="o.number_tags"/></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Deliver:</span></strong>
+                        </div>
+                        <div class="col-6">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Receives</span></strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <span style="font-family:'arialfont'; font-size: 14px;">______________________________________</span>
+                        </div>
+                        <div class="col-6">
+                            <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Name, sign, date</span></strong>
+                        </div>
+                        <div class="col-6">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Name, sign, date</span></strong>
+                        </div>
+                    </div>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
+                    <div class="row-12" style="border-bottom: 1px solid black;">
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, Méxcio.</p>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;">Tels.: 5559 4206  5359 4363 Fax: 5358 3913</p>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

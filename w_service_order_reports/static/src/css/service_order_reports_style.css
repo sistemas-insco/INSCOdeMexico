@@ -1,0 +1,14 @@
+/* Service Order Report */
+
+.border-black {
+    border: 1px solid black;
+}
+
+.border-black > div.row > div {
+    padding: 4px;
+}
+
+.certicate_cols > div.row > div.col-6 {
+    padding: 8px;
+}
+

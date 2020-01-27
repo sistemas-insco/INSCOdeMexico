@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="w_service_order_multi_layout_standard">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header">
+            <div class="text-muted text-right">
+                page <span class="page"/> to <span class="topage"/>
+            </div>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-4 mb4">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                </div>
+                <div class="col-4 mb4 text-left">
+                    <strong><span style="font-size: 20px;">de México, S. A. DE C. V</span></strong>
+                </div>
+                <div class="col-4 text-right" name="serv_order_zone">
+                    <strong>
+                        <h5 class="text-center" style="padding: 0;">Order service</h5>
+                        <h5 class="text-center" style="padding: 0;color: red;" t-if="doc and doc._context.get('service_orders', '')" t-esc="doc._context.get('service_orders', '')" />
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0" />
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="col-12 mb4 text-left">
+                    <strong><span style="font-size: 14px;">Special requirements:</span></strong>
+                    <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span>
+                </div>
+            </div>
+            <br></br>
+            <!-- <div class="row-12" style="border-bottom: 24px solid #75baff;">
+            </div> -->
+            <div class="row-12" style="background-color: #75baff;" >
+                <table style="width=100%;">
+                    <tr class="row=12" style="background-color:#75baff; width=100%;">
+                        <td style="font-family:'arialfont'; font-size: 14px; width=45%;" class="text-align: left"><strong>Existe la capacidad técnica de este laboratorio para este servicio________ </strong></td>
+                        <td style="font-family:'arialfont'; font-size: 14px; width=15%;"> 
+                        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+                        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+                        </td> 
+                        <td style="font-family:'arialfont'; font-size: 14px; width=40%;" class="text-align: right"><strong>Producido por:</strong></td> 
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span style="font-size: 14px;">With accreditation</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <span style="font-size: 14px;">Name and signature of the laboratory technician</span>
+                </div>
+                <div class="col-6">
+                    <span style="font-size: 14px;">Sign</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_footer_left"/>
+                </div>
+                <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_footer_right"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                     <span style="font-size: 14px;" t-esc="o.company_id.codification_equipment_delivery_4"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="w_order_service_multi_report_document">
+        <t t-call="w_service_order_reports.w_service_order_multi_layout_standard">
+            <t t-set="o" t-value="doc.with_context({'lang': doc.user_id.lang})" />
+            <div class="page" style="padding-top: 40px !important;">
+                <div name="customer_zone" class="border-black" style="padding: 4px 10px !important;font-size: 14px;">
+                    <div class="row" style="padding-left: 20px !important;">
+                        <div class="col-5">
+                            <b>Customer: </b><t t-esc="o.partner_id.name" />
+                        </div>
+                        <div class="col-3">
+                            <!-- For layout purposes -->
+                        </div>
+                        <div class="col-4">
+                            <b>N. of Quote: </b><t t-esc="o.sale_line_id.order_id.name" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;">
+                        <div class="col-5">
+                            <b>Address: </b><t t-esc="o.get_street_partner()" />
+                        </div>
+                        <div class="col-3">
+                            <b>Phone: </b><t t-esc="o.get_address_partner().get('phone') or ''" />
+                        </div>
+                        <div class="col-4">
+                            <!-- For layout purposes -->
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;">
+                        <div class="col-5">
+                            <b>Colony: </b><t t-esc="o.get_address_partner().get('colony') or ''" />
+                        </div>
+                        <div class="col-3">
+                            <!-- For layout purposes -->
+                        </div>
+                        <div class="col-4">
+                            <t t-if="o.conditions_report_service_order">
+                                <b>Terms: </b><t t-esc="o.conditions_report_service_order" />
+                            </t>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;">
+                        <div class="col-5">
+                            <b>City: </b><t t-esc="o.get_address_partner().get('city') or ''" />
+                        </div>
+                        <div class="col-3">
+                            <b>ZIP Code: </b><t t-esc="o.get_address_partner().get('zip') or ''" />
+                        </div>
+                        <div class="col-4">
+                            <b>Made: </b><t t-esc="user.name" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;">
+                        <div class="col-12">
+                            <b>With attention of: </b>
+                        </div>
+                    </div>
+                </div>
+                <div name="delivery_details_zone" style="margin-top: 15px;">
+                    <table style="border-spacing:0;border-collapse: collapse" class="table border-black">
+                        <tbody>
+                            <tr>
+                                <td  style="width:30% border-bottom: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Reception date:</span></strong>
+                                    <span t-if="o.date_reception"><span style=" font-size: 14px;" t-esc="o.date_reception.strftime('%Y-%m-%d')"/></span>
+                                </td>
+                                <td style="border-left:1px solid black;">
+                                    <strong><span style="font-size: 14px;">Brought by:</span></strong>
+                                    <span t-if="o.brought_by"><span style=" font-size: 14px;" t-esc="o.brought_by"/></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:30%; border-top: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Delivery date:</span></strong>
+                                    <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span>
+                                </td>
+                                <td style="border-left: 1px solid black; border-top: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Delivered by:</span></strong>
+                                    <span t-if="o.delivery_by"><span t-esc="o.delivery_by" style=" font-size: 14px;"/></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div name="certificate_address_zone" class="certificate_cols" style="margin-top: 10px;font-size: 14px !important;">
+                    <span style="background-color: #D8D8D8;padding: 4px;font-size: 12px;"><b>Certificate address</b></span>
+                    <div class="row" style="padding-left: 20px !important;padding-top: 5px !important;">
+                        <div class="col-6">
+                            <b>Company: </b><t t-esc="o.sale_line_id.order_id.partner_shipping_id.name" />
+                        </div>
+                        <div class="col-6">
+                            <b>ZIP Code: </b><t t-esc="o.get_certificate_addres().get('zip') or ''" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;padding-top: 5px !important;">
+                        <div class="col-6">
+                            <b>Address: </b><t t-esc="o.get_street_shipping()" />
+                        </div>
+                        <div class="col-6">
+                            <b>State: </b><t t-esc="o.get_certificate_addres().get('state') or ''" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;padding-top: 5px !important;">
+                        <div class="col-6">
+                            <b>Colony: </b><t t-esc="o.get_certificate_addres().get('colony') or ''" />
+                        </div>
+                        <div class="col-6">
+                            <b>Email: </b><t t-esc="o.get_certificate_addres().get('email') or ''" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 20px !important;padding-top: 5px !important;">
+                        <div class="col-6">
+                            <b>City: </b><t t-esc="o.get_certificate_addres().get('city') or ''" />
+                        </div>
+                        <div class="col-6">
+                            <!-- For layout purposes -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <p style="page-break-before:always;"></p> -->
+                <div name="main_table_zone" style="margin-top: 10px;">
+                    <t t-set="services_data" t-value="docs._context.get('service_types', [])" />
+                    <span t-esc="service_data" />
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr style="background-color: #75baff;">
+                                <th style="font-size: 11px;">Type service</th>
+                                <th style="font-size: 11px;">Instrument</th>
+                                <th class="text-center" style="font-size: 11px;">Process</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="services_data" t-as="serv">
+                                <td style="width:50%;">
+                                    <span style="font-size: 11px;"><t t-esc="serv['service']"/> (from <t t-esc="serv['origin']" />)<br t-esc="serv['description']"/></span>
+                                </td>
+                                <td style="width:20%;">
+                                </td>
+                                <td class="text-center" style="width:30%;">
+                                    <span style="font-size: 11px;" t-if="serv['product_id'].process" t-esc="serv['product_id'].process"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="w_order_service_multi_report">
+        <t t-call="web.html_container">
+            <t t-if="docs" t-set="docs" t-value="docs[0].getServiceOrders(docs)"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="w_service_order_reports.w_order_service_multi_report_document" />
+            </t>
+        </t>
+    </template>
+</odoo>

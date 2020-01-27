@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="w_inherit_sale_order_view_add_field_attention_of">
+            <field name="name">w.inherit.sale.order.view.add.field.attention.of</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="attention_of"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

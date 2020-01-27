@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <template id="w_order_service_spacing">
+            <div class="row">
+                <div class="col-4 mb4"/>
+                <div class="col-8 mb4 text-left"/>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_layout_header_left">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Company:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.partner_id.name"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Address:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.get_street_partner()"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Colony:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_address_partner().get('colony') or ''"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style=" font-size: 14px;">Mun/Delg: </span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_address_partner().get('city') or ''"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">At'n de: </span></strong>
+                        <span t-if="o.get_address_partner().get('x_studio_contacto')"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_address_partner().get('x_studio_contacto') or ''"/></span>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_layout_header_center">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <div class="col">
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Phone:</span></strong>
+                        <span><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_address_partner().get('phone') or ''"/></span>
+                    </div>
+                </div>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">C.P: </span></strong>
+                        <span><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_address_partner().get('zip') or ''"/></span>
+                    </div>
+                </div>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_layout_header_right">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <div class="col" style="border-left: 1px solid black;">
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Terms: </span></strong>
+                        <span t-if="o.conditions_report_service_order"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.conditions_report_service_order"/></span>
+                    </div>
+                </div>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Made: </span></strong>
+                        <span t-if="user.name"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="user.name"/></span>
+                    </div>
+                </div>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+                <t t-call="w_report_projects.w_order_service_spacing"/>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_body_1">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <table style="border-spacing:0;margin-bottom:0; border-collapse: collapse" class="table">
+                <thead>
+                    <tr>
+                        <td  style="width:30% border-bottom: 1px solid black;">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Reception date:</span></strong>
+                            <span t-if="o.date_reception"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.date_reception.strftime('%Y-%m-%d')"/></span>
+                        </td>
+                        <td style="border-left:1px solid black;">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Brought by:</span></strong>
+                            <span t-if="o.brought_by"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.brought_by"/></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:30%; border-top: 1px solid black;">
+                            <strong><span style=" font-size: 14px;">Delivery date:</span></strong>
+                            <span t-if="o.date_delivery"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span>
+                        </td>
+                        <td style="border-left: 1px solid black; border-top: 1px solid black;">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Delivered by:</span></strong>
+                            <span t-if="o.delivery_by"><span t-esc="o.delivery_by" style="font-family:'arialfont'; font-size: 14px;"/></span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </template>
+
+        <template id="w_order_service_template_starndar_body_2">
+            <strong><p style="font-family:'arialfont'; font-size: 14px; background-color: #D8D8D8;">Certificate address</p></strong>
+        </template>
+
+         <template id="w_order_service_template_starndar_body_3">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Business name:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.sale_line_id.order_id.partner_shipping_id.name"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Address:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_street_shipping()"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Colony:</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_certificate_addres().get('colony') or ''"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Mun/Delg: </span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_certificate_addres().get('city') or ''"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_body_4">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">C:P:.&amp;nbsp;</span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_certificate_addres().get('zip') or ''"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">State: </span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_certificate_addres().get('state') or ''"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4 text-left">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Mail: </span></strong>
+                        <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.get_certificate_addres().get('email') or ''"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="w_order_service_template_starndar_body_5">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+            <table class="table table-sm o_main_table">
+                <thead>
+                    <tr style="font-family:'arialfont';font-size: 14px; background-color: #75baff;">
+                        <th>Type service</th>
+                        <th>Instrument</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="width:50%;"><span t-if="o.sale_line_id.name"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.sale_line_id.name"/><span t-if="o.service_order" style="font-family:'arialfont'; font-size: 14px;">(de <t t-esc="o.service_order or ''"/>) <br t-esc="o.get_description_text()"/></span></span></td>
+                    <td style="width:50%;"></td>
+                </tr>
+                </tbody>
+            </table>
+        </template>
+
+        <template id="w_order_service_template_starndar_footer_left">
+            <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+        </template>
+
+        <template id="w_order_service_template_starndar_footer_right">
+        <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+        </template>
+
+        <template id="w_order_service_template_footer">
+        <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_report_projects/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+        <div class="footer">
+            <div class="row">
+                <div class="col-12 mb4 text-left">
+                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Special requirements:</span></strong>
+                    <span t-if="o.especial_requiriments"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.especial_requiriments"/></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb4 text-left">
+                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Service type procedure:</span></strong>
+                    <t t-set="serv_procedure" t-value="services.get('service_types', [])"/>
+                    <span t-if="serv_procedure[0].get('procedures', False)"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="serv_procedure[0].get('procedures', '')"/></span>
+                </div>
+            </div>
+            <br></br>
+            <div class="row-12" style="background-color: #75baff;">
+                <div class="col-8">
+                    <span style="font-family:'arialfont'; font-size: 14px;">There is the technical capacity of this laboratory for this service________</span>
+                </div>
+                <div class="col-2">
+                    <span style="font-family:'arialfont'; font-size: 14px;">Produced by:</span>
+                </div>
+                <div class="col-2 text-right">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span style="font-family:'arialfont'; font-size: 14px;">With accreditation</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <span style="font-family:'arialfont'; font-size: 14px;">Nombre y firma del técnico del laboratorio </span>
+                </div>
+                <div class="col-6">
+                    <span style="font-family:'arialfont'; font-size: 14px;">Sign</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_footer_left"/>
+                </div>
+                <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_footer_right"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.company_id.codification_equipment_delivery_4"/>
+                </div>
+            </div>
+        </div>
+        </template>
+
+        <template id="w_order_service_template">
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <t t-call="w_report_projects.w_order_service_spacing"/>
+            <div class="row" style="border:1px solid black;">
+                <div class="col-5">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_layout_header_left"/>
+                </div>
+                <div class="col-3 text-center">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_layout_header_center"/>
+                </div>
+                <div class="col-4 text-right">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_layout_header_right"/>
+                </div>
+            </div>
+            <br></br>
+            <div class="row" style="border:1px solid black;">
+                 <t t-call="w_report_projects.w_order_service_template_starndar_body_1"/>
+                 <br/>
+            </div>
+            <div class="row">
+                <t t-call="w_report_projects.w_order_service_template_starndar_body_2"/>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_body_3"/>
+                 </div>
+                 <div class="col-6">
+                    <t t-call="w_report_projects.w_order_service_template_starndar_body_4"/>
+                 </div>
+            </div>
+            <div class="row">
+                <t t-call="w_report_projects.w_order_service_template_starndar_body_5"/>
+            </div>
+
+            <div>
+                <t t-call="w_report_projects.w_order_service_template_footer"/>
+            </div>
+        </template>
+
+        <template id="w_report_order_service">
+            <t t-if="docs" t-set="services" t-value="docs[0].get_services_description(docs)"/>
+            <t t-call="web.basic_layout">
+                <t t-if="not o" t-set="o" t-value="doc"/>
+                <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+                <div class="header">
+                    <div class="text-muted text-right">
+                        page <span class="page"/> to <span class="topage"/>
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-4 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                        </div>
+                        <div class="col-4 mb4  text-left">
+                            <t t-call="w_report_projects.w_order_service_spacing"/>
+                            <t t-call="w_report_projects.w_order_service_spacing"/>
+                            <t t-call="w_report_projects.w_order_service_spacing"/>
+                            <strong><span style="font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                        </div>
+                        <div class="col-4 text-right" name="moto">
+                            <strong><span class="text-center" style="font-size: 14px;">Order service</span></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <t t-call="w_report_projects.w_order_service_template">
+                        <t t-set="o" t-value="o"/>
+                    </t>
+                </div>
+            </t>
+        </template>
+        <template id="w_main_report_serice_order">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="w_report_projects.w_report_order_service" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

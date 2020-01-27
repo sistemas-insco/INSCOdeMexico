@@ -1,0 +1,490 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* w_document_mod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-28 20:54+0000\n"
+"PO-Revision-Date: 2019-05-28 20:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: w_document_mod
+#: code:addons/w_document_mod/report/_inherit_sale_order_report.py:15
+#, python-format
+msgid "00452636417 CABLE 012180004526364176"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<b><span>Account Number</span></b>"
+msgstr "<b><span>Número de Cuenta</span></b>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<b><span>Payment Form</span></b>"
+msgstr "<b><span>Forma de Pago</span></b>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<b><span>Payment Method</span></b>"
+msgstr "<b><span>Método de Pago</span></b>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<b><span>TOTAL WITH CHAR:</span></b>"
+msgstr "<b><span>TOTAL CON LETRA:</span></b>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span style=\"background-color: #808080; font-size: 12px; color: white;\">\n"
+"                                <strong style=\"padding: 40px !important;\">SENDER FROM:   </strong>\n"
+"                            </span>"
+msgstr "<span style=\"background-color: #808080; font-size: 12px; color: white;\">\n"
+"                           <strong>EXPEDIDO EN:   </strong>\n"
+"                       </span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span style=\"font-size: 12px;\">SENDER DIGITAL SELLER CERTIFIC</span>"
+msgstr "<span style=\"font-size: 12px;\">CERTIFICADO SELLO DIGITAL EMISOR</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span style=\"font-size: 12px;color: #A17373;\">FISCAL CHECK RECEIVER </span>"
+msgstr "<span style=\"font-size: 12px;color: #A17373;\">RECEPTOR DE COMPROBANTE FISCAL </span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>AUTHORICE SUPPLIER OF CERTIFICATE </span>"
+msgstr "<span>PROVEEDOR AUTORIZADO DE CERTIFICACION </span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>CFDI USAGE</span>"
+msgstr "<span>USO del CFDI</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "<span>DATE AND TIME OF EMITION</span>"
+msgstr "<span>FECHA Y HORA DE EMISIÓN</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>DIGITAL SELLET OF CFDI</span>"
+msgstr "<span>SELLO DIGITAL DEL CFDI</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>DIGITAL SELLET OF SAT</span>"
+msgstr "<span>SELLO DIGITAL DEL SAT</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>DISCOUNT</span>"
+msgstr "<span>DESCUENTO</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>FISCAL FOLIO </span>"
+msgstr "<span>FOLIO FISCAL</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "<span>INVOICE</span>"
+msgstr "<span>FACTURA</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>OBSERVATIONS</span>"
+msgstr "OBSERVACIONES"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>ORIGINAL CHAIN OF DIGITAL CERTIFICATION COMPLEMENT TO THE SAT</span>"
+msgstr "<span>CADENA ORIGINAL DEL COMPLEMENTO DE CERTIFICACION DEL SAT</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>PAYMENT DETAILS</span>"
+msgstr "<span>DETALLES DE PAGO</span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>R.F.C. </span>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<span>SOCIAL REASON </span>"
+msgstr "<span>RAZÓN SOCIAL </span>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<strong class=\"mr16\">CFDI Related:</strong>"
+msgstr "<strong class=\"mr16\">CFDI Relacionado</strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Address:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Dirección:</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Attention of: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Atención de: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Certificate address:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Dirección de certificado:</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">City: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Ciudad: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Company:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Empresa:</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Date order: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Fecha cot: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Date validity: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Vigente hasta: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">IVA:</span></strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notes and Comments</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notas y comentarios</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Phone: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Teléfono: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Request ref.: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Ref.Solicitud.: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Subtotal Lab.:</span></strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Subtotal:</span></strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Total:</span></strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Unique Discount:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Descuento único:</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">VAT:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">RFC:</span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">ZIP: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">CP: </span></strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 15px;\">#Folio:</span></strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<strong>Discount</strong>"
+msgstr "<strong>Descuento</strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<strong>New Subtotal</strong>"
+msgstr "<strong>Nuevo Subtotal</strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "<strong>TOTAL</strong>"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "<strong>This document is a printed representation of a CFDI - Version 3.3</strong>"
+msgstr "<strong>Este documento es una representación impresa de un CFDI - Versión 3.3</strong>"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "AMOUNT"
+msgstr "IMPORTE"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_report_account_report_invoice_with_payments
+msgid "Account Invoice Report"
+msgstr "Reporte de Facturas"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.res_config_settings_view_form
+msgid "Add the file with extension (.pdf) to feed it to the odoo sales report. If you add a file without extension or a different extension to a pdf file, the sales report will not be printed."
+msgstr "Agregue un archivo de extensión(.pdf) para fucionar con el reporte de ventas. Si agregua un archivo sin extensión o con una extensión diferente a (.pdf), el reporte de ventas no sera generado."
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "Amount"
+msgstr "Importe"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_sale_order__attention_of
+msgid "Attention of"
+msgstr "Atención de"
+
+#. module: w_document_mod
+#: code:addons/w_document_mod/report/_inherit_sale_order_report.py:14
+#, python-format
+msgid "BBVA BANCOMER National Currency check"
+msgstr "BBVA BANCOMER Cheque de moneda nacional"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "CODE"
+msgstr "CÓDIGO"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_res_company__codification_sale_order_report
+msgid "Codification report sale"
+msgstr "Codificación reporte de cotización"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.res_config_settings_view_form
+msgid "Configure your term and condition for report sale"
+msgstr "Configurar su archivo .pdf de términos y condiciones para el reporte de ventas"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_report_account_report_invoice_with_payments__display_name
+#: model:ir.model.fields,field_description:w_document_mod.field_report_sale_report_saleorder__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "FISCAL ADDRESS"
+msgstr "DOMICILIO FISCAL"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "FISCAL POSITION"
+msgstr "REGIMEN FISCAL"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_res_config_settings__terms_file
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_res_config_settings__filename_terms
+msgid "Filename Terms"
+msgstr "Nombre del archivo"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_report_account_report_invoice_with_payments__id
+#: model:ir.model.fields,field_description:w_document_mod.field_report_sale_report_saleorder__id
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "ID"
+msgstr ""
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_report_account_report_invoice_with_payments____last_update
+#: model:ir.model.fields,field_description:w_document_mod.field_report_sale_report_saleorder____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard
+msgid "Logo"
+msgstr ""
+
+#. module: w_document_mod
+#: code:addons/w_document_mod/models/inherit_ir_action_report.py:37
+#, python-format
+msgid "Make sure that the file is attached to the pdf file and has its own extension (.pdf), otherwise it will not be able to save the changes."
+msgstr "Asegurese que el archivo adjuntado sea tipo pdf y que tenga la extensión (.pdf), de lo contrario cargue un archivo con extensión(.pdf)"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_account_invoice__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "PCDT"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "PRICE"
+msgstr "PRECIO"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "PRODUCT KEY"
+msgstr "CveProdSer"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "Pre Unit"
+msgstr "Prec. Unitario"
+
+#. module: w_document_mod
+#: model:ir.model.fields,field_description:w_document_mod.field_product_product__process
+#: model:ir.model.fields,field_description:w_document_mod.field_product_template__process
+msgid "Process"
+msgstr "Procedimiento"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "QUANTITY"
+msgstr "CANTIDAD"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "R.F.C. NAME AND SOCIAL REASON"
+msgstr "R.F.C. NOMBRE Y RAZÓN SOCIAL"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "RFC Certificate Supplier"
+msgstr "RFC Proveedor de Certificado"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_ir_actions_report
+msgid "Report Action"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_res_company_view_add_page
+msgid "Report information"
+msgstr "Información del Reporte"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "SENDER OF THE INVOICE"
+msgstr "EMISOR DEL COMPROBANTE FISCAL"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_sale_order
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_report_sale_report_saleorder
+msgid "Sale Order Report"
+msgstr "Reporte de venta"
+
+#. module: w_document_mod
+#: model:ir.model,name:w_document_mod.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "Serie"
+msgstr ""
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "TAX AMOUNT"
+msgstr "IVA IMPUESTO"
+
+#. module: w_document_mod
+#: code:addons/w_document_mod/models/inherit_ir_action_report.py:33
+#, python-format
+msgid "The extension of the file of terms and conditions that is configured by default is not (.pdf)"
+msgstr "La extensión del archivo de términos y condiciones que se encuentra en la configuración no es de tipo(.pdf)"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
+msgid "UOM"
+msgstr "U.MEDIDA"
+
+#. module: w_document_mod
+#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
+msgid "page <span class=\"page\"/> to <span class=\"topage\"/>"
+msgstr "página <span class=\"page\"/> de <span class=\"topage\"/>"

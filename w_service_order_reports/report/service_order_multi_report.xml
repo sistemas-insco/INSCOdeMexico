@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="w_order_service_multi"
+            string="Multi - Order Services"
+            model="project.task"
+            report_type="qweb-pdf"
+            name="w_service_order_reports.w_order_service_multi_report"
+            file="w_service_order_reports.w_order_service_multi_report"
+            paperformat="w_report_projects.paper_format_report_service_order"
+        />
+    </data>
+</odoo>
+

@@ -1,0 +1,187 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* w_service_order_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-03 14:19+0000\n"
+"PO-Revision-Date: 2019-06-03 14:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "(from"
+msgstr "(de"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Address: </b>"
+msgstr "<b>Dirección: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>City: </b>"
+msgstr "<b>Mun/Delg: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Colony: </b>"
+msgstr "<b>Colonia: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Company: </b>"
+msgstr "<b>Empresa: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Customer: </b>"
+msgstr "<b>Empresa: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Email: </b>"
+msgstr ""
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Made: </b>"
+msgstr "<b>Realizó: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>N. of Quote: </b>"
+msgstr "<b>N° de Cotización: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Phone: </b>"
+msgstr "<b>Teléfono: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>State: </b>"
+msgstr "<b>Estado: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>Terms: </b>"
+msgstr "<b>Términos: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>With attention of: </b>"
+msgstr "<b>At'n de: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<b>ZIP Code: </b>"
+msgstr "<b>C.P.: </b>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<span style=\"background-color: #D8D8D8;padding: 4px;font-size: 12px;\"><b>Certificate address</b></span>"
+msgstr "<span style=\"background-color: #D8D8D8;padding: 4px;font-size: 12px;\"><b>Dirección de certificado</b></span>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "<span style=\"font-size: 14px;\">Name and signature of the laboratory technician</span>"
+msgstr "<span style=\"font-size: 14px;\">Nombre y firma del técnico del laboratorio</span>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "<span style=\"font-size: 14px;\">Sign</span>"
+msgstr "<span style=\"font-size: 14px;\">Firma</span>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "<span style=\"font-size: 14px;\">With accreditation</span>"
+msgstr "<span style=\"font-size: 14px;\">Con acreditación</span>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<strong><span style=\"font-size: 14px;\">Brought by:</span></strong>"
+msgstr "<strong><span style=\"font-size: 14px;\">Traido por:</span></strong>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<strong><span style=\"font-size: 14px;\">Delivered by:</span></strong>"
+msgstr "<strong><span style=\"font-size: 14px;\">Entregado por:</span></strong>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<strong><span style=\"font-size: 14px;\">Delivery date:</span></strong>"
+msgstr "<strong><span style=\"font-size: 14px;\">Fecha de entrega:</span></strong>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "<strong><span style=\"font-size: 14px;\">Reception date:</span></strong>"
+msgstr "<strong><span style=\"font-size: 14px;\">Fecha de recepción:</span></strong>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "<strong><span style=\"font-size: 14px;\">Special requirements:</span></strong>"
+msgstr "<strong><span style=\"font-size: 14px;\">Requisitos especiales:</span></strong>"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "<strong><span style=\"font-size: 20px;\">de México, S. A. DE C. V</span></strong>"
+msgstr ""
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "Instrument"
+msgstr "Instrumento"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "Logo"
+msgstr ""
+
+#. module: w_service_order_reports
+#: model:ir.actions.report,name:w_service_order_reports.w_order_service_multi
+msgid "Multi - Order Services"
+msgstr "Multi - Órdenes de Servicio"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.inherited_w_report_order_service
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "Order service"
+msgstr "Orden de servicio"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "Process"
+msgstr "Procedimiento"
+
+#. module: w_service_order_reports
+#: model:ir.model.fields,field_description:w_service_order_reports.field_project_task__service_order
+msgid "Service Order"
+msgstr "Orden de Servicio"
+
+#. module: w_service_order_reports
+#: model:ir.model.fields,help:w_service_order_reports.field_project_task__service_order
+msgid "Service Order for this task."
+msgstr "Orden de Servicio para esta tarea."
+
+#. module: w_service_order_reports
+#: model:ir.model,name:w_service_order_reports.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
+msgid "Type service"
+msgstr "Tipo de servicio"
+
+#. module: w_service_order_reports
+#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
+msgid "page <span class=\"page\"/> to <span class=\"topage\"/>"
+msgstr "página <span class=\"page\"/> de <span class=\"topage\"/>"

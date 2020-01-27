@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Customization for Opportunity -->
+        <record id="inherited_crm_lead_form_view_project" model="ir.ui.view">
+            <field name="name">inherited_crm_lead_form_view_project</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="project_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherited_crm_stage_form_view_project" model="ir.ui.view">
+            <field name="name">inherited_crm_stage_form_view_project</field>
+            <field name="model">crm.stage</field>
+            <field name="inherit_id" ref="crm.crm_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fold']" position="after">
+                    <field name="create_project"/>
+                </xpath>
+                <xpath expr="//separator" position="before">
+                    <notebook name="notebook_project">
+                        <page name="project_settings" string="Project Settings">
+                            <group>
+                                <field name="privacy_visibility"/>
+                                <field name="project_stage_ids" widget="many2many_tags"/>
+                                <field name="default_task_ids">
+                                    <tree editable='bottom'>
+                                        <field name="name"/>
+                                        <field name="department_id"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

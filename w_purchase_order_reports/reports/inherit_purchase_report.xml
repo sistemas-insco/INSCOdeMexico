@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <template id="report_purchase_inherit" inherit_id="purchase_stock.report_purchaseorder_document">
+        <xpath expr="//t[@t-else='']" position="replace">
+       </xpath>
+    </template> -->
+    <template id="insco_external_layout_standard">
+        <!-- <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('w_document_mod/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+        </style> -->
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header" style="font-family:'arialfont'; font-size: 12px;">
+            <div class="text-muted text-right">
+                <span class="page"/>/<span class="topage"/>
+            </div>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-4 mb4 text-left">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                </div>
+                <div class="col-5 mb4  text-left">
+                    <!-- <t t-call="w_document_mod.insco_spacing"/>
+                    <t t-call="w_document_mod.insco_spacing"/>
+                    <t t-call="w_document_mod.insco_spacing"/> 
+                    <strong><span style="font-family:'arialfont'; font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>-->
+                    <table style="width: 100%;">
+                        <tr style="background-color: #75baff;">
+                            <th style="border: 1px solid white;"><strong>Facturar a:</strong></th>
+                        </tr>
+                        <tr style="background-color: #75baff;">
+                            <td style="border: 1px solid white;"><i>Bill to:</i></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" >
+                                <strong><span style="font-family:'arialfont'; font-size: 12px;">
+                                        INSCO DE MEXICO SA DE CV <br></br>
+                                        DOMICILIO DE LA EMPRESA: <br></br>
+                                        COLONIA, FRACCIONAMIENTO INDUSTRIAL ALCE BLANCO<br></br>
+                                        NAUCALPAN DE JUÁREZ ESTADO DE MÉXICO<br></br>
+                                        R.F.C. IME930930UPA<br></br>
+                                </span></strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-3 text-left" name="moto">
+                    <table style="width:100;">
+                        <tr style="background-color: #75baff;">
+                            <th style="border: 1px solid white;  width:100%;"><strong>Orden de compra</strong></th>
+                        </tr>
+                        <tr style="background-color: #75baff; width:100%;">
+                            <td style="border: 1px solid white;  width:100%;"><i>Purchase order</i></td>
+                        </tr>
+                        <tr style="background-color: #75baff;">
+                           <th style="border: 1px solid white;"><strong>Número:</strong></th>
+                            <td style="background-color: white; vertical-align:middle;" rowspan="2" class="text-center">
+                            <span t-if="o.name"><span style="font-family:'arialfont';" t-esc="o.name"/></span> 
+                            </td>
+                        </tr>
+                        <tr style="background-color: #75baff;">
+                           <td style="border: 1px solid white;"><i>P.U.N°</i></td>
+                        </tr>
+                        <tr style="background-color: #75baff;">
+                           <th style="border: 1px solid white;"><strong>Fecha:</strong></th>
+                            <td style="background-color: white; vertical-align:middle;  width:100%;" rowspan="2" class="text-center">
+                            <span t-if="o.date_order"><span style="font-family:'arialfont'; width:100%;" t-esc="o.date_order.strftime('%Y/%m/%d')"/></span> 
+                            </td>
+                        </tr>
+                        <tr style="background-color: #75baff;">
+                           <td style="border: 1px solid white;"><i>Date:</i></td>
+                        </tr>
+                        
+                    </table>
+                    <!--<strong><span style="font-family:'arialfont'; font-size: 18px;"><t t-esc="'Orden de compra'"/></span></strong>-->
+                </div>
+                <!--<div class="col-2 mb4  text-right">
+                    <strong><span style="font-family:'arialfont'; font-size: 15px;">#Referencia:</span></strong>
+                    <span t-if="o.name"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.name"/><br></br></span> 
+                    <strong><span style="font-family:'arialfont'; font-size: 15px;">Fecha:<br></br></span></strong>
+                    <span t-if="o.date_order"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.date_order.strftime('%Y/%m/%d')"/></span> 
+                </div>-->
+            </div>
+        </div>
+        <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+            <div class="row">
+                <!--<div class="col-4">
+                    <span t-esc="company.vat"/>
+                </div>
+                <div class="col-4 text-center">
+                    <span t-esc="'inscomex.com'"/>
+                </div>-->
+                <div class="col-12 text-right">
+                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.045</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="report_purchase_inherit" >
+    <t t-call="w_purchase_order_reports.insco_external_layout_standard"> 
+      <div class="page" style="font-family:'arialfont'; font-size: 12px;">
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
+         <table style="width:100%;" >
+             <thead>
+                <tr style="background-color: #75baff;">
+                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor</strong></th>
+                    <th style="border: 1px solid white; width: 50%;" ><strong>Enviar a:</strong></th>
+                </tr>
+                <tr style="background-color: #75baff;">
+                    <td style="border: 1px solid white;width: 50%;" ><i>Supplier</i></td>
+                    <td style="border: 1px solid white;width: 50%;" ><i>Send to:</i></td>
+                </tr>
+                <tr>
+                     <th>
+                            <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                            <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>  
+                    </th>
+                    <!--<td rowspan="5" >
+                        <span>
+                                INSCO DE MEXICO SA DE CV <br></br>
+                                COLONIA, FRACCIONAMIENTO INDUSTRIAL ALCE BLANCO<br></br>
+                                NAUCALPAN DE JUÁREZ ESTADO DE MÉXICO<br></br>
+                                R.F.C IME930930UPA<br></br>
+                        </span>
+                    </td>-->
+                   
+                </tr>
+            </thead>
+         </table>
+                <!-- <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p> -->
+         <br></br>
+         <br></br> 
+            <table style="width:100%;"> 
+                <thead >
+                    <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;"><strong>Código</strong></th>
+                        <th style="border: 1px solid white;"><strong>Cantidad</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Descripcion</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Precio u</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>I.V.A</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Precio</strong></th>
+                    </tr>
+                    <tr style="background-color: #75baff;">
+                        <td style="border: 1px solid white;"><i>Item</i></td>
+                        <td style="border: 1px solid white;"><i>Qty</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Description</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Rate</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Tax</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Amount</i></td>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr t-foreach="o.order_line" t-as="line" >
+                            <td style="border: 1px solid white;"> 
+                                <span t-field="line.product_id"/>
+                            </td>
+                            <td style="border: 1px solid white;">
+                                <span t-field="line.product_qty"/>
+                                <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                            </td>
+                            <td style="border: 1px solid white;">
+                                <span t-field="line.name"/>
+                            </td>
+                            <td class="text-right" style="border: 1px solid white;">
+                                <span t-field="line.price_unit"/>
+                            </td>
+                            <td class="text-center" style="border: 1px solid white;">
+                                <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
+                            </td>
+                            <td class="text-right" style="border: 1px solid white;">
+                                <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table> 
+            <br></br> 
+            <br></br> 
+            <table style="width:100%;">
+                <thead>
+                    <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;" class="text-center"><strong>Departamento</strong></th>
+                        <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
+                            <span>
+                                Campo
+                            </span>
+                        </td>
+                         <th style="border: 1px solid white;"><strong>Importe:</strong></th>
+                          <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
+                            <span t-field="o.amount_untaxed"/>
+                        </td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <td style="border: 1px solid white;" class="text-center"><i>Department</i></td>
+                        <td style="border: 1px solid white;"><i>Amount</i></td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;" class="text-center"><strong>Correo</strong></th>
+                         <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
+                            <span t-field="o.company_id.email"/>
+                        </td>
+                         <th style="border: 1px solid white;"><strong>Descuento</strong></th>
+                          <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
+                            <span >
+                                Campo
+                            </span>
+                        </td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <td style="border: 1px solid white;" class="text-center"><i>E-mail</i></td>
+                        <td style="border: 1px solid white;"><i>Discount</i></td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;" class="text-center"><strong>Elaboró</strong></th>
+                        <td style="background-color: white; border: 2px solid white;vertical-align:middle;" rowspan="2" class="text-center">
+                            <span>
+                                Campo
+                            </span>
+                        </td>
+                        <th style="border: 1px solid white;"><strong>I.V.A</strong></th>
+                         <td style="background-color: white; border: 2px solid white;" rowspan="1" class="text-center">
+                              <span t-field="o.amount_tax"/>
+                        </td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <td style="border: 1px solid white;" class="text-center"><i>Elaborated by</i></td>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;" class="text-center"><strong>Autorizado por:</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Solicitado por:</strong></th>
+                    </tr>
+                     <tr style="background-color: #75baff; border: 1px solid white;">
+                        <td style="border: 1px solid white;" class="text-center"><i>Requested by</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Authorized by:</i></td>
+                    </tr>
+                     <tr style="background-color: white; border: 1px solid white;">
+                        <th style="border: 1px solid white;"><i>Campo</i></th>
+                        <th style="border: 1px solid white;"><strong>Campo</strong></th>
+                        <th style="border: 1px solid white; background-color: #75baff"><strong>Total:</strong></th>
+                        <th style="border: 1px solid white; background-color: #75baff" class="text-center"><strong><span t-field="o.amount_total"/></strong></th>
+                    </tr>
+                    <tr style="background-color: #75baff; border: 1px solid white;">
+                        <th style="border: 1px solid white;"><strong>Datos de documentos de Pasivo:</strong></th>
+                        <td rowspan="1" style="background-color: white;"></td>
+                        <th style="border: 1px solid white;"><strong>Moneda:</strong></th>
+                        <td style="background-color: white; border: 2px solid white;vertical-align:middle;" rowspan="2" class="text-center">
+                            <span t-field="o.currency_id"/>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #75baff; border: 1px solid white;">
+                        <td style="border: 1px solid white;"><i>Passive document data:</i></td>
+                        <td rowspan="1" style="background-color: white;"></td>
+                        <td style="border: 1px solid white;"  class="text-left"><i>Currency:</i></td>
+                    </tr>
+                </thead>
+            </table>
+            <div >
+                <div>
+                    <br></br>
+                    <br></br>
+                    <strong><span>Observaciones:</span></strong>
+                </div>
+                <div>
+                    <br></br>
+                    <span t-field="o.notes"/>
+                </div>
+            </div>
+
+        </div>
+        </t>
+    </template>
+    <template id="purchase.report_purchaseorder">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="w_purchase_order_reports.report_purchase_inherit" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+    </template>
+    
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="w_inherit_project_task_view_add_field">
+            <field name="name">w.inherit.project.task.view.add.field</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                        <field name="number_tags"/>
+                </xpath>
+                <xpath expr="//notebook" position="after">
+                    <separator string="Reports information"/>
+                    <group>
+                        <group>
+                            <field name="observations_report_equipment_reception"/>
+                            <field name="conditions_report_service_order"/>
+                            <field name="especial_requiriments"/>
+                        </group>
+                        <group>
+                            <field name="date_reception"/>
+                            <field name="date_delivery"/>
+                            <field name="brought_by"/>
+                            <field name="delivery_by"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

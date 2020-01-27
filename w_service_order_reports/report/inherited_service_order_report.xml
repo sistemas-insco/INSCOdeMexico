@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherited_w_report_order_service" inherit_id="w_report_projects.w_report_order_service">
+        <xpath expr="//div[@name='moto']" position="replace">
+            <div class="col-4 text-right" name="moto">
+                <strong>
+                    <t t-if="docs" t-set="docs" t-value="docs[0].getServiceOrders(docs)" />
+                    <h5 class="text-center" style="padding: 0;">Order service</h5>
+                    <h5 class="text-center" style="padding: 0;color: red;" t-if="docs and docs[0]._context.get('service_orders', '')" t-esc="docs[0]._context.get('service_orders', '')" />
+                </strong>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="inherited_w_reception_equipment_report" inherit_id="w_report_projects.w_reception_equipment_report">
+        <xpath expr="//div[@name='moto']" position="replace">
+            <div class="col-4 text-right" name="moto">
+                <strong>
+                    <t t-if="docs" t-set="docs" t-value="docs[0].getServiceOrders(docs, no_sequence=False)" />
+                    <h5 class="text-center" style="padding: 0;color: red;" t-if="docs and docs[0]._context.get('service_orders', '')" t-esc="docs[0]._context.get('service_orders', '')" />
+                </strong>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="inherited_report_equipment_delivery" inherit_id="w_report_projects.report_equipment_delivery">
+        <xpath expr="//div[@name='moto']" position="replace">
+            <div class="col-4 text-right" name="moto">
+                <strong>
+                    <t t-if="docs" t-set="docs" t-value="docs[0].getServiceOrders(docs, no_sequence=False)" />
+                    <h5 class="text-center" style="padding: 0;color: red;" t-if="docs and docs[0]._context.get('service_orders', '')" t-esc="docs[0]._context.get('service_orders', '')" />
+                </strong>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+

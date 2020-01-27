@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_assets_common_btm" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link href="/w_service_order_reports/static/src/css/service_order_reports_style.css" rel="stylesheet" type="text/css" />
+        </xpath>
+    </template>
+</odoo>
+

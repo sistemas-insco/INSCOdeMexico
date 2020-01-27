@@ -1,0 +1,520 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* w_report_projects
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-28 20:48+0000\n"
+"PO-Revision-Date: 2019-05-28 20:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_5
+msgid "(de"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "<span calss=\"text-center\" style=\"font-family:'arialfont'; font-size: 14px;\">Number</span>"
+msgstr "<span calss=\"text-center\" style=\"font-family:'arialfont'; font-size: 14px;\">Número</span>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_report
+msgid "<span calss=\"text-center\" style=\"font-family:'arialfont'; font-size: 14px;\">Número</span>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">Nombre y firma del técnico del laboratorio Firma</span>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">Produced by:</span>"
+msgstr "<span style=\"font-family:'arialfont'; font-size: 14px;\">Producido por:</span>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">Sign</span>"
+msgstr "<span style=\"font-family:'arialfont'; font-size: 14px;\">Firma</span>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">There is the technical capacity of this laboratory for this service________</span>"
+msgstr "<span style=\"font-family:'arialfont'; font-size: 14px;\">Existe la capacidad técnica de este laboratorio para este servicio________</span>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">With accreditation</span>"
+msgstr "<span style=\"font-family:'arialfont'; font-size: 14px;\">Con acreditación</span>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">______________________________________</span>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<span style=\"font-family:'arialfont'; font-size: 14px;\">_______________________________________</span>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<strong>\n"
+"                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>\n"
+"                            Recepción, entrega y revisión de equipos.\n"
+"                            </span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "<strong>\n"
+"                            <span>QUALITY ASSURANCE MANUAL<br/><br/>\n"
+"                            Reception, delivery and review of applications and contracts\n"
+"                            </span></strong>"
+msgstr "<strong>\n"
+"                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>\n"
+"                            Recepción, entrega y revisión de solicitudes y contratos\n"
+"                            </span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_report_order_service
+msgid "<strong><span class=\"text-center\" style=\"font-size: 14px;\">Order service</span></strong>"
+msgstr "<strong><span calss=\"text-center\" style=\"font-size: 14px;\">Orden de servicio</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_1
+msgid "<strong><span style=\" font-size: 14px;\">Delivery date:</span></strong>"
+msgstr "<strong><span style=\" font-size: 14px;\">Fecha de entrega:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_left
+msgid "<strong><span style=\" font-size: 14px;\">Mun/Delg: </span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_3
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Address:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Dirección:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">At'n de: </span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_1
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Brought by:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Traido por:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_3
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Business name:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Empresa:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_center
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">C.P: </span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_4
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">C:P:.&amp;nbsp;</span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_3
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Colony:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Colonia:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_left
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Company:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Empresa:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Deliver:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Entrega:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_1
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Delivered by:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Entregado por:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Entrega:</span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Firma y fecha</span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Made: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Realizó: </span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_4
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Mail: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Email: </span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_3
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Mun/Delg: </span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Name, sign, date</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Nombre, firma y fecha</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_center
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Phone:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Teléfono:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Receives</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Recibe:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_1
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Reception date:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Fecha de recepción:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Recibe:</span></strong>"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Service type procedure:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Procedimiento tipo de servicio:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_footer
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Special requirements:</span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Requisitos especiales:</span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_4
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">State: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Estado: </span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_layout_header_right
+msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Terms: </span></strong>"
+msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Condiciones: </span></strong>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "<strong><span>Description and identification code</span></strong>"
+msgstr "<strong><span>descripción y código de identificación</span></strong>"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__brought_by
+msgid "Brought by"
+msgstr "Traido por:"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Cant:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_2
+msgid "Certificate address"
+msgstr "Dirección de certificado"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_5
+msgid "Codification equipment reception report 5"
+msgstr "Codificación reporte recepción equipos 5"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_6
+msgid "Codification equipment reception report 6"
+msgstr "Codificación reporte recepción equipos 6"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_7
+msgid "Codification equipment reception report 7"
+msgstr "Codificación reporte recepción equipos 7"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_8
+msgid "Codification equipment reception report 8"
+msgstr "Codificación reporte recepción equipos 8"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_1
+msgid "Codification equipment report 1"
+msgstr "Codificación entrega de equipos 1"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_2
+msgid "Codification equipment report 2"
+msgstr "Codificación entrega de equipos 2"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_3
+msgid "Codification equipment report 3"
+msgstr "Codificación entrega de equipos 3"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_4
+msgid "Codification equipment report 4"
+msgstr "Codificación entrega de equipos 4"
+
+#. module: w_report_projects
+#: model:ir.model,name:w_report_projects.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: w_report_projects
+#: model:ir.model.fields,help:w_report_projects.field_project_task__conditions_report_service_order
+msgid "Conditions for report service order"
+msgstr "Condiciones para el reporte de orden de servicio."
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__conditions_report_service_order
+msgid "Conditions report service order"
+msgstr "Condiciones reporte orden de servicio"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_sale_order__contact
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Contacto:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Correo Electrónico:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "Customer name: &amp;nbsp;"
+msgstr "Nombre del cliente: &amp;nbsp;"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Código:"
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__date_delivery
+msgid "Date delivery"
+msgstr "Fecha de entrega"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__date_reception
+msgid "Date reception"
+msgstr "Fecha de recepción"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Datos para certificado"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Datos para facturación:"
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__delivery_by
+msgid "Delivery by"
+msgstr "Entregado por:"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "Delivery of instruments, equipment and documents"
+msgstr "Entrega de instrumentos, equipos y documentos"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
+msgid "Description of instruments or equipment"
+msgstr "Descripción de los instrumentos o equipos"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Dirección:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "E-mail: <u>oficina@inscomexico.com</u>"
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.actions.report,name:w_report_projects.w_equipment_delivery
+msgid "Equipment delivery"
+msgstr "Entrega de equipos"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, Méxcio."
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__especial_requiriments
+msgid "Especial requiriment"
+msgstr "Requisitos especiales"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_5
+msgid "Instrument"
+msgstr "Instrumento"
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__invoice_number
+msgid "Invoice number"
+msgstr "Número de factura"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "Invoice:"
+msgstr "Factura:"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_report
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_report_order_service
+msgid "Logo"
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__number_tags
+msgid "Number tags"
+msgstr "Número de etiquetas"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Número de puerta:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Observaciones:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "Observations"
+msgstr "Observaciones:"
+
+#. module: w_report_projects
+#: model:ir.model.fields,help:w_report_projects.field_project_task__observations_report_equipment_reception
+msgid "Observations for report reception equipment"
+msgstr "Observaciones para el reporte de recepción de equipos."
+
+#. module: w_report_projects
+#: model:ir.model.fields,field_description:w_report_projects.field_project_task__observations_report_equipment_reception
+msgid "Observations report equipment reception"
+msgstr "Obervaciones reporte recepción de equipos"
+
+#. module: w_report_projects
+#: model:ir.actions.report,name:w_report_projects.w_order_service
+msgid "Order service"
+msgstr "Orden de servicio"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "RFC:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Razón social:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Recepción de instrumentos o equipos"
+msgstr ""
+
+#. module: w_report_projects
+#: model:ir.actions.report,name:w_report_projects.w_reception_equipment
+msgid "Reception equipment"
+msgstr "Recepción de equipos"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_inherit_project_task_view_add_field
+msgid "Reports information"
+msgstr "Información reportes"
+
+#. module: w_report_projects
+#: model:ir.model,name:w_report_projects.model_sale_order
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+msgid "Tags:"
+msgstr "Etiquetas:"
+
+#. module: w_report_projects
+#: model:ir.model,name:w_report_projects.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Tels.: 5559 4206  5359 4363 Fax: 5358 3913"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Teléfono:"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_pricipa_template
+msgid "Tipo de servicio y Tipo de instrumento"
+msgstr ""
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_order_service_template_starndar_body_5
+msgid "Type service"
+msgstr "Tipo de servicio"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.report_equipment_delivery
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_report_order_service
+msgid "page <span class=\"page\"/> to <span class=\"topage\"/>"
+msgstr "página <span class=\"page\"/> de <span class=\"topage\"/>"
+
+#. module: w_report_projects
+#: model_terms:ir.ui.view,arch_db:w_report_projects.w_reception_equipment_report
+msgid "página <span class=\"page\"/> de <span class=\"topage\"/>"
+msgstr ""

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="inherit_res_company_view_extended_fields">
+            <field name="name">inherit.res.company.view.extended.fields</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="w_document_mod.inherit_res_company_view_add_page"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='codification_sale_order_report']" position="after">
+                        <field name="codification_equipment_delivery_1"/>
+                        <field name="codification_equipment_delivery_2"/>
+                        <field name="codification_equipment_delivery_3"/>
+                        <field name="codification_equipment_delivery_4"/>
+                        <field name="codification_equipment_delivery_5"/>
+                        <field name="codification_equipment_delivery_6"/>
+                        <field name="codification_equipment_delivery_8"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

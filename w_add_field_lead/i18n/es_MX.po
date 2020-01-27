@@ -1,0 +1,633 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* w_add_field_lead
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-19 14:10+0000\n"
+"PO-Revision-Date: 2018-09-19 14:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Account Data"
+msgstr "Datos Contabilidad"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_account_number
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_account_number
+msgid "Account number"
+msgstr "Número de Cuenta"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_achieve_order
+msgid "Achieve Order No."
+msgstr "Lograr No. de orden"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,measurement_sonsumption:0
+msgid "Any"
+msgstr "Ninguno"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_auth_request_credit
+msgid "Authorization to request credit reports"
+msgstr "Autorización para solicitar reportes de crédito"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_authorized_collection
+msgid "Authorized collection, authorization of installation"
+msgstr "Cobranza asegurada,autorización de instalación"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_awaiting_project
+msgid "Awaiting project acceptance"
+msgstr "En espera de aceptación de proyecto"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_inv_home
+msgid "Billing home"
+msgstr "Domicilio Fiscal"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_inv_mail
+msgid "Billing mail"
+msgstr "Correo Facturación"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_inv_name
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_inv_home
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_inv_mail
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_inv_name
+msgid "Billing name"
+msgstr "Nombre de Facturación"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_birth_certificate
+msgid "Birth certificate"
+msgstr "Certificado de Nacimiento"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_budget_shedule
+msgid "Budget and work schedule"
+msgstr "Presupuesto y calendario de obra"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_use_cfi
+msgid "CFDI use"
+msgstr "Uso del CFDI"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rpu
+msgid "CFE Control number"
+msgstr "Número de control CFE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_cfe_number
+msgid "CFE number"
+msgstr "Número CFE "
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_cfe_receipt
+msgid "CFE receipt"
+msgstr "Recibo CFE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_sing_obteined
+msgid "CFE signatures were obtained in agreement signed by the client"
+msgstr "Se lograron firmas de CFE en convenio firmado por el cliente "
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_curp_binary_short
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_curp_infonavit
+msgid "CURP"
+msgstr "CURP"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_card_digits
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_card_digits
+msgid "Card digits"
+msgstr "Dígitos de trajeta"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,method_pay:0
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_change_meter
+msgid "Change of meter"
+msgstr "Cambio de medidor"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_collection_completed
+msgid "Collection completed"
+msgstr "Cobranza terminada"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_collection_balance
+msgid "Collection of balances"
+msgstr "Cobranza de saldo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_workshop_know
+msgid "Constancy Workshop Know to decide"
+msgstr "Constancia Taller Saber para decidir"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_constitutive_act
+msgid "Constitutive Act"
+msgstr "Acta Constitutiva"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_measurement_sonsumption
+msgid "Consumption Measurement"
+msgstr "Medición de Consumo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_no_smartsheet
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_no_smartsheet
+msgid "Control Code"
+msgstr "Código de control"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_credit_sic
+msgid "Credit application and SIC formats"
+msgstr "Solicitud de crédito y formatos SIC"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_credit_request
+msgid "Credit request"
+msgstr "Solicitud de crédito"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rpu_home
+msgid "Customer Address  on the CFE receip"
+msgstr "Dirección del cliente en recibo CFE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_cfe_number
+msgid "Customer name on the CFE receip"
+msgstr "Nombre del cliente en recibo CFE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_data_verification
+msgid "Data Verification"
+msgstr "Verificación de Documentos"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,currency_account_id:0
+msgid "American Dollar"
+msgstr "Dolar Americano"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_delivery_agreement
+msgid "Delivery copy of agreement"
+msgstr "Entrega de copia de convenio"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Documentation"
+msgstr "Documentación"
+
+#. module: w_add_field_lead
+#: code:addons/w_add_field_lead/models/inherit_crm_lead.py:171
+#, python-format
+msgid "You do not have the ID control code enabled."
+msgstr "No tiene habilitado el Código de control ID."
+
+#. module: w_add_field_lead
+#: selection:crm.lead,measurement_sonsumption:0
+msgid "EGauge"
+msgstr "EGauge"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,panel_band:0
+msgid "ET Solar"
+msgstr "ET Solar"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,method_pay:0
+msgid "Electronic Background Transfer"
+msgstr "Transferencia Electrónica de Fondos"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,inverter_band:0
+#: selection:crm.lead,inverter_model:0
+msgid "Emphase"
+msgstr "Emphase"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_end_work
+msgid "End work"
+msgstr "Fin de obra"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_engineering
+msgid "Engineering"
+msgstr "Ingenierías"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,measurement_sonsumption:0
+msgid "Envoy"
+msgstr "Envoy"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_exchange_rate
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_exchange_rate
+msgid "Exchange rate"
+msgstr "Tipo de cambio"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_fico_calification_long
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_fico_calification_short
+msgid "FICO Formats"
+msgstr "Formatos FICO"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "FIDE Financing"
+msgstr "Financiamiento FIDE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_done_procedure
+msgid "Finalize procedure"
+msgstr "Finaliza trámite"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_proccess_finish
+msgid "Finish process"
+msgstr "Finalizar proceso"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,inverter_band:0
+#: selection:crm.lead,inverter_model:0
+msgid "Fronius"
+msgstr "Fronius"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_guarantee_data
+msgid "Guarantee data"
+msgstr "Documento de Autorización"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Infonavit"
+msgstr "Infonavit"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,inverter_band:0
+#: selection:crm.lead,inverter_model:0
+msgid "Ingeteam"
+msgstr "Ingeteam"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_auth_installation_long
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_auth_installation_short
+msgid "Installation authorization"
+msgstr "Autorización de Instalación"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_inverter_band
+msgid "Inverter band"
+msgstr "Marca del inversor"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_inverter_model
+msgid "Inverter model"
+msgstr "Modelo del Inversor"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_invoiced_collection
+msgid "Invoice and collection"
+msgstr "Envío de factura y cobranza"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,panel_band:0
+msgid "Jinko"
+msgstr "Jinko"
+
+#. module: w_add_field_lead
+#: model:ir.model,name:w_add_field_lead.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Inicaitiva / Oportunidad"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_auth_installation_long
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_auth_installation_short
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_auth_request_credit
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_birth_certificate
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_budget_shedule
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_cfe_receipt
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_constitutive_act
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_credit_request
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_credit_sic
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_curp_binary_short
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_curp_infonavit
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_fico_calification_long
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_fico_calification_short
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_guarantee_data
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_marriage_certificate
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_oficial_id
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_power_legal_rep
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_predial
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_prequalification_infonavit
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_quotation
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc_binary_long
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc_binary_short
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc_fide
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc_infonavit
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc_legal_rep
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_two_month_account
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_workshop_know
+msgid "Limited to 1024x1024px"
+msgstr "Limitado para 1024x1024px"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_list_material
+msgid "List of materials to winery"
+msgstr "Lista de materiales a bodega"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_url_locations
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Long Term Financing"
+msgstr "Financiamiento a Largo Plazo"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,finance_type:0
+msgid "Long term Ecopulse"
+msgstr "Ecopulse largo plazo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_marriage_certificate
+msgid "Marriage certificate"
+msgstr "Certificado de matrimonio"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,measurement_sonsumption:0
+msgid "Meter"
+msgstr "Medidor"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,measurement_sonsumption:0
+msgid "Neurio"
+msgstr "Neurio"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,method_pay:0
+msgid "Nominative Check"
+msgstr "Cheque Nominativo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_notice_contractor
+msgid "Notice to the contractor"
+msgstr "Aviso al contratista"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_oficial_id
+msgid "Oficial Indentification"
+msgstr "Identificación Oficial"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,inverter_band:0
+#: selection:crm.lead,inverter_model:0
+msgid "Other"
+msgstr "Otro"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_panel_band
+msgid "Panel Band"
+msgstr "Marca de Panel"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_panel_potential
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_panel_potential
+msgid "Panel Potential"
+msgstr "Potencia del Panel"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_qty_panel
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_qty_panel
+msgid "Panel qty"
+msgstr "Cantidad de paneles"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,way_pay:0
+msgid "Partial pay"
+msgstr "Plazos"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_method_pay
+msgid "Payment method"
+msgstr "Método de Pago"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_performs_survey
+msgid "Performs survey, reviews inventory and proposal"
+msgstr "Realiza levantamiento, revisa inventario y propuesta"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_physical_delivery
+msgid "Physical delivery of work"
+msgstr "Entrega física de obra"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_power_legal_rep
+msgid "Power of the legal representative"
+msgstr "Poder del Representante Legal"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_predial
+msgid "Predial"
+msgstr "Predial"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_prequalification_infonavit
+msgid "Prequalification infonavit"
+msgstr "Precalificación infonavit"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,currency_account_id:0
+msgid "Mexican Peso"
+msgstr "Peso Mexicano"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_quotation
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_bank
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc_binary_long
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc_binary_short
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc_fide
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc_infonavit
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_use_cfi
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_rfc
+msgid "RFC"
+msgstr "RFC"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rfc_legal_rep
+msgid "RFC legal representative"
+msgstr "RFC del representante legal"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rpu
+msgid "RPU"
+msgstr "RPU"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_rpu_home
+msgid "RPU home"
+msgstr "Domicilio RPU"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_review_authorization
+msgid "Review with the client and authorization"
+msgstr "Revisión con el cliente y autorización"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_schedule_appointment
+msgid "Schedule appointment with the client"
+msgstr "Programar cita con el cliente"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_short_3d
+msgid "Short 3d model and heliscope and location"
+msgstr "Módelo 3D orto y heliscope y emplazamiento"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Short Term Financing"
+msgstr "Financimiento a Corto Plazo"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,finance_type:0
+msgid "Short term Ecopulse"
+msgstr "Ecopulse corto plazo"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_sing_cfe_agree
+msgid "Signature CFE agreement"
+msgstr "Firma convenio CFE"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_sing_ecopulse_contract
+msgid "Signed Ecopulse contract"
+msgstr "Contrato Ecopulse Firmado"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_sing_documents
+msgid "Sing of documents"
+msgstr "Firma de Documentos"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,way_pay:0
+msgid "Single exibition"
+msgstr "Una sola exhibición"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,panel_band:0
+msgid "Solar"
+msgstr "Solar"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,inverter_band:0
+#: selection:crm.lead,inverter_model:0
+msgid "Solar Edge"
+msgstr "Solar Edge"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,panel_band:0
+msgid "Solar Tec"
+msgstr "Solar Tec"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Stages Account"
+msgstr "Etapas Contabilidad"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Stages Design"
+msgstr "Etapas Diseño"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Stages Work"
+msgstr "Etapas Obra"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Stages of Contracts and Procedures"
+msgstr "Etapas Contratos y Trámites"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_start_work
+msgid "Start of work"
+msgstr "Inicio de obra"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_start_process_cfe
+msgid "Start process CFE"
+msgstr "Inicio Tramite CFE"
+
+#. module: w_add_field_lead
+#: selection:crm.lead,panel_band:0
+msgid "Sun Power"
+msgstr "Sun Power"
+
+#. module: w_add_field_lead
+#: model:ir.ui.view,arch_db:w_add_field_lead.inherit_crm_lead_view_add_page_ecopulse_lead
+msgid "Tecnical Data"
+msgstr "Datos Técnicos"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_two_month_account
+msgid "Two month account statement"
+msgstr "Estado de cuenta de 2 meses"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_finance_type
+msgid "Type of financing"
+msgstr "Tipo de financiamiento"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_url_locations
+msgid "URL of the location of the property"
+msgstr "URL de la ubicación del predio"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_ver_documents
+msgid "Verification of documents"
+msgstr "Verificación de Documentos"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_verify_collection
+msgid "Verify collection"
+msgstr "Verificar cobranza"
+
+#. module: w_add_field_lead
+#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_way_pay
+msgid "Way to pay"
+msgstr "Forma de Pago"
+

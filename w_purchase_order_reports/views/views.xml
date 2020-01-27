@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="w_sales_reports.list">
+      <field name="name">w_sales_reports list</field>
+      <field name="model">w_sales_reports.w_sales_reports</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="w_sales_reports.action_window">
+      <field name="name">w_sales_reports window</field>
+      <field name="res_model">w_sales_reports.w_sales_reports</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="w_sales_reports.action_server">
+      <field name="name">w_sales_reports server</field>
+      <field name="model_id" ref="model_w_sales_reports_w_sales_reports"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="w_sales_reports" id="w_sales_reports.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="w_sales_reports.menu_1" parent="w_sales_reports.menu_root"/>
+    <menuitem name="Menu 2" id="w_sales_reports.menu_2" parent="w_sales_reports.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="w_sales_reports.menu_1_list" parent="w_sales_reports.menu_1"
+              action="w_sales_reports.action_window"/>
+    <menuitem name="Server to list" id="w_sales_reports" parent="w_sales_reports.menu_2"
+              action="w_sales_reports.action_server"/>
+    -->
+  </data>
+</odoo>
