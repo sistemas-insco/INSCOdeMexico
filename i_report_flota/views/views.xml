@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="custom_flota">
+            <field name="name">flota_custon</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/> <!--Esta es la vista -->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                        <group col="2">
+                            <group string="Exterior">
+                            <field name="luces_flete"/>
+                            <field name="antena_flete"/>
+                            <field name="espejo1_flete"/>
+                            <field name="espejo2_flete"/>
+                            <field name="crsitales_flete"/>
+                            <field name="emblema_flete"/>
+                            <field name="llantas_flete"/>
+                            <field name="tapones_flete"/>
+                            <field name="tapon_flete"/>
+                            <field name="claxon_flete"/>
+                            </group>
+
+                            <group string="Interior">
+                            <field name="tablero_flete"/>
+                            <field name="calefaccion_flete"/>
+                            <field name="limp_parabrisas_flete"/>
+                            <field name="radio_flete"/>
+                            <field name="bocinas_flete"/>
+                            <field name="Encendedor_flete"/>
+                            <field name="retrovisor_flete"/>
+                            <field name="ceniceros_flete"/>
+                            <field name="cinturo_seguridad_flete"/>
+                            <field name="botones_flete"/>
+                            <field name="manijas_flete"/>
+                            </group>
+
+                             <group string="Accesorios y documentacion">
+                            <field name="tapetes_flete"/>
+                            <field name="vestidura_flete"/>
+                            <field name="gato_flete"/>
+                            <field name="llave_flete"/>
+                            <field name="herramientas_flete"/>
+                            <field name="reflejantes_flete"/>
+                            <field name="llanta_ref_flete"/>
+                            <field name="extinguidor_flete"/>
+                            <field name="tajeta_flete"/>
+                            <field name="seguro_flete"/>
+                            <field name="verificacion_flete"/>
+                             </group>
+
+                             <group string="Propiedades iniciales y finales">
+                                 
+                                  <field name="Gasolina_Inicial_flete"/>
+                                   <field name="Gasolina_Final_flete"/>
+                                    <field name="date1_field"/>
+                                    <field name="date2_field"/>
+                                    <field name="destino_field"/>
+                                    <field name="Observaciones_flete"/>
+                                   
+
+
+                            </group>
+   
+
+                        </group>
+                </xpath>
+
+                <xpath expr="//field[@name='residual_value']" position="after">
+                    <field name="Odometro_Finals_flete"/>
+                    
+                 </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+

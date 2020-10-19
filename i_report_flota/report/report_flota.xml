@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+   <report id="reporte_flota"
+        string="Reporte de entrega"
+           model="fleet.vehicle"  
+           report_type="qweb-pdf"
+        name="i_report_flota.report_entrega_carro"/>
+      
+      <template id="report_entrega_carro">
+          <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                       
+                       <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                     </t>
+                    </t>
+
+                        <div class="page" style="font-size:18px">
+                                
+
+                    <div class="header">
+                    <div class="text-muted text-right">
+                        página <span class="page"/> de <span class="topage"/>
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-4 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                        </div>
+                        <div class="col-4 mb4  text-left">
+                            
+                            <strong><span style="font-size: 20px;"><t t-esc="'INSCO de México'"/></span></strong>
+                        </div>
+                        </div>
+                        </div>
+
+
+
+                                <table style="border-spacing:0;margin-bottom:0;" class="table">
+                                    <thead>
+                                      <tr>
+                                
+                                         <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                                         <strong>
+                                         <span>FORMATO PARA CONTROL DE VEHÍCULOS<br/>
+
+                                          </span></strong></td>
+                                
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                </table>
+                                  
+                                <br></br>
+
+                        <div class="row">
+
+                            <table style="width:100%;">
+
+                                <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
+                                    <t t-set="colspan" t-value="6"/>
+                                        <th>Tipo y Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Núm Placas</th>
+                                        <th>Destino</th>
+                                        <th>Conducto</th>
+                                        <th>Fecha</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><span t-field="o.model_id" /> </td>
+                                        <td><span t-field="o.model_year" /> </td>
+                                        <td><span t-field="o.license_plate" /> </td>
+                                        <td><span t-field="o.destino_field" /></td>
+                                        <td><span t-field="o.driver_id" /> </td>
+                                        <td><span t-field="o.acquisition_date" /></td>
+                                        </tr>
+
+                            </table>
+                        </div> 
+
+                             <br></br>
+                             <br></br>
+
+
+                <div class="row">
+
+                    <table style="width:100%;">
+                        <tr>
+                            <td class="text-center" >CATEGORIAS Y CONDICIONES GENERALES DEL VEHÍCULO:</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="row">
+
+                        <table style="width:100%;">
+
+                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
+                                <t t-set="colspan" t-value="6"/>
+                                    <th>Exteriores</th>
+                                    <th>Interiorres</th>
+                                    <th>Accesoriso</th>
+                                    <th> Documentacion</th>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td>Luces: <span t-field="o.luces_flete" /></td>
+                                    <td> Tablero: <span t-field="o.tablero_flete" /></td> 
+                                    <td> Tapetes: <span t-field="o.tapetes_flete" /></td> 
+                                    <td> Targeta de circulación: <span t-field="o.tajeta_flete" /></td>                  
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td> Andtena: <span t-field="o.antena_flete" /></td>
+                                    <td> Calefacción: <span t-field="o.calefaccion_flete" /></td>
+                                    <td> Vestidura: <span t-field="o.vestidura_flete" /></td>
+                                    <td> Seguro: <span t-field="o.seguro_flete" /></td>
+            
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td>Espejo lateral derecho: <span t-field="o.espejo1_flete" /></td>
+                                    <td> Limpia Parabrisa: <span t-field="o.limp_parabrisas_flete" /></td>
+                                    <td> Gato: <span t-field="o.gato_flete" /></td>
+                                    <td> Documentos verificación: <span t-field="o.verificacion_flete" /></td>
+                                    
+                                    </tr>
+
+                                    <tr>
+                                        <td>Espejo lateral izquierdo: <span t-field="o.espejo2_flete" /></td>
+                                        <td> Radio: <span t-field="o.radio_flete" /></td>
+                                        <td> LLave de crus: <span t-field="o.llave_flete" /></td>
+                                        
+                                    </tr>
+
+                                     <tr>
+                                        <td>Cristales: <span t-field="o.crsitales_flete" /></td>
+                                        <td> Bocinas: <span t-field="o.bocinas_flete" /></td>
+                                        <td> Herramientas: <span t-field="o.herramientas_flete" /></td>
+                                     </tr>
+
+                                    <tr>
+                                         <td>Emblema: <span t-field="o.emblema_flete" /></td>
+                                         <td> Encendedor: <span t-field="o.Encendedor_flete" /></td>
+                                         <td> Reflejantes: <span t-field="o.reflejantes_flete" /></td>
+                                    </tr>
+
+                                     <tr>
+                                        <td>LLantas: <span t-field="o.llantas_flete" /></td>
+                                        <td> Retrovisor: <span t-field="o.retrovisor_flete" /></td>
+                                        <td> LLanta de refacción: <span t-field="o.llanta_ref_flete" /></td>
+                                     </tr>
+
+                                    <tr>
+                                        <td>Tapones: <span t-field="o.tapones_flete" /></td>
+                                        <td> Cenicero: <span t-field="o.ceniceros_flete" /></td>
+                                        <td> Extinguidor: <span t-field="o.extinguidor_flete" /></td>
+                                    
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tapon Gasolina: <span t-field="o.tapon_flete" /></td>
+                                        <td> Cinturones: <span t-field="o.cinturo_seguridad_flete" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> Botones: <span t-field="o.botones_flete" /></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td> Manijas: <span t-field="o.manijas_flete" /></td>
+                                        
+                                    </tr>
+
+                        </table>
+                </div> 
+                                     
+                <br></br>
+                                      
+
+
+
+
+
+                    <div class="row">
+
+                        <table style="width:100%;">
+
+                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
+                                <t t-set="colspan" t-value="6"/>
+                                    <th>Odómetro Inicial</th>
+                                    <th>Odómetro Final</th>
+                                    <th>Gasolina Inicial</th>
+                                    <th>Gasolina Final</th>
+                                    
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><span t-field="o.odometer" />km </td>
+                                    <td><span t-field="o.Odometro_Finals_flete" />km </td>
+                                    <td><span t-field="o.Gasolina_Inicial_flete" />lt </td>
+                                    <td><span t-field="o.Gasolina_Final_flete" />lt </td>
+                                   
+                                    </tr>
+
+                        </table>
+                    </div>
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    
+                 
+                                   
+                            <div class="row">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Observations: <span t-field="o.Observaciones_flete" /></td>
+                                        
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+
+
+
+                            <br></br>
+                            
+
+
+                         <div class="row">
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Entrega:</span></strong>
+                    </div>
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Recibe:</span> </strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">______________________________________</span>
+                    </div>
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma y fecha</span> <span t-field="o.date1_field" /></strong>
+                    </div>
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma y fecha</span><span t-field="o.date2_field" /></strong>
+                    </div>
+                </div>
+
+
+                            <div class="footer">
+
+                                <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, Méxcio.</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 5559 4206  5359 4363 Fax: 5358 3913</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+                                
+                                
+                               
+                                
+                                
+                        </div>
+                    </t>
+                </t>
+            </t>
+    </template>
+  </data>
+</odoo>
+
+
+
+                                    
+
+
