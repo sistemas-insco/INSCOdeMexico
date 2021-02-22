@@ -36,7 +36,8 @@
         'base',
         'sale',
         'project',
-        'w_document_mod'
+        'w_document_mod',
+        'product'
     ],
     'data': [
         'report/template_project_task_equipment_delivery.xml',
@@ -45,7 +46,8 @@
         'report/project_task_report.xml',
         'views/inherit_res_company_view.xml',
         'views/inherit_project_task_view.xml',
-        'views/inherit_sale_order.xml'
+        'views/inherit_sale_order.xml',
+        
     ],
     'demo': [],
     'qweb': [],

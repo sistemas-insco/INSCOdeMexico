@@ -131,6 +131,7 @@
                         <table style="width:30%;">
                             <tr>
                                 <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Observations</td>
+                                <td style="width:80%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;"><span t-if="o.observations_report_equipment_delivery"><span t-esc="o.observations_report_equipment_delivery"/></span></td>
                             </tr>
                         </table>
                     </div>

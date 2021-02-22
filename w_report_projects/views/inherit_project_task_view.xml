@@ -14,6 +14,7 @@
                     <group>
                         <group>
                             <field name="observations_report_equipment_reception"/>
+                            <field name="observations_report_equipment_delivery"/>
                             <field name="conditions_report_service_order"/>
                             <field name="especial_requiriments"/>
                         </group>

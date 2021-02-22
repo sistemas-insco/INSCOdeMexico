@@ -25,3 +25,4 @@
 from . import inherit_res_company
 from . import inherit_project_task
 from . import inherit_sale_order
+

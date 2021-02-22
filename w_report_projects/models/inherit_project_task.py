@@ -58,6 +58,10 @@ class ProjectTask(models.Model):
     )
     invoice_number = fields.Char(string='Invoice number')
 
+    observations_report_equipment_delivery = fields.Text(
+        string='Observations report equipment delivery',
+        help='Observations for report delivery equipment')
+
     def get_street_partner(self):
         return "{}, {}, {}".format(
             self.partner_id.street_name or '',
@@ -98,7 +102,7 @@ class ProjectTask(models.Model):
 
     def convert_description_pad(self, description):
         flags = re.IGNORECASE | re.MULTILINE
-        html = re.sub(r'\[font\s*([^\]]+)\]', '<font \1>', description, flags=flags)
+        html = re.sub(r'\[font\s*([^\]]+)\]', '<font>', description, flags=flags)
         html = re.sub(r'\[/font\s*\]', '</font>', html, flags=flags)
         return html
 
