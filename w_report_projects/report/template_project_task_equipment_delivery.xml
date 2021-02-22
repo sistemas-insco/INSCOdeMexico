@@ -130,8 +130,8 @@
                     <div class="row">
                         <table sstyle="border-spacing:0;margin-bottom:0;" class="table">
                             <tr>
-                                <td width="20%" height="50" style="border: 1px solid black;vertical-align:middle;">Observations</td>
-                                <td width="80%" height="50" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_delivery"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_delivery"/></span></td>
+                                <td width="20%" height="40" style="border: 1px solid black;vertical-align:middle;">Observations</td>
+                                <td width="80%" height="40" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_delivery"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_delivery"/></span></td>
                         </tr>
                         </table>
                     </div>
