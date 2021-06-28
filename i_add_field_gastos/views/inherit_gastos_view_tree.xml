@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="i_inherit_gastos_view_tree_add_field">
+            <field name="name">i.inherit.gastos.view.tree.add.field</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="fecha_pago_id"/>
+                </xpath>
+                <xpath expr="//field[@name='fecha_pago_id']" position="after">
+                    <field name="proveedor_id"/>
+                    <field name="purchase_order_id"/>
+                    <field name="sucursal_id"/>
+                    <field name="diferencia_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
