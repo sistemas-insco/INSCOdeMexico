@@ -4,9 +4,9 @@
         <record model="ir.ui.view" id="i_inherit_gastos_view_from2_add_field">
             <field name="name">i.inherit.gastos.view.from2.add.field</field>
             <field name="model">hr.expense</field>
-            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_filter"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='company_id']" position="after">
+                <xpath expr="//field[@name='name']" position="after">
                     <field name="fecha_pago_id"/>
                 </xpath>
                 <xpath expr="//field[@name='fecha_pago_id']" position="after">
