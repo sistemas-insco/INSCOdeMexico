@@ -19,7 +19,6 @@ modificate gastos for INSCO.
     'data': [
         'views/inherit_gastos_view_from.xml',
         'views/inherit_gastos_view_tree.xml',
-        'views/inherit_gastos_view_from2.xml',
     ],
     'demo': [
     ],
