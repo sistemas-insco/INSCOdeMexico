@@ -13,6 +13,7 @@
                     <field name="proveedor_id"/>
                     <field name="purchase_order_id"/>
                     <field name="sucursal_id"/>
+                    <field name="departamento_id"/>
                     <field name="diferencia_id"/>
                 </xpath>
             </field>
