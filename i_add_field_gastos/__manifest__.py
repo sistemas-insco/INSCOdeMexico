@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "INSCO | Campos para gastos",
+    'name': "INSCO | Campos para Gastos",
     'summary': """
-        Insco Document Modific for INSCO""",
+        Insco Gastos Modific for INSCO""",
     'description': """
-INSCO | Insco Document Modific
+INSCO | Insco Gastos Modific
 ------------------------------
 modificate gastos for INSCO.
     """,
-    'author': "INSCO©",
+    'author': "Andres Gonzalez",
     'website': "https://www.inscomex.com",
     'category': 'Sales',
     'version': '1.0',
