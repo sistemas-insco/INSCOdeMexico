@@ -14,3 +14,7 @@ class GastosUsuario(models.Model):
         string='Sucursal')
 	diferencia_id = fields.Monetary(string='Diferencia', track_visibility="always")
 	departamento_id = fields.Many2one(string='Departamento', related='employee_id.department_id')
+	forma_pago = fields.Selection([('Tasferencia:', 'Tasferencia:'), ('Efectivo:', 'Efectivo:'), ('Tarjeta:', 'Tarjeta:')],
+        string='Forma de pago')
+	num_tarjeta_gasolina = fields.Char(string='N° Tarjeta Gasolina', help='Escribe los 4 ultimos digitos de tu tarjeta')
+	num_tarjeta_business = fields.Char(string='N° Tarjeta business', help='Escribe los 4 ultimos digitos de tu tarjeta')

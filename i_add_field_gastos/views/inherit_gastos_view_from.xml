@@ -11,6 +11,9 @@
                       <field name="departamento_id"/>
                     <field name="proveedor_id"/>
                     <field name="diferencia_id"/>
+                    <field name="forma_pago"/>
+                    <field name="num_tarjeta_gasolina"/>
+                    <field name="num_tarjeta_business"/>
                 </xpath>
                 <xpath expr="//field[@name='date']" position="after">
                     <field name="fecha_pago_id"/>
