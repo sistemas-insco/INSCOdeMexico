@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="i_inherit_empelados_view_from_add_field">
+            <field name="name">i.inherit.empleados.view.from.add.field</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="fecha_ingreso"/>
+                    <field name="años_antiguedad"/>
+                    <field name="vacaciones_dias"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

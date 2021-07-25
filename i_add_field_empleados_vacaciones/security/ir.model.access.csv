@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_solicitud_vacaciones_manager,solicitud_vacaciones_manager,i_add_field_empleados_vacaciones.model_solicitud_vacaciones,group_vacaiones_manager,1,1,1,1
+access_solicitud_vacaciones_empelado,solicitud_vacaciones_empleado,i_add_field_empleados_vacaciones.model_solicitud_vacaciones,vacaciones_empleados_group,1,1,1,0
