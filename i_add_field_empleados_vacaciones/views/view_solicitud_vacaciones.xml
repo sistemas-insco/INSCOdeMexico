@@ -12,7 +12,6 @@
                 <field name="empleado_id"/>
                 <field name="departamento_id"/>
                 <field name="solicitud_tipo"/>
-                <field name="state"/>
                 <separator />
             </search>
         </field>
@@ -42,10 +41,11 @@
             <field name="name">i.add.fields.empleados.view.kanban.vacaciones</field>
             <field name="model">solicitud.vacaciones</field>
             <field name="arch" type="xml">
-                <kanban class="o_kanban_mobile" default_group_by="state" >
-                    <field name="empleado_id"/>
+                <kanban class="o_kanban_mobile" default_group_by="solicitud_tipo" >
+                    <field name="empleado_id" readonly = "1"/>
                     <field name="departamento_id"/>
-                    <field name="solicitud_tipo"/>
+                    <field name="state" readonly = "1"/>
+                    <field name="solicitud_tipo" readonly = "1"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_card oe_kanban_global_click">
@@ -60,7 +60,7 @@
                                         <span><t t-esc="record.name.value"/> <t t-esc="record.date_order.value"/></span>
                                     </div> -->
                                     <div class="oe_kanban_bottom_right">
-                                        <field name="solicitud_tipo" widget="label_selection"/>
+                                        <field name="name" widget="label_selection"/>
                                     </div>
                                 </div>
                             </div>
@@ -97,12 +97,13 @@
             <field name="arch" type="xml">
                 <form string="Form View Vacaciones">
                     <header>
-                <button name="solictud_aprovada" string="Aprobado" type="object" class="btn-primary"/>
-               <!--  <button name="send_mail" string="Enviar solictud" type="object"/> -->
+                <button name="solictud_enproceso" string="En Proceso" type="object"/>
+                <button name="solictud_aprovada" string="Aprobado" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
+                <button name="solictud_cancelada" string="Cancelar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
+
                         <field name="state"
                                 widget="statusbar"
-                                clickable="True"
-                                status_visible="nuevo,en proceso,aprovado,cancelado"/>
+                                status_visible="nuevo,en proceso,aprobado,cancelado"/>
                     </header>
 
                 <sheet>
