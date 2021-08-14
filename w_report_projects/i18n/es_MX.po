@@ -443,16 +443,6 @@ msgid "Observations report equipment reception"
 msgstr "Obervaciones reporte recepción de equipos"
 
 #. module: w_report_projects
-#: model:ir.model.fields,help:w_report_projects.field_project_task__observations_report_equipment_delivery
-msgid "Observations for report delivery equipment"
-msgstr "Observaciones para el reporte de entrega de equipos."
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_project_task__observations_report_equipment_delivery
-msgid "Observations report equipment delivery"
-msgstr "Obervaciones reporte entrega de equipos"
-
-#. module: w_report_projects
 #: model:ir.actions.report,name:w_report_projects.w_order_service
 msgid "Order service"
 msgstr "Orden de servicio"

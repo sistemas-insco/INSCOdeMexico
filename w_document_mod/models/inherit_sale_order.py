@@ -43,3 +43,6 @@ class SaleOrder(models.Model):
     attention_of = fields.Char(
         string='Attention of'
     )
+    fecha_solicitud = fields.Date(
+        string='Fecha de la solcitud',track_visibility="always"
+    )

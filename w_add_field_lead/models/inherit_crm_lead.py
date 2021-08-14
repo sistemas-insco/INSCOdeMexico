@@ -81,7 +81,7 @@ class CrmLead(models.Model):
         string='Way to pay')
     method_pay = fields.Selection([('01', 'Cash'), ('02', 'Nominative Check'),('03', 'Electronic Background Transfer')],
         string='Payment method')
-    currency_account_id = fields.Selection([('mxn', 'Mexican Peso'), ('usd', 'American Dollar')],
+    currency_account_id = fields.Selection([('mxn:', 'Mexican Peso:'), ('usd:', 'American Dollar:')],
         string='Currency')
     exchange_rate = fields.Float('Exchange rate', help='Exchange rate')
 #     Contratos y tramites
@@ -119,26 +119,26 @@ class CrmLead(models.Model):
     physical_delivery = fields.Boolean('Physical delivery of work', default=False)
 
 #     Financiamiento ecopulse corto plazo
-    rfc_binary_short = fields.Binary("RFC", attachment=True,
+    rfc_binary_short = fields.Binary("RFC5", attachment=True,
         help="Limited to 1024x1024px",)
     rfc_binary_short_filename = fields.Char()
     fico_calification_short = fields.Binary("FICO Formats", attachment=True,
         help="Limited to 1024x1024px",)
     fico_calification_short_filename = fields.Char()
-    curp_binary_short = fields.Binary("CURP", attachment=True,
+    curp_binary_short = fields.Binary("CURP2", attachment=True,
         help="Limited to 1024x1024px",)
     curp_binary_short_filename = fields.Char()
     auth_installation_short = fields.Binary("Installation authorization", attachment=True,
         help="Limited to 1024x1024px",)
     auth_installation_short_filename = fields.Char()
 #     Financiamiento ecopulse largo plazo
-    rfc_binary_long = fields.Binary("RFC", attachment=True,
+    rfc_binary_long = fields.Binary("RFC4", attachment=True,
         help="Limited to 1024x1024px",)
     rfc_binary_long_filename = fields.Char()
-    fico_calification_long = fields.Binary("FICO Formats", attachment=True,
+    fico_calification_long = fields.Binary("FICO Format", attachment=True,
         help="Limited to 1024x1024px",)
     fico_calification_long_filename = fields.Char()
-    auth_installation_long = fields.Binary("Installation authorization", attachment=True,
+    auth_installation_long = fields.Binary("Installation authorization2", attachment=True,
         help="Limited to 1024x1024px",)
     auth_installation_long_filename = fields.Char()
     rfc_legal_rep = fields.Binary("RFC legal representative", attachment=True,
@@ -157,7 +157,7 @@ class CrmLead(models.Model):
         help="Limited to 1024x1024px",)
     guarantee_data_filename = fields.Char()
 #     Financimiento FIDE
-    rfc_fide = fields.Binary("RFC", attachment=True,
+    rfc_fide = fields.Binary("RFC3", attachment=True,
         help="Limited to 1024x1024px",)
     rfc_fide_filename = fields.Char()
     credit_request = fields.Binary("Credit request", attachment=True,
@@ -167,13 +167,13 @@ class CrmLead(models.Model):
         help="Limited to 1024x1024px",)
     auth_request_credit_filename = fields.Char()
 #     infonavit
-    rfc_infonavit = fields.Binary("RFC", attachment=True,
+    rfc_infonavit = fields.Binary("RFC2", attachment=True,
         help="Limited to 1024x1024px",)
     rfc_infonavit_filename = fields.Char()
     birth_certificate = fields.Binary("Birth certificate", attachment=True,
         help="Limited to 1024x1024px",)
     birth_certificate_filename = fields.Char()
-    curp_infonavit = fields.Binary("CURP", attachment=True,
+    curp_infonavit = fields.Binary("CURP2", attachment=True,
         help="Limited to 1024x1024px",)
     curp_infonavit_filename = fields.Char()
     prequalification_infonavit = fields.Binary("Prequalification infonavit", attachment=True,
@@ -193,7 +193,7 @@ class CrmLead(models.Model):
     marriage_certificate_filename = fields.Char()
 
 
-    @api.multi
+    #@api.multi
     def write(self, vals):
         stage_obj = self.env['crm.stage']
         for lead in self:

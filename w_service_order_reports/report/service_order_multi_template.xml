@@ -54,7 +54,7 @@
                         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
                         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
                         </td> 
-                        <td style="font-family:'arialfont'; font-size: 14px; width=40%;" class="text-align: right"><strong>Producido por:</strong></td> 
+                        <td style="font-family:'arialfont'; font-size: 14px; width=40%;" class="text-align: right"><strong>.</strong></td> 
                     </tr>
                 </table>
             </div>
@@ -67,9 +67,9 @@
                 <div class="col-6">
                     <span style="font-size: 14px;">Name and signature of the laboratory technician</span>
                 </div>
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <span style="font-size: 14px;">Sign</span>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col-6">
@@ -136,6 +136,9 @@
                         </div>
                         <div class="col-4">
                             <b>Made: </b><t t-esc="user.name" />
+                            <span >
+                            <i><k><span t-esc="doc.user_id.name"/> <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> </k></i>
+                             </span>
                         </div>
                     </div>
                     <div class="row" style="padding-left: 20px !important;">
@@ -213,19 +216,20 @@
                         <thead>
                             <tr style="background-color: #75baff;">
                                 <th style="font-size: 11px;">Type service</th>
-                                <th style="font-size: 11px;">Instrument</th>
-                                <th class="text-center" style="font-size: 11px;">Process</th>
+                                <!-- <th style="font-size: 11px;">Instrument</th> -->
+                                <th style="font-size: 11px;">Process</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr t-foreach="services_data" t-as="serv">
                                 <td style="width:50%;">
-                                    <span style="font-size: 11px;"><t t-esc="serv['service']"/> (from <t t-esc="serv['origin']" />)<br t-esc="serv['description']"/></span>
+                                    <span style="font-size: 11px;"><t t-esc="serv['service']"/> (from <t t-esc="serv['origin']" />)<!--<br t-esc="serv['description']"/> --></span>
                                 </td>
-                                <td style="width:20%;">
-                                </td>
-                                <td class="text-center" style="width:30%;">
-                                    <span style="font-size: 11px;" t-if="serv['product_id'].process" t-esc="serv['product_id'].process"/>
+                               <!--  <td style="width:20%;">
+                                </td> -->
+                                <td style="width:30%;">
+                                    <!-- <span style="font-size: 11px;" t-if="serv['product_id'].process" t-esc="serv['product_id'].process"/> -->
+                                    <span style="font-size: 11px;" t-if="serv['product_id'].x_studio_etiquetas" t-esc="serv['product_id'].x_studio_etiquetas"/>
                                 </td>
                             </tr>
                         </tbody>

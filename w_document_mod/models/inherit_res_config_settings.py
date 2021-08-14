@@ -50,7 +50,7 @@ class ResConfigSettings(models.TransientModel):
             filename_terms=default_filename_terms)
         return res
 
-    @api.multi
+    #@api.multi
     def set_values(self):
         res = super(ResConfigSettings, self).set_values()
         set_param = self.env['ir.config_parameter'].sudo().set_param

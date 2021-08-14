@@ -34,7 +34,15 @@ class ProjectTask(models.Model):
 
     service_order = fields.Char(
         string="Service Order",
-        help="Service Order for this task."
+        help="Service Order for this task.",
+        track_visibility="always"
+    )
+
+    procedimiento = fields.Char(
+        string="Procedimiento",
+        related = 'sale_line_id.product_id.x_studio_etiquetas', 
+        store = True,
+        track_visibility="always"
     )
 
     @api.model

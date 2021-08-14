@@ -83,7 +83,8 @@
                     </div>
                     <div class="row" style="color: red;">
                         <div class="col-12" style="font-size: 14px !important;text-align: right;">
-                            Serie  <span t-esc="doc.number"/>
+                           <!--  Serie  <span t-esc="doc.invoice_sequence_number_next"/> -->
+                           <span t-if="doc.name"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="doc.name"/></span>
                         </div>
                     </div>
                     <div class="row" style="background-color: #808080;color: white;">
@@ -92,9 +93,15 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12" style="font-size: 16px !important;text-align: center;padding-top: 10px;font-family: 'Courier New', Courier, monospace;">
+                        <!-- <div class="col-12" style="font-size: 16px !important;text-align: center;padding-top: 10px;font-family: 'Courier New', Courier, monospace;">
                             <strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y/%m/%d %H:%M:%S')"/></strong>
+                        </div> -->
+                        <div class="col-auto mw-100 mb-2" t-if="o.invoice_date" name="invoice_date">
+                           <!--  <strong>Invoice Date:</strong> -->
+                            <p class="m-0" t-field="o.invoice_date"/>
                         </div>
+
+
                     </div>
                 </div>
                 <!-- <div class="col-1"/> -->
@@ -177,7 +184,7 @@
                     <div class="row">
                         <div class="col-7"/>
                         <div class="col-5 text-center" style="font-size: 12px;">
-                            <span t-esc="o.l10n_mx_edi_cfdi_certificate_id.serial_number" />
+                            <span t-esc="o.serial_number" />
                         </div>
                     </div>
                     <div class="row">
@@ -227,7 +234,7 @@
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="product_key"><span t-esc="'%s - %s' % (line.product_id.l10n_mx_edi_code_sat_id.code or '', line.product_id.l10n_mx_edi_code_sat_id.name or '')"/></td>
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="account_invoice_line_name"><span t-field="line.name"/></td>
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-center">
-                                        <span t-esc="'%s - %s' % (line.uom_id.l10n_mx_edi_code_sat_id.code, line.uom_id.l10n_mx_edi_code_sat_id.name)" groups="uom.group_uom"/>
+                                        <span t-esc="'%s - %s' % (line.product_uom_id.l10n_mx_edi_code_sat_id.code, line.product_uom_id.l10n_mx_edi_code_sat_id.name)" groups="uom.group_uom"/>
                                     </td>
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-center">
                                         <span t-field="line.quantity"/>
@@ -251,7 +258,7 @@
                                         </t>
                                     </td>
                                     <td style="border-left: 1px solid #808080;border-right: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-right o_price_total">
-                                        <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <strong><span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/></strong>
                                     </td>
                                 </t>
                                 <t t-if="line.display_type == 'line_section'">
@@ -309,7 +316,7 @@
                                     <b><span t-esc="o.l10n_mx_edi_payment_method_id.code"/> <span t-esc="o.l10n_mx_edi_payment_method_id.name" /></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 10px;">
-                                    <b><span t-if="o.payment_method" t-esc="o.payment_method" /></b>
+                                    <b><span t-if="o.payment_method" t-esc="o.payment_method"/></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 10px;">
                                     <b><span t-if="o.l10n_mx_edi_partner_bank_id.acc_number" t-esc="o.l10n_mx_edi_partner_bank_id.acc_number" /></b>
@@ -364,7 +371,8 @@
                                 </tr>
                                 <t t-foreach="o.amount_by_group" t-as="amount_by_group">
                                     <tr>
-                                        <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                        <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
+                                        <!--<t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">-->
                                             <td class="text-right" style="background-color: #EEECE0;">
                                                 <strong><span t-esc="amount_by_group[0]"/></strong>
                                             </td>

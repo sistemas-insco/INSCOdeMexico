@@ -30,22 +30,30 @@ CFDI_XSLT_CADENA_TFD = 'l10n_mx_edi/data/xslt/3.3/cadenaoriginal_TFD_1_1.xslt'
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = 'account.move'
 
     observations = fields.Text(
-        string='Observations')
+        string='Observations'
+    )
     sello_cfdi = fields.Char(
-        compute="_compute_cfdi_values"
+        compute="_compute_cfdi_values",
+        store=True
     )
     sello_sat = fields.Char(
-        compute="_compute_cfdi_values"
+        compute="_compute_cfdi_values",
+        store=True
     )
     cfdi_cadena = fields.Char(
-        compute='_compute_cfdi_values'
+        compute='_compute_cfdi_values',
+        store=True
     )
     payment_method = fields.Char(
-        compute="_compute_cfdi_values"
+        compute="_compute_cfdi_values",
+        store=True
     )
+
+    serial_number = fields.Char(compute='_compute_cfdi_values',
+        store=True)
 
     @api.model
     def _get_l10n_mx_edi_cadena(self):
@@ -62,37 +70,72 @@ class AccountInvoice(models.Model):
             print(e)
         # return the cadena
 
-    @api.multi
+    #@api.multi
+    """
     @api.depends('l10n_mx_edi_cfdi_name')
     def _compute_cfdi_values(self):
-        '''Fill the invoice fields from the cfdi values.
-        '''
-        for inv in self:
-            attachment_id = inv.l10n_mx_edi_retrieve_last_attachment()
+        #'''Fill the invoice fields from the cfdi values.
+        #'''
+        for record  in self:
+            attachment_id = record .l10n_mx_edi_retrieve_last_attachment()
             if not attachment_id:
                 continue
             # At this moment, the attachment contains the file size in its 'datas' field because
             # to save some memory, the attachment will store its data on the physical disk.
             # To avoid this problem, we read the 'datas' directly on the disk.
             datas = attachment_id._file_read(attachment_id.store_fname)
-            inv.l10n_mx_edi_cfdi = datas
-            cfdi = base64.decodestring(datas).replace(
+            record .l10n_mx_edi_cfdi = datas
+            cfdi = base64.b64decode(datas).replace( # se acambio de base64.decodestring  a  base64.b64encode#
                 b'xmlns:schemaLocation', b'xsi:schemaLocation')
-            tree = inv.l10n_mx_edi_get_xml_etree(cfdi)
+            tree = record .l10n_mx_edi_get_xml_etree(cfdi)
             # if already signed, extract uuid
-            tfd_node = inv.l10n_mx_edi_get_tfd_etree(tree)
+            tfd_node = record .l10n_mx_edi_get_tfd_etree(tree)
+
             if tfd_node is not None:
-                inv.l10n_mx_edi_cfdi_uuid = tfd_node.get('UUID')
-                inv.sello_sat = tfd_node.get('SelloSAT', '')
-            inv.l10n_mx_edi_cfdi_amount = tree.get('Total', tree.get('total'))
-            inv.l10n_mx_edi_cfdi_supplier_rfc = tree.Emisor.get(
-                'Rfc', tree.Emisor.get('rfc'))
-            inv.l10n_mx_edi_cfdi_customer_rfc = tree.Receptor.get(
-                'Rfc', tree.Receptor.get('rfc'))
-            certificate = tree.get('noCertificado', tree.get('NoCertificado'))
-            inv.l10n_mx_edi_cfdi_certificate_id = self.env['l10n_mx_edi.certificate'].sudo().search(
-                [('serial_number', '=', certificate)], limit=1)
-            inv.sello_cfdi = tree.get('sello', tree.get('Sello', 'No identificado'))
-            cfdi_cadena = inv._get_l10n_mx_edi_cadena()
-            inv.cfdi_cadena = cfdi_cadena if cfdi_cadena else ''
-            inv.payment_method = tree.get('MetodoPago', '')
+                record .l10n_mx_edi_cfdi_uuid = tfd_node.get('UUID')
+                record .sello_sat = tfd_node.get('SelloSAT', '')
+                record .l10n_mx_edi_cfdi_amount = tree.get('Total', tree.get('total'))
+                record .l10n_mx_edi_cfdi_supplier_rfc = tree.Emisor.get('Rfc', tree.Emisor.get('rfc'))
+                record .l10n_mx_edi_cfdi_customer_rfc = tree.Receptor.get('Rfc', tree.Receptor.get('rfc'))
+
+                certificate = tree.get('noCertificado', tree.get('NoCertificado'))
+                record .l10n_mx_edi_cfdi_certificate_id = self.env['l10n_mx_edi.certificate'].sudo().search([('serial_number', '=', 'certificate')], limit=1)
+                record .sello_cfdi = tree.get('sello', tree.get('Sello', 'No identificado'))
+                cfdi_cadena = record ._get_l10n_mx_edi_cadena()
+                record .cfdi_cadena = cfdi_cadena if cfdi_cadena else ''
+                record .payment_method = tree.get('MetodoPago', '')
+    """
+
+    @api.depends('l10n_mx_edi_cfdi_name')
+    def _compute_cfdi_values(self):
+        res = super(AccountInvoice, self)._compute_cfdi_values()
+        for record in self:
+            attachment_id = record.l10n_mx_edi_retrieve_last_attachment()
+            if not attachment_id:
+                continue
+            # At this moment, the attachment contains the file size in its 'datas' field because
+            # to save some memory, the attachment will store its data on the physical disk.
+            # To avoid this problem, we read the 'datas' directly on the disk.
+            datas = attachment_id._file_read(attachment_id.store_fname)
+            record.l10n_mx_edi_cfdi = datas
+            cfdi = base64.b64decode(datas).replace(  # se acambio de base64.decodestring  a  base64.b64encode#
+                b'xmlns:schemaLocation', b'xsi:schemaLocation')
+            tree = record.l10n_mx_edi_get_xml_etree(cfdi)
+            # if already signed, extract uuid
+            tfd_node = record.l10n_mx_edi_get_tfd_etree(tree)
+            if tfd_node is not None:
+                record.l10n_mx_edi_cfdi_uuid = tfd_node.get('UUID')
+                record.sello_sat = tfd_node.get('SelloSAT', '')
+                record.l10n_mx_edi_cfdi_amount = tree.get('Total', tree.get('total'))
+                record.l10n_mx_edi_cfdi_supplier_rfc = tree.Emisor.get('Rfc', tree.Emisor.get('rfc'))
+                record.l10n_mx_edi_cfdi_customer_rfc = tree.Receptor.get('Rfc', tree.Receptor.get('rfc'))
+
+                certificate = tree.get('noCertificado', tree.get('NoCertificado'))
+                #record.l10n_mx_edi_cfdi_certificate_id = self.env['l10n_mx_edi.certificate'].sudo().search(                
+                #    [('serial_number', '=', 'certificate')], limit=1)
+                record.serial_number = certificate
+                record.sello_cfdi = tree.get('sello', tree.get('Sello', 'No identificado'))
+                cfdi_cadena = record._get_l10n_mx_edi_cadena()
+                record.cfdi_cadena = cfdi_cadena if cfdi_cadena else ''
+                record.payment_method = tree.get('MetodoPago', '')
+        return res

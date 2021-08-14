@@ -37,7 +37,7 @@ class AccountInvoiceReport(models.AbstractModel):
         )
 
     def get_taxes(self, line):
-        taxes = line.invoice_line_tax_ids
+        taxes = line.tax_ids
         result = []
         for tax in taxes:
             result.extend(
@@ -49,7 +49,7 @@ class AccountInvoiceReport(models.AbstractModel):
                             line.price_unit,
                             line.quantity,
                             line.product_id,
-                            line.invoice_id.partner_id
+                            #line.invoice_id.partner_id
                         )
                     )
                 ]
@@ -60,8 +60,8 @@ class AccountInvoiceReport(models.AbstractModel):
     def _get_report_values(self, docids, data=None):
         return {
             'doc_ids': docids,
-            'doc_model': 'account.invoice',
-            'docs': self.env['account.invoice'].browse(docids),
+            'doc_model': 'account.move',
+            'docs': self.env['account.move'].browse(docids),
             'get_addr': self.get_addr,
             'get_taxes': self.get_taxes,
             'get_pac_name': self.get_pac_name,

@@ -29,7 +29,7 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
 
-    @api.one
+    #@api.one
     def _set_tags(self):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.process = self.process

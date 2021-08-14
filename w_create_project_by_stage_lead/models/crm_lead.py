@@ -32,7 +32,7 @@ class CrmLead(models.Model):
 
     _inherit = 'crm.lead'
     
-    @api.multi
+    #@api.multi
     def write(self, vals):
         stage_obj = self.env['crm.stage']
         project_obj = self.env['project.project']

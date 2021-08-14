@@ -9,7 +9,7 @@ from odoo.exceptions import UserError
 class IrActionsReport(models.Model):
     _inherit = 'ir.actions.report'
 
-    @api.multi
+    #@api.multi
     def _post_pdf(self, save_in_attachment, pdf_content=None, res_ids=None):
         # OVERRIDE
         if self.model == 'sale.order' and res_ids and len(
