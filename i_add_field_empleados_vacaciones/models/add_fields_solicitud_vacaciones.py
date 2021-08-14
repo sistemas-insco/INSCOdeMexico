@@ -1,10 +1,11 @@
 from datetime import date
 from odoo import models, fields, api,  _
+from odoo.exceptions import UserError
 
 
 class vacaciones(models.Model):
 	_name = 'solicitud.vacaciones'
-	_description = 'Solictud de Vacaciones'
+	_description = 'Solictud'
 	_inherit = ['mail.thread', 'mail.activity.mixin']
 
 
@@ -35,19 +36,22 @@ class vacaciones(models.Model):
 
 
 
-	@api.multi
-	def solictud_aprovada(self, reason):
+	#@api.multi
+	def solictud_aprovada(self):
 		if self.user_has_groups('i_add_field_empleados_vacaciones.group_vacaiones_manager'):
 				self.write({'state': 'aprobado'})
 
-	@api.multi
-	def solictud_cancelada(self, reason):
+	#@api.multi
+	def solictud_cancelada(self):
 		if self.user_has_groups('i_add_field_empleados_vacaciones.group_vacaiones_manager'):
 				self.write({'state': 'cancelado'})
 
-	@api.multi
-	def solictud_enproceso(self, reason):
-				self.write({'state': 'en proceso'})
+	#@api.multi
+	def solictud_enproceso(self):
+		if self.state == 'nuevo':
+			self.write({'state': 'en proceso'})
+		else:
+			raise UserError(_('Ya no se puede pasar cambiar a este estado una ves aprobada o canceladad '))
 		
 
 

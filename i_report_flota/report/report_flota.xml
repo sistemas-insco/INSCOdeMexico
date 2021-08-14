@@ -74,7 +74,7 @@
                                         <th>Modelo</th>
                                         <th>Núm Placas</th>
                                         <th>Destino</th>
-                                        <th>Conducto</th>
+                                        <th>Conductor</th>
                                         <th>Fecha</th>
                                         </tr>
                                         
@@ -111,77 +111,77 @@
                             <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
                                 <t t-set="colspan" t-value="6"/>
                                     <th>Exteriores</th>
-                                    <th>Interiorres</th>
-                                    <th>Accesoriso</th>
+                                    <th>Interiores</th>
+                                    <th>Accesorisos</th>
                                     <th> Documentacion</th>
                                     </tr>
                                     
                                     <tr>
-                                    <td>Luces: <span t-field="o.luces_flete" /></td>
-                                    <td> Tablero: <span t-field="o.tablero_flete" /></td> 
-                                    <td> Tapetes: <span t-field="o.tapetes_flete" /></td> 
-                                    <td> Targeta de circulación: <span t-field="o.tajeta_flete" /></td>                  
+                                        <td>Luces: <span t-field="o.luces_flete" /></td>
+                                        <td>Tablero: <span t-field="o.tablero_flete" /></td> 
+                                        <td>Tapetes: <span t-field="o.tapetes_flete" /></td> 
+                                        <td>Targeta de circulación: <span t-field="o.tajeta_flete" /></td>                  
                                     </tr>
                                     
                                     <tr>
-                                    <td> Andtena: <span t-field="o.antena_flete" /></td>
-                                    <td> Calefacción: <span t-field="o.calefaccion_flete" /></td>
-                                    <td> Vestidura: <span t-field="o.vestidura_flete" /></td>
-                                    <td> Seguro: <span t-field="o.seguro_flete" /></td>
+                                        <td>Antena: <span t-field="o.antena_flete" /></td>
+                                        <td>Calefacción: <span t-field="o.calefaccion_flete" /></td>
+                                        <td>Vestidura: <span t-field="o.vestidura_flete" /></td>
+                                        <td>Seguro: <span t-field="o.seguro_flete" /></td>
             
                                     </tr>
                                     
                                     <tr>
-                                    <td>Espejo lateral derecho: <span t-field="o.espejo1_flete" /></td>
-                                    <td> Limpia Parabrisa: <span t-field="o.limp_parabrisas_flete" /></td>
-                                    <td> Gato: <span t-field="o.gato_flete" /></td>
-                                    <td> Documentos verificación: <span t-field="o.verificacion_flete" /></td>
+                                        <td>Espejo lateral derecho: <span t-field="o.espejo1_flete" /></td>
+                                        <td>Limpia Parabrisas: <span t-field="o.limp_parabrisas_flete" /></td>
+                                        <td>Gato: <span t-field="o.gato_flete" /></td>
+                                        <td>Documentos verificación: <span t-field="o.verificacion_flete" /></td>
                                     
                                     </tr>
 
                                     <tr>
                                         <td>Espejo lateral izquierdo: <span t-field="o.espejo2_flete" /></td>
-                                        <td> Radio: <span t-field="o.radio_flete" /></td>
-                                        <td> LLave de crus: <span t-field="o.llave_flete" /></td>
+                                        <td>Radio: <span t-field="o.radio_flete" /></td>
+                                        <td>LLave de crus: <span t-field="o.llave_flete" /></td>
                                         
                                     </tr>
 
                                      <tr>
                                         <td>Cristales: <span t-field="o.crsitales_flete" /></td>
-                                        <td> Bocinas: <span t-field="o.bocinas_flete" /></td>
-                                        <td> Herramientas: <span t-field="o.herramientas_flete" /></td>
+                                        <td>Bocinas: <span t-field="o.bocinas_flete" /></td>
+                                        <td>Herramientas: <span t-field="o.herramientas_flete" /></td>
                                      </tr>
 
                                     <tr>
                                          <td>Emblema: <span t-field="o.emblema_flete" /></td>
-                                         <td> Encendedor: <span t-field="o.Encendedor_flete" /></td>
-                                         <td> Reflejantes: <span t-field="o.reflejantes_flete" /></td>
+                                         <td>Encendedor: <span t-field="o.Encendedor_flete" /></td>
+                                         <td>Reflejantes: <span t-field="o.reflejantes_flete" /></td>
                                     </tr>
 
                                      <tr>
                                         <td>LLantas: <span t-field="o.llantas_flete" /></td>
-                                        <td> Retrovisor: <span t-field="o.retrovisor_flete" /></td>
-                                        <td> LLanta de refacción: <span t-field="o.llanta_ref_flete" /></td>
+                                        <td>Retrovisor: <span t-field="o.retrovisor_flete" /></td>
+                                        <td>LLanta de refacción: <span t-field="o.llanta_ref_flete" /></td>
                                      </tr>
 
                                     <tr>
                                         <td>Tapones: <span t-field="o.tapones_flete" /></td>
-                                        <td> Cenicero: <span t-field="o.ceniceros_flete" /></td>
-                                        <td> Extinguidor: <span t-field="o.extinguidor_flete" /></td>
+                                        <td>Cenicero: <span t-field="o.ceniceros_flete" /></td>
+                                        <td>Extinguidor: <span t-field="o.extinguidor_flete" /></td>
                                     
                                     </tr>
 
                                     <tr>
                                         <td>Tapon Gasolina: <span t-field="o.tapon_flete" /></td>
-                                        <td> Cinturones: <span t-field="o.cinturo_seguridad_flete" /></td>
+                                        <td>Cinturones: <span t-field="o.cinturo_seguridad_flete" /></td>
                                     </tr>
 
                                     <tr>
-                                        <td> Botones: <span t-field="o.botones_flete" /></td>
+                                        <td>Botones: <span t-field="o.botones_flete" /></td>
                                         
                                     </tr>
                                     <tr>
-                                        <td> Manijas: <span t-field="o.manijas_flete" /></td>
+                                        <td>Manijas: <span t-field="o.manijas_flete" /></td>
                                         
                                     </tr>
 
@@ -219,10 +219,33 @@
                         </table>
                     </div>
 
+                    <div class="row">
+
+                        <table style="width:100%;">
+
+                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
+                                <t t-set="colspan" t-value="6"/>
+                                    <th>Refrigerante</th>
+                                    <th>Liquido de frenos</th>
+                                    <th>Aceite del motor</th>
+                                    
+                                    
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><span t-field="o.anticongelante_flete" /></td>
+                                    <td><span t-field="o.liq_frenos_flete" /></td>
+                                    <td><span t-field="o.aceite_motor_flete" /></td>
+                                  
+                                    </tr>
+
+                        </table>
+                    </div>
+
+
                     <br></br>
                     <br></br>
-                    <br></br>
-                    <br></br>
+                    
                     
                  
                                    
@@ -297,23 +320,6 @@
                                 <div class="col-1"></div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-                            
-
-                                
-                                
-                               
-                                
                                 
                         </div>
                     </t>

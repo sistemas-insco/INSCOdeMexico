@@ -56,10 +56,9 @@
                                     <field name="date1_field"/>
                                     <field name="date2_field"/>
                                     <field name="destino_field"/>
-                                    <field name="Observaciones_flete"/>
-                                   
-
-
+                                    <field name="anticongelante_flete"/>
+                                    <field name="liq_frenos_flete"/>
+                                    <field name="aceite_motor_flete"/>
                             </group>
    
 

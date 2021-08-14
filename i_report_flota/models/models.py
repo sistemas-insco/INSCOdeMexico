@@ -54,6 +54,10 @@ class 	fleetvehicle(models.Model):
 	date2_field = fields.Date('Fecha de recepcion',track_visibility="always")
 	destino_field = fields.Char('Destino',track_visibility="always")
 
+	#Condiciones del Motor
+	anticongelante_flete = fields.Char('Refrigerante',track_visibility="always")
+	liq_frenos_flete = fields.Char('Liquido de frenos',track_visibility="always")
+	aceite_motor_flete =fields.Char('Aceite del motor',track_visibility="always")
 
 	#, track_visibility="always" Este parametro hace que el cambio del campo se registre en el histotico de odoo
 	#lista1_flete = fields.Many2one('res.parner', string='lista de flota', index=True) sirve para traer una lista por ejemlpo la de los usuarios de odoo

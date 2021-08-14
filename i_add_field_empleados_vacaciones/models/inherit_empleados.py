@@ -24,7 +24,7 @@ class vacacionesId(models.Model):
 	
 
 
-	@api.one
+	#@api.one
 	@api.depends('años_antiguedad')
 	def _asignacion_dias_vacaciones(self):
 		if self.años_antiguedad == '1':
