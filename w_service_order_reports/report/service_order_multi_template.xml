@@ -136,9 +136,9 @@
                         </div>
                         <div class="col-4">
                             <b>Made: </b><t t-esc="user.name" />
-                            <span >
-                            <i><k> <!-- <span t-esc="doc.user_id.name"/> --> <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> </k></i>
-                             </span>
+                           <!--  <span >
+                            <i><k> <span t-esc="doc.user_id.name"/> <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> </k></i>
+                             </span> -->
                         </div>
                     </div>
                     <div class="row" style="padding-left: 20px !important;">
