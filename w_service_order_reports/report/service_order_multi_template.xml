@@ -70,6 +70,12 @@
                 <!-- <div class="col-6">
                     <span style="font-size: 14px;">Sign</span>
                 </div> -->
+                <div class="col-4">
+                    <b>Realizado: </b><t t-esc="user.name"/>
+                        
+                    <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col-6">
@@ -134,16 +140,15 @@
                         <div class="col-3">
                             <b>ZIP Code: </b><t t-esc="o.get_address_partner().get('zip') or ''" />
                         </div>
-                        <div class="col-4">
+                        <!-- <div class="col-4">
                             <b>Made: </b><t t-esc="user.name" />
-                           <!--  <span >
-                            <i><k> <span t-esc="doc.user_id.name"/> <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> </k></i>
-                             </span> -->
-                        </div>
+                        
+                            <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
+                        </div> -->
                     </div>
                     <div class="row" style="padding-left: 20px !important;">
                         <div class="col-12">
-                            <b>With attention of: </b>
+                            <b>With attention of: </b><t t-esc="o.partner_id.x_studio_contacto" />
                         </div>
                     </div>
                 </div>
