@@ -7,6 +7,7 @@
             </div>
         </div>
     </template>
+
     <template id="insco_external_layout_standard_right">
         <style type="text/css">
              <![CDATA[
@@ -20,14 +21,14 @@
             <div class="row">
                 <div class="col-4"/>
                 <div class="col-8 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Date order: </span></strong>
+                    <strong><span>Fecha cot.</span></strong>
                     <span t-if="doc.date_order"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="doc.date_order.strftime('%Y-%m-%d')"/></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 mb4"/>
                 <div class="col-8 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Date validity: </span></strong>
+                    <strong><span>Vigente hasta.</span></strong>
                     <span t-if="doc.validity_date"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="doc.validity_date.strftime('%Y-%m-%d')" /></span>
                 </div>
             </div>
@@ -36,28 +37,28 @@
             <t t-call="w_document_mod.insco_spacing"/>
             <t t-call="w_document_mod.insco_spacing"/>
             <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
+
             <div class="row text-left">
-                <div class="col-4 mb4">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">ZIP: </span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.zip"/>
+                <div class="col-8">
+                   <strong><span>Atención de.</span></strong>
+                    <span t-if="o.attention_of"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.attention_of"/></span>
                 </div>
-                <div class="col-8 mb4">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Phone: </span></strong>
+            </div>
+
+            <div class="row text-left">
+               <div class="col-10 ">
+                    <strong><span>Correo.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.email and o.partner_id.email.split(',')[0]"/>
+                </div>
+            </div>
+
+            <div class="row text-left">
+                <div class="col-6">
+                    <strong><span>Telefono.</span></strong>
                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.phone and o.partner_id.phone.split(',')[0]"/>
                 </div>
             </div>
+
         </div>
     </template>
 
@@ -73,47 +74,76 @@
         <div class="col">
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Company:</span></strong>
+                    <strong><span>Empresa:</span></strong>
                     <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.partner_id.name"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Address:</span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.street"/>
+                    <strong><span>Dirección.</span></strong> 
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.street_name"/>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.street_number"/>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.street_number2"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">VAT:</span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.vat"/>
+                    <strong><span>Estado.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.state_id and o.partner_id.state_id.name"/>
                 </div>
             </div>
-            <div class="row">
+             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">City: </span></strong>
+                    <strong><span>Mun/Delg.</span></strong>
                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.city_id and o.partner_id.city_id.name"/>
+                    <strong><span>C.P.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.zip"/>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Attention of: </span></strong>
-                    <span t-if="o.attention_of"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.attention_of"/></span>
+                    <strong><span>Colonia.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_id.l10n_mx_edi_colony"/>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Request ref.: </span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.email and o.partner_id.email.split(',')[0]"/>
+                    <strong><span>Dirección de certificado:</span></strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <strong><span>Empresa:</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.partner_shipping_id.name"/>
+                </div>
+                <div class="col-md-6">
+                    <strong><span>Dirección.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.street_name"/>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.street_number"/>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.street_number2"/>
                 </div>
             </div>
             <div class="row">
-                <div t-if="o.partner_shipping_id" class="col-12 mb4 text-left">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Certificate address:</span></strong>
-                    <div style="font-family:'arialfont'; font-size: 14px !important;" t-field="o.partner_shipping_id"
-                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                <div class="col-md-6">
+                    <strong><span>Estado.</span></strong>
+                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.state_id and o.partner_shipping_id.state_id.name"/>
+                </div>
+                <div class="col-md-6">
+                    <strong><span>Mun/Delg.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.city_id and o.partner_shipping_id.city_id.name"/>
+                    <strong><span>C.P.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.zip"/>
                 </div>
             </div>
+            <div class="row">
+                 <strong><div class="col-md-12">Colonia.</div></strong>
+                 <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.l10n_mx_edi_colony"/>
+                 <div class="col-md-6"></div>
+            </div>
+
         </div>
     </template>
 
@@ -217,7 +247,8 @@
             <!-- Is there a discount on at least one line? -->
             <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>
 
-            <table class="table table-sm o_main_table">
+            <table style="width:100%;">
+            <!-- <table class="table table-sm o_main_table"> -->
                 <thead>
                     <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
                         <t t-set="colspan" t-value="6"/>
@@ -229,7 +260,7 @@
                         <th class="text-center">Amount</th>
                     </tr>
                 </thead>
-                <tbody class="sale_tbody">
+                <tbody class="sale_tbody" style="font-family:'arialfont'; font-size: 14px;">
                     <t t-set="current_subtotal" t-value="0"/>
                     <t t-foreach="doc.order_line" t-as="line">
                         <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
@@ -246,7 +277,7 @@
                                     <span t-if="line.product_id.process"><span t-field="line.product_id.process"/></span>
                                 </td>
                                 <td class="text-right">
-                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_qty" />
                                     <span t-field="line.product_uom" groups="uom.group_uom"/>
                                 </td>
                                 <td class="text-right">

@@ -130,40 +130,7 @@ msgstr "<span>RAZÓN SOCIAL </span>"
 msgid "<strong class=\"mr16\">CFDI Related:</strong>"
 msgstr "<strong class=\"mr16\">CFDI Relacionado</strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Address:</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Dirección:</span></strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Attention of: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Atención de: </span></strong>"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Certificate address:</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Dirección de certificado:</span></strong>"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">City: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Ciudad: </span></strong>"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Company:</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Empresa:</span></strong>"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Date order: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Fecha cot: </span></strong>"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Date validity: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Vigente hasta: </span></strong>"
 
 #. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
@@ -175,15 +142,7 @@ msgstr ""
 msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notes and Comments</span></strong>"
 msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notas y comentarios</span></strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Phone: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Teléfono: </span></strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Request ref.: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Ref.Solicitud.: </span></strong>"
 
 #. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
@@ -205,15 +164,7 @@ msgstr ""
 msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Unique Discount:</span></strong>"
 msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Descuento único:</span></strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_left
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">VAT:</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">RFC:</span></strong>"
 
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard_right
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">ZIP: </span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">CP: </span></strong>"
 
 #. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard
