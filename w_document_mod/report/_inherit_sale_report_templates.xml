@@ -39,21 +39,21 @@
             <t t-call="w_document_mod.insco_spacing"/>
 
             <div class="row text-left">
-                <div class="col-8">
+                <div class="col-12">
                    <strong><span>Atención de.</span></strong>
                     <span t-if="o.attention_of"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.attention_of"/></span>
                 </div>
             </div>
 
             <div class="row text-left">
-               <div class="col-10 ">
+               <div class="col-12 ">
                     <strong><span>Correo.</span></strong>
                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.email and o.partner_id.email.split(',')[0]"/>
                 </div>
             </div>
 
             <div class="row text-left">
-                <div class="col-6">
+                <div class="col-12">
                     <strong><span>Telefono.</span></strong>
                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.phone and o.partner_id.phone.split(',')[0]"/>
                 </div>

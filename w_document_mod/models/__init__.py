@@ -28,3 +28,4 @@ from . import inherit_product
 from . import inherit_res_config_settings
 from . import inherit_ir_action_report
 from . import inherit_account_invoice
+from . import inherit_account_invoice_report
