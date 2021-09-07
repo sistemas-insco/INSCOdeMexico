@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="i_ticktes_invetario_sistemas_view_kanban_equipo">
+            <field name="name">i.ticktes.invetario.sistemas.view.kanban_equipo</field>
+            <field name="model">team.computer</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                     <field name="name"/>
+                    <field name="image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <field name="image" nolabel="1" widget="image" class="oe_right oe_avatar"/>
+                                    <!-- <img t-att-src="kanban_image('team.computer', 'image', record.image.raw_value)"/> -->
+                                </div>
+                                <div class="o_kanban_record_top mb16">
+                                    <div class="o_kanban_record_headings mt4">
+                                        <strong class="o_kanban_record_title"><!-- <span><t t-esc="record.partner_id.value"/></span> --></strong>
+                                    </div>
+                                    <strong><field name="marca"/></strong>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="modelo"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="estado" widget="label_selection"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+       <!--  vista lista -->
+        <record model="ir.ui.view" id="i_ticktes_invetario_sistemas_view_tree_equipo">
+            <field name="name">i.ticktes.invetario.sistemas.view.tree.eqipo</field>
+            <field name="model">team.computer</field>
+            <field name="arch" type="xml">
+                <tree string="Tree name">
+                <field name="name"/>
+                <field name="empleado_id"/>
+                <field name="tipo_equipo"/>
+                <field name="direccion_mac"/>
+                <field name="direccion_ip"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- vista Formulario -->
+        <record model="ir.ui.view" id="i_ticktes_invetario_sistemas_view_from_equipo">
+            <field name="name">i.ticktes.invetario.sistemas.view.from.equipo</field>
+            <field name="model">team.computer</field>
+            <field name="arch" type="xml">
+                <form string="Form View name">
+                <sheet>
+            <field name="image" widget="image" class="oe_avatar"/>
+            <div class="oe_title">
+                    <h1><field name="name" /></h1>   
+            </div>
+
+            <group col="2">  
+
+                <group string="Datos del equipo">
+                <field name="tipo_equipo"/>
+                <field name="modelo"/>
+                <field name="marca"/>
+                <field name="numero_serie"/>
+                <field name="estado"/>
+                <field name="num_inventario_area"/>
+                <field name="descripcion"/>
+                </group>
+
+                <group string="Software">
+                <field name="sistemas_operativo"/>
+                <field name="kay_windows" groups="i_ticktes_invetario_sistemas.group_sistemas_manager"/>
+                <field name="office_tipo"/>
+                <field name="kay_office" groups="i_ticktes_invetario_sistemas.group_sistemas_manager"/>
+                </group>
+
+
+                <group string="Datos del usuario">
+                <field name="empleado_id"/>
+                <field name="departamento_id"/>
+                <field name="sucursal_id"/>
+                <field name="fecha_assignment"/>
+                <field name="notas_entrega"/>
+                </group>
+
+                <group string="Datos de la red">
+                <field name="direccion_mac"/>
+                <field name="direccion_ip"/>
+                </group>
+
+                <group string="Datos de Inicio de Sesión">
+                  <field name="usuario_pc" groups="i_ticktes_invetario_sistemas.group_sistemas_manager"/>
+                 <field name="password_pc" groups="i_ticktes_invetario_sistemas.group_sistemas_manager"/>
+                </group>
+            </group>
+                 </sheet>
+                 <div class="oe_chatter">
+                     <field name="message_follower_ids" widget="mail_followers"/>
+                     <field name="activity_ids" widget="mail_activity"/>
+                     <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                 </div>
+                </form>
+            </field>
+        </record>
+
+
+        <act_window
+            id="action_menu_computer"
+            name="EQUIPOS"
+            res_model="team.computer"
+            view_mode="kanban,list,form"
+        />
+
+
+
+        
+
+        <menuitem
+            action="action_menu_computer"
+            id="action_menu_team_computer"
+            parent="menu_team_computer"
+            name="Equipos"
+            sequence="6"/>
+
+    </data>
+</odoo>

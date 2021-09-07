@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+  <template id="i_order_service_spacing">
+            <div class="row">
+                <div class="col-4 mb4"/>
+                <div class="col-8 mb4 text-left"/>
+            </div>
+        </template>
+      
+      <template id="report_mantenimiento_equipo">
+        <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('i_ticktes_invetario_sistemas/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+        
+          <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                       
+                       <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                     </t>
+                    </t>
+
+                <div class="page" style="font-size:18px">
+                                
+
+                    <div class="header">
+                    <div class="text-muted text-right">
+                        página <span class="page"/> de <span class="topage"/>
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-4 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                        </div>
+                        <div class="col-4 mb4  text-left">
+                            
+                            <strong><span style="font-size: 20px;"><t t-esc="'de México, S.A. de C.V.'"/></span></strong>
+                        </div>
+                        <div class="col-4 text-right">
+                    <strong>
+                        <h5 class="text-center" style="padding: 0;color: red;" t-field="o.name" />
+                    </strong>
+                </div>
+                        </div>
+                        </div>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                    
+                    <table style="border-spacing:0;margin-bottom:0;" class="table">
+                                    <thead>
+                                      <tr>
+                                
+                                         <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                                         <strong>
+                                         <span>Formato de mantenimiento preventivo y correctivo
+
+                                          </span></strong></td>
+                                
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                     </table>
+                                  
+                                <br></br>
+                                <br></br>
+
+                         <div class="row">
+
+                         <table style="width:100%;">
+                        <tr>
+                            <td class="text-center" >Datos del equipo y área:</td>
+                        </tr>
+                            </table>
+
+                        </div>
+
+                        <div class="row">
+
+                            <table style="width:100%;">
+
+                                <tr style="font-family:'arialfont'; font-size: 14px; background-color: #26A69A !important;">
+                                    <t t-set="colspan" t-value="6"/>
+                                        <th>Usuario</th>
+                                        <th>Marca</th>
+                                        <th>TIPO</th>
+                                        <th>Modelo</th>
+                                        <th>No. de serie</th>
+                                        <th>Área</th>
+                                        <th>Fecha del Mantenimiento</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><span t-field="o.user_id" /> </td>
+                                        <td><t t-esc="o.equipo_id.marca" /> </td>
+                                        <td><t t-esc="o.equipo_id.tipo_equipo" /> </td>
+                                        <td><t t-esc="o.equipo_id.modelo" /> </td>
+                                        <td><t t-esc="o.equipo_id.numero_serie" /> </td>
+                                        <td><span t-field="o.departamento_id" /> </td>
+                                        <td><span t-if="o.fecha_mantenimiento"><span t-esc="o.fecha_mantenimiento.strftime('%Y-%m-%d')"/></span> </td>
+                                        </tr>
+
+                            </table>
+                        </div> 
+
+                             <br></br>
+                             <br></br> 
+                <div class="row">
+
+                    <table style="width:100%;">
+                        <tr>
+                            <td class="text-center" >Tipo de servicio:</td>
+                        </tr>
+                    </table>
+
+                </div>                                    
+
+
+                    <div class="row">
+
+                        <table style="width:100%;">
+
+                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #26A69A !important;">
+                                <t t-set="colspan" t-value="6"/>
+                                    <th>Tipo de Servicio</th>
+                                    <th>Descripción de la falla</th>
+                                    
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><span t-field="o.tipo_servicio" /> </td>
+                                    <td><span t-field="o.descripcion_falla" /> </td>
+                                    </tr>
+
+                        </table>
+                    </div>
+
+                    <br></br>
+                    <br></br>
+                    
+                    
+                 
+                                   
+                            <div class="row">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Conclusiones: <span t-field="o.descripcion_conclucion" /></td>
+                                        
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                         <div class="row">
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Realizó Servicio:</span></strong>
+                    </div>
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma: Solicitante:</span> </strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">Andres González Covarubias</span>
+                    </div>
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
+                    </div>
+                </div>
+
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        
+                            <div class="footer">
+
+                                <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, México.</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>sistemas@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">FT.S.01.01.00</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </t>
+                </t>
+            </t>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paper_format_report_matenimiento_equipo" model="report.paperformat">
+            <field name="name">paper.format.report.matenimiento.equipo</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_width">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_right">5</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">5</field>
+            <field name="header_line" eval="True"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+        <record id="paper_format_report_entrega_equipo" model="report.paperformat">
+            <field name="name">paper.format.report.entrega.equipo</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_width">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_right">5</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">5</field>
+            <field name="header_line" eval="True"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+        
+
+        <report
+            id="i_entrega_equipo"
+            string="Entrega de equipo"
+            model="team.computer"
+            report_type="qweb-pdf"
+            name="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
+            file="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
+            paperformat="paper_format_report_entrega_equipo"
+        />
+        <report
+            id="i_mantenimiento_equipo"
+            string="matenimiento"
+            model="team.computer_tiket"
+            report_type="qweb-pdf"
+            name="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
+            file="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
+            paperformat="paper_format_report_matenimiento_equipo"
+        />
+      
+    </data>
+</odoo>

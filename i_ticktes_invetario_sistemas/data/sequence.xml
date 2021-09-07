@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Adding New Sequence For A Field-->
+    <data noupdate="1">
+
+        <!-- Sequences for team.computer_tiket -->
+        <record id="sequence_tiket_team" model="ir.sequence">
+            <field name="name">Secuencia Ticket</field>
+            <field name="code">team.computer_tiket.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TICKET</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+
+        <!-- Sequences for team.computer -->
+        <record id="sequence_computer_team" model="ir.sequence">
+            <field name="name">Secuencia Computadora</field>
+            <field name="code">team.computer.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">IMX.S.</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

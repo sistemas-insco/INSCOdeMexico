@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+      
+      <template id="reporte_equipo_entrega">
+        <style type="text/css">
+             <![CDATA[
+                    @font-face {
+                        font-family: 'arialfont';
+                        src: url('i_ticktes_invetario_sistemas/static/src/font/arial.ttf') format('truetype');
+                    }
+               ]]>
+            </style>
+
+          <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                       
+                       <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                     </t>
+                    </t>
+
+                 <div class="page" style="font-size:18px">
+                                
+
+                    <div class="header">
+                    <div class="text-muted text-right">
+                        página <span class="page"/> de <span class="topage"/>
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-4 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                        </div>
+                        <div class="col-4 mb4  text-left">
+                            
+                            <strong><span style="font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                        </div>
+                        </div>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                             <div class="row">
+                                <table style="border-spacing:0;margin-bottom:0;" class="table">
+                                    <thead>
+                                      <tr>
+                                
+                                         <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                                         <strong>
+                                         <span>Vale de entrega de equipo de cómputo y telefonía<br/>
+
+                                          </span></strong></td>
+                                
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                </table>
+                                  </div>
+                                <br></br>
+                                <br></br>
+
+                        <div class="row">
+
+                         <table style="width:100%;">
+
+                            <blockquote>
+                            <p class="text-left">
+                            Por medio de la presente yo <strong> <span t-field="o.empleado_id" /> </strong> hago constar que he recibido de INSCO de México, el uso del siguiente equipo (en el sucesivo el “equipo”);
+                            </p>
+                            </blockquote>
+
+
+                            </table>
+
+                        </div>
+                        <br></br>
+
+                         <div class="row">
+
+                         <table style="width:100%;">
+                        <tr>
+                            <td class="text-center" >Descripción del equipo:</td>
+                        </tr>
+                            </table>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <table style="width:100%;">
+
+                                <tr style="font-family:'arialfont'; font-size: 15px; background-color: #26A69A !important;">
+                                    <t t-set="colspan" t-value="6"/>
+                                        <th>TIPO</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>No. de serie</th>
+                                        <th>Área</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha de Engtrega</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><span t-field="o.tipo_equipo" /> </td>
+                                        <td><span t-field="o.marca" /> </td>
+                                        <td><span t-field="o.modelo" /> </td>
+                                        <td><span t-field="o.numero_serie" /></td>
+                                        <td><span t-field="o.departamento_id" /> </td>
+                                        <td><span t-field="o.empleado_id" /></td>
+                                        <td><span t-if="o.fecha_assignment"><span t-esc="o.fecha_assignment.strftime('%Y-%m-%d')"/></span></td>
+                                        </tr>
+
+                            </table>
+                        </div>
+                        <br></br>
+
+                        <div class="row">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Notas: <span t-field="o.notas_entrega" /></td>
+                                        
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+
+
+
+                             <br></br>
+
+                    <blockquote>
+                    <p class="text-left">
+                             El cual recibo como herramienta de trabajo y de acuerdo al contrato de trabajo que me liga con dicha empresa lo utilizare de acuerdo a las Políticas y Procedimientos internos que la empresa ha marcado incluyendo el Manual del Colaborador vigente, siendo entre otros que:
+                    </p>
+                    </blockquote>
+
+                    <blockquote>
+                    <p class="text-left">
+                             1- El equipo me ha sido entregado con el fin único de utilizarlo para el mejor desarrollo de mis actividades y funciones al servicio de INSCO de México y lo concibo como una herramienta de trabajo y no como un beneficio personal, por lo que únicamente podré utilizarlo para actividades que se deriven directamente del trabajo que tengo encomendado y me comprometo a que en ningún momento utilizare el mismo para fines diversos.
+                    </p>
+                    </blockquote>
+
+                    <blockquote>
+                    <p class="text-left">
+                            2- Comprendo que un mal uso o abuso por mi parte del equipo asignado, puede ser causa fundada para la recisión de mi contrato de trabajo sin reclamación alguna de mi parte, todo ello de conformidad a lo establecido por el artículo 47 de la ley Federal del Trabajo.
+                    </p>
+                    </blockquote>
+
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    
+                    
+                 <div class="row">
+
+                         <table style="width:100%;">
+                        <tr>
+                            <td class="text-center" >Buenas prácticas en el uso de los equipos de cómputo y telefonía.:</td>
+                        </tr>
+                            </table>
+
+                        </div>
+
+
+
+                            <br></br>
+                            
+
+
+                         <table style="width:100%;">
+
+                             <blockquote>
+                            <p class="text-left">
+                            El uso de los equipos de cómputo y telefonía en INSCO de México está exclusivamente considerado como una herramienta de trabajo, los teléfonos deben ser única y exclusivamente para comunicación interna con empleados de INSCO de México y externa con proveedores y clientes, se asigna a personas clave que por sus actividades necesitan estar en comunicación continua. En este documento se pretende explicar las buenas prácticas a considerar en el uso de equipos de cómputo y telefonía móvil, sin ser restrictivo únicamente ha:
+                            </p>
+                            </blockquote>
+
+                            <blockquote>
+                                <p>
+                                    1.  Evitar la descarga de aplicaciones si no fueron aprobadas previamente por el departamento de IT.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    2.  Evitar la descarga y uso de aplicaciones de redes sociales como Facebook y Twitter.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    3.  Hacer el uso de mapas en línea y/o GPS (Geo-posicionamiento satelital), sólo cuando sea necesario.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    4.  Evitar el envío /recepción de mensajes no laborales.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    5.  Configurar una contraseña para bloquear/desbloquear el teléfono.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                     6.  Observar siempre un uso ético de este recurso ya que INSCO de México y el departamento de sistemas puede solicitar en cualquier momento (sin notificación previa), el dispositivo celular o de cómputo para revisión, monitoreo y/o aseguramiento cuando se considerado necesario.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    7.  Estrictamente prohibido que se acceda, almacene, manipule cualquier tipo de contenido pornográfico en los dispositivos celulares al igual que todo equipo de cómputo de INSCO de México.
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                     8. Evitar activar el  Hotspot de Windows "Zona cubierta movil" 
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>
+                                    9.  Bloqueo de equipo de cómputo al abandonar su área de trabajo 
+                                </p>
+                            </blockquote>
+
+                            <blockquote>
+                                <p>
+                                    10.  Utilice los recursos de INSCO de México de forma adecuada, con sentido común y de acuerdo a las buenas costumbres.
+                                </p>
+                            </blockquote>
+
+                        </table>
+
+                        
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Autoriza:</span></strong>
+                    </div>
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Recibe:</span> </strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">______________________________________</span>
+                    </div>
+                    <div class="col-6">
+                        <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma</span> </strong>
+                    </div>
+                    <div class="col-6">
+                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma</span>
+                    </strong>
+                    </div>
+                </div>
+
+
+                            <div class="footer">
+
+                                <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, México.</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363 </p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>sistemas@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">FT.S.01.02.00</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </t>
+                </t>
+            </t>
+    </template>
+  </data>
+</odoo>

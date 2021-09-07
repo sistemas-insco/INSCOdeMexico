@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_invetario_sistemas,invetario_sistemas_manager,i_ticktes_invetario_sistemas.model_team_computer,group_sistemas_manager,1,1,1,1
+access_tiket_sistemas,tiket_sistemas_manager,i_ticktes_invetario_sistemas.model_team_computer_tiket,group_sistemas_manager,1,1,1,1
+
+
+access_tiket_sistemas_usuario,tiket_sistemas_usuario,i_ticktes_invetario_sistemas.model_team_computer_tiket,group_sistemas_usuarios,1,1,1,0
+access_invetario_sistemas_usaurios2,invetario_sistemas_usuarios2,i_ticktes_invetario_sistemas.model_team_computer,group_sistemas_usuarios,1,0,0,0
