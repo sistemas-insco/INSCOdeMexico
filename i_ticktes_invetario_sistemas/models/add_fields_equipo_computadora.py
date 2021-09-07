@@ -12,7 +12,7 @@ class customComputer(models.Model):
 	
 	name= fields.Char(string='N° Inventario', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 	num_inventario_area = fields.Char(string="N° Inventario del área")
-	tipo_equipo = fields.Selection([('Laptop', 'Laptop'), ('PC de escritorio', 'PC de escritorio'), ('Telefono IP', 'Teléfono IP'),('Telefono Celular', 'Teléfono Celular'), ('Router', 'Router'), ('Switch', 'Switch'), ('Monitor', 'Monitor'), ('Dispocitivo', 'Dispositivo')],
+	tipo_equipo = fields.Selection([('AP', 'AP'),('DVR', 'DVR'), ('Conmutador', 'Conmutador'), ('Impresora', 'Impresora'), ('Servidor', 'Servidor'), ('Laptop', 'Laptop'), ('PC de escritorio', 'PC de escritorio'), ('Telefono IP', 'Teléfono IP'),('Telefono Celular', 'Teléfono Celular'), ('Router', 'Router'), ('Switch', 'Switch'), ('Monitor', 'Monitor'), ('Dispocitivo', 'Dispositivo')],
         string='Tipo de Equipo')
 	modelo = fields.Char(string='Modelo',track_visibility="always")
 	marca = fields.Char(string='Marca')
