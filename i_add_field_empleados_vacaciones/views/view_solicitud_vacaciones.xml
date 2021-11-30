@@ -99,8 +99,8 @@
 
                     <header>
                 <button name="action_solicitud_send" string="Enviar solicitud" type="object"/>
-                <button name="solictud_aprovada" string="Aprobado" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
-                <button name="solictud_cancelada" string="Cancelar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
+                <button name="solictud_aprovada" string="Aprobado" states="por aprobar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
+                <button name="solictud_cancelada" string="Cancelar" states="por aprobar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
 
                         <field name="state"
                                 widget="statusbar"
