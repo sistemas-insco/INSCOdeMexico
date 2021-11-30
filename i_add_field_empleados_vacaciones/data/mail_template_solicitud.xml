@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Creating Email Template in Odoo-->
+    <data>
+        <record id="solicitud_card_email_template" model="mail.template">
+            <field name="name">Solicitud: Send by email</field>
+            <field name="model_id" ref="i_add_field_empleados_vacaciones.model_solicitud_vacaciones"/>
+            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <!-- <field name="email_to">${sistemas@inscomexico.com}</field -->
+           <!-- <field name="email_to">sistemas@inscomexico.com</field> -->
+            <field name="subject">Solicitud (Ref ${object.solicitud_tipo})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Tipo de solicitud ${object.solicitud_tipo}
+                        <br /><br />
+                        Fecha inicio ${object.fecha_inicio}
+                        <br /><br />
+                        Fecha Fin ${object.fecha_fin}
+                        <br /><br />
+                        Numero de dias solicitados ${object.numero_dias_solicitaso}
+                         <br /><br />
+                        Descripción  ${object.descripcion_solicitud}
+                    </p>
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="i_mantenimiento_equipo"/>
+            <field name="report_name">Ticket Card_${(object.name)}</field> -->
+        </record>
+    </data>
+    
+</odoo>

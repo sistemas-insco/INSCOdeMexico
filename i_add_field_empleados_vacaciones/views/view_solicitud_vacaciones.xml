@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
 
@@ -78,7 +78,6 @@
             <field name="model">solicitud.vacaciones</field>
             <field name="arch" type="xml">
                 <tree string="Tree Vacaciones">
-                <!--  <field name="name" /> -->
                 <field name="empleado_id" />
                 <field name="departamento_id"/>
                 <field name="fecha_inicio"/>
@@ -96,23 +95,34 @@
             <field name="model">solicitud.vacaciones</field>
             <field name="arch" type="xml">
                 <form string="Form View Vacaciones">
+                     <field name="active" invisible="1"/>
+
                     <header>
-                <button name="solictud_enproceso" string="En Proceso" type="object"/>
+                <button name="action_solicitud_send" string="Enviar solicitud" type="object"/>
                 <button name="solictud_aprovada" string="Aprobado" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
                 <button name="solictud_cancelada" string="Cancelar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
 
                         <field name="state"
                                 widget="statusbar"
-                                status_visible="nuevo,en proceso,aprobado,cancelado"/>
+                                status_visible="nuevo,por aprobar,aprobado,cancelado"/>
                     </header>
 
                 <sheet>
-
+                     <!--banda de archivado-->
+            <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
             <div class="oe_title">  
                 <h1>Solicitud de Vacaciones o Permisos</h1>
-                <h3><field name="name" /></h3>   
+                <h3><field name="name" /></h3>  
             </div>
             <group col="2"> 
+
+                <group string="Datos del empleado ">
+                 <field name="user_id"/>
+                <field name="empleado_id"/>
+                <field name="departamento_id"/>
+                 <field name="usuario_responsable"/>
+                <field name="dias_vacaciones"/>
+                </group>
 
 
                 <group string="Datos de la solicitud ">
@@ -122,13 +132,8 @@
                 <field name="numero_dias_solicitaso"/>
                 </group>
 
-                <group string="Datos del empleado ">
-                 <field name="user_id"/>
-                <field name="empleado_id"/>
-                <field name="departamento_id"/>
-                 <field name="usuario_responsable"/>
-                <field name="dias_vacaciones"/>
-                <field name="numero_dias_restantes"/>
+                <group>
+                <field name="descripcion_solicitud"/>
                 </group>
 
             </group>

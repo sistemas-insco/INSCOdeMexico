@@ -6,11 +6,30 @@
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='user_id']" position="after">
-                    <field name="fecha_ingreso"/>
-                    <field name="años_antiguedad"/>
-                    <field name="vacaciones_dias"/>
-                </xpath>
+                <notebook position="inside">
+                    <page string = "Vacaciones y Uniformes" groups="hr.group_hr_user">
+                         <group col="2">  
+
+                            <group string="Datos de Vacaciones" >
+                            <field name="fecha_ingreso"/>
+                            <field name="años_antiguedad" groups="hr.group_hr_user"/>
+                            <field name="vacaciones_dias" groups="hr.group_hr_user"/>
+                            </group>
+
+                            <group string="Tallas de Uniforme">
+                            <field name="polo_cruzada" groups="hr.group_hr_user"/>
+                            <field name="camisa_manga_larga" groups="hr.group_hr_user"/>
+                            <field name="camisola_circuito" groups="hr.group_hr_user"/>
+                            <field name="bata_de_asistencia" groups="hr.group_hr_user"/>
+                            <field name="chamarra" groups="hr.group_hr_user"/>
+                            <field name="pantalon_ejecutivo" groups="hr.group_hr_user"/>
+                            <field name="pantalon_cargo" groups="hr.group_hr_user"/>
+                            <field name="botas_calzado_seguridad" groups="hr.group_hr_user"/>
+                            </group>
+
+                        </group>  
+                    </page>
+                </notebook>
             </field>
         </record>
     </data>

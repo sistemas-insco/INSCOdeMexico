@@ -1,14 +1,23 @@
-from datetime import datetime, time
+from datetime import date
 from odoo import models, fields, api
 
 
-class vacacionesId(models.Model):
+class VacacionesId(models.Model):
 	_inherit = 'hr.employee'
 
 
-	vacaciones_dias = fields.Integer(string="Dias de Vacaciones", compute='_asignacion_dias_vacaciones',store=True, compute_sudo=False)
-	fecha_ingreso = fields.Date(string="fecha ingreso", track_visibility="always")
-	# edad = fields.Text(string='Edad', compute='_asignacion_dias_vacaciones2')
+
+	fecha_ingreso = fields.Date(string="Fecha ingreso", track_visibility="always", groups="hr.group_hr_user")
+	vacaciones_dias = fields.Integer(string="Dias de Vacaciones",default='6', track_visibility="always", groups="hr.group_hr_user")
+
+	polo_cruzada = fields.Char(string ='Polo Cruzada',help='(TODOS)', groups="hr.group_hr_user")
+	camisa_manga_larga = fields.Char(string ='Camisa manga larga',help='(TODOS)', groups="hr.group_hr_user")
+	camisola_circuito = fields.Char(string ='Camisola circuito',help='(LABS Y LOGÍSTICA)', groups="hr.group_hr_user")
+	bata_de_asistencia = fields.Char(string ='Bata de asistencia',help='(MANTENIMIENTO)', groups="hr.group_hr_user")
+	chamarra = fields.Char(string ='Chamarra',help='(TODOS)', groups="hr.group_hr_user")
+	pantalon_ejecutivo = fields.Char(string ='Pantalón ejecutivo',help='(ADMINISTRATIVOS)', groups="hr.group_hr_user")
+	pantalon_cargo = fields.Char(string ='Pantalón Cargo',help='(LABORATORIOS, LOGÍSTICA, y MANTENIMIENTO)', groups="hr.group_hr_user")
+	botas_calzado_seguridad = fields.Char(string ='Botas y/o Calzado de Seguridad',help='(TODOS)', groups="hr.group_hr_user")
 
 	años_antiguedad = fields.Selection([
 										('1', '1'),
@@ -20,12 +29,16 @@ class vacacionesId(models.Model):
 										('de 15 a 19 años', 'De 15 a 19 años'),
 										('de 20 a 24 años', 'De 20 a 24 años'),
 										('de 25 a 29 años', 'De 25 a 29 años')],
-										default='1', track_visibility="always",string='Años de antiguedad')
+										default='1', track_visibility="always",string='Años de antiguedad',groups="hr.group_hr_user")
 	
 
 
-	#@api.one
-	@api.depends('años_antiguedad')
+	# @api.onchange('años_antiguedad')
+	# def dias_vacaciones_retantes(self):
+	# 	self.dias_vacaciones_restantes = vacaciones_dias
+
+
+	@api.onchange('años_antiguedad')
 	def _asignacion_dias_vacaciones(self):
 		if self.años_antiguedad == '1':
 			self.vacaciones_dias= 6
@@ -45,13 +58,3 @@ class vacacionesId(models.Model):
 			self.vacaciones_dias= 20
 		if self.años_antiguedad == 'de 25 a 29 años':
 			self.vacaciones_dias= 22
-
-	# @api.one
-	# @api.depends('fecha_ingreso')
-	# def _asignacion_dias_vacaciones2(self):
-	# 		dob = time.strptime(self.fecha_nacimiento,"%Y-%m-%d")
-	# 		today = time.localtime()
-	# 		edad_empleador = today.tm_year - dob.tm_year
-	# 		if today.tm_mon < dob.tm_mon:
-	# 			edad_empleador = edad_empleador - 1
-	# 				self.edad = edad_empleador

@@ -23,7 +23,7 @@
 #
 ########################################################################
 {
-    'name': 'INSCO | Menu Empleados',
+    'name': 'INSCO | Permisos y Vacaciones',
     'author': 'Andres Gonzalez INSCO',
     'category': 'rh',
     'summary': "Menu Empleados permisos",
@@ -38,6 +38,7 @@
     ],
     'data': [
         'security/security.xml',
+        'data/mail_template_solicitud.xml',
         'security/ir.model.access.csv',
         'views/view_solicitud_vacaciones.xml',
         'views/view_inherit_empelados.xml',
