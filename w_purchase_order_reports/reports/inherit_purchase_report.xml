@@ -51,8 +51,8 @@
                                 <strong><span style="font-family:'arialfont'; font-size: 12px;">
                                         INSCO DE MEXICO SA DE CV <br></br>
                                         DOMICILIO DE LA EMPRESA: <br></br>
-                                        COLONIA, FRACCIONAMIENTO INDUSTRIAL ALCE BLANCO<br></br>
-                                        NAUCALPAN DE JUÁREZ ESTADO DE MÉXICO<br></br>
+                                        Av. Ingenieros Militares No. 111-B,<br></br>
+                                        Col. Lomas de Sotelo, 11200, CDMX<br></br>
                                         R.F.C. IME930930UPA<br></br>
                                 </span></strong>
                             </td>
@@ -109,7 +109,7 @@
                     <span t-esc="'inscomex.com'"/>
                 </div>-->
                 <div class="col-12 text-right">
-                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.06</span>
+                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.07</span>
                 </div>
             </div>
         </div>
