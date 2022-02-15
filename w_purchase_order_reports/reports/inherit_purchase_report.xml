@@ -62,10 +62,10 @@
                 <div class="col-3 text-left" name="moto">
                     <table style="width:100;">
                         <tr style="background-color: #75baff;">
-                            <th style="border: 1px solid white;  width:100%;"><strong>Orden de compra</strong></th>
+                            <th style="border: 1px solid white;  width:100%;"><strong>Orden de compra:</strong></th>
                         </tr>
                         <tr style="background-color: #75baff; width:100%;">
-                            <td style="border: 1px solid white;  width:100%;"><i>Purchase order</i></td>
+                            <td style="border: 1px solid white;  width:100%;"><i>Purchase order:</i></td>
                         </tr>
                         <tr style="background-color: #75baff;">
                            <th style="border: 1px solid white;"><strong>Número:</strong></th>
@@ -74,7 +74,7 @@
                             </td>
                         </tr>
                         <tr style="background-color: #75baff;">
-                           <td style="border: 1px solid white;"><i>P.U.N°</i></td>
+                           <td style="border: 1px solid white;"><i>P.O.N.:</i></td>
                         </tr>
                         <tr style="background-color: #75baff;">
                            <th style="border: 1px solid white;"><strong>Fecha:</strong></th>
@@ -124,11 +124,11 @@
          <table style="width:100%;" >
              <thead>
                 <tr style="background-color: #75baff;">
-                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor</strong></th>
+                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor:</strong></th>
                     <th style="border: 1px solid white; width: 50%;" ><strong>Enviar a:</strong></th>
                 </tr>
                 <tr style="background-color: #75baff;">
-                    <td style="border: 1px solid white;width: 50%;" ><i>Supplier</i></td>
+                    <td style="border: 1px solid white;width: 50%;" ><i>Supplier:</i></td>
                     <td style="border: 1px solid white;width: 50%;" ><i>Send to:</i></td>
                 </tr>
                 <tr>
@@ -136,14 +136,14 @@
                             <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
                             <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>  
                     </th>
-                    <!--<td rowspan="5" >
+                  <!--   <td rowspan="5" >
                         <span>
                                 INSCO DE MEXICO SA DE CV <br></br>
                                 COLONIA, FRACCIONAMIENTO INDUSTRIAL ALCE BLANCO<br></br>
                                 NAUCALPAN DE JUÁREZ ESTADO DE MÉXICO<br></br>
                                 R.F.C IME930930UPA<br></br>
                         </span>
-                    </td>-->
+                    </td> -->
                    
                 </tr>
             </thead>
@@ -159,7 +159,7 @@
                         <th style="border: 1px solid white;"><strong>Cantidad</strong></th>
                         <th style="border: 1px solid white;" class="text-center"><strong>Descripcion</strong></th>
                         <th style="border: 1px solid white;" class="text-center"><strong>Precio u</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>I.V.A</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>IVA</strong></th>
                         <th style="border: 1px solid white;" class="text-center"><strong>Precio</strong></th>
                     </tr>
                     <tr style="background-color: #75baff;">
@@ -252,7 +252,7 @@
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
                         <td style="border: 1px solid white;" class="text-center"><i>Requested by</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Authorized by:</i></td>
+                        <td style="border: 1px solid white;" class="text-center"><i>Authorized by</i></td>
                     </tr>
                      <tr style="background-color: white; border: 1px solid white;">
                         <th style="border: 1px solid white;"><i>Campo</i></th>
@@ -261,17 +261,17 @@
                         <th style="border: 1px solid white; background-color: #75baff" class="text-center"><strong><span t-field="o.amount_total"/></strong></th>
                     </tr>
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;"><strong>Datos de documentos de Pasivo:</strong></th>
+                        <th style="border: 1px solid white;"><strong>Datos de documentos de Pasivo</strong></th>
                         <td rowspan="1" style="background-color: white;"></td>
-                        <th style="border: 1px solid white;"><strong>Moneda:</strong></th>
+                        <th style="border: 1px solid white;"><strong>Moneda</strong></th>
                         <td style="background-color: white; border: 2px solid white;vertical-align:middle;" rowspan="2" class="text-center">
                             <span t-field="o.currency_id"/>
                         </td>
                     </tr>
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;"><i>Passive document data:</i></td>
+                        <td style="border: 1px solid white;"><i>Passive document data</i></td>
                         <td rowspan="1" style="background-color: white;"></td>
-                        <td style="border: 1px solid white;"  class="text-left"><i>Currency:</i></td>
+                        <td style="border: 1px solid white;"  class="text-left"><i>Currency</i></td>
                     </tr>
                 </thead>
             </table>
