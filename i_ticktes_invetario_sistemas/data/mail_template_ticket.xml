@@ -4,7 +4,7 @@
     <!--Creating Email Template in Odoo-->
     <!-- https://www.youtube.com/watch?v=rGfGHRS3iWw&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=43  -->
     <!-- https://www.youtube.com/watch?v=CZVRmtv6re0&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=44  -->
-    <data noupdate="1">
+    <data>
         <record id="tikcet_card_email_template" model="mail.template">
             <field name="name">Soporte: Send by email</field>
             <field name="model_id" ref="i_ticktes_invetario_sistemas.model_team_computer_tiket"/>
@@ -20,6 +20,10 @@
                         Número de solicitud ${object.name}
                         <br /><br />
                         Fecha de solicitud ${object.fecha_mantenimiento}
+                        <br /><br />
+                        <br /><br />
+                        Descripcion de la falla 
+                        ${object.descripcion_falla}
                     </p>
                 </div>
             </field>

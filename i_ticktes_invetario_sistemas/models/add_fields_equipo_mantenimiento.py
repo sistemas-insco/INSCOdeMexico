@@ -13,14 +13,31 @@ class tiketComputer(models.Model):
 	name= fields.Char(string='N° Ticket', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 	descripcion_falla = fields.Text(string='Descripción de la falla', track_visibility="always")
 	descripcion_conclucion = fields.Text(string='Conclusión de la falla', track_visibility="always")
-	tipo_servicio = fields.Selection([('Preventivo', 'Preventivo'), ('Correctivo', 'Correctivo')], string='Tipo de Mantenimiento', track_visibility='onchange')
 	fecha_mantenimiento = fields.Datetime(string='Fecha de mantenimiento', track_visibility="always")
-	estado_tipo =fields.Selection([('nuevo', 'Nuevo'),('enviado', 'Enviado') ,('abierto', 'Abierto'),('cerrado', 'Cerrado')], string="Estado",default='nuevo', copy=False, track_visibility="always")
 	equipo_id = fields.Many2one("team.computer",string="Equipo")
 	departamento_id = fields.Many2one('hr.department', string='Departamento',track_visibility="always")
 	user_id = fields.Many2one('res.users', string='Usuario', index=True, track_visibility='onchange', track_sequence=2, default=lambda self: self.env.user)
-	calificacion = fields.Selection( [('no hay calificacion', 'no hay calificación'), ('muy insatisfecho', 'muy insatisfecho'), ('no satisfecho', 'no satisfecho'),('satisfecho', 'satisfecho')], default='no hay calificacion',string='Calificación', track_visibility='onchange')
 	comentarios_calificacion = fields.Text(string='Comentarios', track_visibility="always")
+	active = fields.Boolean('Active', default=True, tracking=True)
+
+	calificacion = fields.Selection(		[('no hay calificacion', 'no hay calificación'),
+											('muy insatisfecho', 'muy insatisfecho'),
+											('no satisfecho', 'no satisfecho'),
+											('satisfecho', 'satisfecho')],
+											default='no hay calificacion',string='Calificación', track_visibility='onchange')
+
+
+	estado_tipo =fields.Selection(			[('nuevo', 'Nuevo'),
+											('enviado', 'Enviado'),
+											('abierto', 'Abierto'),
+											('cerrado', 'Cerrado')], 
+											string="Estado",default='nuevo', copy=False, track_visibility="always")
+
+
+	tipo_servicio = fields.Selection(		[('Preventivo', 'Preventivo'), 
+											('Correctivo', 'Correctivo'),
+											('solicitud de equipo', 'Solicitud de Equipo'),], 
+											string='Tipo de Mantenimiento', track_visibility='onchange')
 
 
 

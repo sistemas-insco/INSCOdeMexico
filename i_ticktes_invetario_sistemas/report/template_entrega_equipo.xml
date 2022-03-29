@@ -104,15 +104,26 @@
 
                             <table style="width:100%;">
 
-                                <tr style="font-family:'arialfont'; font-size: 15px; background-color: #26A69A !important;">
+                                <tr style="font-family:'arialfont'; font-size: 15px; background-color: #75baff; border: 1px solid white;">
+                                    <t t-set="colspan" t-value="6"/>
+                                        <th>Usuario</th>
+                                        <th>Área</th>
+                                        <th>Fecha de Engtrega</th>
+                                        <th></th>
+                                        </tr>
+
+                                        <tr>
+                                        <td><span t-field="o.empleado_id" /></td>
+                                        <td><span t-field="o.departamento_id" /> </td>
+                                        <td><span t-if="o.fecha_assignment"><span t-esc="o.fecha_assignment.strftime('%Y-%m-%d')"/></span></td>
+                                        </tr>
+
+                                <tr style="font-family:'arialfont'; font-size: 15px; background-color: #75baff; border: 1px solid white;">
                                     <t t-set="colspan" t-value="6"/>
                                         <th>TIPO</th>
                                         <th>Marca</th>
                                         <th>Modelo</th>
                                         <th>No. de serie</th>
-                                        <th>Área</th>
-                                        <th>Usuario</th>
-                                        <th>Fecha de Engtrega</th>
                                         </tr>
                                         
                                         <tr>
@@ -120,10 +131,8 @@
                                         <td><span t-field="o.marca" /> </td>
                                         <td><span t-field="o.modelo" /> </td>
                                         <td><span t-field="o.numero_serie" /></td>
-                                        <td><span t-field="o.departamento_id" /> </td>
-                                        <td><span t-field="o.empleado_id" /></td>
-                                        <td><span t-if="o.fecha_assignment"><span t-esc="o.fecha_assignment.strftime('%Y-%m-%d')"/></span></td>
                                         </tr>
+
 
                             </table>
                         </div>
@@ -292,7 +301,7 @@
                                 <div class="col-1">
                                  </div>
                                 <div class="col-10">
-                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, México.</p>
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
                                 </div>
                                 <div class="col-1"></div>
                                 </div>
@@ -301,7 +310,7 @@
                                 <div class="col-1">
                                 </div>
                                 <div class="col-10">
-                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363 </p>
+                                <p style="text-align: center;">Tels.: 55 5359 0088, 55 5359 4206 y 55 5359 4363</p>
                                  </div>
                                 <div class="col-1"></div>
                                 </div>

@@ -97,7 +97,7 @@
 
                             <table style="width:100%;">
 
-                                <tr style="font-family:'arialfont'; font-size: 14px; background-color: #26A69A !important;">
+                                <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff; border: 1px solid white;">
                                     <t t-set="colspan" t-value="6"/>
                                         <th>Usuario</th>
                                         <th>Marca</th>
@@ -138,7 +138,7 @@
 
                         <table style="width:100%;">
 
-                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #26A69A !important;">
+                            <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff; border: 1px solid white;">
                                 <t t-set="colspan" t-value="6"/>
                                     <th>Tipo de Servicio</th>
                                     <th>Descripción de la falla</th>
@@ -208,7 +208,7 @@
                                 <div class="col-1">
                                  </div>
                                 <div class="col-10">
-                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, México.</p>
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
                                 </div>
                                 <div class="col-1"></div>
                                 </div>

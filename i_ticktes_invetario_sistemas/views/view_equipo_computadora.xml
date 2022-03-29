@@ -59,7 +59,8 @@
             <field name="name">i.ticktes.invetario.sistemas.view.from.equipo</field>
             <field name="model">team.computer</field>
             <field name="arch" type="xml">
-                <form string="Form View name">
+            <form string="Form View name">
+                <field name="active" invisible="1"/>
                 <sheet>
             <field name="image" widget="image" class="oe_avatar"/>
             <div class="oe_title">

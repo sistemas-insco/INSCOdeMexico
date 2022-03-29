@@ -88,6 +88,7 @@
             <field name="model">team.computer_tiket</field>
             <field name="arch" type="xml">
         <form string="Form View name">
+            <field name="active" invisible="1"/>
             <header>
              <button name="action_ticket_send" string="Enviar Ticket" type="object" class="btn-primary"/>
               <button name="solictud_abierto" string="Ticket Abierto" type="object" class="btn-primary"/>
