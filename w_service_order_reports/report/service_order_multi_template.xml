@@ -18,12 +18,12 @@
             <div class="text-muted text-right">
                 page <span class="page"/> to <span class="topage"/>
             </div>
-            <div class="row" style="margin-top: 25px;">
+            <div class="row" style="margin-top: 1px;">
                 <div class="col-4 mb4">
-                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
                 </div>
                 <div class="col-4 mb4 text-left">
-                    <strong><span style="font-size: 20px;">de México, S. A. DE C. V</span></strong>
+                    <strong><span style="font-size: 23px;">de México, S. A. DE C. V.</span></strong>
                 </div>
                 <div class="col-4 text-right" name="serv_order_zone">
                     <strong>
@@ -36,6 +36,7 @@
         <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
             <t t-raw="0" />
         </div>
+
         <div class="footer">
             <div class="row">
                 <div class="col-12 mb4 text-left">
@@ -44,8 +45,10 @@
                 </div>
             </div>
             <br></br>
+
             <!-- <div class="row-12" style="border-bottom: 24px solid #75baff;">
             </div> -->
+<!-- 
             <div class="row-12" style="background-color: #75baff;" >
                 <table style="width=100%;">
                     <tr class="row=12" style="background-color:#75baff; width=100%;">
@@ -67,16 +70,50 @@
                 <div class="col-6">
                     <span style="font-size: 14px;">Name and signature of the laboratory technician</span>
                 </div>
-                <!-- <div class="col-6">
-                    <span style="font-size: 14px;">Sign</span>
-                </div> -->
+               
                 <div class="col-4">
                     <b>Realizado: </b><t t-esc="user.name"/>
                         
                     <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
                 </div>
+            </div> -->
 
-            </div>
+
+            <div class="row-12" style="border-bottom: 1px solid black;">
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-10">
+                        <p style="text-align: center;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('street_name', '') +' '+
+                        'No. '+ o.branch_office_company().get('number1', '') +' '+
+                        o.branch_office_company().get('number2', '') +' '+
+                        'Col. '+ o.branch_office_company().get('colony', '')+', '+
+                        o.branch_office_company().get('zip', '') + ', '+
+                        o.branch_office_company().get('state', '') 
+                        "/></p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-10">
+                        <p style="text-align: center;">Tels.: <span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('phone', '')"/></p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-10">
+                        <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                    </div>
+                </div>
+
+
+
+
             <div class="row">
                 <div class="col-6">
                     <t t-call="w_report_projects.w_order_service_template_starndar_footer_left"/>
@@ -91,6 +128,7 @@
                 </div>
             </div>
         </div>
+
     </template>
 
     <template id="w_order_service_multi_report_document">
@@ -152,32 +190,47 @@
                         </div>
                     </div>
                 </div>
+
                 <div name="delivery_details_zone" style="margin-top: 15px;">
                     <table style="border-spacing:0;border-collapse: collapse" class="table border-black">
                         <tbody>
                             <tr>
-                                <td  style="width:30% border-bottom: 1px solid black;">
-                                    <strong><span style="font-size: 14px;">Reception date:</span></strong>
-                                    <span t-if="o.date_reception"><span style=" font-size: 14px;" t-esc="o.date_reception.strftime('%Y-%m-%d')"/></span>
+                                <td  style="width:40% border-bottom: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Fecha de recepción en el laboratorio: </span></strong>
+                                    <span t-if="o.date_service_order"><span style=" font-size: 14px;" t-esc="o.date_service_order.strftime('%Y-%m-%d')"/></span>
                                 </td>
                                 <td style="border-left:1px solid black;">
-                                    <strong><span style="font-size: 14px;">Brought by:</span></strong>
-                                    <span t-if="o.brought_by"><span style=" font-size: 14px;" t-esc="o.brought_by"/></span>
+                                    <strong><span style="font-size: 14px;">Fecha de entrega del laboratorio:</span></strong>
+                                     <!-- <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span> -->
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:30%; border-top: 1px solid black;">
-                                    <strong><span style="font-size: 14px;">Delivery date:</span></strong>
-                                    <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span>
+                                <td style="width:40% border-bottom: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Exite la capacidad técnica:</span></strong>
+                                   
                                 </td>
                                 <td style="border-left: 1px solid black; border-top: 1px solid black;">
-                                    <strong><span style="font-size: 14px;">Delivered by:</span></strong>
-                                    <span t-if="o.delivery_by"><span t-esc="o.delivery_by" style=" font-size: 14px;"/></span>
+                                    <strong><span style="font-size: 14px;">Con acreditación:</span></strong>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:40% border-bottom: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Nombre y firma del técnico del laboratorio:</span></strong>
+                                    <!-- <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span> -->
+                                </td>
+                                <td style="border-left: 1px solid black; border-top: 1px solid black;">
+                                    <strong><span style="font-size: 14px;">Realizado por: </span></strong>
+                                    <spad  t-esc="user.name"></spad>
+                                    <!-- <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> -->
+                                     <img t-if="user.sign_signature" t-att-src="image_data_uri(user.sign_signature)" style="max-height: 50px;" alt="Logo"/>
+                                    
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
                 <div name="certificate_address_zone" class="certificate_cols" style="margin-top: 10px;font-size: 14px !important;">
                     <span style="background-color: #D8D8D8;padding: 4px;font-size: 12px;"><b>Certificate address</b></span>
                     <div class="row" style="padding-left: 20px !important;padding-top: 5px !important;">

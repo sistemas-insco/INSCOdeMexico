@@ -26,7 +26,11 @@
             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-            <div class="row">
+            <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
+            <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
+            <div  style="padding:0;">
                 <table style="border-spacing:0;margin-bottom:0;" class="table">
                     <thead>
                         <tr>
@@ -36,7 +40,7 @@
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong>
                             <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
-                            Recepción, entrega y revisión de equipos.
+                            Proceso de aceptación de los servicios.
                             </span></strong></td>
                             <td class="text-center" style="border: 2px solid black;">
                                 <span t-esc="o.company_id.codification_equipment_delivery_2"/>
@@ -51,166 +55,97 @@
                 </table>
             </div>
             <br></br>
-            <div class="row">
-                <table style="width:100%;">
+
+            <div align="center">
+                <table style="width:80%">
                     <tr>
-                        <td rowspan="2" width="30%" style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Datos para facturación:</td>
-                        <td rowspan="2" class="text-center" witdth="70%" style="border-bottom: 1px solid black; vertical-align:middle;">Recepción de instrumentos o equipos</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="row">
-                <table style="width:100%">
-                    <tr>
-                        <td style="width:15%;border-left: 1px solid black;border-bottom: 1px solid black;">Razón social:</td>
-                        <td style="width:45%;border-left: 1px solid black;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.partner_id.name"/></td>
-                        <td style="width:20%;border-bottom: 1px solid black;"></td>
-                        <td style="width:30%;border-right: 1px solid black;border-bottom: 1px solid black;"></td>
-                    </tr>
-                    <tr>
-                        <td style="width:15%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Dirección:</td>
-                        <td style="width:45%;border-left: 1px solid black;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_address_partner().get('street_name', '') + ',' + ' ' + (o.get_address_partner().get('number1') or o.get_address_partner().get('number2')) + ',' + ' ' + o.get_address_partner().get('colony', '') + ',' + o.get_address_partner().get('city', '') + ',' + o.get_address_partner().get('state', '')"/></td>
-                        <td style="width:20%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Código:</td>
-                        <td style="width:30%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_address_partner().get('zip', '')"/></td>
-                    </tr>
-                    <tr>
-                        <td style="width:15%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">RFC:</td>
-                        <td style="width:45%;border-left: 1px solid black;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_address_partner().get('vat', '')"/></td>
-                        <td style="width:20%;border-bottom: 1px solid black;"></td>
-                        <td style="width:30%;border-bottom: 1px solid black;border-right: 1px solid black;"></td>
-                    </tr>
-                    <tr>
-                        <td style="width:15%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Contacto:</td>
-                        <!-- <td style="width:45%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;"><span t-if="o.sale_line_id.order_id.contact"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.sale_line_id.order_id.contact"/></span></td> -->
-                        <td style="width:45%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;"><span t-if="o.get_address_partner().get('x_studio_contacto')"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_address_partner().get('x_studio_contacto', '')" /></span></td>
-                        <td style="width:20%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Correo Electrónico:</td>
-                        <td style="width:30%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.email_from"/></td>
-                    </tr>
-                    <tr>
-                        <td style="width:15%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Teléfono:</td>
-                        <td style="width:45%;border-left: 1px solid black; border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_address_partner().get('phone', '')"/></td>
-                        <td style="width:20%;border-bottom: 1px solid black;"></td>
-                        <td style="width:30%;border-bottom: 1px solid black; border-right: 1px solid black"></td>
+                        <td align="center">Recepción de Items</td>
                     </tr>
                 </table>
             </div>
             <br></br>
-            <div class="row">
-                <table style="width:100%;">
+            <div>
+                <table>
                     <tr>
-                        <td width="30%" style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Datos para certificado</td>
-                        <td class="text-center" witdth="70%" style="border-bottom: 1px solid black; vertical-align:middle;"></td>
+                        <td style="width:20%;">Nombre del cliente: &amp;nbsp;</td>
+                        <td align="left" style="width:80%; border-bottom: 2px solid black;"><span t-esc="o.partner_id.name"/></td>
+                        <td>&amp;nbsp;</td>
                     </tr>
                 </table>
             </div>
-            <div class="row">
-                <table style="width:100%;">
-                     <tr>
-                        <td style="width:20%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Razón social:</td>
-                        <td style="width:40%;border-bottom: 1px solid black;border-right: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('name', '')"/></td>
-                        <td style="width:20%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Número de puerta:</td>
-                        <td style="width:40%;border-bottom: 1px solid black;border-right: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('number2', '')"/></td>
+       
+            <br></br>
+            <div>
+                <table sstyle="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                    <tr>
+                        <td width="80%" height="7" style="border: 1px solid black;">
+                            <strong><span style=" font-size: 14px;">Entrega: Firma y fecha</span></strong>
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td width="80%" height="7" style="border: 1px solid black;">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Recibe: Firma y fecha</span></strong>
+                        </td>
+                    </tr>
+                </thead>
+                </table>
+            </div>
 
-                    </tr>
-                </table>
-            </div>
-            <div class="row">
-                <table style="width:100%;">
-                     <tr>
-                        <td style="width:20%;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Dirección:</td>
-                        <td style="width:30%;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('street', '')"/></td>
-                        <td style="width:20%;border-bottom: 1px solid black;"></td>
-                        <td style="width:30%;border-bottom: 1px solid black;border-right: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="'#' + '' + o.get_certificate_addres().get('number', '') + ',' + ' ' + o.get_certificate_addres().get('colony', '')"/></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="row">
-                <table style="width:100%;">
-                     <tr>
-                        <td style="width:20%;border-right: 1px solid black;"></td>
-                        <td style="width:20%;border-bottom: 1px solid black;"><span  style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('city', '')"/></td>
-                        <td style="width:10%;border-bottom: 1px solid black;"></td>
-                        <td style="width:30%;border-bottom: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('state', '')"/></td>
-                        <td style="width:20%;border-bottom: 1px solid black;border-right: 1px solid black;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.get_certificate_addres().get('zip', '')"/></td>
-                    </tr>
-                </table>
-            </div>
-            <br/>
-            <div class="row">
+
+            
+            <div style="padding:0;">
                 <t t-set="services_data" t-value="docs[0]._context.get('service_types', '')"/>
-                <table style="width:100%;">
-                    <tr>
-                        <td width="10%" style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Cant:</td>
-                        <td width="80%" class="text-center" style="border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black;">Tipo de servicio y Tipo de instrumento</td>
-                    </tr>
-                    <tr t-foreach="services_data" t-as="serv">
-                        <td width="10%"><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td>
-                        <td width="80%"><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><br t-esc="serv['description']"/></span></td>
-                    </tr>
+                <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <!-- <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <strong><span t-esc="'Cant'"/></strong>
+                            </td> -->
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong><span>Tipo de servicio y tipo de instrumento</span></strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="services_data" t-as="serv">
+                           <!--  <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td> -->
+                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><!-- <br t-esc="serv['description']"/> --></span></td>
+                        </tr>
+
+                    </tbody>
+                  
                 </table>
+                 
+                
+
             </div>
             <div class="footer">
                 <div class="row">
                 <table style="border-spacing:0;margin-bottom:0;" class="table">
-                    <thead>
                         <tr>
-                            <td width="20%" height="50" style="border: 1px solid black;vertical-align:middle;">Observaciones:</td>
-                            <td width="80%" height="50" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_reception"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_reception"/></span></td>
+                            <td width="20%" height="40" style="border: 1px solid black;vertical-align:middle;">Observaciones:</td>
+                            <td width="80%" height="40" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_reception"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_reception"/></span></td>
                         </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
                 </table>
             </div>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <div class="row">
-                    <div class="col-6">
-                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Entrega:</span></strong>
-                    </div>
-                    <div class="col-6">
-                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Recibe:</span></strong>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <span style="font-family:'arialfont'; font-size: 14px;">______________________________________</span>
-                    </div>
-                    <div class="col-6">
-                        <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma y fecha</span></strong>
-                    </div>
-                    <div class="col-6">
-                        <strong><span style="font-family:'arialfont'; font-size: 14px;">Firma y fecha</span></strong>
-                    </div>
-                </div>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
+             <br></br>
+                
+                 
                 <div class="row-12" style="border-bottom: 1px solid black;">
                 </div>
                 <div class="row">
                     <div class="col-1">
                     </div>
                     <div class="col-10">
-                        <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                        <p style="text-align: center;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('street_name', '') +' '+
+                        'No. '+ o.branch_office_company().get('number1', '') +' '+
+                        o.branch_office_company().get('number2', '') +' '+
+                        'Col. '+ o.branch_office_company().get('colony', '')+', '+
+                        o.branch_office_company().get('zip', '') + ', '+
+                        o.branch_office_company().get('state', '') 
+                        "/></p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -218,7 +153,7 @@
                     <div class="col-1">
                     </div>
                     <div class="col-10">
-                        <p style="text-align: center;">Tels.: 55 5359 0088, 55 5359 4206 y 55 5359 4363</p>
+                        <p style="text-align: center;">Tels.: <span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('phone', '')"/></p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -228,7 +163,6 @@
                     <div class="col-10">
                         <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
                     </div>
-                    <div class="col-1"></div>
                 </div>
             </div>
         </template>
@@ -252,15 +186,15 @@
                     <div class="text-muted text-right">
                         página <span class="page"/> de <span class="topage"/>
                     </div>
-                    <div class="row" style="margin-top: 25px;">
+                    <div class="row" style="margin-top: 1px;">
                         <div class="col-4 mb4">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
                         </div>
                         <div class="col-4 mb4  text-left">
                             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
                             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
                             <t t-call="w_report_projects.w_order_reception_equipment_spacing"/>
-                            <strong><span style="font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                            <strong><span style="font-size: 23px;"><t t-esc="'de México, S. A. DE C. V.'"/></span></strong>
                         </div>
                         <div class="col-4 text-right" name="moto">
                             <span calss="text-center" style="font-family:'arialfont'; font-size: 14px;">Número</span>

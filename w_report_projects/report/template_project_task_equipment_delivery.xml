@@ -28,8 +28,8 @@
                             </td>
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong>
-                            <span>QUALITY ASSURANCE MANUAL<br/><br/>
-                            Reception, delivery and review of applications and contracts
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Recolección y entrega de items
                             </span></strong></td>
                             <td class="text-center" style="border: 2px solid black;">
                                 <span t-esc="o.company_id.codification_equipment_delivery_2"/>
@@ -43,10 +43,11 @@
                     </tbody>
                 </table>
             </div>
+            <br></br>
             <div align="center">
                 <table style="width:80%">
                     <tr>
-                        <td align="center">Delivery of instruments, equipment and documents</td>
+                        <td align="center">Entrega de items y documentos</td>
                     </tr>
                 </table>
             </div>
@@ -61,28 +62,95 @@
                 </table>
             </div>
             <br></br>
-            <h8>Description of instruments or equipment</h8>
+            <div>
+                <table sstyle="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                    <tr>
+                        <td width="80%" height="7" style="border: 1px solid black;">
+                            <strong><span style=" font-size: 14px;">Entrega: Firma y fecha</span></strong>
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td width="80%" height="7" style="border: 1px solid black;">
+                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Recibe: Firma y fecha</span></strong>
+                        </td>
+                    </tr>
+                </thead>
+                </table>
+            </div>
+
+            
+            <!-- <h8>Description of instruments or equipment</h8> -->
             <div style="padding:0;">
                 <t t-set="services_data" t-value="docs[0]._context.get('service_types', '')"/>
                 <table style="border-spacing:0;margin-bottom:0;" class="table">
                     <thead>
                         <tr>
-                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                            <!-- <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
                                 <strong><span t-esc="'Cant'"/></strong>
-                            </td>
+                            </td> -->
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong><span>Description and identification code</span></strong></td>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr t-foreach="services_data" t-as="serv">
-                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td>
-                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><br t-esc="serv['description']"/></span></td>
+                            <!-- <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td> -->
+                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><!-- <br t-esc="serv['description']"/> --></span></td>
                         </tr>
                     </tbody>
+
                 </table>
             </div>
+
+                <div class="footer">
+                    <div class="row">
+                        <table sstyle="border-spacing:0;margin-bottom:0;" class="table">
+                            <tr>
+                                <td width="20%" height="40" style="border: 1px solid black;vertical-align:middle;">Observaciones</td>
+                                <td width="80%" height="40" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_delivery"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_delivery"/></span></td>
+                        </tr>
+                        </table>
+                    </div>
+                   
+                  
+                    <div class="row-12" style="border-bottom: 1px solid black;">
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;"><span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('street_name', '') +' '+
+                        'No. '+ o.branch_office_company().get('number1', '') +' '+
+                        o.branch_office_company().get('number2', '') +' '+
+                        'Col. '+ o.branch_office_company().get('colony', '')+', '+
+                        o.branch_office_company().get('zip', '') + ', '+
+                        o.branch_office_company().get('state', '') 
+                        "/></p>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;">Tels.: <span style="font-family:'arialfont'; font-size: 14px;"  t-esc="o.branch_office_company().get('phone', '')"/></p>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-10">
+                            <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                        </div>
+                    </div>
+                </div>
         </template>
+
         <template id="report_equipment_delivery">
             <t t-call="web.basic_layout">
                 <t t-if="not o" t-set="o" t-value="doc"/>
@@ -99,20 +167,18 @@
                     </t>
                 </t>
                 <div class="header">
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
                     <div class="text-muted text-right">
                         page <span class="page"/> to <span class="topage"/>
                     </div>
-                    <div class="row" style="margin-top: 25px;">
+                    <div class="row" style="margin-top: 1px;">
                         <div class="col-4 mb4">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;" alt="Logo"/>
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
                         </div>
                         <div class="col-4 mb4  text-left">
                             <t t-call="w_report_projects.w_order_equipment_spacing"/>
                             <t t-call="w_report_projects.w_order_equipment_spacing"/>
                             <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                            <strong><span style="font-family:'arialfont'; font-size: 15px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                            <strong><span style="font-size: 23px;"><t t-esc="'de México, S. A. DE C. V.'"/></span></strong>
                         </div>
                         <div class="col-4 text-right" name="moto">
                             <span calss="text-center" style="font-family:'arialfont'; font-size: 14px;">Number</span>
@@ -125,92 +191,6 @@
                             <t t-set="o" t-value="o"/>
                         </t>
                     </t>
-                </div>
-                <div class="footer">
-                    <div class="row">
-                        <table sstyle="border-spacing:0;margin-bottom:0;" class="table">
-                            <tr>
-                                <td width="20%" height="40" style="border: 1px solid black;vertical-align:middle;">Observations</td>
-                                <td width="80%" height="40" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_delivery"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_delivery"/></span></td>
-                        </tr>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <table style="width:100%;">
-                            <t t-set="tags" t-value="docs[0]._context.get('service_types', '')"/>
-                            <tr>
-                                <td style="border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;">Invoice:</td>
-                                <td style="width:80%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;"><span t-if="o.invoice_number"><span t-esc="o.invoice_number"/></span></td>
-                            </tr>
-                            <tr>
-                                <td style="border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">Tags:</td>
-                                <td style="width:80%; border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;border-top: 1px solid black;"><span t-if="o.number_tags"><span t-esc="o.number_tags"/></span></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Deliver:</span></strong>
-                        </div>
-                        <div class="col-6">
-                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Receives</span></strong>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <span style="font-family:'arialfont'; font-size: 14px;">______________________________________</span>
-                        </div>
-                        <div class="col-6">
-                            <span style="font-family:'arialfont'; font-size: 14px;">_______________________________________</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Name, sign, date</span></strong>
-                        </div>
-                        <div class="col-6">
-                            <strong><span style="font-family:'arialfont'; font-size: 14px;">Name, sign, date</span></strong>
-                        </div>
-                    </div>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <t t-call="w_report_projects.w_order_equipment_spacing"/>
-                    <div class="row-12" style="border-bottom: 1px solid black;">
-                    </div>
-                    <div class="row">
-                        <div class="col-1">
-                        </div>
-                        <div class="col-10">
-                            <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1">
-                        </div>
-                        <div class="col-10">
-                            <p style="text-align: center;">Tels.: 55 5359 0088, 55 5359 4206 y 55 5359 4363</p>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1">
-                        </div>
-                        <div class="col-10">
-                            <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
                 </div>
             </t>
         </template>

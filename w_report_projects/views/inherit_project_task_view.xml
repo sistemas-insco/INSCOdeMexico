@@ -13,16 +13,19 @@
                 <xpath expr="//notebook" position="after">
                     <separator string="Reports information"/>
                     <group>
-                        <group>
+                        <group  string="Recepcion de Items">
                             <field name="observations_report_equipment_reception"/>
-                            <field name="observations_report_equipment_delivery"/>
+                            <field name="date_reception"/>
+                            <field name="brought_by"/>
+                        </group>
+                        <group string="Orden de Servicio">
                             <field name="conditions_report_service_order"/>
+                            <field name="date_service_order"/>
                             <field name="especial_requiriments"/>
                         </group>
-                        <group>
-                            <field name="date_reception"/>
+                        <group string="Entrega de Items">
+                            <field name="observations_report_equipment_delivery"/>
                             <field name="date_delivery"/>
-                            <field name="brought_by"/>
                             <field name="delivery_by"/>
                         </group>
                     </group>

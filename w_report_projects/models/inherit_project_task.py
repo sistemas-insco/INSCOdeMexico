@@ -35,34 +35,47 @@ class ProjectTask(models.Model):
     )
     observations_report_equipment_reception = fields.Text(
         string='Observations report equipment reception',
-        help='Observations for report reception equipment')
+        help='Observations for report reception equipment',
+        track_visibility="always")
 
     conditions_report_service_order = fields.Text(
         string='Conditions report service order',
-        help='Conditions for report service order'
+        help='Conditions for report service order',
+        track_visibility="always"
     )
     date_reception = fields.Date(
-        string='Date reception'
+        string='Date reception',
+        track_visibility="always"
+    )
+    date_service_order = fields.Date(
+        string='Date service order',
+        track_visibility="always"
     )
     date_delivery = fields.Date(
-        string='Date delivery'
+        string='Date delivery',
+        track_visibility="always"
     )
     brought_by = fields.Char(
-        string='Brought by'
+        string='Brought by',
+        track_visibility="always"
     )
     delivery_by = fields.Char(
-        string='Delivery by'
+        string='Delivery by',
+        track_visibility="always"
     )
     especial_requiriments = fields.Text(
-        string='Especial requiriment'
+        string='Especial requiriment',
+        track_visibility="always"
     )
     invoice_number = fields.Char(string='Invoice number')
 
     observations_report_equipment_delivery = fields.Text(
         string='Observations report equipment delivery',
-        help='Observations for report delivery equipment')
+        help='Observations for report delivery equipment',
+        track_visibility="always")
 
-    certificate_number = fields.Char(string='Certificate number')
+    certificate_number = fields.Char(string='Certificate number',
+        track_visibility="always")
 
     def get_street_partner(self):
         return "{}, {}, {}".format(
@@ -81,7 +94,23 @@ class ProjectTask(models.Model):
             'vat': self.partner_id.vat or '',
             'phone': self.partner_id.phone or '',
             'state': self.partner_id.state_id.name if self.partner_id.state_id.name else '',
+            'x_studio_contacto' : self.create_uid.address_id.x_studio_contacto}
+
+
+    def branch_office_company(self):
+        return {
+            'colony': self.create_uid.address_id.l10n_mx_edi_colony or '',
+            'city': self.create_uid.address_id.city or '',
+            'zip': self.create_uid.address_id.zip or '',
+            'street_name': self.create_uid.address_id.street_name or '',
+            'number1': self.create_uid.address_id.street_number or '',
+            'number2': self.create_uid.address_id.street_number2 or '',
+            'vat': self.create_uid.address_id.vat or '',
+            'phone': self.create_uid.address_id.phone or '',
+            'state': self.create_uid.address_id.state_id.name if self.create_uid.address_id.state_id.name else '',
             'x_studio_contacto' : self.partner_id.x_studio_contacto}
+
+
 
     def get_street_shipping(self):
         return "{}, {}, {}".format(

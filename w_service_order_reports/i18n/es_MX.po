@@ -105,25 +105,7 @@ msgstr "<span style=\"font-size: 14px;\">Firma</span>"
 msgid "<span style=\"font-size: 14px;\">With accreditation</span>"
 msgstr "<span style=\"font-size: 14px;\">Con acreditación</span>"
 
-#. module: w_service_order_reports
-#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
-msgid "<strong><span style=\"font-size: 14px;\">Brought by:</span></strong>"
-msgstr "<strong><span style=\"font-size: 14px;\">Traido por:</span></strong>"
 
-#. module: w_service_order_reports
-#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
-msgid "<strong><span style=\"font-size: 14px;\">Delivered by:</span></strong>"
-msgstr "<strong><span style=\"font-size: 14px;\">Entregado por:</span></strong>"
-
-#. module: w_service_order_reports
-#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
-msgid "<strong><span style=\"font-size: 14px;\">Delivery date:</span></strong>"
-msgstr "<strong><span style=\"font-size: 14px;\">Fecha de entrega:</span></strong>"
-
-#. module: w_service_order_reports
-#: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_order_service_multi_report_document
-msgid "<strong><span style=\"font-size: 14px;\">Reception date:</span></strong>"
-msgstr "<strong><span style=\"font-size: 14px;\">Fecha de recepción:</span></strong>"
 
 #. module: w_service_order_reports
 #: model_terms:ir.ui.view,arch_db:w_service_order_reports.w_service_order_multi_layout_standard
