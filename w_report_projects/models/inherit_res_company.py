@@ -28,34 +28,43 @@ from odoo import models, fields, api
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
+
+    #Campos de reporte de Entrega de items
+
     codification_equipment_delivery_1 = fields.Char(
-        string='Codification equipment report 1',
+        string='Codigo de formatos de calidad',
         default='FA.G.01.02.05'
     )
     codification_equipment_delivery_2 = fields.Char(
-        string='Codification equipment report 2',
+        string='Procedimiento de recoleccion y entrega',
         default='PA.G.02.06'
     )
     codification_equipment_delivery_3 = fields.Char(
-        string='Codification equipment report 3',
+        string='Formato de entrega',
         default='FA.G.02.04.06'
     )
+
+# Campos de orden de servicio 
+
     codification_equipment_delivery_4 = fields.Char(
-        string='Codification equipment report 4',
+        string='Formato oredn de servicio',
         default='FA.G.02.03.05'
     )
+
+# Campos de recepcion de items
     codification_equipment_delivery_5 = fields.Char(
-        string='Codification equipment reception report 5',
+        string='Codido de formato de calidad',
         default='FA.G.01.02.05'
     )
     codification_equipment_delivery_6 = fields.Char(
-        string='Codification equipment reception report 6',
+        string='Precedimiento de atencion de servicio',
         default='FA.G.01.02.05'
     )
     codification_equipment_delivery_7 = fields.Char(
-        string='Codification equipment reception report 7',
+        string='Formato de recepcion',
         default='PA.G.02.06'
     )
+
     codification_equipment_delivery_8 = fields.Char(
         string='Codification equipment reception report 8',
         default='PA.G.02.02.06'

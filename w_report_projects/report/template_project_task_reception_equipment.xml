@@ -35,7 +35,7 @@
                     <thead>
                         <tr>
                             <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
-                                <span t-esc="o.company_id.codification_equipment_delivery_1"/>
+                                <span t-esc="o.company_id.codification_equipment_delivery_5"/>
                             </td>
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong>
@@ -43,11 +43,11 @@
                             Proceso de aceptación de los servicios.
                             </span></strong></td>
                             <td class="text-center" style="border: 2px solid black;">
-                                <span t-esc="o.company_id.codification_equipment_delivery_2"/>
+                                <span t-esc="o.company_id.codification_equipment_delivery_6"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;"><span t-esc="o.company_id.codification_equipment_delivery_3"/></td>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;"><span t-esc="o.company_id.codification_equipment_delivery_7"/></td>
                         </tr>
                     </thead>
                     <tbody>

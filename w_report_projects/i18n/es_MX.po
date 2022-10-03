@@ -243,46 +243,6 @@ msgid "Certificate address"
 msgstr "Dirección de certificado"
 
 #. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_5
-msgid "Codification equipment reception report 5"
-msgstr "Codificación reporte recepción equipos 5"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_6
-msgid "Codification equipment reception report 6"
-msgstr "Codificación reporte recepción equipos 6"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_7
-msgid "Codification equipment reception report 7"
-msgstr "Codificación reporte recepción equipos 7"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_8
-msgid "Codification equipment reception report 8"
-msgstr "Codificación reporte recepción equipos 8"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_1
-msgid "Codification equipment report 1"
-msgstr "Codificación entrega de equipos 1"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_2
-msgid "Codification equipment report 2"
-msgstr "Codificación entrega de equipos 2"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_3
-msgid "Codification equipment report 3"
-msgstr "Codificación entrega de equipos 3"
-
-#. module: w_report_projects
-#: model:ir.model.fields,field_description:w_report_projects.field_res_company__codification_equipment_delivery_4
-msgid "Codification equipment report 4"
-msgstr "Codificación entrega de equipos 4"
-
-#. module: w_report_projects
 #: model:ir.model,name:w_report_projects.model_res_company
 msgid "Companies"
 msgstr "Compañías"

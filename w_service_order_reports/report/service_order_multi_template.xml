@@ -223,7 +223,7 @@
                                     <strong><span style="font-size: 14px;">Realizado por: </span></strong>
                                     <spad  t-esc="user.name"></spad>
                                     <!-- <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> -->
-                                     <img t-if="user.sign_signature" t-att-src="image_data_uri(user.sign_signature)" style="max-height: 50px;" alt="Logo"/>
+                                     <!-- <img t-if="user.sign_signature" t-att-src="image_data_uri(user.sign_signature)" style="max-height: 50px;" alt="Logo"/> -->
                                     
                                 </td>
                             </tr>
