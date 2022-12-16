@@ -27,9 +27,11 @@
         'views/views.xml',
         'views/templates.xml',
         'report/report_flota.xml',
+        'report/i_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
     'installable': True,
     'application': False,
+    'license': 'LGPL-3',
 }

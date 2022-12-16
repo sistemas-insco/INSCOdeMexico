@@ -20,6 +20,6 @@ modificate gastos for INSCO.
         'views/inherit_gastos_view_from.xml',
         'views/inherit_gastos_view_tree.xml',
     ],
-    'demo': [
-    ],
+    'demo': [],
+    'license': 'LGPL-3',
 }

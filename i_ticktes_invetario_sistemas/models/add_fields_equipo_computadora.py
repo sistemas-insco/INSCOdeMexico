@@ -12,7 +12,7 @@ class customComputer(models.Model):
 	
 	name= fields.Char(string='N° Inventario', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 	num_inventario_area = fields.Char(string="N° Inventario del área")
-	modelo = fields.Char(string='Modelo',track_visibility="always")
+	modelo = fields.Char(string='Modelo',tracking = True)
 	marca = fields.Char(string='Marca')
 	numero_serie = fields.Char(string='Número de Serie')
 	direccion_mac = fields.Char(string='Dirección MAC')
@@ -23,8 +23,8 @@ class customComputer(models.Model):
 	password_pc = fields.Text(string='Password')
 	descripcion = fields.Text(string='Descripción')
 	notas_entrega = fields.Text(string='Notas de entrega de equipo')
-	fecha_assignment = fields.Date(string='Fecha de asignación', track_visibility="always")
-	empleado_id = fields.Many2one('hr.employee', string='Empleado',track_visibility="always")
+	fecha_assignment = fields.Date(string='Fecha de asignación', tracking=True)
+	empleado_id = fields.Many2one('hr.employee', string='Empleado',tracking=True)
 	departamento_id = fields.Many2one(string='Departamento', related = 'empleado_id.department_id', store = True)
 	# departamento_id = fields.Many2one('hr.department', string='Departamento')
 	image = fields.Binary(string="Equipo Imagen")
@@ -34,7 +34,7 @@ class customComputer(models.Model):
 	estado = fields.Selection(					[('En opereacion', 'En operación'),
 												('fuera de uso', 'Fuera de uso'),
 												('renta', 'Renta')],
-												string='Estado del equipo', track_visibility="always")
+												string='Estado del equipo', tracking=True)
 
 
 	sucursal_id = fields.Selection(				[('insco de Mexico', 'INSCO de México'),
@@ -50,8 +50,9 @@ class customComputer(models.Model):
 												('Windows 7', 'Windows 7'),
 												('Windows 8.1', 'Windows 8.1'),
 												('Windows 10', 'Windows 10'),
-												('Windows 11', 'Windows 11')],
-												string='Sistema operativo',track_visibility="always")
+												('Windows 11', 'Windows 11'),
+												('Windows 12', 'Windows 12')],
+												string='Sistema operativo',tracking=True)
 
 
 	office_tipo = fields.Selection(				[('n/a', 'n/a'),
@@ -60,6 +61,8 @@ class customComputer(models.Model):
 												('Office 2016', 'Office 2016'),
 												('Office 2019', 'Office 2019'),
 												('Office 2020', 'Office 2020'),
+												('Office 2021', 'Office 2021'),
+												('Office 2022', 'Office 2022'),
 												('Office 365', 'Office 365')],
 												string='Tipo de Office')
 

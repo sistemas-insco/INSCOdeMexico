@@ -147,22 +147,21 @@
             </field>
         </record>
 
-        <act_window
+       <!--  <act_window
             id="action_menu_vacaciones"
             name="Permisos"
             res_model="solicitud.vacaciones"
             view_mode="kanban,list,form,calendar"
-        />
+        /> -->
 
 
-        <!-- <record id="action_menu_vacaciones" model="ir.actions.act_window">
+        <record id="action_menu_vacaciones" model="ir.actions.act_window">
             <field name="name">Permisos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">solicitud.vacaciones</field>
-            <field name="view_type">form</field>
             <field name="view_mode">kanban,list,form,calendar</field>
            
-        </record> -->
+        </record>
 
         <menuitem
             action="action_menu_vacaciones"

@@ -133,12 +133,31 @@
 
 
 
-        <act_window
+      <!--   <act_window
             id="action_menu_tiket"
             name="Tickets"
             res_model="team.computer_tiket"
             view_mode="kanban,list,form,calendar"
-        />
+        /> -->
+
+    
+
+
+        <record id="action_menu_tiket" model="ir.actions.act_window">
+            <field name="name">Tickets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">team.computer_tiket</field>
+            <field name="view_mode">kanban,tree,form,calendar</field>
+              <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new
+              </p><p>
+                
+              </p>
+            </field>
+            
+        </record>
+        
 
 
 

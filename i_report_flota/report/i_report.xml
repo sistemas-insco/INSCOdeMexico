@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paper_format_report_flota" model="report.paperformat">
+            <field name="name">paper.format.report.flota</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_width">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_right">5</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">5</field>
+            <field name="header_line" eval="True"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+
+    <record id="i_report_flota_entrega" model="ir.actions.report">
+        <field name="name">Reporte de entrega</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">i_report_flota.report_entrega_carro</field>
+        <field name="report_file">i_report_flota.report_entrega_carro</field>
+        <field name="print_report_name">'Entrega - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="i_report_flota.paper_format_report_flota"/>
+        <field name="binding_model_id" ref="model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+      
+    </data>
+</odoo>

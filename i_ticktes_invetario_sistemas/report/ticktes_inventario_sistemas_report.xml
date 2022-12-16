@@ -33,7 +33,7 @@
         </record>
         
 
-        <report
+     <!--    <report
             id="i_entrega_equipo"
             string="Entrega de equipo"
             model="team.computer"
@@ -41,8 +41,23 @@
             name="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
             file="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
             paperformat="paper_format_report_entrega_equipo"
-        />
-        <report
+        /> -->
+
+
+    <record id="i_entrega_equipo" model="ir.actions.report">
+        <field name="name">Entrega de equipo</field>
+        <field name="model">team.computer</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">i_ticktes_invetario_sistemas.reporte_equipo_entrega</field>
+        <field name="report_file">i_ticktes_invetario_sistemas.reporte_equipo_entrega</field>
+        <field name="print_report_name">'Entrega de equipo - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="i_ticktes_invetario_sistemas.paper_format_report_entrega_equipo"/>
+        <field name="binding_model_id" ref="model_team_computer"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+       <!--  <report
             id="i_mantenimiento_equipo"
             string="matenimiento"
             model="team.computer_tiket"
@@ -50,7 +65,21 @@
             name="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
             file="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
             paperformat="paper_format_report_matenimiento_equipo"
-        />
+        /> -->
+
+
+    <record id="i_mantenimiento_equipo" model="ir.actions.report">
+        <field name="name">Matenimiento</field>
+        <field name="model">team.computer_tiket</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">i_ticktes_invetario_sistemas.report_mantenimiento_equipo</field>
+        <field name="report_file">i_ticktes_invetario_sistemas.report_mantenimiento_equipo</field>
+        <field name="print_report_name">'Matenimiento - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="i_ticktes_invetario_sistemas.paper_format_report_matenimiento_equipo"/>
+        <field name="binding_model_id" ref="model_team_computer_tiket"/>
+        <field name="binding_type">report</field>
+    </record>
+
       
     </data>
 </odoo>

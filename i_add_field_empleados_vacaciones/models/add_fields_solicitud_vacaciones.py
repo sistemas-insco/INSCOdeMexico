@@ -9,14 +9,14 @@ class vacaciones(models.Model):
 
 
 
-	name = fields.Char('Periódo',default='Periódo', track_visibility="always",required=True)
-	empleado_id = fields.Many2one('hr.employee',track_visibility="always", string="Empleado", required=True)
+	name = fields.Char('Periódo',default='Periódo', tracking=True,required=True)
+	empleado_id = fields.Many2one('hr.employee',tracking=True, string="Empleado", required=True)
 	usuario_responsable=fields.Many2one(string="Responsable", related = 'empleado_id.parent_id')
-	user_id = fields.Many2one('res.users', string='Usuario', index=True, track_visibility='onchange', track_sequence=2, default=lambda self: self.env.user)
-	fecha_inicio = fields.Date(string="Fecha de Inicio", track_visibility="always", required=True)
-	fecha_fin = fields.Date(string="Fecha Final", track_visibility="always", required=True)
+	user_id = fields.Many2one('res.users', string='Usuario', index=True, tracking=True, default=lambda self: self.env.user)
+	fecha_inicio = fields.Date(string="Fecha de Inicio", tracking=True, required=True)
+	fecha_fin = fields.Date(string="Fecha Final", tracking=True, required=True)
 	departamento_id = fields.Many2one(string='Departamento', related = 'empleado_id.department_id', store = True)
-	numero_dias_solicitaso =fields.Integer(string="Días solicitados",  track_visibility="always", required=True, readonly=True, states={'nuevo': [('readonly', False)], 'por aprobar': [('readonly', False)]})
+	numero_dias_solicitaso =fields.Integer(string="Días solicitados",  tracking=True, required=True, readonly=True, states={'nuevo': [('readonly', False)], 'por aprobar': [('readonly', False)]})
 	dias_vacaciones = fields.Integer(string="Días de Vacaciones", related = 'empleado_id.vacaciones_dias')
 	descripcion_solicitud = fields.Text(string="Descripción")
 	active = fields.Boolean('Active', default=True, tracking=True)
@@ -26,7 +26,7 @@ class vacaciones(models.Model):
 										('por aprobar', 'Por aprobar'),
 										('aprobado', 'Aprobado'),
 										('cancelado', 'Cancelado')],
-										default='nuevo', string="Estado",track_visibility="always",copy=False)
+										default='nuevo', string="Estado",tracking=True,copy=False)
 
 	solicitud_tipo =fields.Selection([
 												('vacaciones', 'Vacaciones'),
@@ -35,7 +35,7 @@ class vacaciones(models.Model):
 												('reposicion', 'Reposición'),
 												('dia por dia', 'Dia por dia'),
 												('otro', 'Otro')],
-												string="Tipo de Solicitud", track_visibility="always", readonly=True, states={'nuevo': [('readonly', False)], 'por aprobar': [('readonly', False)]})
+												string="Tipo de Solicitud", tracking=True, readonly=True, states={'nuevo': [('readonly', False)], 'por aprobar': [('readonly', False)]})
 
 
 

@@ -2,11 +2,11 @@
 
 <odoo>
   <data>
-   <report id="reporte_flota"
+   <!-- <report id="reporte_flota"
         string="Reporte de entrega"
            model="fleet.vehicle"  
            report_type="qweb-pdf"
-        name="i_report_flota.report_entrega_carro"/>
+        name="i_report_flota.report_entrega_carro"/> -->
       
       <template id="report_entrega_carro">
           <t t-call="web.html_container">
@@ -297,7 +297,7 @@
                                 <div class="col-1">
                                  </div>
                                 <div class="col-10">
-                                <p style="text-align: center;">Escape No. 3-A Local 2, Industrial Alce Blanco, C.P. 53370 Naucalpan de Juárez, Méxcio.</p>
+                                <p style="text-align: center;">Av. Ingenieros Militares 111 B, Lomas de Sotelo, Miguel Hidalgo, 11200 Ciudad de México.</p>
                                 </div>
                                 <div class="col-1"></div>
                                 </div>

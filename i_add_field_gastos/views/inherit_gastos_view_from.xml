@@ -17,7 +17,7 @@
                 </xpath>
                 <xpath expr="//field[@name='date']" position="after">
                     <field name="fecha_pago_id"/>
-                    <field name="purchase_order_id"/>
+                   <!--  <field name="purchase_order_id"/> -->
                 </xpath>
             </field>
         </record>

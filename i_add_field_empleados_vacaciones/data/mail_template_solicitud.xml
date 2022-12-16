@@ -6,22 +6,27 @@
         <record id="solicitud_card_email_template" model="mail.template">
             <field name="name">Solicitud: Send by email</field>
             <field name="model_id" ref="i_add_field_empleados_vacaciones.model_solicitud_vacaciones"/>
-            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <field name="email_from">{{(object.user_id.email_formatted) }}</field>
             <!-- <field name="email_to">${sistemas@inscomexico.com}</field -->
            <!-- <field name="email_to">sistemas@inscomexico.com</field> -->
-            <field name="subject">Solicitud (Ref ${object.solicitud_tipo})</field>
+            <field name="subject">Solicitud {{object.solicitud_tipo}}</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                        Tipo de solicitud ${object.solicitud_tipo}
+                        Tipo de solicitud: <t t-out="object.solicitud_tipo"></t> 
+                        
                         <br /><br />
-                        Fecha inicio ${object.fecha_inicio}
+                        Fecha inicio: <t t-out="object.fecha_inicio"></t> 
+                        
                         <br /><br />
-                        Fecha Fin ${object.fecha_fin}
+                        Fecha Fin: <t t-out="object.fecha_fin"></t>
                         <br /><br />
-                        Numero de dias solicitados ${object.numero_dias_solicitaso}
+                        Numero de dias solicitados: <t t-out="object.numero_dias_solicitaso"></t>
+                         
                          <br /><br />
-                        Descripción  ${object.descripcion_solicitud}
+                        Descripción:
+                        <t t-out="object.descripcion_solicitud"></t>
+                        
                     </p>
                 </div>
             </field>

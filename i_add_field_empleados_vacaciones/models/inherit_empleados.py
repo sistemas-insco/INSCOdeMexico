@@ -7,8 +7,8 @@ class VacacionesId(models.Model):
 
 
 
-	fecha_ingreso = fields.Date(string="Fecha ingreso", track_visibility="always", groups="hr.group_hr_user")
-	vacaciones_dias = fields.Integer(string="Dias de Vacaciones",default='6', track_visibility="always", groups="hr.group_hr_user")
+	fecha_ingreso = fields.Date(string="Fecha ingreso", tracking=True, groups="hr.group_hr_user")
+	vacaciones_dias = fields.Integer(string="Dias de Vacaciones",default='6', tracking=True, groups="hr.group_hr_user")
 
 	polo_cruzada = fields.Char(string ='Polo Cruzada',help='(TODOS)', groups="hr.group_hr_user")
 	camisa_manga_larga = fields.Char(string ='Camisa manga larga',help='(TODOS)', groups="hr.group_hr_user")
@@ -29,7 +29,7 @@ class VacacionesId(models.Model):
 										('de 15 a 19 años', 'De 15 a 19 años'),
 										('de 20 a 24 años', 'De 20 a 24 años'),
 										('de 25 a 29 años', 'De 25 a 29 años')],
-										default='1', track_visibility="always",string='Años de antiguedad',groups="hr.group_hr_user")
+										default='1', tracking=True,string='Años de antiguedad',groups="hr.group_hr_user")
 	
 
 
