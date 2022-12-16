@@ -54,5 +54,6 @@ Service Order Reports for INSCO.
     'demo': [],
     'installable': True,
     'application': False,
+    'license': 'LGPL-3',
 }
 

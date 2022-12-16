@@ -193,7 +193,8 @@
             </div>
         </div>
         <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
-            <t t-raw="0"/>
+           <!--  <t t-raw="0"/> -->
+            <t t-out="0"/>
         </div>
         <div class="footer o_standard_footer">
             <div class="row">
@@ -253,11 +254,11 @@
                     <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff !important;">
                         <t t-set="colspan" t-value="6"/>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Description</th>
+                        <th class="text-center">Descripción</th>
                         <th class="text-center">PCDT</th>
-                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Cantidad</th>
                         <th class="text-center">Pre Unit</th>
-                        <th class="text-center">Amount</th>
+                        <th class="text-center">Importe</th>
                     </tr>
                 </thead>
                 <tbody class="sale_tbody" style="font-family:'arialfont'; font-size: 14px;">
@@ -315,7 +316,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong><span style="font-family:'arialfont'; font-size: 14px;">Unique Discount:</span></strong></td>
+                                <td><strong><span style="font-family:'arialfont'; font-size: 14px;">Descuento unico:</span></strong></td>
                                 <td class="text-right">
                                     <span
                                         t-esc="doc.amount_undiscounted - doc.amount_untaxed"
@@ -354,7 +355,7 @@
             <div class="col" style="page-break-inside: avoid;"/>
             <div class="row-12">
                 <div class="col-12 text-center">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Notes and Comments</span></strong>
+                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Notas y comentarios</span></strong>
                 </div>
                 <div class="row">
                     <div class="col-12">

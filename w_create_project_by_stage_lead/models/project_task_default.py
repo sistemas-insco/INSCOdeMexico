@@ -31,6 +31,7 @@ from odoo import api, fields, models, tools, _
 class TaskDefaultStage(models.Model):
 
     _name = 'crm.stage.default.task'
+    _description = "Tareas"
 
     stage_id = fields.Many2one('crm.stage')
     name = fields.Char('Task name')

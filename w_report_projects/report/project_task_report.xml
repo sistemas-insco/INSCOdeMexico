@@ -46,7 +46,9 @@
             <field name="header_spacing">20</field>
             <field name="dpi">90</field>
         </record>
-        <report
+
+
+       <!--  <report
             id="w_equipment_delivery"
             string="Equipment delivery"
             model="project.task"
@@ -54,8 +56,24 @@
             name="w_report_projects.report_equipment_delivery"
             file="w_report_projects.report_equipment_delivery"
             paperformat="paper_format_report_equipment_delivery"
-        />
-        <report
+        /> -->
+
+        <record id="w_equipment_delivery" model="ir.actions.report">
+        <field name="name">Equipment delivery</field>
+        <field name="model">project.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">w_report_projects.report_equipment_delivery</field>
+        <field name="report_file">w_report_projects.report_equipment_delivery</field>
+        <field name="print_report_name">'Entrega de equipo - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="w_report_projects.paper_format_report_equipment_delivery"/>
+        <field name="binding_model_id" ref="model_project_task"/>
+        <field name="binding_type">report</field>
+        </record>
+
+
+
+
+      <!--   <report
             id="w_order_service"
             string="Order service"
             model="project.task"
@@ -63,8 +81,24 @@
             name="w_report_projects.w_main_report_serice_order"
             file="w_report_projects.w_main_report_serice_order"
             paperformat="paper_format_report_service_order"
-        />
-        <report 
+        /> -->
+
+        <record id="w_order_service" model="ir.actions.report">
+        <field name="name">Order service</field>
+        <field name="model">project.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">w_report_projects.w_main_report_serice_order</field>
+        <field name="report_file">w_report_projects.w_main_report_serice_order</field>
+        <field name="print_report_name">'Orden de servicio - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="w_report_projects.paper_format_report_service_order"/>
+        <field name="binding_model_id" ref="model_project_task"/>
+        <field name="binding_type">report</field>
+        </record>
+
+
+
+
+       <!--  <report 
             id="w_reception_equipment"
             string="Reception equipment"
             model="project.task"
@@ -73,5 +107,21 @@
             file="w_report_projects.w_reception_equipment_report"
             paperformat="paper_format_report_reception_equipment"
         />
+ -->
+        <record id="w_reception_equipment" model="ir.actions.report">
+        <field name="name">Reception equipment</field>
+        <field name="model">project.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">w_report_projects.w_reception_equipment_report</field>
+        <field name="report_file">w_report_projects.w_reception_equipment_report</field>
+        <field name="print_report_name">'Recepcion de Equipo - %s' % (object.name or 'Attendee').replace('/','')</field>
+        <field name="paperformat_id" ref="w_report_projects.paper_format_report_reception_equipment"/>
+        <field name="binding_model_id" ref="model_project_task"/>
+        <field name="binding_type">report</field>
+        </record>
+
+
+
+
     </data>
 </odoo>

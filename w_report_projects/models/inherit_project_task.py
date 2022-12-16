@@ -36,46 +36,46 @@ class ProjectTask(models.Model):
     observations_report_equipment_reception = fields.Text(
         string='Observations report equipment reception',
         help='Observations for report reception equipment',
-        track_visibility="always")
+        tracking=True)
 
     conditions_report_service_order = fields.Text(
         string='Conditions report service order',
         help='Conditions for report service order',
-        track_visibility="always"
+        tracking=True
     )
     date_reception = fields.Date(
         string='Date reception',
-        track_visibility="always"
+        tracking=True
     )
     date_service_order = fields.Date(
         string='Date service order',
-        track_visibility="always"
+       tracking=True
     )
     date_delivery = fields.Date(
         string='Date delivery',
-        track_visibility="always"
+        tracking=True
     )
     brought_by = fields.Char(
         string='Brought by',
-        track_visibility="always"
+        tracking=True
     )
     delivery_by = fields.Char(
         string='Delivery by',
-        track_visibility="always"
+        tracking=True
     )
     especial_requiriments = fields.Text(
         string='Especial requiriment',
-        track_visibility="always"
+        tracking=True
     )
     invoice_number = fields.Char(string='Invoice number')
 
     observations_report_equipment_delivery = fields.Text(
         string='Observations report equipment delivery',
         help='Observations for report delivery equipment',
-        track_visibility="always")
+        tracking=True)
 
     certificate_number = fields.Char(string='Certificate number',
-        track_visibility="always")
+        tracking=True)
 
     def get_street_partner(self):
         return "{}, {}, {}".format(

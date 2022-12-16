@@ -62,7 +62,7 @@ class CrmLead(models.Model):
         'project.project',
         string = 'Project',
         help = _('Project related to this opportunity.'),
-        track_visibility="onchange"
+        tracking=True
     )
 
 class CrmStage(models.Model):

@@ -27,6 +27,8 @@ Wedoo addons to modificate documents for INSCO.
         'views/inherit_res_config_settings.xml',
         'views/inherit_account_invoice_view.xml',
     ],
-    'demo': [
-    ],
+    'demo': [],
+    'installable': True,
+    'application': False,
+    'license': 'LGPL-3',
 }

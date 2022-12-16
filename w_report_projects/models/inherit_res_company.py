@@ -69,3 +69,8 @@ class ResCompany(models.Model):
         string='Codification equipment reception report 8',
         default='PA.G.02.02.06'
     )
+
+    codification_equipment_delivery_9 = fields.Char(
+        string='Codificacion de salida de inventario',
+        default='PA.G.02.02.06'
+    )

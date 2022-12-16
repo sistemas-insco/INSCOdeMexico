@@ -81,8 +81,8 @@ class CrmLead(models.Model):
         string='Way to pay')
     method_pay = fields.Selection([('01', 'Cash'), ('02', 'Nominative Check'),('03', 'Electronic Background Transfer')],
         string='Payment method')
-    currency_account_id = fields.Selection([('mxn:', 'Mexican Peso:'), ('usd:', 'American Dollar:')],
-        string='Currency')
+    currency_account_id = fields.Selection([('mxn:', 'Peso:'), ('usd:', 'Dollar:')],
+        string='Currency 1')
     exchange_rate = fields.Float('Exchange rate', help='Exchange rate')
 #     Contratos y tramites
     ver_documents = fields.Boolean('Verification of documents', default=False)
@@ -125,7 +125,7 @@ class CrmLead(models.Model):
     fico_calification_short = fields.Binary("FICO Formats", attachment=True,
         help="Limited to 1024x1024px",)
     fico_calification_short_filename = fields.Char()
-    curp_binary_short = fields.Binary("CURP2", attachment=True,
+    curp_binary_short = fields.Binary("CURP", attachment=True,
         help="Limited to 1024x1024px",)
     curp_binary_short_filename = fields.Char()
     auth_installation_short = fields.Binary("Installation authorization", attachment=True,
@@ -173,7 +173,7 @@ class CrmLead(models.Model):
     birth_certificate = fields.Binary("Birth certificate", attachment=True,
         help="Limited to 1024x1024px",)
     birth_certificate_filename = fields.Char()
-    curp_infonavit = fields.Binary("CURP2", attachment=True,
+    curp_infonavit = fields.Binary("CURP1", attachment=True,
         help="Limited to 1024x1024px",)
     curp_infonavit_filename = fields.Char()
     prequalification_infonavit = fields.Binary("Prequalification infonavit", attachment=True,

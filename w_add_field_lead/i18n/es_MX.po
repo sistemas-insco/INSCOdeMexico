@@ -109,11 +109,6 @@ msgstr "Recibo CFE"
 msgid "CFE signatures were obtained in agreement signed by the client"
 msgstr "Se lograron firmas de CFE en convenio firmado por el cliente "
 
-#. module: w_add_field_lead
-#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_curp_binary_short
-#: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_curp_infonavit
-msgid "CURP"
-msgstr "CURP"
 
 #. module: w_add_field_lead
 #: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_card_digits
@@ -189,8 +184,8 @@ msgstr "Verificación de Documentos"
 
 #. module: w_add_field_lead
 #: selection:crm.lead,currency_account_id:0
-msgid "American Dollar"
-msgstr "Dolar Americano"
+msgid "Dollar"
+msgstr "Dolar"
 
 #. module: w_add_field_lead
 #: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_delivery_agreement
@@ -335,7 +330,7 @@ msgstr "Inicaitiva / Oportunidad"
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_credit_request
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_credit_sic
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_curp_binary_short
-#: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_curp_infonavit
+
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_fico_calification_long
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_fico_calification_short
 #: model:ir.model.fields,help:w_add_field_lead.field_crm_lead_guarantee_data
@@ -465,8 +460,8 @@ msgstr "Precalificación infonavit"
 
 #. module: w_add_field_lead
 #: selection:crm.lead,currency_account_id:0
-msgid "Mexican Peso"
-msgstr "Peso Mexicano"
+msgid "Peso"
+msgstr "Peso"
 
 #. module: w_add_field_lead
 #: model:ir.model.fields,field_description:w_add_field_lead.field_crm_lead_quotation

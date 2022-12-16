@@ -29,6 +29,6 @@ class ResCompany(models.Model):
     _inherit = 'res.company'
 
     codification_sale_order_report = fields.Char(
-        string='Codification report sale',
+        string='Codificacion reporte ventas',
         default='FA.C.01.01.00'
     )

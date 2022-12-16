@@ -20,21 +20,22 @@ class AccountInvoiceReport(models.AbstractModel):
         return pac_rfc
 
     def get_addr(self, partner):
-        return '%s # %s %s %s %s, %s, %s, %s, %s' % (
+        return '%s %s %s, %s, %s, %s' % (
             partner.street or '',
-            partner.street_number or '',
-            partner.street_number2 or '',
-            partner.l10n_mx_edi_locality and
-            'LOCAL. %s' % partner.l10n_mx_edi_locality or '',
+            # partner.street_number or '',
+            # partner.street_number2 or '',
+            #partner.l10n_mx_edi_locality or '',
             partner.l10n_mx_edi_colony and
             'COL. %s' % partner.l10n_mx_edi_colony or '',
             partner.zip and
             'C.P. %s' % partner.zip or '',
             partner.city or '',
             partner.state_id and
-            'ESTADO DE %s' % partner.state_id.name or '',
+            '%s' % partner.state_id.name or '',
             partner.country_id and partner.country_id.name or ''
         )
+
+
 
     def get_taxes(self, line):
         taxes = line.tax_ids
@@ -67,3 +68,4 @@ class AccountInvoiceReport(models.AbstractModel):
             'get_pac_name': self.get_pac_name,
             'get_pac_rfc': self.get_pac_rfc,
         }
+

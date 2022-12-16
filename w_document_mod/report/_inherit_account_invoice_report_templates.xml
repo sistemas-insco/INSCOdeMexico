@@ -31,12 +31,12 @@
                 <div class="col col-4 text-left" style="font-size: 8px;">
                     <div class="row" style="color: #3929C8;">
                         <div class="col-12">
-                            SENDER OF THE INVOICE
+                            EMISOR DEL COMPROBANTE FISCAL
                         </div>
                     </div>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12">
-                            R.F.C. NAME AND SOCIAL REASON
+                            R.F.C. NOMBRE Y RAZÓN SOCIAL
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="row" style="background-color: #808080;color:white;">
                         <div class="col-12">
-                            FISCAL ADDRESS
+                            DOMICILIO FISCAL
                         </div>
                     </div>
                     <div class="row">
@@ -57,12 +57,27 @@
                     </div>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12">
-                            FISCAL POSITION
+                            REGIMEN FISCAL
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12" style="font-size: 10px !important;">
-                            <strong><span t-esc="company.partner_id.property_account_position_id.name"/></strong>
+
+                         <strong><span t-esc="o.company_id.l10n_mx_edi_fiscal_regime" />
+                         <span t-field="o.company_id.l10n_mx_edi_fiscal_regime" /></strong>
+
+                        </div>
+                    </div>
+                    <div class="row" style="background-color: #808080;color: white;">
+                        <div class="col-12">
+                            EXPEDIDO EN:
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+
+                         <span t-esc="get_addr(company)"/>
+
                         </div>
                     </div>
                 </div>
@@ -78,7 +93,7 @@
                     <div class="row"/>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12" style="font-size: 12px !important;text-align: right;">
-                            <span>INVOICE</span>
+                            <span>FACTURA</span>
                         </div>
                     </div>
                     <div class="row" style="color: red;">
@@ -89,7 +104,7 @@
                     </div>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12" style="font-size: 12px !important;text-align: right;">
-                            <span>DATE AND TIME OF EMITION</span>
+                            <span>FECHA DE EMISIÓN</span>
                         </div>
                     </div>
                     <div class="row">
@@ -103,20 +118,38 @@
 
 
                     </div>
+
+                    <div class="row" style="background-color: #808080;color: white;">
+                        <div class="col-12" style="font-size: 12px !important;text-align: right;">
+                            <span>FOLIO FISCAL</span>
+                        </div>
+                    </div>
+
+                    <div class="row" style="color: red;">
+                        <div class="col-12" style="font-size: 11px !important;text-align: left;">
+                          <span t-esc="o.l10n_mx_edi_cfdi_uuid"/>
+                         <!--  <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span> -->
+                         <span t-if="o.state == 'cancel'">Factura Cancelada</span>
+                        </div>
+                    </div>
+
+
                 </div>
                 <!-- <div class="col-1"/> -->
             </div>
         </div>
+
         <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
-            <t t-raw="0"/>
+         <!--    <t t-raw="0"/> -->
+             <t t-out="0"/>
         </div>
         <div class="footer">
             <div class="text-right">
                 <div class="digital-stamp-content float-left" style="font-family: 'Courier New', Courier, monospace;">
-                    <strong>This document is a printed representation of a CFDI - Version 3.3</strong>
+                    <strong>Este documento es una representación impresa de un CFDI - Versión 4.0</strong>
                 </div>
                 <div t-if="report_type == 'pdf'" class="text-muted float-right" style="font-family: 'Courier New', Courier, monospace;">
-                    page <span class="page"/> to <span class="topage"/>
+                    página<span class="page"/> de <span class="topage"/>
                 </div>
             </div>
         </div>
@@ -140,70 +173,75 @@
                     </t>
                 </t>
                 <div style="font-size: 8px !important;width: 100%;padding: 0px 30px;">
-                    <div class="row">
-                        <div class="col-2"/>
-                        <div class="col-10">
-                            <span style="background-color: #808080; font-size: 12px; color: white;">
-                                <strong style="padding: 40px !important;">SENDER FROM:   </strong>
-                            </span>
-                            <span style="font-size: 12px;" t-esc="get_addr(company)"/>
+                   <div class="row" style="font-size: 12px; color: #3929C8;">
+                        <div class="col-12">
+                            RECEPTOR DE COMPROBANTE FISCAL
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-7">
-                            <span style="font-size: 12px;color: #A17373;">FISCAL CHECK RECEIVER </span>
-                        </div>
-                        <div class="col-5" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span>AUTHORICE SUPPLIER OF CERTIFICATE </span>
-                        </div>
-                    </div>
+
                     <div class="row text-center">
                         <div class="col-2 text-center" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span >R.F.C. </span>
+                            <span >R.F.C. </span> 
                         </div>
                         <div class="col-5 text-center" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span>SOCIAL REASON </span>
-                        </div>
-                        <div class="col-5 text-center" style="font-size: 12px;">
-                            <span t-if="get_pac_name(o) and get_pac_rfc(o)">
-                                <t t-esc="get_pac_name(o)" /> - <t t-esc="get_pac_rfc(o)" />
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-2">
-                            <b><span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.vat" /></b>
-                        </div>
-                        <div class="col-5" >
-                            <b><span style="font-size: 10px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.name" /></b>
+                            <span>RAZÓN SOCIAL  </span>
                         </div>
                         <div class="col-5 text-center" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span style="font-size: 12px;">SENDER DIGITAL SELLER CERTIFIC</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7"/>
-                        <div class="col-5 text-center" style="font-size: 12px;">
-                            <span t-esc="o.serial_number" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span>FISCAL FOLIO </span>
-                        </div>
-                        <div class="col-5" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span>CFDI USAGE</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7" style="font-size: 14px;color: red;padding-top: 10px;font-family: 'Courier New', Courier, monospace;">
-                            <b><span t-esc="o.l10n_mx_edi_cfdi_uuid"/></b>
-                        </div>
-                        <div class="col-5" style="font-size: 16px !important;text-align: center;padding-top: 10px;font-family: 'Courier New', Courier, monospace;">
-                            <span t-if="o.l10n_mx_edi_usage" t-esc="o.l10n_mx_edi_usage"/><span t-if="o.l10n_mx_edi_usage" t-esc="'-'"/><span t-if="o.l10n_mx_edi_usage" t-field="o.l10n_mx_edi_usage"/>
-                        </div>
+                            <span>Uso del CFDI  </span>
+                        </div> 
+                        
                     </div>
                 </div>
+                <div style="font-size: 8px !important;width: 100%;padding: 0px 30px;">
+
+                    <div class="row text-center">
+                        <div class="col-2 text-center">
+                            <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.vat" />
+                        </div>
+                        <div class="col-5 text-center">
+                            <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.name" /> 
+                        </div>
+                        <div class="col-5 text-center" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+                            <span t-if="o.l10n_mx_edi_usage" t-esc="o.l10n_mx_edi_usage"/><span t-if="o.l10n_mx_edi_usage" t-esc="'-'"/><span t-if="o.l10n_mx_edi_usage" t-field="o.l10n_mx_edi_usage"/>
+                        </div> 
+                        
+                    </div>
+                </div>
+
+                <div style="font-size: 8px !important;width: 100%;padding: 0px 30px;">
+                
+                    <div class="row text-center">
+                        <div class="col-2 text-center" style="background-color: #808080; font-size: 12px; color: white;">
+                            <span >C.P</span> 
+                        </div>
+                        <div class="col-5 text-center" style="background-color: #808080; font-size: 12px; color: white;">
+                            <span>REGIMEN FISCAL</span>
+                        </div>
+                        <div class="col-5 text-center" style="background-color: #808080; font-size: 12px; color: white;">
+                            <span>  </span>
+                        </div> 
+                        
+                    </div>
+                </div>
+
+                <div style="font-size: 8px !important;width: 100%;padding: 0px 30px;">
+
+                    <div class="row text-center">
+                        <div class="col-2 text-center">
+                             <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.zip" />
+                        </div>
+                        <div class="col-5 text-center">
+                            <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.l10n_mx_edi_fiscal_regime" />
+                            <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;"  t-field="o.partner_id.l10n_mx_edi_fiscal_regime" />
+                        </div>
+                        <div class="col-5 text-center" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+                            
+                        </div> 
+                        
+                    </div>
+                </div>
+
+
                 <br/>
                 <t t-set="colspan" t-value="8"/>
                 <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>
@@ -211,40 +249,50 @@
                 <table class="table table-sm o_main_table" name="invoice_line_table" style="font-size: 12px;min-height: 400px !important;">
                     <thead>
                         <tr style="background-color: #808080; color: white;">
-                            <th class="text-center">CODE</th>
-                            <th class="text-center">PRODUCT KEY</th>
-                            <th class="text-center">DESCRIPTION</th>
-                            <th class="text-center">UOM</th>
-                            <th class="text-center">QUANTITY</th>
-                            <th class="text-center">PRICE</th>
+                            <th class="text-center">CÓDIGO</th>
+                            <th class="text-center">CveProdSer</th>
+                            <th class="text-center">DESCRIPCIÓN</th>
+                            <th class="text-center">U.MEDIDA</th>
+                            <th class="text-center">CANTIDAD</th>
+                            <th class="text-center">PRECIO</th>
                             <th t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
-                                <span>DISCOUNT</span>
+                                <span>DESCUENTO</span>
                                 <t t-set="colspan" t-value="colspan+1"/>
                             </th>
-                            <th class="text-center">TAX AMOUNT</th>
-                            <th class="text-center">AMOUNT</th>
+                            <th class="text-center">IVA IMPUESTO</th>
+                            <th class="text-center">IMPORTE</th>
                         </tr>
                     </thead>
                     <tbody class="invoice_tbody">
                         <t t-foreach="o.invoice_line_ids" t-as="line">
                             <t t-set="amount_without_discount" t-value="amount_without_discount + (line.price_unit * line.quantity)"/>
+
                             <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+
                                 <t t-if="not line.display_type" name="account_invoice_line_accountable">
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="product_code"><span t-field="line.product_id.default_code"/></td>
-                                    <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="product_key"><span t-esc="'%s - %s' % (line.product_id.l10n_mx_edi_code_sat_id.code or '', line.product_id.l10n_mx_edi_code_sat_id.name or '')"/></td>
+
+                                    <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="product_key"><span t-esc="'%s - %s' % (line.product_id.unspsc_code_id.code or '', line.product_id.unspsc_code_id.name or '')"/></td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" name="account_invoice_line_name"><span t-field="line.name"/></td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-center">
-                                        <span t-esc="'%s - %s' % (line.product_uom_id.l10n_mx_edi_code_sat_id.code, line.product_uom_id.l10n_mx_edi_code_sat_id.name)" groups="uom.group_uom"/>
+                                        <span t-esc="'%s - %s' % (line.product_uom_id.unspsc_code_id.code, line.product_uom_id.unspsc_code_id.name)" groups="uom.group_uom"/>
                                     </td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-center">
                                         <span t-field="line.quantity"/>
                                     </td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                         <span t-field="line.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                         <span t-field="line.discount"/>
                                     </td>
+
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                         <t t-foreach="get_taxes(line)" t-as="tax">
                                             <div class="row">
@@ -257,30 +305,35 @@
                                             </div>
                                         </t>
                                     </td>
+
                                     <td style="border-left: 1px solid #808080;border-right: 1px solid #808080;border-bottom:1px solid #cccccc;" class="text-right o_price_total">
                                         <strong><span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/></strong>
                                     </td>
+
                                 </t>
+
                                 <t t-if="line.display_type == 'line_section'">
                                     <td t-att-colspan="colspan">
                                         <span t-field="line.name"/>
                                     </td>
                                     <t t-set="current_section" t-value="line"/>
                                 </t>
+
                                 <t t-if="line.display_type == 'line_note'">
                                     <td t-att-colspan="colspan">
                                         <span t-field="line.name"/>
                                     </td>
                                 </t>
+
                             </tr>
 
                             <t t-if="line_last">
                                 <tr class="is-subtotal" style="font-size: 14px;font-family: 'Courier New', Courier, monospace;">
                                     <td class="text-right" colspan="2">
-                                        <strong class="mr16">CFDI Related:</strong>
+                                        <strong class="mr16">CFDI Relacionado:</strong>
                                     </td>
                                     <td class="text-left">
-                                        <t t-set="related" t-value="o.get_cfdi_related()" />
+                                        <t t-set="related" t-value="o.get_cfdi_related_1()" />
                                         <t t-if="len(related) > 0">
                                             <t t-foreach="related['related']" t-as="number">
                                                 <t t-esc="'%s ' % number" />
@@ -289,26 +342,27 @@
                                     </td>
                                 </tr>
                             </t>
+
                         </t>
                     </tbody>
                 </table>
                 <div class="clearfix">
                     <div id="total1" class="row" style="background-color: #808080;color: white;margin-left: 1px;margin-right: 1px;margin-bottom: 10px;">
                         <div class="col col-12" style="font-size: 12px;">
-                            <span>PAYMENT DETAILS</span>
+                            <span>DETALLES DEL PAGO</span>
                         </div>
                     </div>
                     <div id="total" class="row" style="font-size: 12px;">
                         <div class="col col-9">
                             <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
                                 <div class="col-4" style="padding-bottom: 5px;">
-                                    <b><span>Payment Form</span></b>
+                                    <b><span>Forma Dde Pago</span></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 5px;">
-                                    <b><span>Payment Method</span></b>
+                                    <b><span>Método de Pago</span></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 5px;">
-                                    <b><span>Account Number</span></b>
+                                    <b><!-- <span>Account Number</span> --></b>
                                 </div>
                             </div>
                             <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
@@ -319,48 +373,59 @@
                                     <b><span t-if="o.payment_method" t-esc="o.payment_method"/></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 10px;">
-                                    <b><span t-if="o.l10n_mx_edi_partner_bank_id.acc_number" t-esc="o.l10n_mx_edi_partner_bank_id.acc_number" /></b>
+                                    <b><!-- <span t-if="o.l10n_mx_edi_partner_bank_id.acc_number" t-esc="o.l10n_mx_edi_partner_bank_id.acc_number" /> --></b>
                                 </div>
                             </div>
                             <div class="row" />
                             <div class="row" />
                             <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
                                 <div class="col-12" style="padding-bottom: 10px;">
-                                    <strong>RFC Certificate Supplier   <t t-if="get_pac_rfc(o)" t-esc="get_pac_rfc(o)" /></strong>
+                                   <!--  <strong>RFC Certificate Supplier   <t t-if="get_pac_rfc(o)" t-esc="get_pac_rfc(o)" /></strong> -->
+                                     <strong>RFC proveedor de certificado   <span t-if="get_pac_name(o) and get_pac_rfc(o)">
+                                        <t t-esc="get_pac_name(o)" /> - <t t-esc="get_pac_rfc(o)" />
+                                        </span></strong>
+
+                                </div>
+
+                            </div>
+                            <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+                                <div class="col-12">
+                                    <b><strong>CERTIFICADO SELLO DIGITAL EMISOR    <span t-esc="o.serial_number" /></strong></b>
+                                </div>
+                            </div>
+                            <br></br>
+                            <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+                                <div class="col-12">
+                                    <b><span>TOTAL CON LETRA:</span></b>
                                 </div>
                             </div>
                             <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
                                 <div class="col-12">
-                                    <b><span>TOTAL WITH CHAR:</span></b>
-                                </div>
-                            </div>
-                            <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
-                                <div class="col-12">
-                                    <b><span t-esc="o.l10n_mx_edi_amount_to_text()"/></b>
+                                    <b><span t-esc="o._l10n_mx_edi_cfdi_amount_to_text()"/></b>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <table class="table table-sm">
                                 <tr>
-                                    <td class="text-right" style="background-color: #EEECE0;">
+                                    <td class="text-left" style="background-color: #FFFFFF;">
                                         <strong>Subtotal</strong>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-left">
                                         <span t-esc="amount_without_discount"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" style="background-color: #EEECE0;">
-                                        <strong>Discount</strong>
+                                    <td class="text-left" style="background-color: #FFFFFF;">
+                                        <strong>Descuento</strong>
                                     </td>
                                     <td class="text-right">
                                         <span t-esc="amount_without_discount - o.amount_untaxed"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td class="text-right" style="background-color: #EEECE0;">
                                         <strong>New Subtotal</strong>
                                     </td>
@@ -368,11 +433,11 @@
                                         <span t-esc="o.amount_untaxed"
                                             t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
-                                </tr>
-                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                </tr> -->
+
+                               <!--  <t t-foreach="o.amount_by_group" t-as="amount_by_group">
                                     <tr>
-                                        <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
-                                        <!--<t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">-->
+                                        <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
                                             <td class="text-right" style="background-color: #EEECE0;">
                                                 <strong><span t-esc="amount_by_group[0]"/></strong>
                                             </td>
@@ -389,21 +454,30 @@
                                             </td>
                                         </t>
                                     </tr>
-                                </t>
-                                <tr>
+                                </t> -->
+
+
+
+                                <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                    <t t-call="account.document_tax_totals"/>
+
+
+
+
+                                <!-- <tr>
                                     <td class="text-right" style="background-color: #EEECE0;">
                                         <strong>TOTAL</strong>
                                     </td>
                                     <td class="text-right">
                                         <span t-field="o.amount_total"/>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </div>
                     </div>
                     <div t-if="o.observations" class="row" style="background-color: #808080;color: white;margin-left: 1px;margin-right: 1px;margin-bottom: 10px;">
                         <div class="col col-12" style="font-size: 12px;">
-                            <span>OBSERVATIONS</span>
+                            <span>OBSERVACIONES</span>
                         </div>
                     </div>
                     <div t-if="o.observations" class="row">
@@ -416,7 +490,7 @@
                 <div style="page-break-inside: avoid; font-size: 12px; margin-left: 10px;margin-right: 10px;">
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12 mb4 text-left">
-                            <span>ORIGINAL CHAIN OF DIGITAL CERTIFICATION COMPLEMENT TO THE SAT</span>
+                            <span>CADENA ORIGINAL DEL COMPLEMENTO DE CERTIFICADO DEL SAT</span>
                         </div>
                     </div>
                     <div class="row">
@@ -427,7 +501,7 @@
                     <br/>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12 mb4 text-left">
-                            <span>DIGITAL SELLET OF CFDI</span>
+                            <span>SELLO DIGITAL DEL CFDI</span>
                         </div>
                     </div>
                     <div class="row">
@@ -438,7 +512,7 @@
                     <br/>
                     <div class="row" style="background-color: #808080;color: white;">
                         <div class="col-12 mb4 text-left">
-                            <span>DIGITAL SELLET OF SAT</span>
+                            <span>SELLO DIGITAL DEL SAT</span>
                         </div>
                     </div>
                     <div class="row" >
@@ -454,7 +528,7 @@
     <template id="account.report_invoice_with_payments">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-set="lang" t-value="doc.user_id.lang if doc.type in ('in_invoice', 'in_refund') else doc.partner_id.lang"/>
+                <!-- <t t-set="lang" t-value="doc.user_id.lang if doc.type in ('in_invoice', 'in_refund') else doc.partner_id.lang"/> -->
                 <t t-call="w_document_mod.inherit_report_invoice_document_with_payments" t-lang="lang"/>
             </t>
         </t>

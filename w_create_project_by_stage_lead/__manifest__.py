@@ -52,4 +52,5 @@ Create project from lead - some stages
     'demo': [],
     'qweb': [],
     'application': False,
+    'license': 'LGPL-3',
 }

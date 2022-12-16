@@ -34,14 +34,15 @@
             </div>
         </div>
         <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
-            <t t-raw="0" />
+            <!-- <t t-raw="0" /> -->
+             <t t-out="0" />
         </div>
 
         <div class="footer">
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-size: 14px;">Special requirements:</span></strong>
-                    <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span>
+                    <!-- <strong><span style="font-size: 14px;">Special requirements:</span></strong>
+                    <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span> -->
                 </div>
             </div>
             <br></br>
@@ -133,9 +134,12 @@
 
     <template id="w_order_service_multi_report_document">
         <t t-call="w_service_order_reports.w_service_order_multi_layout_standard">
-            <t t-set="o" t-value="doc.with_context({'lang': doc.user_id.lang})" />
+
+            <t t-set="o" t-value="doc.with_context({'lang': doc.user_ids.lang})" />
+            
             <div class="page" style="padding-top: 40px !important;">
-                <div name="customer_zone" class="border-black" style="padding: 4px 10px !important;font-size: 14px;">
+
+                <div name="customer_zone" class="border border-dark" style="padding: 4px 10px !important;font-size: 14px;">
                     <div class="row" style="padding-left: 20px !important;">
                         <div class="col-5">
                             <b>Customer: </b><t t-esc="o.partner_id.name" />
@@ -193,35 +197,38 @@
 
                 <div name="delivery_details_zone" style="margin-top: 15px;">
                     <table style="border-spacing:0;border-collapse: collapse" class="table border-black">
-                        <tbody>
+                         <tbody>
                             <tr>
-                                <td  style="width:40% border-bottom: 1px solid black;">
+                                <td style="border-left: 1px solid black;border-right: 1px solid black" width="50%">
                                     <strong><span style="font-size: 14px;">Fecha de recepción en el laboratorio: </span></strong>
                                     <span t-if="o.date_service_order"><span style=" font-size: 14px;" t-esc="o.date_service_order.strftime('%Y-%m-%d')"/></span>
                                 </td>
-                                <td style="border-left:1px solid black;">
+                                <td style="border-right: 1px solid black;">
                                     <strong><span style="font-size: 14px;">Fecha de entrega del laboratorio:</span></strong>
                                      <!-- <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span> -->
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:40% border-bottom: 1px solid black;">
-                                    <strong><span style="font-size: 14px;">Exite la capacidad técnica:</span></strong>
+                                <td style="border-left: 1px solid black;border-right: 1px solid black" >
+                                    <strong><span style="font-size: 14px;">Existe la capacidad técnica:</span></strong>
                                    
                                 </td>
-                                <td style="border-left: 1px solid black; border-top: 1px solid black;">
+                                <td style="border-right: 1px solid black;">
                                     <strong><span style="font-size: 14px;">Con acreditación:</span></strong>
                                     
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:40% border-bottom: 1px solid black;">
+                                <td style="border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black">
                                     <strong><span style="font-size: 14px;">Nombre y firma del técnico del laboratorio:</span></strong>
                                     <!-- <span t-if="o.date_delivery"><span style=" font-size: 14px;" t-esc="o.date_delivery.strftime('%Y-%m-%d')"/></span> -->
                                 </td>
-                                <td style="border-left: 1px solid black; border-top: 1px solid black;">
+                                <td style="border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black">
                                     <strong><span style="font-size: 14px;">Realizado por: </span></strong>
-                                    <spad  t-esc="user.name"></spad>
+                                    <spad t-esc="user.name"/>
+                                    <div class="col-4">
+                                        <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
+                                    </div>
                                     <!-- <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> -->
                                      <!-- <img t-if="user.sign_signature" t-att-src="image_data_uri(user.sign_signature)" style="max-height: 50px;" alt="Logo"/> -->
                                     
@@ -301,7 +308,7 @@
         <t t-call="web.html_container">
             <t t-if="docs" t-set="docs" t-value="docs[0].getServiceOrders(docs)"/>
             <t t-foreach="docs" t-as="doc">
-                <t t-call="w_service_order_reports.w_order_service_multi_report_document" />
+                <t t-call="w_service_order_reports.w_order_service_multi_report_document" t-lang="doc.partner_id.lang" />
             </t>
         </t>
     </template>
