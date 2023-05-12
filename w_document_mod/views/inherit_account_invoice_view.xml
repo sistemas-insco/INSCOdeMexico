@@ -13,5 +13,20 @@
                 </xpath>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="w_inherit_account_invoice_form_view_tree_secundaria">
+            <field name="name">w.inherit.account.invoice.form.view.tree.secundaria</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[not(@name)][3]/field[@name='edi_document_ids']/tree[1]" position="attributes">
+                <attribute name="edit">true</attribute>
+                <attribute name="editable">top</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[not(@name)][3]/field[@name='edi_document_ids']/tree[1]/field[@name='name']" position="after">
+                <field name="attachment_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
