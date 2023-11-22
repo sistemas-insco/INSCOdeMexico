@@ -10,6 +10,7 @@
 
     <template id="insco_account_external_layout_standard">
         <t t-set="get_addr" t-value="get_addr"/>
+        <t t-set="cfdi_vals" t-value="o._l10n_mx_edi_decode_cfdi()"/>  <!-- se agrega linea para crear el QR del la factura -->
         <t t-if="not o" t-set="o" t-value="doc"/>
         <t t-if="not company">
             <!-- Multicompany -->
@@ -81,14 +82,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2 text-center">
+                <div t-if="cfdi_vals.get('sello')" class="barcode col-3">
+                <img alt="Barcode" t-att-src="'/report/barcode/?type=QR&amp;value=%s&amp;width=180&amp;height=180' % quote_plus( 'https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?' + keep_query( re=o.l10n_mx_edi_cfdi_supplier_rfc, rr=o.l10n_mx_edi_cfdi_customer_rfc, tt='%.*f' % (o.currency_id.decimal_places, o.l10n_mx_edi_cfdi_amount), id=o.l10n_mx_edi_cfdi_uuid) + '&amp;fe=%s' % quote_plus( cfdi_vals['sello'][-8:], 'utf-8', 'strict', '=/').replace('%2B', '+'))"/>
+                </div>
+                <!-- <div class="col-2 text-center">
                     <img alt="Barcode" style="width: 100%;height: 110px;" t-att-src="'/report/barcode/?type=QR&amp;value=%s' % quote_plus(
                             'https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?' + keep_query(
                                 re=o.l10n_mx_edi_cfdi_supplier_rfc, rr=o.l10n_mx_edi_cfdi_customer_rfc,
                                 tt=o.l10n_mx_edi_cfdi_amount, id=o.l10n_mx_edi_cfdi_uuid)
                                 + '&amp;fe=%s' % quote_plus(
                                     sello, 'utf-8', 'strict', '=/').replace('%2B', '+'))" />
-                </div>
+                </div> -->
                 <div class="col-3 text-right">
                     <div class="row"/>
                     <div class="row" style="background-color: #808080;color: white;">
