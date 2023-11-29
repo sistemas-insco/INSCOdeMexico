@@ -4,6 +4,7 @@
         <xpath expr="//t[@t-else='']" position="replace">
        </xpath>
     </template> -->
+
     <template id="insco_external_layout_standard">
         <!-- <style type="text/css">
              <![CDATA[
@@ -41,10 +42,7 @@
                     <strong><span style="font-family:'arialfont'; font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>-->
                     <table style="width: 100%;">
                         <tr style="background-color: #75baff;">
-                            <th style="border: 1px solid white;"><strong>Facturar a:</strong></th>
-                        </tr>
-                        <tr style="background-color: #75baff;">
-                            <td style="border: 1px solid white;"><i>Bill to:</i></td>
+                            <th style="border: 1px solid white;"><strong>Facturar a:/Bill to:</strong></th>
                         </tr>
                         <tr>
                             <td rowspan="3" >
@@ -62,39 +60,24 @@
                 <div class="col-3 text-left" name="moto">
                     <table style="width:100;">
                         <tr style="background-color: #75baff;">
-                            <th style="border: 1px solid white;  width:100%;"><strong>Orden de compra:</strong></th>
+                            <th style="border: 1px solid white;  width:100%;"><strong>OC/OP:</strong></th>
                         </tr>
                         <tr style="background-color: #75baff; width:100%;">
-                            <td style="border: 1px solid white;  width:100%;"><i>Purchase order:</i></td>
+                            <td style="border: 1px solid white;  width:100%;"><span t-if="o.name"><span style="font-family:'arialfont';" t-esc="o.name"/></span> </td>
                         </tr>
                         <tr style="background-color: #75baff;">
-                           <th style="border: 1px solid white;"><strong>Número:</strong></th>
-                            <td style="background-color: white; vertical-align:middle;" rowspan="2" class="text-center">
-                            <span t-if="o.name"><span style="font-family:'arialfont';" t-esc="o.name"/></span> 
-                            </td>
-                        </tr>
-                        <tr style="background-color: #75baff;">
-                           <td style="border: 1px solid white;"><i>P.O.N.:</i></td>
-                        </tr>
-                        <tr style="background-color: #75baff;">
-                           <th style="border: 1px solid white;"><strong>Fecha:</strong></th>
+                           <th style="border: 1px solid white;"><strong>Fecha:/Date:</strong></th>
                             <td style="background-color: white; vertical-align:middle;  width:100%;" rowspan="2" class="text-center">
-                            <span t-if="o.date_order"><span style="font-family:'arialfont'; width:100%;" t-esc="o.date_order.strftime('%Y/%m/%d')"/></span> 
                             </td>
                         </tr>
                         <tr style="background-color: #75baff;">
-                           <td style="border: 1px solid white;"><i>Date:</i></td>
+                           <td style="border: 1px solid white;"><span t-if="o.date_order"><span style="font-family:'arialfont'; width:100%;" t-esc="o.date_order.strftime('%Y/%m/%d')"/></span>  </td>
                         </tr>
                         
                     </table>
-                    <!--<strong><span style="font-family:'arialfont'; font-size: 18px;"><t t-esc="'Orden de compra'"/></span></strong>-->
+                    
                 </div>
-                <!--<div class="col-2 mb4  text-right">
-                    <strong><span style="font-family:'arialfont'; font-size: 15px;">#Referencia:</span></strong>
-                    <span t-if="o.name"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.name"/><br></br></span> 
-                    <strong><span style="font-family:'arialfont'; font-size: 15px;">Fecha:<br></br></span></strong>
-                    <span t-if="o.date_order"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.date_order.strftime('%Y/%m/%d')"/></span> 
-                </div>-->
+               
             </div>
         </div>
         <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
@@ -105,18 +88,13 @@
         </div>
         <div class="footer o_standard_footer">
             <div class="row">
-                <!--<div class="col-4">
-                    <span t-esc="company.vat"/>
-                </div>
-                <div class="col-4 text-center">
-                    <span t-esc="'inscomex.com'"/>
-                </div>-->
                 <div class="col-12 text-right">
-                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.07</span>
+                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.08</span>
                 </div>
             </div>
         </div>
     </template>
+
     <template id="report_purchase_inherit" >
     <t t-call="w_purchase_order_reports.insco_external_layout_standard"> 
       <div class="page" style="font-family:'arialfont'; font-size: 12px;">
@@ -124,29 +102,36 @@
          <br></br>
          <br></br>
          <br></br>
-         <table style="width:100%;" >
+         <table style="width:100%;">
              <thead>
                 <tr style="background-color: #75baff;">
-                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor:</strong></th>
-                    <th style="border: 1px solid white; width: 50%;" ><strong>Enviar a:</strong></th>
+                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor:/Supplier:</strong></th>
+                    <th style="border: 1px solid white; width: 50%;" ><strong>Enviar a:/Send to:</strong></th>
                 </tr>
                 <tr style="background-color: #75baff;">
-                    <td style="border: 1px solid white;width: 50%;" ><i>Supplier:</i></td>
-                    <td style="border: 1px solid white;width: 50%;" ><i>Send to:</i></td>
+                    <td style="border: 1px solid white;width: 50%;" ><i></i></td>
+                    <td style="border: 1px solid white;width: 50%;" ><i></i></td>
                 </tr>
                 <tr>
                      <th>
                             <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
                             <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>  
                     </th>
-                  <!--   <td rowspan="5" >
-                        <span>
-                                INSCO DE MEXICO SA DE CV <br></br>
-                                COLONIA, FRACCIONAMIENTO INDUSTRIAL ALCE BLANCO<br></br>
-                                NAUCALPAN DE JUÁREZ ESTADO DE MÉXICO<br></br>
-                                R.F.C IME930930UPA<br></br>
-                        </span>
-                    </td> -->
+                    <td rowspan="5" >
+                        
+                        
+                        <div t-if="o.x_studio_enviar_a">
+                        <div t-field="o.x_studio_enviar_a"/>
+                        </div>
+                        
+                        <div t-else="o.picking_type_id">
+                        <span t-field="o.picking_type_id.warehouse_id.name"/>
+                        <div t-field="o.picking_type_id.warehouse_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                        </div>
+                        
+                               
+                        
+                    </td> 
                    
                 </tr>
             </thead>
@@ -158,20 +143,12 @@
             <table style="width:100%;"> 
                 <thead >
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;"><strong>Código</strong></th>
-                        <th style="border: 1px solid white;"><strong>Cantidad</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>Descripcion</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>Precio u</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>IVA</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>Precio</strong></th>
-                    </tr>
-                    <tr style="background-color: #75baff;">
-                        <td style="border: 1px solid white;"><i>Item</i></td>
-                        <td style="border: 1px solid white;"><i>Qty</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Description</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Rate</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Tax</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Amount</i></td>
+                        <th style="border: 1px solid white;"><strong>Código/Item</strong></th>
+                        <th style="border: 1px solid white;"><strong>Cantidad/Qty</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Descripcion/Description</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Precio u/Rate</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>IVA/Tax</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Precio/Amount</strong></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -203,43 +180,37 @@
             <table style="width:100%;">
                 <thead>
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;" class="text-center"><strong>Departamento</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Buyer/Comprador</strong></th>
                         <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
                             <span>
-                                Campo
+                                <span  t-field="user.name"/>
                             </span>
                         </td>
-                         <th style="border: 1px solid white;"><strong>Importe:</strong></th>
+                         <th style="border: 1px solid white;"><strong>Importe:/Amount</strong></th>
                           <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
                             <span t-field="o.amount_untaxed"/>
                         </td>
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;" class="text-center"><i>Department</i></td>
-                        <td style="border: 1px solid white;"><i>Amount</i></td>
+                        
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;" class="text-center"><strong>Correo</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Correo/E-mail</strong></th>
                          <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
-                            <span t-field="o.company_id.email"/>
+                             <span t-field="user.email"/>
                         </td>
-                         <th style="border: 1px solid white;"><strong>Descuento</strong></th>
+                         <th  rowspan="1" style="background-color: white;"><strong> </strong></th>
                           <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
-                            <span >
-                                Campo
-                            </span>
+                          
                         </td>
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;" class="text-center"><i>E-mail</i></td>
-                        <td style="border: 1px solid white;"><i>Discount</i></td>
+                        
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;" class="text-center"><strong>Elaboró</strong></th>
+                        <th  rowspan="1" style="background-color: white;" class="text-center"></th>
                         <td style="background-color: white; border: 2px solid white;vertical-align:middle;" rowspan="2" class="text-center">
-                            <span>
-                                Campo
-                            </span>
+                           
                         </td>
                         <th style="border: 1px solid white;"><strong>I.V.A</strong></th>
                          <td style="background-color: white; border: 2px solid white;" rowspan="1" class="text-center">
@@ -247,45 +218,41 @@
                         </td>
                     </tr>
                      <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;" class="text-center"><i>Elaborated by</i></td>
+                        
                     </tr>
-                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;" class="text-center"><strong>Autorizado por:</strong></th>
-                        <th style="border: 1px solid white;" class="text-center"><strong>Solicitado por:</strong></th>
-                    </tr>
-                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;" class="text-center"><i>Requested by</i></td>
-                        <td style="border: 1px solid white;" class="text-center"><i>Authorized by</i></td>
-                    </tr>
+                    
+                     
                      <tr style="background-color: white; border: 1px solid white;">
-                        <th style="border: 1px solid white;"><i>Campo</i></th>
-                        <th style="border: 1px solid white;"><strong>Campo</strong></th>
+                        <th  rowspan="1" style="background-color: white;"></th>
+                        <th  rowspan="1" style="background-color: white;"></th>
                         <th style="border: 1px solid white; background-color: #75baff"><strong>Total:</strong></th>
                         <th style="border: 1px solid white; background-color: #75baff" class="text-center"><strong><span t-field="o.amount_total"/></strong></th>
                     </tr>
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;"><strong>Datos de documentos de Pasivo</strong></th>
+                        <th  rowspan="1" style="background-color: white;"></th>
                         <td rowspan="1" style="background-color: white;"></td>
-                        <th style="border: 1px solid white;"><strong>Moneda</strong></th>
+                        <th style="border: 1px solid white;"><strong>Moneda/Currency</strong></th>
                         <td style="background-color: white; border: 2px solid white;vertical-align:middle;" rowspan="2" class="text-center">
                             <span t-field="o.currency_id"/>
                         </td>
                     </tr>
-                    <tr style="background-color: #75baff; border: 1px solid white;">
-                        <td style="border: 1px solid white;"><i>Passive document data</i></td>
-                        <td rowspan="1" style="background-color: white;"></td>
-                        <td style="border: 1px solid white;"  class="text-left"><i>Currency</i></td>
-                    </tr>
+                   
                 </thead>
             </table>
-            <div >
+            <div>
+                <div class="col-4">
+                                
+                                <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
+                                <span  t-field="user.name"/>
+                                
+                            </div>
                 <div>
-                    <br></br>
-                    <br></br>
+                     <br/>
                     <strong><span>Observaciones:</span></strong>
                 </div>
                 <div>
-                    <br></br>
+                   
+                    <br/>
                     <span t-field="o.notes"/>
                 </div>
             </div>
@@ -293,6 +260,7 @@
         </div>
         </t>
     </template>
+
     <template id="purchase.report_purchaseorder">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
