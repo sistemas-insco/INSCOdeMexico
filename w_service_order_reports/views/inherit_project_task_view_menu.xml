@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--search view de bitacora-->
+    <record id="w_inherit_project_task_view_form_search" model="ir.ui.view">
+        <field name="name">w.inherit.project.task.view.form.search</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+               <field name="service_order" string ="Orden de servicio"/>
+               <field name="certificate_number" string ="Informe"/>
+            </xpath>
+            <!-- <xpath expr="//filter[@name='my_tasks']" position="after">
+                <filter string="Mis superviciones" name="supervisor_lab" domain="[('overtime', '&gt;', 0)]"/>
+            </xpath> -->
+             <xpath expr="//filter[@name='my_tasks']" position="after">
+                <filter string="Mis Supervisiones" name="supervisor_lab" domain="[('supervisor_lab','=',uid)]"/>
+                <filter string="Mis Calibraciones" name="calibrado_por_lab" domain="[('calibrado_por_lab','=',uid)]"/>
+                <filter string="Mis Aprobaciones" name="aprobado_por_lab" domain="[('aprobado_por_lab','=',uid)]"/>
+                <!-- <filter string="Mis calibraciones" name="user_ids" domain="[('user_ids','=',uid)]"/> -->
+            </xpath>
+    
+            <xpath expr="//group/filter[@name='stage']" position="replace">
+                <filter string="Estatus lab" name="estado_service_lab" context="{'group_by': 'estado_service_lab'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='estado_service_lab']" position="after">
+                <filter string="Orden de servicio" name="service_order" context="{'group_by': 'service_order'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='service_order']" position="after">
+                <filter string="Estatus Med" name="estado_service_lab_med" context="{'group_by': 'estado_service_lab_med'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='estado_service_lab_med']" position="after">
+                <filter string="Sucursal" name="sucursal_lab" context="{'group_by': 'sucursal_lab'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='sucursal_lab']" position="after">
+                <filter string="Urgencia del servicio" name="urgencia_del_servicio" context="{'group_by': 'urgencia_del_servicio'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='urgencia_del_servicio']" position="after">
+                <filter string="Asignado lab" name="primer_usuario" context="{'group_by': 'primer_usuario'}"/>
+            </xpath>
+
+            <xpath expr="//group/filter[@name='primer_usuario']" position="after">
+                <filter string="Servicio en" name="lugar_service" context="{'group_by': 'lugar_service'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+
+        <!--tree view masa-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_masa">
+            <field name="name">w.inherit.project.task.view.tree.masa</field>
+            <field name="model">project.task</field>
+            <field name="priority" eval="90"/>
+            <field name="arch" type="xml">
+                <tree string="Tree Masa" multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_masa" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE"  readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show"/>
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show" />
+                <field name="date_det_vol_final" optional="show" />
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab"  widget="many2one_avatar_user" optional="show" />
+                <field name="calibrado_por_lab"  widget="many2one_avatar_user" optional="show" />
+                <field name="aprobado_por_lab"  widget="many2one_avatar_user" optional="show" />
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+               <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--tree view temperatura-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_temperatura">
+            <field name="name">w.inherit.project.task.view.tree.temperatura</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Temperatura"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_temperatura" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number"  readonly="1"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE"  readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show" />
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view humedad-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_humedad">
+            <field name="name">w.inherit.project.task.view.tree.humedad</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Humedad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_humedad" string="Asignar Informe Humedad" type="object" class="btn-primary"/>
+                <button name="open_certificate_wizard_temperatura" string="Asignar Informe Temperatura" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number" readonly="1"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE" readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show" />
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view mediciones especiales-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_med">
+            <field name="name">w.inherit.project.task.view.tree.med</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Med"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab_med=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_med" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number"/>
+                <field name="getion_rieesgo_med" optional="show" />
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE" readonly="1"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="os_termopares" optional="show" />
+                <field name="date_cal_ter" optional="show" />
+                <field name="os_temp_sensor" optional="show" />
+                <field name="os_hum_sensor" optional="show" />
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="date_calibracion" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="tiempo_entrega" optional="show"/>
+                <!-- <field name="date_inicio_med" optional="show" /> -->
+                <!-- <field name="date_termino_med" optional="show" /> -->
+                <field name="user_ids" string ="EJECUTADO" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" string ="CALIFICADO"  optional="show"  />
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <!-- <field name="date_programada_entrega" optional="show"/> -->
+                <!-- <field name="date_entrega_med" optional="show"/> -->
+                <!-- <field name="tiempo_entrega_med" optional="show"/> -->
+                <field name="estado_service_lab_med" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tipo_servicio_med" optional="show"/>
+                <!-- <field name="tiempo_asignado_med" optional="show"/> -->
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+                  <!-- falta modificar -->
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab_med', '=', 'ENTREGADO'), ('estado_service_lab_med', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view Kaye-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_kaye">
+            <field name="name">w.inherit.project.task.view.tree.kaye</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_kaye" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number" readonly="1"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE" readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show" />
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view Volumen-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_volumen">
+            <field name="name">w.inherit.project.task.view.tree.volumen</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Volumen"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_volumen" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number"  readonly="1"/>
+                <field name="service_order" string="ORDEN DE SERVICIO" readonly="1"/> 
+                <field name="partner_id" string ="CLIENTE"  readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string="DESCRIPCIÓN" optional="show"/>
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show"/>
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show"/>
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]"/>
+                <field name="supervisor_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show" />
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show"/>
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab" optional="show"/>
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view lab electrica-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_electrica">
+            <field name="name">w.inherit.project.task.view.tree.electrica</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <header>
+                <button name="open_certificate_wizard_electrica" string="Asignar Informe" type="object" class="btn-primary"/>
+                </header>
+                <field name="certificate_number" readonly="1"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
+                <field name="partner_id" string ="CLIENTE" readonly="1"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="marca_equipo" optional="show"/>
+                <field name="numero_serie" optional="show"/>
+                <field name="modelo_euipo" optional="show"/>
+                <field name="number_piezas" optional="show"/>
+                <field name="clasificacion_equipo" optional="show" />
+                <field name="numero_id" optional="show"/>
+                <field name="date_limpieza" optional="show" />
+                <field name="date_calibracion" optional="show"/>
+                <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
+                <field name="supervisor_lab" widget="many2one_avatar_user"/>
+                <field name="calibrado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="aprobado_por_lab" widget="many2one_avatar_user" optional="show"/>
+                <field name="date_calibracion_opcional" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="date_entrega_lab_real" optional="show" />
+                <field name="estado_service_lab" optional="show"/>
+                <field name="tipo_mantenimiento_equipo" optional="show"/>
+                <field name="tiempo_entrega" optional="show"/>
+                <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="observations_lab"  optional="show" />
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view Calidad-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_calidad">
+            <field name="name">w.inherit.project.task.view.tree.calidad</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Calidad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <field name="certificate_number" readonly="1"/>
+                <field name="service_order" string ="ORDEN DE SERVICIO"/>
+                <field name="fecha_revision_cotizacion" optional="show"/>
+                <field name="fecha_envio_facturar" optional="show"/>
+                <field name="date_ingreso_lab" optional="show"/>
+                <field name="date_entrega_lab" optional="show"/>
+                <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
+                <field name="estado_service_lab" optional="show" readonly="1"/>
+                <field name="date_reception" string ="FECHA DE RECEPCION" optional="show"/>
+                <field name="date_delivery" string ="FECHA DE ENTREGA" optional="show"/>
+                <field name="dias_entre_fechas_recepsion_entrega" optional="show"/>
+                <field name="dias_entre_fechas_recepsion_orden" optional="show"/>
+                <field name="dias_entre_fechas_cotizacion_ingreso_lab" optional="show"/>
+                <field name="sucursal_lab" optional="show"/>
+                <field name="lugar_service" optional="show"/>
+                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
+                 <field name="company_id" invisible="1"/>
+                <field name="motivo_sustitucion_informe" optional="show"/>
+                <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--tree view Etiquetas-->
+        <record model="ir.ui.view" id="w_inherit_project_task_view_tree_etiquetas">
+            <field name="name">w.inherit.project.task.view.tree.etiquetas</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tree Etiquetas"  multi_edit="1" editable="bottom">
+                <field name="certificate_number" readonly="1"/>
+                <field name="calibrado_por_lab" readonly="1" widget="many2one_avatar_user" optional="show"/>
+                <field name="numero_serie"/>
+                <field name="numero_id"/>
+                <field name="date_calibracion_opcional"/>
+                <field name="date_calibracion"/>
+                <field name="date_proxima_calibracion_opcional"/>
+                <field name="date_proxima_calibracion"/>
+                <field name="codificasion"/>
+                 <field name="company_id" invisible="1"/>
+                </tree>  
+            </field>
+        </record>
+
+        <!--action view Masa-->
+        <record id="action_menu_masa_tree" model="ir.actions.act_window">
+            <field name="name">MASA</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_masa"/>
+            <field name="domain">[('display_project_id','ilike',' Servicio Masa'),("service_order","!=",False)]</field>
+            <!-- <field name="domain">['|',('user_ids','=',uid),('manager_id','=',uid),('service_order','=',True)]</field> -->
+            <field name="help" type="html">
+
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.01.02.08</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.02.09</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.02.01.09</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+    
+        <!--action view Temperatura-->
+        <record id="action_menu_temperatura" model="ir.actions.act_window">
+            <field name="name">TEMPERATURA</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_temperatura"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Temperatura'),("service_order","!=",False)]</field>
+            <!-- <field name="domain">['|',('user_ids','=',uid),('manager_id','=',uid)]</field> -->
+            <field name="help" type="html">
+                    <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Humedad-->
+        <record id="action_menu_humedad" model="ir.actions.act_window">
+            <field name="name">HUMEDAD</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_humedad"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Humedad'),("service_order","!=",False)]</field>
+            <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Mediciones especiales-->
+        <record id="action_menu_med" model="ir.actions.act_window">
+            <field name="name">MED</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_med"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Mediciones Especiales'),("service_order","!=",False)]</field>
+            <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Kaye-->
+        <record id="action_menu_kaye" model="ir.actions.act_window">
+            <field name="name">KAYE</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_kaye"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Kaye'),("service_order","!=",False)]</field>
+            <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Volumen-->
+        <record id="action_menu_volumen" model="ir.actions.act_window">
+            <field name="name">VOLUMEN</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_volumen"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Volumen'),("service_order","!=",False)]</field>
+            <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Electrica-->
+        <record id="action_menu_electrica" model="ir.actions.act_window">
+            <field name="name">ELECTRICA</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_electrica"/>
+            <field name="domain">[('display_project_id','ilike','Servicio Electrica'),("service_order","!=",False)]</field>
+            <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+        <!--action view Calidad-->
+        <record id="action_menu_calidad" model="ir.actions.act_window">
+            <field name="name">CALIDAD</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_calidad"/>
+            <field name="domain">[("service_order","!=",False)]</field>
+             <field name="help" type="html">
+                 <body>
+
+                    <header>
+
+                       <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <thead>
+                        <tr>
+                            <td rowspan="2" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FA.G.00.00.00</span>
+                            </td>
+                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
+                            <strong>
+                            <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
+                            Uso de formatos electrónicos y hojas de cálculo
+                            Asignación de números de certificados de calibración
+                            </span></strong></td>
+                            <td class="text-center" style="border: 2px solid black;">
+                                <span>IT.M.00.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="border: 2px solid black;vertical-align:middle;">
+                                <span>FI.M.00.00.00</span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table> 
+
+                    </header>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br> 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    <footer>
+                         <div class="row">
+                                <div class="col-1">
+                                 </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Av. Ingenieros Militares No. 111-B, Col. Lomas de Sotelo, 11200, CDMX</p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">Tels.: 55 5359 0088 - 5559 4206 - 5359 4363</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: center;">E-mail: <u>oficina@inscomexico.com</u></p>
+                                </div>
+                                <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10">
+                                <p style="text-align: right;">.</p>
+                                 </div>
+                                <div class="col-1"></div>
+                                </div>
+                    </footer>
+
+                    </body>
+            </field>
+           
+        </record>
+
+
+        <!--action view Etiquetas-->
+        <record id="action_menu_etiquetas" model="ir.actions.act_window">
+            <field name="name">ETIQUETAS</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="w_inherit_project_task_view_tree_etiquetas"/>
+            <field name="domain">[("service_order","!=",False),("certificate_number","!=",False),("date_calibracion","!=",False),("date_proxima_calibracion","!=",False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Vista para imprimir etiquetas, si tu registro no aparece revisa que ya contenga los siguientes datos Orden de servicio,número de informe,fecha de calibración y fecha de próxima calibración 
+                </p>
+            </field>
+
+           
+        </record>
+
+        <menuitem
+            id="action_menu_indicadores"
+            parent="project.menu_main_pm"
+            name="Bitácoras técnicas"/>
+
+        <menuitem
+            id="action_etiquetas"
+            parent="project.menu_main_pm"
+            name="Etiquetas"
+            action="action_menu_etiquetas"/>
+
+
+        <menuitem
+            name="Masa"
+            id="menu_masa"
+            parent="action_menu_indicadores"
+            action="action_menu_masa_tree"
+            sequence="1"/>
+
+        
+        <menuitem
+            name="Humedad"
+            id="menu_humedad"
+            parent="action_menu_indicadores"
+            action="action_menu_humedad"
+            sequence="3"/>
+
+
+        <menuitem
+            name="Mediciones"
+            id="menu_med"
+            parent="action_menu_indicadores"
+            action="action_menu_med"
+            sequence="4"/>
+
+        <menuitem
+            name="Kaye"
+            id="menu_kaye"
+            parent="action_menu_indicadores"
+            action="action_menu_kaye"
+            sequence="5"/>
+
+        <menuitem
+            name="Volumen"
+            id="menu_volumen"
+            parent="action_menu_indicadores"
+            action="action_menu_volumen"
+            sequence="6"/>
+
+        <menuitem
+            name="Eléctrica"
+            id="menu_electica"
+            parent="action_menu_indicadores"
+            action="action_menu_electrica"
+            sequence="7"/>
+
+        <menuitem
+            name="Temperatura"
+            id="menu_temp"
+            parent="action_menu_indicadores"
+            action="action_menu_temperatura"
+            sequence="8"/>
+
+        <menuitem
+            name="Calidad"
+            id="menu_calidad"
+            parent="action_menu_indicadores"
+            action="action_menu_calidad"
+            sequence="9"/>
+
+
+    </data>
+</odoo>

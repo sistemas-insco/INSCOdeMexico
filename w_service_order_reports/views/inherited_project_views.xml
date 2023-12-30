@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="project.view_task_form2" />
             <field name="arch" type="xml">
                 <xpath expr="//group[field/@name='date_deadline']" position="inside">
-                    <field name="service_order" />
+                    <field name="service_order"/>
                     <field name="invoice_number" />
                 </xpath>
             </field>
@@ -18,7 +18,25 @@
             <field name="inherit_id" ref="project.view_task_tree2" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='project_id']" position="after">
-                    <field name="service_order" />
+                    <field name="certificate_number" readonly="1" optional="show"/>
+                    <field name="service_order" string ="ORDEN DE SERVICIO" optional="show" />
+
+                    <field name="observations_report_equipment_reception" optional="show"/>
+                    <field name="date_reception" optional="show"/>
+                    <field name="brought_by" optional="show"/>
+
+                    <field name="conditions_report_service_order" optional="show"/>
+                    <field name="date_service_order" optional="show"/>
+                    <field name="fecha_revision_cotizacion" optional="show"/>
+                    <field name="especial_requiriments" optional="show"/>
+                    <field name="lugar_service" optional="show"/>
+                    <field name="sucursal_lab" optional="show"/>
+                    <field name="urgencia_del_servicio" optional="show"/>
+                    <field name="observations_report_equipment_delivery" optional="show"/>
+                    <field name="date_delivery" optional="show"/>
+                    <field name="delivery_by" optional="show"/>
+                    <field name="invoice_number" optional="show"/>
+
                 </xpath>
             </field>
         </record>

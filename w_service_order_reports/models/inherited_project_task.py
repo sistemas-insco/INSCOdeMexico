@@ -71,7 +71,10 @@ class ProjectTask(models.Model):
                 'qty': task.sale_line_id.product_uom_qty,
                 'description': task.get_description_text(),
                 'procedures': procedures,
-                'tags': tags
+                'tags': tags,
+                'certificate_number': task.certificate_number,
+                'observations_report_equipment_delivery': task.observations_report_equipment_delivery,
+                'observations_report_equipment_reception': task.observations_report_equipment_reception
                 } for task in docs]
         return docs[0].with_context({
             'service_orders': service_orders,

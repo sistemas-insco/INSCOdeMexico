@@ -9,6 +9,276 @@
             <field name="number_increment" eval="1" />
             <field name="company_id" eval="False" />
         </record>
+
+          <!-- secuencias laborarotio masa matriz -->
+        <record id="sequence_lab_masa_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion Masa Matriz CC</field>
+            <field name="code">sequence.lab.masa.matriz.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.M/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="sequence_lab_masa_matriz_reporte_servicio" model="ir.sequence">
+            <field name="name">Numero de Reporte servicio Masa Matriz RS</field>
+            <field name="code">sequence.lab.masa.reporte.servicio</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.M/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- secuencias laborarotio temperatura matriz -->
+        <record id="sequence_lab_temperatura_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion temperatura Matriz CC</field>
+            <field name="code">sequence.lab.temperatura.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_matriz_certificado_medicion" model="ir.sequence">
+            <field name="name">Numero de Certificado de Medicion temperatura Matriz CM</field>
+            <field name="code">sequence_lab.temperatura.matriz.certificado.medicion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_matriz_certificado_estudio_termico" model="ir.sequence">
+            <field name="name">Numero de Certificado de Estudio Termico temperatura Matriz CE</field>
+            <field name="code">sequence.lab.matriz.temperatura.certificado.estudio.termico</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_matriz_reporte_servicio" model="ir.sequence">
+            <field name="name">Numero de Reporte temperatura Matriz RS</field>
+            <field name="code">sequence.lab.temperatura.matriz.reporte.servicio</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <!-- secuencias laborarotio temperatura Guadalajara -->
+        <record id="sequence_lab_temperatura_guadalajara_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion temperatura Guadalajara CC</field>
+            <field name="code">sequence.lab.temperatura.guadalajara.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_guadalajara_certificado_medicion" model="ir.sequence">
+            <field name="name">Numero de Certificado de Medicion temperatura Guadalajara CM</field>
+            <field name="code">sequence.lab.temperatura.guadalajara.certificado.medicion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_guadalajara_certificado_estudio_termico" model="ir.sequence">
+            <field name="name">Numero de Certificado de Estudio Termico temperatura Guadalajara CE</field>
+            <field name="code">sequence.lab.temperatura.guadalajara.certificado.estudio.termico</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_temperatura_guadalajara_reporte_servicio" model="ir.sequence">
+            <field name="name">Numero de Reporte temperatura Guadalajara RS</field>
+            <field name="code">sequence.lab.guadalajara.temperatura.reporte.servicio</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.T/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- secuencias laborarotio Humedad Matriz -->
+        <record id="sequence_lab_humedad_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion humedad Matriz CC</field>
+            <field name="code">sequence.lab.humedad.matriz.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.H/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <!-- secuencias laborarotio Humedad Guadalajara -->
+        <record id="sequence_lab_humedad_guadalajara_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion humedad Guadalajara CC</field>
+            <field name="code">sequence.lab.guadalajara.humedad.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.H/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- secuencias laborarotio mediciones especiales Matriz -->
+        <record id="sequence_lab_med_matriz_certificado_medicion_caracterizacion" model="ir.sequence">
+            <field name="name">Numero de Certificado medicion o Caracterizacion med Matriz CM</field>
+            <field name="code">sequence.lab.med.matriz.certificado.medicion.caracterizacion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.ME/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_lab_med_matriz_reporte_monitoreo" model="ir.sequence">
+            <field name="name">Numero Reporte Monitoreo med Matriz RM</field>
+            <field name="code">sequence.lab.med.matriz.monitoreo.termico</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.ME/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        
+
+        <record id="sequence_lab_med_matriz_reporte_calificacion" model="ir.sequence">
+            <field name="name">Numero de Reporte de Calificacion med Matriz RC</field>
+            <field name="code">sequence.lab.med.matriz.reporte.calificacion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.ME/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        
+
+        <record id="sequence_lab_med_matriz_gestion_riesgo" model="ir.sequence">
+            <field name="name">Numero gestion de Riesgo med Matriz GR</field>
+            <field name="code">sequence.lab.med.matriz.monitoreo.termico</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">ME/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+       
+        <!-- secuencias laborarotio kaye Matriz -->
+        <record id="sequence_lab_kaye_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion KAYE Matriz CC</field>
+            <field name="code">sequence.lab.kaye.matriz.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.K/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <record id="sequence_lab_kaye_matriz_reporte_servicio" model="ir.sequence">
+            <field name="name">Numero de Reporte servicio kaye Matriz RS</field>
+            <field name="code">sequence.lab.kaye.matriz.reporte.servicio</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.K/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- secuencias laborarotio volumen Matriz-->
+        <record id="sequence_lab_volumen_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion Volumen Matriz CC</field>
+            <field name="code">sequence.lab.volumen.matriz.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.V/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <record id="sequence_lab_volumen_matriz_reporte_servicio" model="ir.sequence">
+            <field name="name">Numero de Reporte volumen Matriz RS</field>
+            <field name="code">sequence.lab.volumen.matriz.reporte.servicio</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.V/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <!-- secuencias laborarotio electrica Matriz -->
+        <record id="sequence_lab_electrica_matriz_certificado_calibracion" model="ir.sequence">
+            <field name="name">Numero de Certificado Calibracion Electrica Matriz CC</field>
+            <field name="code">sequence.lab.electrica.matriz.certificado.calibracion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">.E/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+
+
     </data>
 </odoo>
 
