@@ -39,13 +39,17 @@
         'w_document_mod'
     ],
     'data': [
+        'security/security_bitacora_lab.xml',
+        'security/ir.model.access.csv',
         'report/template_project_task_equipment_delivery.xml',
         'report/template_project_task_service_order.xml',
         'report/template_project_task_reception_equipment.xml',
+        'report/template_project_task_certificate_labels.xml',
         'report/project_task_report.xml',
         'views/inherit_res_company_view.xml',
         'views/inherit_project_task_view.xml',
-        'views/inherit_sale_order.xml'
+        'views/inherit_sale_order.xml', 
+        'wizard/certificate_wizard_view_form.xml'
     ],
     'demo': [],
     'qweb': [],
