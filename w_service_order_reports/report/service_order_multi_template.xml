@@ -41,8 +41,8 @@
         <div class="footer">
             <div class="row">
                 <div class="col-12 mb4 text-left">
-                    <strong><span style="font-size: 14px;">Special requirements:</span></strong>
-                    <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span>
+                    <!-- <strong><span style="font-size: 14px;">Special requirements:</span></strong>
+                    <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span> -->
                 </div>
             </div>
             <br></br>
@@ -135,8 +135,7 @@
     <template id="w_order_service_multi_report_document">
         <t t-call="w_service_order_reports.w_service_order_multi_layout_standard">
 
-            <t t-set="o" t-value="doc"/>
-            <!-- <t t-set="o" t-value="doc.with_context({'lang': doc.user_ids.lang})" /> -->
+            <t t-set="o" t-value="doc.with_context({'lang': doc.user_ids.lang})" />
             
             <div class="page" style="padding-top: 40px !important;">
 

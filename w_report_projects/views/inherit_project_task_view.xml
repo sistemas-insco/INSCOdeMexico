@@ -6,11 +6,13 @@
             <field name="model">project.task</field>
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
-
-                <notebook position="inside">
-                    <page string = "Información de reportes" groups="hr.group_hr_user">
-                         <group col="2">  
-
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                        <field name="number_tags"/>
+                        <field name="certificate_number"/>
+                </xpath>
+                <xpath expr="//notebook" position="after">
+                    <separator string="Reports information"/>
+                    <group>
                         <group  string="Recepcion de Items">
                             <field name="observations_report_equipment_reception"/>
                             <field name="date_reception"/>
@@ -19,67 +21,15 @@
                         <group string="Orden de Servicio">
                             <field name="conditions_report_service_order"/>
                             <field name="date_service_order"/>
-                            <field name="fecha_revision_cotizacion"/>
                             <field name="especial_requiriments"/>
-                            <field name="lugar_service"/>
-
                         </group>
                         <group string="Entrega de Items">
                             <field name="observations_report_equipment_delivery"/>
                             <field name="date_delivery"/>
                             <field name="delivery_by"/>
                         </group>
-
-
-                        <group string="Indicador de tiempo">
-                            <field name="dias_entre_fechas_recepsion_entrega"/>
-                            <field name="dias_entre_fechas_recepsion_orden"/>
-                            <field name="dias_entre_fechas_cotizacion_ingreso_lab"/>
-                            <field name="dias_entre_fechas_ingreso_salida_lab"/>
-                        </group>
-                        
-
-                        </group>  
-                    </page>
-                </notebook>
-
-                <notebook position="inside">
-                    <page string = "Bitacora Tecnica" groups="hr.group_hr_user">
-                         <group col="2">  
-                            <group string="Datos Generales del servicio">
-                                <field name="certificate_number" readonly="1"/>
-                                <field name="date_ingreso_lab" readonly="1"/>
-                                <field name="number_piezas" readonly="1"/>
-                                <field name="numero_serie" readonly="1"/>
-                                <field name="numero_id" readonly="1"/>
-                                <field name="marca_equipo" readonly="1"/>
-                                <field name="modelo_euipo" readonly="1"/>
-                                <field name="date_calibracion" readonly="1"/>
-                               
-                            </group >
-                            <group string="Datos Generales del servicio">
-                                <field name="date_supervision_lab" readonly="1"/>
-                                <field name="date_entrega_lab" readonly="1"/>
-                                <field name="date_entrega_lab_real" readonly="1"/>
-                                <field name="date_proxima_calibracion" readonly="1"/>
-                                <field name="lugar_service" readonly="1"/>
-                                <field name="tipo_mantenimiento_equipo" readonly="1"/>
-                                <field name="observations_lab" readonly="1"/>
-                            
-                            </group >
-                            <group string="Datos Masa">
-                                <field name="date_limpieza" readonly="1"/>
-                                <field name="date_det_vol_final" readonly="1"/>
-                            </group>
-                            <group string="Datos MED">
-                                <field name="tipo_servicio_med" readonly="1"/>
-                                <field name="getion_rieesgo_med" readonly="1"/>
-                            </group>
-
-
-                        </group>  
-                    </page>
-                </notebook>
+                    </group>
+                </xpath>
             </field>
         </record>
     </data>

@@ -49,8 +49,7 @@ Service Order Reports for INSCO.
         'views/inherited_project_views.xml',
         'report/service_order_multi_template.xml',
         'report/service_order_multi_report.xml',
-        'report/inherited_service_order_report.xml',
-        'views/inherit_project_task_view_menu.xml'
+        'report/inherited_service_order_report.xml'
     ],
     'demo': [],
     'installable': True,

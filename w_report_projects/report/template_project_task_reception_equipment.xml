@@ -106,15 +106,12 @@
                             </td> -->
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong><span>Tipo de servicio y tipo de instrumento</span></strong></td>
-                            <td rowspan="2" class="text-center" style="border: 2px solid black;">
-                            <strong><span>Observaciones</span></strong></td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr t-foreach="services_data" t-as="serv">
                            <!--  <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['qty']"/></span></td> -->
                             <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['service']"/><!-- <br t-esc="serv['description']"/> --></span></td>
-                            <td><span style="font-family:'arialfont'; font-size: 14px;"><t t-esc="serv['observations_report_equipment_reception']"/></span></td>
                         </tr>
 
                     </tbody>
@@ -125,14 +122,14 @@
 
             </div>
             <div class="footer">
-               <!--  <div class="row">
+                <div class="row">
                 <table style="border-spacing:0;margin-bottom:0;" class="table">
                         <tr>
                             <td width="20%" height="40" style="border: 1px solid black;vertical-align:middle;">Observaciones:</td>
                             <td width="80%" height="40" style="border: 1px solid black;"><span t-if="o.observations_report_equipment_reception"><span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.observations_report_equipment_reception"/></span></td>
                         </tr>
                 </table>
-            </div> -->
+            </div>
              <br></br>
                 
                  
