@@ -88,6 +88,8 @@ class ProjectTask(models.Model):
         string="FECHA DE SOLICITUD DE FACTURA"
     )
 
+    fecha_solicitud_cotizacion = fields.Date(string="Fecha Solicitud de cotizacion")
+
 #----------------------Campos generales de la bitacora de areas tecnicas--------------------#
 
 
