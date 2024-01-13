@@ -26,4 +26,5 @@
 ########################################################################
 
 from . import inherited_project_task
+from . import new_models_bitacora
 

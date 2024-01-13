@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!--- accesoso para asignar numeros de informe y creacion de clasificacion de equipos -->
+
+    <record id="group_bitacora_certificados" model="res.groups">
+        <field name="name">Acceso a Asignacion de numero de certificados y creacion de clasificacion de equipos</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <!-- <field name="menu_access" ref="project.task.menu_masa"/> -->
+    </record>
+
+    <!-- <record model="ir.rule" id="asignacion_certificado_bitacoras">
+        <field name="name">Asignacion de certificados </field>
+        <field name="model_id" ref="model_certificate_wizard"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_certificados'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_clasificacion_equipos">
+        <field name="name">Crear Clasificacion de equipos </field>
+        <field name="model_id" ref="model_item_clasificacion"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_certificados'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+
+        <!--- accesoso a menu de bitacoras y creacion de Marca y modelos de equipos  -->
+
+
+        <!-- Accesos masa -->
+
+    <record id="group_bitacora_masa" model="res.groups">
+        <field name="name">Masa</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_masa'))]"/>
+        <!-- <field name="view_access" eval="[(4, ref('w_service_order_reports.w_inherit_project_task_view_tree_masa'))]"/> -->
+        <!-- <field name="menu_access" ref="project.task.menu_masa"/> -->
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_masa">
+        <field name="name">Crear Marca de equipos masa </field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_masa'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_masa">
+        <field name="name">Crear Modelo de equipos masa </field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_masa'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+ -->
+
+            <!-- Accesos Temperatura -->
+
+    <record id="group_bitacora_temperatura" model="res.groups">
+        <field name="name">Temperatura</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_temp'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_temperatura">
+        <field name="name">Crear Marca de equipos temperatura </field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_temperatura'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_temperatura">
+        <field name="name">Crear Modelo de equipos temperatura </field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_temperatura'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+
+
+
+    <!-- Accesos Humedad -->
+
+    <record id="group_bitacora_humedad" model="res.groups">
+        <field name="name">Humedad</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_humedad'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_humedad">
+        <field name="name">Crear Marca de equipos humedad</field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_humedad'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_humedad">
+        <field name="name">Crear Modelo de equipos humedad</field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_humedad'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+    <!-- Accesos Mediciones especiales -->
+
+
+    <record id="group_bitacora_med" model="res.groups">
+        <field name="name">Med</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_med'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_med">
+        <field name="name">Crear Marca de equipos med</field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_med'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_med">
+        <field name="name">Crear Modelo de equipos med</field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_med'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+    <!-- Accesos Kaye -->
+
+
+    <record id="group_bitacora_kaye" model="res.groups">
+        <field name="name">Kaye</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_kaye'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_kaye">
+        <field name="name">Crear Marca de equipos kaye</field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_kaye'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_keye">
+        <field name="name">Crear Modelo de equipos keye</field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_kaye'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+    <!-- Accesos Volumen -->
+
+
+    <record id="group_bitacora_volumen" model="res.groups">
+        <field name="name">Volumen</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_volumen'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_volumen">
+        <field name="name">Crear Marca de equipos volumen</field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_volumen'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_volumen">
+        <field name="name">Crear Modelo de equipos volumen</field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_volumen'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+
+    <!-- Accesos Electrica -->
+
+
+    <record id="group_bitacora_electrica" model="res.groups">
+        <field name="name">Electrica</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_electica'))]"/>
+    </record>
+
+    <!-- <record model="ir.rule" id="crear_marca_equipos_electrica">
+        <field name="name">Crear Marca de equipos electrica</field>
+        <field name="model_id" ref="model_item_marca"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_volumen'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="crear_modelo_equipos_electrica">
+        <field name="name">Crear Modelo de equipos electrica</field>
+        <field name="model_id" ref="model_item_modelo"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_bitacora_electrica'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+
+    <!-- Accesos Calidad -->
+
+    <record id="group_bitacora_calidad" model="res.groups">
+        <field name="name">Calidad</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.menu_calidad'))]"/>
+    </record>
+
+    <!-- Accesos Etiquetas -->
+
+
+    <record id="group_bitacora_etiquetas" model="res.groups">
+        <field name="name">Etiquetas Lab</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="menu_access" eval="[(4, ref('w_service_order_reports.action_etiquetas'))]"/>
+    </record>
+
+
+   
+
+    <!-- <record model="ir.rule" id="see_all_inventario_gerentes">
+        <field name="name">Ver todos los regitros equipos</field>
+        <field name="model_id" ref="model_team_computer"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_sistemas_manager'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record> -->
+
+
+
+</odoo>

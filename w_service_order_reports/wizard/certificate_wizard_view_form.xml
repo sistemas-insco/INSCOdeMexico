@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Vista laboratorio de masa -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_masa">
+          <field name="name">certificate.wizard.view.form.masa</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio Masa">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_masa" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+         <!-- Vista laboratorio de temperatura -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_temperatura">
+          <field name="name">certificate.wizard.view.form.temperatura</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio Temperatura">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_temperatura" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Vista laboratorio de humedad -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_humedad">
+          <field name="name">certificate.wizard.view.form.temperatura</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio Humedad">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_humedad" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Vista laboratorio de med -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_med">
+          <field name="name">certificate.wizard.view.form.med</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio MED">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_med" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Vista laboratorio de kaye -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_kaye">
+          <field name="name">certificate.wizard.view.form.med</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio Kaye">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_kaye" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Vista laboratorio de volumen -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_volumen">
+          <field name="name">certificate.wizard.view.form.volumen</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio volumen">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_volumen" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Vista laboratorio de electrica -->
+        <record model="ir.ui.view" id="certificate_wizard_view_form_electrica">
+          <field name="name">certificate.wizard.view.form.electrica</field>
+          <field name="model">certificate.wizard</field>
+          <field name="arch" type="xml">
+            <form string="Asignar Tipo de documento Laboratorio Electrica">
+              <group>
+                <field name="tipo_documento"/>
+                <field name="lugar_lab"/>
+              </group>
+              <footer>
+                <button name="update_certificate_number_electrica" string="Asignar" type="object" class="btn-primary"/>
+                <button string="Cancelar" class="btn-default" special="cancel"/>
+              </footer>
+            </form>
+          </field>
+        </record>
+    </data>
+</odoo>
