@@ -74,7 +74,7 @@ class ProjectTask(models.Model):
         help='Observations for report delivery equipment',
         tracking=True)
 
-    certificate_number = fields.Char(string='Certificate number',
+    certificate_number = fields.Char(string='NUMERO DE INFORME',
         tracking=True)
 
     def get_street_partner(self):

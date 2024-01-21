@@ -45,7 +45,8 @@
         'report/project_task_report.xml',
         'views/inherit_res_company_view.xml',
         'views/inherit_project_task_view.xml',
-        'views/inherit_sale_order.xml'
+        'views/inherit_sale_order.xml', 
+        
     ],
     'demo': [],
     'qweb': [],

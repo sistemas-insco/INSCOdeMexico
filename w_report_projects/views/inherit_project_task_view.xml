@@ -6,13 +6,15 @@
             <field name="model">project.task</field>
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
+
                 <xpath expr="//field[@name='tag_ids']" position="after">
-                        <field name="number_tags"/>
                         <field name="certificate_number"/>
                 </xpath>
-                <xpath expr="//notebook" position="after">
-                    <separator string="Reports information"/>
-                    <group>
+
+                <notebook position="inside">
+                    <page string = "Información de reportes" groups="hr.group_hr_user">
+                         <group col="2">  
+
                         <group  string="Recepcion de Items">
                             <field name="observations_report_equipment_reception"/>
                             <field name="date_reception"/>
@@ -22,14 +24,26 @@
                             <field name="conditions_report_service_order"/>
                             <field name="date_service_order"/>
                             <field name="especial_requiriments"/>
+
                         </group>
                         <group string="Entrega de Items">
                             <field name="observations_report_equipment_delivery"/>
                             <field name="date_delivery"/>
                             <field name="delivery_by"/>
                         </group>
-                    </group>
-                </xpath>
+
+
+                        <!-- <group string="Indicador de tiempo">
+                            <field name="dias_entre_fechas_recepsion_entrega"/>
+                            <field name="dias_entre_fechas_recepsion_orden"/>
+                            <field name="dias_entre_fechas_cotizacion_ingreso_lab"/>
+                            <field name="dias_entre_fechas_ingreso_salida_lab"/>
+                        </group> -->
+                        
+
+                        </group>  
+                    </page>
+                </notebook>
             </field>
         </record>
     </data>
