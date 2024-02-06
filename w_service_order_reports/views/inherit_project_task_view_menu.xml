@@ -70,7 +70,7 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show"/>
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show"/>
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -93,7 +93,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-               <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -117,7 +116,7 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -139,7 +138,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -163,7 +161,7 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -185,7 +183,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -208,7 +205,7 @@
                 <field name="getion_rieesgo_med" optional="show" />
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -240,8 +237,6 @@
                 <!-- <field name="tiempo_asignado_med" optional="show"/> -->
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                  <!-- falta modificar -->
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab_med', '=', 'ENTREGADO'), ('estado_service_lab_med', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -264,7 +259,7 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -286,7 +281,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -309,7 +303,7 @@
                 <field name="service_order" string="ORDEN DE SERVICIO" readonly="1"/> 
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string="DESCRIPCIÓN" optional="show"/>
+                <field name="descripcion_linea_ventas" string="DESCRIPCIÓN" optional="show"/>
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -331,7 +325,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab" optional="show"/>
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -354,7 +347,7 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
-                <field name="description" string ="DESCRIPCIÓN" optional="show" />
+                <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                 <field name="marca_equipo" optional="show"/>
                 <field name="numero_serie" optional="show"/>
                 <field name="modelo_euipo" optional="show"/>
@@ -376,7 +369,6 @@
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -396,18 +388,17 @@
                 <field name="service_order" string ="ORDEN DE SERVICIO"/>
                 <field name="fecha_revision_cotizacion" optional="show"/>
                 <field name="fecha_envio_facturar" optional="show"/>
-                <field name="date_ingreso_lab" optional="show"/>
-                <field name="date_entrega_lab" optional="show"/>
+                <field name="date_ingreso_lab" string ="FECHA DE INGRESO AL LAB"  readonly="1" optional="show"/>
+                <field name="date_entrega_lab" readonly="1" optional="show"/>
                 <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
                 <field name="estado_service_lab" optional="show" readonly="1"/>
-                <field name="date_reception" string ="FECHA DE RECEPCION" optional="show"/>
-                <field name="date_delivery" string ="FECHA DE ENTREGA" optional="show"/>
+                <field name="date_reception" string ="FECHA DE RECEPCION INSCO" optional="show"/>
+                <field name="date_delivery" string ="FECHA DE ENTREGA INSCO" optional="show"/>
                 <field name="dias_entre_fechas_recepsion_entrega" optional="show"/>
                 <field name="dias_entre_fechas_recepsion_orden" optional="show"/>
                 <field name="dias_entre_fechas_cotizacion_ingreso_lab" optional="show"/>
                 <field name="sucursal_lab" optional="show"/>
                 <field name="lugar_service" optional="show"/>
-                <field name="date_entrega_lab" string="ENTREGA" widget="remaining_days" attrs="{'invisible': ['|', ('estado_service_lab', '=', 'ENTREGA'), ('estado_service_lab', '=', 'CANCELADO')]}"/>
                  <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>

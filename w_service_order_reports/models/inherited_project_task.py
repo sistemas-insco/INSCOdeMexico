@@ -45,6 +45,10 @@ class ProjectTask(models.Model):
         store = True,
         tracking=True
     )
+    descripcion_linea_ventas = fields.Text(
+        string="DESCRIPCIÓN DEL ITEM",
+        related = 'sale_line_id.name'
+    )
 
 
 #------------------Campos de los documentos de recepcion, orden de servicio y entrega-------------------# 
@@ -94,7 +98,7 @@ class ProjectTask(models.Model):
 
 
     date_ingreso_lab = fields.Date(
-        string='FECHA DE RECEPCIÓN A LAB.',
+        string='FECHA DE RECEPCIÓN A LAB',
         help='Fecha en la que el área de recepción hace la entrega de los equipos y el laboratorio los recibe',
         tracking=True
     )
@@ -261,13 +265,23 @@ class ProjectTask(models.Model):
                                             default='ordinario',
     )
 
+    # tipo_mantenimiento_equipo = fields.Selection([
+    #                                     ('AJUSTE', 'AJUSTE'),
+    #                                     ('REVISION', 'REVISIÓN'),                                   
+    #                                     ('MANTENIMIENTOPRE', 'MANTENIMIENTO PRE'),
+    #                                     ('MANTENIMIENTOCOR', 'MANTENIMIENTO COR'),
+    #                                     ('REPARACION', 'REPARACIÓN'),
+    #                                     ('SOLICITUDDECORRECCION', 'SOLICITUD DE CORRECIÓN'),#eliminar
+    #                                     ('N/A', 'N/A')],
+    #                                     string='TIPO DE MANTENIMINETO',default='N/A',
+    # )
+
     tipo_mantenimiento_equipo = fields.Selection([
-                                        ('AJUSTE', 'AJUSTE'),
-                                        ('REVISION', 'REVISIÓN'),                                   
-                                        ('MANTENIMIENTOPRE', 'MANTENIMIENTO PRE'),
-                                        ('MANTENIMIENTOCOR', 'MANTENIMIENTO COR'),
-                                        ('REPARACION', 'REPARACIÓN'),
-                                        ('SOLICITUDDECORRECCION', 'SOLICITUD DE CORRECIÓN'),
+                                        ('AJUSTE', 'Ajuste'),
+                                        ('REVISION', 'Revición'),                                   
+                                        ('MANTENIMIENTOPRE', 'Mantenimineto Preventivo'),
+                                        ('MANTENIMIENTOCOR', 'Mantenimineto Corecctivo'),
+                                        ('REPARACION', 'Reparción'),
                                         ('N/A', 'N/A')],
                                         string='TIPO DE MANTENIMINETO',default='N/A',
     )
@@ -288,7 +302,7 @@ class ProjectTask(models.Model):
     )
 
     observations_lab = fields.Text(
-        string='OBSERVACIÓNES',
+        string='OBSERVACIÓNES LAB',
         help='Observaciónes del equipo',
         tracking=True
     )
@@ -467,23 +481,23 @@ class ProjectTask(models.Model):
     @api.depends('date_reception', 'date_delivery')
     def _compute_num_dias_recepcion_entrega(self):
         dias_no_habiles = [
-        date(2024, 1, 1),   # 1 de enero: Año Nuevo
-        date(2024, 2, 5),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
-        date(2024, 3, 18),  # 18 de marzo: Natalicio de Benito Juárez
-        date(2024, 5, 1),   # 1 de mayo: Día del Trabajo
-        date(2024, 9, 16),  # 16 de septiembre: Día de la Independencia
-        date(2024, 10, 1),  # 1 de octubre: cambio de poder ejecutivo
-        date(2024, 11, 18), # 18 de noviembre: revolucion mexicana
-        date(2024, 12, 25), # Navidad
+        datetime(2024, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2024, 2, 5).date(),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
+        datetime(2024, 3, 18).date(),  # 18 de marzo: Natalicio de Benito Juárez
+        datetime(2024, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2024, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
+        datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2024, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_delivery:
                 date_reception = registro.date_reception
                 date_delivery = registro.date_delivery
                 diferencia = date_delivery - date_reception
-                dias = diferencia.days + 1  # Se agrega 1 para incluir la fecha final
+                dias = diferencia.days #+ 1   Se agrega 1 para incluir la fecha final
                 #dias_no_habiles = [d.day for d in dias_no_habiles]  # Convertir objetos fecha a enteros (días)
-                dias_habiles = [d for d in range(dias) if (date_reception + timedelta(d)).weekday() < 5 and (date_reception + timedelta(d)).day not in dias_no_habiles]
+                dias_habiles = [d for d in range(dias) if (date_reception + timedelta(d)).weekday() < 5 and (date_reception + timedelta(d)) not in dias_no_habiles]
                 registro.dias_entre_fechas_recepsion_entrega = len(dias_habiles)
             else:
                 registro.dias_entre_fechas_recepsion_entrega = 0
@@ -493,14 +507,14 @@ class ProjectTask(models.Model):
     @api.depends('date_reception', 'date_service_order')
     def _compute_num_dias_recepsion_orden(self):
         dias_no_habiles = [
-        date(2024, 1, 1),   # 1 de enero: Año Nuevo
-        date(2024, 2, 5),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
-        date(2024, 3, 18),  # 18 de marzo: Natalicio de Benito Juárez
-        date(2024, 5, 1),   # 1 de mayo: Día del Trabajo
-        date(2024, 9, 16),  # 16 de septiembre: Día de la Independencia
-        date(2024, 10, 1),  # 1 de octubre: cambio de poder ejecutivo
-        date(2024, 11, 18), # 18 de noviembre: revolucion mexicana
-        date(2024, 12, 25), # Navidad
+        datetime(2024, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2024, 2, 5).date(),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
+        datetime(2024, 3, 18).date(),  # 18 de marzo: Natalicio de Benito Juárez
+        datetime(2024, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2024, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
+        datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2024, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_service_order:
@@ -509,7 +523,7 @@ class ProjectTask(models.Model):
                 diferencia = date_service_order - date_reception
                 dias = diferencia.days + 1  # Se agrega 1 para incluir la fecha final
                 #dias_no_habiles = [d.day for d in dias_no_habiles]  # Convertir objetos fecha a enteros (días)
-                dias_habiles = [d for d in range(dias) if (date_reception + timedelta(d)).weekday() < 5 and (date_reception + timedelta(d)).day not in dias_no_habiles]
+                dias_habiles = [d for d in range(dias) if (date_reception + timedelta(d)).weekday() < 5 and (date_reception + timedelta(d)) not in dias_no_habiles]
                 registro.dias_entre_fechas_recepsion_orden = len(dias_habiles)
             else:
                 registro.dias_entre_fechas_recepsion_orden = 0
@@ -519,23 +533,23 @@ class ProjectTask(models.Model):
     @api.depends('fecha_revision_cotizacion', 'date_ingreso_lab')
     def _compute_num_dias_cotizacion_ingreso_lab(self):
         dias_no_habiles = [
-        date(2024, 1, 1),   # 1 de enero: Año Nuevo
-        date(2024, 2, 5),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
-        date(2024, 3, 18),  # 18 de marzo: Natalicio de Benito Juárez
-        date(2024, 5, 1),   # 1 de mayo: Día del Trabajo
-        date(2024, 9, 16),  # 16 de septiembre: Día de la Independencia
-        date(2024, 10, 1),  # 1 de octubre: cambio de poder ejecutivo
-        date(2024, 11, 18), # 18 de noviembre: revolucion mexicana
-        date(2024, 12, 25), # Navidad
+        datetime(2024, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2024, 2, 5).date(),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
+        datetime(2024, 3, 18).date(),  # 18 de marzo: Natalicio de Benito Juárez
+        datetime(2024, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2024, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
+        datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2024, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.fecha_revision_cotizacion and registro.date_ingreso_lab:
                 fecha_revision_cotizacion = registro.fecha_revision_cotizacion
                 date_ingreso_lab = registro.date_ingreso_lab
                 diferencia = date_ingreso_lab - fecha_revision_cotizacion
-                dias = diferencia.days + 1  # Se agrega 1 para incluir la fecha final
+                dias = diferencia.days #+ 1   Se agrega 1 para incluir la fecha final
                 #dias_no_habiles = [d.day for d in dias_no_habiles]  # Convertir objetos fecha a enteros (días)
-                dias_habiles = [d for d in range(dias) if (fecha_revision_cotizacion + timedelta(d)).weekday() < 5 and (fecha_revision_cotizacion + timedelta(d)).day not in dias_no_habiles]
+                dias_habiles = [d for d in range(dias) if (fecha_revision_cotizacion + timedelta(d)).weekday() < 5 and (fecha_revision_cotizacion + timedelta(d)) not in dias_no_habiles]
                 registro.dias_entre_fechas_cotizacion_ingreso_lab = len(dias_habiles)
             else:
                 registro.dias_entre_fechas_cotizacion_ingreso_lab = 0
@@ -572,32 +586,38 @@ class ProjectTask(models.Model):
 
 
     
-    #ESTA FUNCION CUENTA LOS DIAS ENTRE LA FECHA DE INGREDO AL LABORATORIO Y LA FECHA REAL DE ENTREGA 
-    @api.depends('date_ingreso_lab', 'date_entrega_lab_real')
+    #ESTA FUNCION CUENTA LOS DIAS ENTRE LA FECHA DE INGRESO AL LABORATORIO Y LA FECHA REAL DE ENTREGA 
+    #TAMBIEN SI EL EN SITIO CUENTA LOS DIAS APARTIR DE LA FECHA DE CALIBRACION
+    @api.depends('date_ingreso_lab', 'date_entrega_lab_real', 'date_calibracion')
     def _compute_num_dias_ingreso_salida_lab(self):
         dias_no_habiles = [
-        date(2024, 1, 1),   # 1 de enero: Año Nuevo
-        date(2024, 2, 5),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
-        date(2024, 3, 18),  # 18 de marzo: Natalicio de Benito Juárez
-        date(2024, 5, 1),   # 1 de mayo: Día del Trabajo
-        date(2024, 9, 16),  # 16 de septiembre: Día de la Independencia
-        date(2024, 10, 1),  # 1 de octubre: cambio de poder ejecutivo
-        date(2024, 11, 18), # 18 de noviembre: revolucion mexicana
-        date(2024, 12, 25), # Navidad
+        datetime(2024, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2024, 2, 5).date(),   # 5 de febrero: Aniversario de la promulgación de la Constitución de 1917
+        datetime(2024, 3, 18).date(),  # 18 de marzo: Natalicio de Benito Juárez
+        datetime(2024, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2024, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
+        datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2024, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_ingreso_lab and registro.date_entrega_lab_real:
                 date_ingreso_lab = registro.date_ingreso_lab
                 date_entrega_lab_real = registro.date_entrega_lab_real
+
+                # Agregar lógica para manejar lugar_service
+                if registro.lugar_service == 'SITIO' and registro.date_calibracion:
+                    date_ingreso_lab = registro.date_calibracion
+
                 diferencia = date_entrega_lab_real - date_ingreso_lab
-                dias = diferencia.days + 1  # Se agrega 1 para incluir la fecha final
+                dias = diferencia.days #+ 1  Se agrega 1 para incluir la fecha final
                 #dias_no_habiles = [d.day for d in dias_no_habiles]  # Convertir objetos fecha a enteros (días)
-                dias_habiles = [d for d in range(dias) if (date_ingreso_lab + timedelta(d)).weekday() < 5 and (date_ingreso_lab + timedelta(d)).day not in dias_no_habiles]
+                dias_habiles = [d for d in range(dias) if (date_ingreso_lab + timedelta(d)).weekday() < 5 and (date_ingreso_lab + timedelta(d)) not in dias_no_habiles]
                 registro.dias_entre_fechas_ingreso_salida_lab = len(dias_habiles)
+
             else:
                 registro.dias_entre_fechas_ingreso_salida_lab = 0
 
-    
 
 #---------Esta funcion es para calcular el primer usuario que esta en el campo user_ids y asi poder sacar una grafica--------#
 

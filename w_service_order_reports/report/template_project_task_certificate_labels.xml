@@ -18,9 +18,9 @@
 
                                <div class="container-fluid">
 
-                                   <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >
+                                   <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;">
                                        <strong>
-                                        <span t-if="o.codificasion == 'FA.G.12.11.09'" >Fecha de calibración:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.11.09'">Fecha de calibración:</span>
                                         <span t-if="o.codificasion == 'FA.G.12.12.09'">Fecha de calibración:</span>
                                         <span t-if="o.codificasion == 'FA.G.12.13.09'">Fecha de medición:</span>
                                         <span t-if="o.codificasion == 'FA.G.12.14.09'">Fecha de reporte:</span>
@@ -35,33 +35,39 @@
                                         </strong>
 
                                    </div>
-                                   <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >
+                                   <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;">
                                        <strong>
-                                        <span t-if="o.codificasion == 'FA.G.12.11.09'">Fecha de Próxima calibración:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.12.09'">Fecha de Próxima calibración:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.13.09'">Fecha de Próxima medición:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.14.09'">Fecha de Próximo reporte:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.15.09'">Fecha de Próximo reporte:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.16.09'">Fecha de Próximo servicio:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.17.09'">Fecha de Próximo reporte:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.18.09'">Fecha de Próximo estudio:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.11.09'">Fecha de próxima calibración:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.12.09'">Fecha de próxima calibración:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.13.09'">Fecha de próxima medición:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.14.09'">Fecha de próximo reporte:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.15.09'">Fecha de próximo reporte:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.16.09'">Fecha de próximo servicio:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.17.09'">Fecha de próximo reporte:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.18.09'">Fecha de próximo estudio:</span>
                                         <span t-if="o.date_proxima_calibracion_opcional">
                                         <span t-esc="o.date_proxima_calibracion_opcional  or ' '"/></span>
                                         <span t-else="o.date_proxima_calibracion">
                                         <span t-esc="o.date_proxima_calibracion.strftime('%Y-%m-%d')  or ' '"/></span>
                                         </strong>
                                     </div>
-                                     <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >
+                                     <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;">
                                         <strong>
-                                        <span t-if="o.codificasion == 'FA.G.12.11.09'">Certificado de calibración No:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.12.09'">Certificado de calibración No:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.13.09'">Certificado de medición No:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.14.09'">No. DE REPORTE:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.15.09'">No. DE REPORTE:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.11.09'">Certificado de calibración No.:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.12.09'">Certificado de calibración No.:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.13.09'">Certificado de medición No.:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.14.09'">No. de reporte:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.15.09'">No. de reporte:</span>
                                         <span t-if="o.codificasion == 'FA.G.12.16.09'">Reporte de servicio:</span>
-                                        <span t-if="o.codificasion == 'FA.G.12.17.09'">No. DE REPORTE:</span>
+                                        <span t-if="o.codificasion == 'FA.G.12.17.09'">No. de reporte:</span>
                                         <span t-if="o.codificasion == 'FA.G.12.18.09'">Certificado de estudio:</span>
                                         <span t-field="o.certificate_number"/>
+                                        </strong>
+                                    </div>
+                                    <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;">
+                                        <strong>
+                                        <span t-if="o.codificasion == 'FA.G.12.16.09'">Tipo de servicio: <span t-field="o.tipo_mantenimiento_equipo"/> </span>
+                                       
                                         </strong>
                                     </div>
                                     <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >

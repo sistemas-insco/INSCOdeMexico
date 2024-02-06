@@ -19,16 +19,14 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='project_id']" position="after">
                     <field name="certificate_number" readonly="1" optional="show"/>
-                    <field name="service_order" string ="ORDEN DE SERVICIO" optional="show" />
-
+                    <field name="service_order" string ="ORDEN DE SERVICIO" optional="show"/>
+                     <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                     <field name="observations_report_equipment_reception" optional="show"/>
                     <field name="date_reception" optional="show"/>
                     <field name="brought_by" optional="show"/>
-
                     <field name="conditions_report_service_order" optional="show"/>
                     <field name="date_service_order" optional="show"/>
                     <field name="fecha_revision_cotizacion" optional="show"/>
-                    <field name="especial_requiriments" optional="show"/>
                     <field name="lugar_service" optional="show"/>
                     <field name="sucursal_lab" optional="show"/>
                     <field name="urgencia_del_servicio" optional="show"/>
@@ -40,6 +38,49 @@
                 </xpath>
             </field>
         </record>
+        <record model="ir.ui.view" id="w_inherit_project_task_view_add_field_bitacoras">
+            <field name="name">w.inherit.project.task.view.add.field.bitacoras</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string = "Bitacora Tecnica">
+                         <group col="2">  
+                            <group string="Datos Generales del servicio">
+                                <field name="certificate_number" readonly="1"/>
+                                <field name="date_ingreso_lab" readonly="1"/>
+                                <field name="number_piezas" readonly="1"/>
+                                <field name="numero_serie" readonly="1"/>
+                                <field name="numero_id" readonly="1"/>
+                                <field name="marca_equipo" readonly="1"/>
+                                <field name="modelo_euipo" readonly="1"/>
+                                <field name="date_calibracion" readonly="1"/>
+                               
+                            </group >
+                            <group string="Datos Generales del servicio">
+                                <field name="date_supervision_lab" readonly="1"/>
+                                <field name="date_entrega_lab" readonly="1"/>
+                                <field name="date_entrega_lab_real" readonly="1"/>
+                                <field name="date_proxima_calibracion" readonly="1"/>
+                                <field name="lugar_service" readonly="1"/>
+                                <field name="tipo_mantenimiento_equipo" readonly="1"/>
+                                <field name="observations_lab" readonly="1"/>
+                            
+                            </group >
+                            <group string="Datos Masa">
+                                <field name="date_limpieza" readonly="1"/>
+                                <field name="date_det_vol_final" readonly="1"/>
+                            </group>
+                            <group string="Datos MED">
+                                <field name="tipo_servicio_med" readonly="1"/>
+                                <field name="getion_rieesgo_med" readonly="1"/>
+                            </group>
+                        </group>  
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
     </data>
 </odoo>
 
