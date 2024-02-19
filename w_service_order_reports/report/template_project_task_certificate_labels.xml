@@ -74,7 +74,7 @@
                                         <strong>Realizado por: <span t-field="o.calibrado_por_lab"/> </strong>
                                     </div>
                                      <div class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >
-                                        <strong>Numero de serie: <span t-field="o.numero_serie"/></strong>
+                                        <strong>Número de serie: <span t-field="o.numero_serie"/></strong>
                                     </div>
                                     <div  class="row" style="font-family:'arialfont'; font-size: 7.3px; text-align: left;" >
                                         <strong>Id: <span t-field="o.numero_id"/></strong>

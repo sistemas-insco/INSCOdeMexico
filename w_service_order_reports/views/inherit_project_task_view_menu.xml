@@ -390,6 +390,7 @@
                 <field name="fecha_envio_facturar" optional="show"/>
                 <field name="date_ingreso_lab" string ="FECHA DE INGRESO AL LAB"  readonly="1" optional="show"/>
                 <field name="date_entrega_lab" readonly="1" optional="show"/>
+                <field name="date_entrega_lab_real" readonly="1" optional="show" />
                 <field name="dias_entre_fechas_ingreso_salida_lab" optional="show"/>
                 <field name="estado_service_lab" optional="show" readonly="1"/>
                 <field name="date_reception" string ="FECHA DE RECEPCION INSCO" optional="show"/>

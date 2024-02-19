@@ -47,7 +47,7 @@
                     <page string = "Bitacora Tecnica">
                          <group col="2">  
                             <group string="Datos Generales del servicio">
-                                <field name="certificate_number" readonly="1"/>
+                                <field name="certificate_number"/>
                                 <field name="date_ingreso_lab" readonly="1"/>
                                 <field name="number_piezas" readonly="1"/>
                                 <field name="numero_serie" readonly="1"/>

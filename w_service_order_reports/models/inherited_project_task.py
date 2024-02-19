@@ -278,9 +278,9 @@ class ProjectTask(models.Model):
 
     tipo_mantenimiento_equipo = fields.Selection([
                                         ('AJUSTE', 'Ajuste'),
-                                        ('REVISION', 'Revición'),                                   
-                                        ('MANTENIMIENTOPRE', 'Mantenimineto Preventivo'),
-                                        ('MANTENIMIENTOCOR', 'Mantenimineto Corecctivo'),
+                                        ('REVISION', 'Revisión'),                                   
+                                        ('MANTENIMIENTOPRE', 'Mantenimiento preventivo'),
+                                        ('MANTENIMIENTOCOR', 'Mantenimiento correctivo'),
                                         ('REPARACION', 'Reparción'),
                                         ('N/A', 'N/A')],
                                         string='TIPO DE MANTENIMINETO',default='N/A',
@@ -417,6 +417,7 @@ class ProjectTask(models.Model):
 
     estado_service_lab_med = fields.Selection([
                                         ('N/A', 'N/A'),
+                                        ('PENDIENTE', 'PENDIENTE'),
                                         ('RECIBIDO', 'RECIBIDO'),
                                         ('ENVIO DE PROTOCOLOS', 'ENVÍO DE PROTOCLO'),                                   
                                         ('EJECUCION', 'EJECUCIÓ'),
