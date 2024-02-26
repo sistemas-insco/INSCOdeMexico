@@ -281,7 +281,7 @@ class ProjectTask(models.Model):
                                         ('REVISION', 'Revisión'),                                   
                                         ('MANTENIMIENTOPRE', 'Mantenimiento preventivo'),
                                         ('MANTENIMIENTOCOR', 'Mantenimiento correctivo'),
-                                        ('REPARACION', 'Reparción'),
+                                        ('REPARACION', 'Reparación'),
                                         ('N/A', 'N/A')],
                                         string='TIPO DE MANTENIMINETO',default='N/A',
     )
