@@ -18,7 +18,7 @@
             <field name="inherit_id" ref="project.view_task_tree2" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='project_id']" position="after">
-                    <field name="certificate_number" readonly="1" optional="show"/>
+                    <field name="certificate_number" optional="show"/>
                     <field name="service_order" string ="ORDEN DE SERVICIO" optional="show"/>
                      <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                     <field name="observations_report_equipment_reception" optional="show"/>

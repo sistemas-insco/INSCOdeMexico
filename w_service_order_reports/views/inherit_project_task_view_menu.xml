@@ -403,6 +403,7 @@
                  <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
+                 <field name="observations_lab" readonly="1"  optional="show" />
                 </tree>  
             </field>
         </record>
