@@ -72,7 +72,7 @@ class ProjectTask(models.Model):
         store=False
     )
     dias_entre_fechas_cotizacion_ingreso_lab = fields.Integer(
-        string="NÚMERO DE DIAS ENTRE REVICION DE COT Y ENTREGA AL LAB",
+        string="NÚMERO DE DIAS ENTRE REVISIÓN DE COT Y ENTREGA AL LAB",
         help='Son los números de dias que el equipo no tiene una cotizacion',
         compute="_compute_num_dias_cotizacion_ingreso_lab",
         store=False
