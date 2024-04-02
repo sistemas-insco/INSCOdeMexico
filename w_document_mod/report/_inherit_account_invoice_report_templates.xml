@@ -206,7 +206,9 @@
                             <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.partner_id.name" /> 
                         </div>
                         <div class="col-5 text-center" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
-                            <span t-if="o.l10n_mx_edi_usage" t-esc="o.l10n_mx_edi_usage"/><span t-if="o.l10n_mx_edi_usage" t-esc="'-'"/><span t-if="o.l10n_mx_edi_usage" t-field="o.l10n_mx_edi_usage"/>
+                            <span t-if="o.l10n_mx_edi_usage" t-esc="o.l10n_mx_edi_usage"/>
+                            <!-- <span t-if="o.l10n_mx_edi_usage" t-esc="'-'"/>
+                            <span t-if="o.l10n_mx_edi_usage" t-field="o.l10n_mx_edi_usage"/> -->
                         </div> 
                         
                     </div>
@@ -222,7 +224,7 @@
                             <span>REGIMEN FISCAL</span>
                         </div>
                         <div class="col-5 text-center" style="background-color: #808080; font-size: 12px; color: white;">
-                            <span>  </span>
+                            <span>TERMINOS DE PAGO </span>
                         </div> 
                         
                     </div>
@@ -239,7 +241,7 @@
                             <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;"  t-field="o.partner_id.l10n_mx_edi_fiscal_regime" />
                         </div>
                         <div class="col-5 text-center" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
-                            
+                        <span style="font-size: 12px;font-family: 'Courier New', Courier, monospace;" t-esc="o.invoice_payment_term_id" t-field="o.invoice_payment_term_id"/>
                         </div> 
                         
                     </div>
@@ -300,11 +302,12 @@
                                     <td style="border-left: 1px solid #808080;border-bottom:1px solid #cccccc;" t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                         <t t-foreach="get_taxes(line)" t-as="tax">
                                             <div class="row">
-                                                <div class="col-7 text-left">
+                                                <div class="col-11 text-left">
                                                     <span t-esc="tax[0]"/>
+                                                     <span t-esc="tax[1]" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                 </div>
                                                 <div class="text-left">
-                                                    <span t-esc="tax[1]" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                   
                                                 </div>
                                             </div>
                                         </t>
