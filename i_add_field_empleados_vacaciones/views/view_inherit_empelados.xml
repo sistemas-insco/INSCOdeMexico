@@ -12,7 +12,7 @@
 
                             <group string="Datos de Vacaciones" >
                             <field name="fecha_ingreso"/>
-                            <field name="años_antiguedad" groups="hr.group_hr_user"/>
+                            <field name="anios_antiguedad" groups="hr.group_hr_user"/>
                             <field name="vacaciones_dias" groups="hr.group_hr_user"/>
                             </group>
 

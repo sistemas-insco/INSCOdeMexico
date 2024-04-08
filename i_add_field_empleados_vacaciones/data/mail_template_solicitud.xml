@@ -8,7 +8,7 @@
             <field name="model_id" ref="i_add_field_empleados_vacaciones.model_solicitud_vacaciones"/>
             <field name="email_from">{{(object.user_id.email_formatted) }}</field>
             <!-- <field name="email_to">${sistemas@inscomexico.com}</field -->
-           <!-- <field name="email_to">sistemas@inscomexico.com</field> -->
+           <field name="email_to">{{(object.usuario_responsable.work_email) }}</field>
             <field name="subject">Solicitud {{object.solicitud_tipo}}</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">

@@ -19,17 +19,31 @@ class VacacionesId(models.Model):
 	pantalon_cargo = fields.Char(string ='Pantalón Cargo',help='(LABORATORIOS, LOGÍSTICA, y MANTENIMIENTO)', groups="hr.group_hr_user")
 	botas_calzado_seguridad = fields.Char(string ='Botas y/o Calzado de Seguridad',help='(TODOS)', groups="hr.group_hr_user")
 
-	años_antiguedad = fields.Selection([
+	anios_antiguedad = fields.Selection([
 										('1', '1'),
 										('2', '2'),
 										('3', '3'),
 										('4', '4'),
-										('de 5 a 9 años', 'De 5 a 9 años'),
-										('de 10 a 14 años', 'De 10 a 14 años'),
-										('de 15 a 19 años', 'De 15 a 19 años'),
-										('de 20 a 24 años', 'De 20 a 24 años'),
-										('de 25 a 29 años', 'De 25 a 29 años')],
+										('5', '5'),
+										('6', 'De 6 a 10 años'),
+										('7', 'De 11 a 15 años'),
+										('8', 'De 16 a 20 años'),
+										('9', 'De 21 a 25 años'),
+										('10', 'De 26 a 30 años'),
+										('11', 'De 31 a 35 años')],
 										default='1', tracking=True,string='Años de antiguedad',groups="hr.group_hr_user")
+
+	# años_antiguedad = fields.Selection([
+	# 									('1', '1'),
+	# 									('2', '2'),
+	# 									('3', '3'),
+	# 									('4', '4'),
+	# 									('de 5 a 9 años', 'De 5 a 9 años'),
+	# 									('de 10 a 14 años', 'De 10 a 14 años'),
+	# 									('de 15 a 19 años', 'De 15 a 19 años'),
+	# 									('de 20 a 24 años', 'De 20 a 24 años'),
+	# 									('de 25 a 29 años', 'De 25 a 29 años')],
+	# 									default='1', tracking=True,string='Años de antiguedad',groups="hr.group_hr_user")
 	
 
 
@@ -38,23 +52,27 @@ class VacacionesId(models.Model):
 	# 	self.dias_vacaciones_restantes = vacaciones_dias
 
 
-	@api.onchange('años_antiguedad')
+	@api.onchange('anios_antiguedad')
 	def _asignacion_dias_vacaciones(self):
-		if self.años_antiguedad == '1':
-			self.vacaciones_dias= 6
-		if self.años_antiguedad == '2':
-			self.vacaciones_dias= 8
-		if self.años_antiguedad == '3':
-			self.vacaciones_dias= 10
-		if self.años_antiguedad == '4':
+		if self.anios_antiguedad == '1':
 			self.vacaciones_dias= 12
-		if self.años_antiguedad == 'de 5 a 9 años':
+		if self.anios_antiguedad == '2':
 			self.vacaciones_dias= 14
-		if self.años_antiguedad == 'de 10 a 14 años':
+		if self.anios_antiguedad == '3':
 			self.vacaciones_dias= 16
-		if self.años_antiguedad == 'de 15 a 19 años':
+		if self.anios_antiguedad == '4':
 			self.vacaciones_dias= 18
-		if self.años_antiguedad == 'de 20 a 24 años':
+		if self.anios_antiguedad == '5':
 			self.vacaciones_dias= 20
-		if self.años_antiguedad == 'de 25 a 29 años':
+		if self.anios_antiguedad == '6': #('6', 'De 6 a 10 años')
 			self.vacaciones_dias= 22
+		if self.anios_antiguedad == '7': #('7', 'De 11 a 15 años')
+			self.vacaciones_dias= 24
+		if self.anios_antiguedad == '8': #('8', 'De 16 a 20 años')
+			self.vacaciones_dias= 26
+		if self.anios_antiguedad == '9': #('9', 'De 21 a 25 años')
+			self.vacaciones_dias= 28
+		if self.anios_antiguedad == '10': #('10', 'De 26 a 30 años')
+			self.vacaciones_dias= 30
+		if self.anios_antiguedad == '11': #('11', 'De 31 a 35 años')
+			self.vacaciones_dias= 32
