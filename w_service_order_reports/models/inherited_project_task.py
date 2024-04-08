@@ -340,14 +340,14 @@ class ProjectTask(models.Model):
 
 
     codificasion = fields.Selection([
-                                        ('FA.G.12.11.09', 'FA.G.12.11.09'),
-                                        ('FA.G.12.12.09', 'FA.G.12.12.09'),
-                                        ('FA.G.12.13.09', 'FA.G.12.13.09'),
-                                        ('FA.G.12.14.09', 'FA.G.12.14.09'),
-                                        ('FA.G.12.15.09', 'FA.G.12.15.09'),
-                                        ('FA.G.12.16.09', 'FA.G.12.16.09'),
-                                        ('FA.G.12.17.09', 'FA.G.12.17.09'),
-                                        ('FA.G.12.18.09', 'FA.G.12.18.09')],
+                                        ('FA.G.12.11.09', 'FA.G.12.11.10'),
+                                        ('FA.G.12.12.09', 'FA.G.12.12.10'),
+                                        ('FA.G.12.13.09', 'FA.G.12.13.10'),
+                                        ('FA.G.12.14.09', 'FA.G.12.14.10'),
+                                        ('FA.G.12.15.09', 'FA.G.12.15.10'),
+                                        ('FA.G.12.16.09', 'FA.G.12.16.10'),
+                                        ('FA.G.12.17.09', 'FA.G.12.17.10'),
+                                        ('FA.G.12.18.09', 'FA.G.12.18.10')],
                                         string="CODIFICACION PARA ETIQUETAS",tracking=True,copy=False)
 
     motivo_sustitucion_informe = fields.Selection([
