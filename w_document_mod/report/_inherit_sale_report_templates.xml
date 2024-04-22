@@ -36,29 +36,16 @@
             <t t-call="w_document_mod.insco_spacing"/>
             <t t-call="w_document_mod.insco_spacing"/>
             <t t-call="w_document_mod.insco_spacing"/>
-            <t t-call="w_document_mod.insco_spacing"/>
 
-            <div class="row text-left">
-                <div class="col-12">
-                   <strong><span>Atención de.</span></strong>
-                    <span t-if="o.attention_of"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.attention_of"/></span>
-                </div>
-            </div>
 
             <div class="row text-left">
                <div class="col-12 ">
-                    <strong><span>Correo.</span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.email and o.partner_id.email.split(',')[0]"/>
+                    <strong><span>Sitio web.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.partner_id.website"/>
                 </div>
             </div>
-
-            <div class="row text-left">
-                <div class="col-12">
-                    <strong><span>Telefono.</span></strong>
-                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_id.phone and o.partner_id.phone.split(',')[0]"/>
-                </div>
-            </div>
-
+        
+            
         </div>
     </template>
 
@@ -143,6 +130,41 @@
                  <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_shipping_id.l10n_mx_edi_colony"/>
                  <div class="col-md-6"></div>
             </div>
+
+
+
+
+            <div class="row">
+                <div class="col-12 mb4 text-left">
+                    <strong><span>Datos del contacto:</span></strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <strong><span>Atención de.</span></strong>
+                   <span t-if="o.partner_contact_id.title"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-field="o.partner_contact_id.title"/></span>
+
+                    <span t-if="o.partner_contact_id.name"><span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_contact_id.name"/></span>
+                </div>
+                <div class="col-md-6">
+                    <strong><span>Puesto.</span></strong>
+                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_contact_id.function and o.partner_contact_id.function"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong><span>Correo.</span></strong>
+                     <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_contact_id.email and o.partner_contact_id.email"/>
+                </div>
+                <div class="col-md-6">
+                    <strong><span>Teléfono.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_contact_id.phone and o.partner_contact_id.phone"/>
+                    <strong><span>Móvil.</span></strong>
+                    <span style="font-family:'arialfont'; font-size: 14px;" class="m-0" t-esc="o.partner_contact_id.mobile and o.partner_contact_id.mobile"/>
+                </div>
+            </div>
+
 
         </div>
     </template>

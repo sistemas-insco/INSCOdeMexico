@@ -46,3 +46,9 @@ class SaleOrder(models.Model):
     fecha_solicitud = fields.Date(
         string='Fecha de la solcitud',tracking=True
     )
+
+    partner_contact_id = fields.Many2one(
+        'res.partner',
+        string='Contacto de Venta',
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+        help="Contacto al que se le envia la cotizacion.")
