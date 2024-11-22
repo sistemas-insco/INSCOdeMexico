@@ -490,6 +490,13 @@ class ProjectTask(models.Model):
         datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
         datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
         datetime(2024, 12, 25).date(), # Navidad
+        datetime(2025, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2025, 2, 3).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2025, 3, 17).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2025, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_delivery:
@@ -516,6 +523,13 @@ class ProjectTask(models.Model):
         datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
         datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
         datetime(2024, 12, 25).date(), # Navidad
+        datetime(2025, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2025, 2, 3).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2025, 3, 17).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2025, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_service_order:
@@ -542,6 +556,13 @@ class ProjectTask(models.Model):
         datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
         datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
         datetime(2024, 12, 25).date(), # Navidad
+        datetime(2025, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2025, 2, 3).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2025, 3, 17).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2025, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.fecha_revision_cotizacion and registro.date_ingreso_lab:
@@ -568,6 +589,13 @@ class ProjectTask(models.Model):
         date(2024, 10, 1),  # 1 de octubre: cambio de poder ejecutivo
         date(2024, 11, 18), # 18 de noviembre: revolucion mexicana
         date(2024, 12, 25), # Navidad
+        date(2025, 1, 1),   # 1 de enero: Año Nuevo
+        date(2025, 2, 3),   # Por el Día de la Constitución Mexicana.
+        date(2025, 3, 17),  #Conmemoración del natalicio de Benito Juárez.
+        date(2025, 5, 1),   # 1 de mayo: Día del Trabajo
+        date(2025, 9, 16),   # 16 de septiembre: Día de la Independencia
+        date(2025, 11, 17), # 18 de noviembre: revolucion mexicana
+        date(2025, 12, 25), # Navidad
         ]
         for registro in self:
             if registro.date_ingreso_lab and registro.tiempo_entrega:
@@ -600,6 +628,13 @@ class ProjectTask(models.Model):
         datetime(2024, 10, 1).date(),  # 1 de octubre: cambio de poder ejecutivo
         datetime(2024, 11, 18).date(), # 18 de noviembre: revolucion mexicana
         datetime(2024, 12, 25).date(), # Navidad
+        datetime(2025, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2025, 2, 3).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2025, 3, 17).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2025, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_ingreso_lab and registro.date_entrega_lab_real:
