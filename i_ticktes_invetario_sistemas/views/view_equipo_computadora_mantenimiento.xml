@@ -72,7 +72,7 @@
                                         <field name="equipo_id"/>
                                     </div>
                                     <div class="oe_kanban_bottom_right">
-                                        <field name="name" widget="label_selection"/>
+                                        <field name="name"/>
                                     </div>
                                 </div>
                             </div>

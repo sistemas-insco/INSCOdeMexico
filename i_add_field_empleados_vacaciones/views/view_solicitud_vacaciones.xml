@@ -60,7 +60,7 @@
                                         <span><t t-esc="record.name.value"/> <t t-esc="record.date_order.value"/></span>
                                     </div> -->
                                     <div class="oe_kanban_bottom_right">
-                                        <field name="name" widget="label_selection"/>
+                                        <field name="name"/>
                                     </div>
                                 </div>
                             </div>

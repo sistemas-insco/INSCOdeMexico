@@ -40,7 +40,7 @@
                                 
 
                     <div class="header">
-                    <div class="text-muted text-right">
+                    <div class="text-muted" style="text-align: right;">
                         página <span class="page"/> de <span class="topage"/>
                     </div>
                     <div class="row" style="margin-top: 25px;">
@@ -58,13 +58,8 @@
                 </div>
                         </div>
                         </div>
-                        <br></br>
-                        <br></br> 
-                        <br></br>
-                        <br></br>
-                        <br></br>
                     
-                    <table style="border-spacing:0;margin-bottom:0;" class="table">
+                    <table style="border-spacing:0;margin-bottom:0;" class="table table-borderless">
                                     <thead>
                                       <tr>
                                 
@@ -85,9 +80,9 @@
 
                          <div class="row">
 
-                         <table style="width:100%;">
+                         <table style="width:100%;"  class="table table-borderless">
                         <tr>
-                            <td class="text-center" >Datos del equipo y área:</td>
+                            <td class="text-center" style="border: 2px solid black;">Datos del equipo y área:</td>
                         </tr>
                             </table>
 
@@ -95,7 +90,7 @@
 
                         <div class="row">
 
-                            <table style="width:100%;">
+                            <table  class="table table-borderless" style="width:100%;">
 
                                 <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff; border: 1px solid white;">
                                     <t t-set="colspan" t-value="6"/>
@@ -125,9 +120,9 @@
                              <br></br> 
                 <div class="row">
 
-                    <table style="width:100%;">
+                    <table style="width:100%;"  class="table table-borderless">
                         <tr>
-                            <td class="text-center" >Tipo de servicio:</td>
+                            <td class="text-center" style="border: 2px solid black;">Tipo de servicio:</td>
                         </tr>
                     </table>
 
@@ -136,7 +131,7 @@
 
                     <div class="row">
 
-                        <table style="width:100%;">
+                        <table style="width:100%;"  class="table table-borderless">
 
                             <tr style="font-family:'arialfont'; font-size: 14px; background-color: #75baff; border: 1px solid white;">
                                 <t t-set="colspan" t-value="6"/>
@@ -160,7 +155,7 @@
                  
                                    
                             <div class="row">
-                                <table style="width:100%;">
+                                <table style="width:100%;"  class="table table-borderless">
                                     <tr>
                                         <td style="border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;" align="left">Conclusiones: <span t-field="o.descripcion_conclucion" /></td>
                                         

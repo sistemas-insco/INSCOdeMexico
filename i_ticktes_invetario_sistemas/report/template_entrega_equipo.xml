@@ -34,7 +34,7 @@
                                 
 
                     <div class="header">
-                    <div class="text-muted text-right">
+                    <div  class="text-muted" style="text-align: right;">
                         página <span class="page"/> de <span class="topage"/>
                     </div>
                     <div class="row" style="margin-top: 25px;">
@@ -47,10 +47,6 @@
                         </div>
                         </div>
                         </div>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                         <br></br>
 
                              <div class="row">
@@ -77,11 +73,11 @@
 
                          <table style="width:100%;">
 
-                            <blockquote>
+                           
                             <p class="text-left">
                             Por medio de la presente yo <strong> <span t-field="o.empleado_id" /> </strong> hago constar que he recibido de INSCO de México, el uso del siguiente equipo (en el sucesivo el “equipo”);
                             </p>
-                            </blockquote>
+                            
 
 
                             </table>
@@ -91,7 +87,7 @@
 
                          <div class="row">
 
-                         <table style="width:100%;">
+                         <table  class="table table-borderless" style="width:100%;">
                         <tr>
                             <td class="text-center" >Descripción del equipo:</td>
                         </tr>
@@ -102,7 +98,7 @@
 
                         <div class="row">
 
-                            <table style="width:100%;">
+                            <table  class="table table-borderless" style="width:100%;">
 
                                 <tr style="font-family:'arialfont'; font-size: 15px; background-color: #75baff; border: 1px solid white;">
                                     <t t-set="colspan" t-value="6"/>
@@ -152,40 +148,32 @@
 
                              <br></br>
 
-                    <blockquote>
+                    
                     <p class="text-left">
                              El cual recibo como herramienta de trabajo y de acuerdo al contrato de trabajo que me liga con dicha empresa lo utilizare de acuerdo a las Políticas y Procedimientos internos que la empresa ha marcado incluyendo el Manual del Colaborador vigente, siendo entre otros que:
                     </p>
-                    </blockquote>
+                   
 
-                    <blockquote>
+                    
                     <p class="text-left">
                              1- El equipo me ha sido entregado con el fin único de utilizarlo para el mejor desarrollo de mis actividades y funciones al servicio de INSCO de México y lo concibo como una herramienta de trabajo y no como un beneficio personal, por lo que únicamente podré utilizarlo para actividades que se deriven directamente del trabajo que tengo encomendado y me comprometo a que en ningún momento utilizare el mismo para fines diversos.
                     </p>
-                    </blockquote>
+                    
 
-                    <blockquote>
+                    
                     <p class="text-left">
                             2- Comprendo que un mal uso o abuso por mi parte del equipo asignado, puede ser causa fundada para la recisión de mi contrato de trabajo sin reclamación alguna de mi parte, todo ello de conformidad a lo establecido por el artículo 47 de la ley Federal del Trabajo.
                     </p>
-                    </blockquote>
+                    
 
 
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <br></br>
                     <br></br>
                     
                     
                  <div class="row">
 
-                         <table style="width:100%;">
+                         <table rowspan="2" class="text-center" style="border: 2px solid black;">
                         <tr>
                             <td class="text-center" >Buenas prácticas en el uso de los equipos de cómputo y telefonía.:</td>
                         </tr>
@@ -201,63 +189,54 @@
 
                          <table style="width:100%;">
 
-                             <blockquote>
+                             
                             <p class="text-left">
                             El uso de los equipos de cómputo y telefonía en INSCO de México está exclusivamente considerado como una herramienta de trabajo, los teléfonos deben ser única y exclusivamente para comunicación interna con empleados de INSCO de México y externa con proveedores y clientes, se asigna a personas clave que por sus actividades necesitan estar en comunicación continua. En este documento se pretende explicar las buenas prácticas a considerar en el uso de equipos de cómputo y telefonía móvil, sin ser restrictivo únicamente ha:
                             </p>
-                            </blockquote>
+                            
 
-                            <blockquote>
+                            
                                 <p>
                                     1.  Evitar la descarga de aplicaciones si no fueron aprobadas previamente por el departamento de IT.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
+                            
                                 <p>
                                     2.  Evitar la descarga y uso de aplicaciones de redes sociales como Facebook y Twitter.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                     3.  Hacer el uso de mapas en línea y/o GPS (Geo-posicionamiento satelital), sólo cuando sea necesario.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                     4.  Evitar el envío /recepción de mensajes no laborales.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                     5.  Configurar una contraseña para bloquear/desbloquear el teléfono.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                      6.  Observar siempre un uso ético de este recurso ya que INSCO de México y el departamento de sistemas puede solicitar en cualquier momento (sin notificación previa), el dispositivo celular o de cómputo para revisión, monitoreo y/o aseguramiento cuando se considerado necesario.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                     7.  Estrictamente prohibido que se acceda, almacene, manipule cualquier tipo de contenido pornográfico en los dispositivos celulares al igual que todo equipo de cómputo de INSCO de México.
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                      8. Evitar activar el  Hotspot de Windows "Zona cubierta movil" 
                                 </p>
-                            </blockquote>
-                            <blockquote>
+                            
                                 <p>
                                     9.  Bloqueo de equipo de cómputo al abandonar su área de trabajo 
                                 </p>
-                            </blockquote>
-
-                            <blockquote>
+                            
                                 <p>
                                     10.  Utilice los recursos de INSCO de México de forma adecuada, con sentido común y de acuerdo a las buenas costumbres.
                                 </p>
-                            </blockquote>
+                            
 
                         </table>
 
