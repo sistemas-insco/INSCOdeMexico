@@ -57,7 +57,7 @@
             <br></br>
 
             <div align="center">
-                <table style="width:80%">
+                <table style="width:80%" class="table table-borderless">
                     <tr>
                         <td align="center">Recepción de Items</td>
                     </tr>
@@ -65,7 +65,7 @@
             </div>
             <br></br>
             <div>
-                <table>
+                <table class="table table-borderless">
                     <tr>
                         <td style="width:20%;">Nombre del cliente: &amp;nbsp;</td>
                         <td align="left" style="width:80%; border-bottom: 2px solid black;"><span t-esc="o.partner_id.name"/></td>
@@ -186,7 +186,7 @@
                     </t>
                 </t>
                 <div class="header">
-                    <div class="text-muted text-right">
+                    <div class="text-muted" style="text-align: right;">
                         página <span class="page"/> de <span class="topage"/>
                     </div>
                     <div class="row" style="margin-top: 1px;">

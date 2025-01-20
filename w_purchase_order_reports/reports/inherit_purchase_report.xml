@@ -28,7 +28,7 @@
             </t>
         </t>
         <div class="header" style="font-family:'arialfont'; font-size: 12px;">
-            <div class="text-muted text-right">
+            <div class="text-muted" style="text-align: right;">
                 <span class="page"/>/<span class="topage"/>
             </div>
             <div class="row" style="margin-top: 25px;">
@@ -40,9 +40,9 @@
                     <t t-call="w_document_mod.insco_spacing"/>
                     <t t-call="w_document_mod.insco_spacing"/> 
                     <strong><span style="font-family:'arialfont'; font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>-->
-                    <table style="width: 100%;">
+                    <table style="width: 100%;" class="table table-borderless">
                         <tr style="background-color: #75baff;">
-                            <th style="border: 1px solid white;"><strong>Facturar a:/Bill to:</strong></th>
+                            <th style="border: 0px solid white; text-align: left"><strong>Facturar a:/Bill to:</strong></th>
                         </tr>
                         <tr>
                             <td rowspan="3" >
@@ -60,13 +60,13 @@
                 <div class="col-3 text-left" name="moto">
                     <table style="width:100;">
                         <tr style="background-color: #75baff;">
-                            <th style="border: 1px solid white;  width:100%;"><strong>OC/OP:</strong></th>
+                            <th style="border: 1px solid white;  width:100%; text-align: left"><strong>OC/PO:</strong></th>
                         </tr>
                         <tr style="background-color: #75baff; width:100%;">
                             <td style="border: 1px solid white;  width:100%;"><span t-if="o.name"><span style="font-family:'arialfont';" t-esc="o.name"/></span> </td>
                         </tr>
                         <tr style="background-color: #75baff;">
-                           <th style="border: 1px solid white;"><strong>Fecha:/Date:</strong></th>
+                           <th style="border: 1px solid white; text-align: left"><strong>Fecha:/Date:</strong></th>
                             <td style="background-color: white; vertical-align:middle;  width:100%;" rowspan="2" class="text-center">
                             </td>
                         </tr>
@@ -88,8 +88,8 @@
         </div>
         <div class="footer o_standard_footer">
             <div class="row">
-                <div class="col-12 text-right">
-                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.08</span>
+                <div class="col-12" style="text-align: right;">
+                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.09</span>
                 </div>
             </div>
         </div>
@@ -102,21 +102,18 @@
          <br></br>
          <br></br>
          <br></br>
-         <table style="width:100%;">
+         <table class="table table-borderless" style="width:100%;text-align: lef;">
              <thead>
                 <tr style="background-color: #75baff;">
-                    <th style="border: 1px solid white; width: 50%;" ><strong>Para Proovedor:/Supplier:</strong></th>
-                    <th style="border: 1px solid white; width: 50%;" ><strong>Enviar a:/Send to:</strong></th>
+                    <th style="border: 0px solid white; width: 50%; text-align: left" ><strong>Para Proovedor:/Supplier:</strong></th>
+                    <th style="border: 0px solid white; width: 50%; text-align: left" ><strong>Enviar a:/Send to:</strong></th>
                 </tr>
-                <tr style="background-color: #75baff;">
-                    <td style="border: 1px solid white;width: 50%;" ><i></i></td>
-                    <td style="border: 1px solid white;width: 50%;" ><i></i></td>
-                </tr>
+                
                 <tr>
-                     <th>
-                            <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                     <td>
+                            <div class="text-right" t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
                             <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>  
-                    </th>
+                    </td>
                     <td rowspan="5" >
                         
                         
@@ -142,7 +139,7 @@
          <br></br> 
             <table style="width:100%;"> 
                 <thead >
-                    <tr style="background-color: #75baff; border: 1px solid white;">
+                    <tr style="background-color: #75baff; border: 0px solid white;">
                         <th style="border: 1px solid white;"><strong>Código/Item</strong></th>
                         <th style="border: 1px solid white;"><strong>Cantidad/Qty</strong></th>
                         <th style="border: 1px solid white;" class="text-center"><strong>Descripcion/Description</strong></th>
@@ -152,9 +149,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <tr t-foreach="o.order_line" t-as="line" >
+                        <tr t-foreach="o.order_line" t-as="line"  t-att-class="'bg-200 fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''" >
+                         <t t-if="not line.display_type">
                             <td style="border: 1px solid white;"> 
-                                <span t-field="line.product_id"/>
+                                <span t-field="line.product_id.default_code"/>
                             </td>
                             <td style="border: 1px solid white;">
                                 <span t-field="line.product_qty"/>
@@ -164,7 +162,7 @@
                                 <span t-field="line.name"/>
                             </td>
                             <td class="text-right" style="border: 1px solid white;">
-                                <span t-field="line.price_unit"/>
+                                <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                             </td>
                             <td class="text-center" style="border: 1px solid white;">
                                 <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
@@ -172,6 +170,19 @@
                             <td class="text-right" style="border: 1px solid white;">
                                 <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                             </td>
+                        </t>
+                        <t t-if="line.display_type == 'line_section'">
+                               <td name="td_section_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                                <t t-set="current_section" t-value="line"/>
+                                <t t-set="current_subtotal" t-value="0"/>
+                            </t>
+                            <t t-if="line.display_type == 'line_note'">
+                                <td name="td_section_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
                         </tr>
                     </tbody>
             </table> 
@@ -180,13 +191,13 @@
             <table style="width:100%;">
                 <thead>
                     <tr style="background-color: #75baff; border: 1px solid white;">
-                        <th style="border: 1px solid white;" class="text-center"><strong>Buyer/Comprador</strong></th>
+                        <th style="border: 1px solid white;" class="text-center"><strong>Comprador/Buyer</strong></th>
                         <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
                             <span>
                                 <span  t-field="user.name"/>
                             </span>
                         </td>
-                         <th style="border: 1px solid white;"><strong>Importe:/Amount</strong></th>
+                         <th style="border: 1px solid white;"><strong>Importe/Amount</strong></th>
                           <td style="background-color: white; border: 2px solid white; vertical-align:middle;" rowspan="2" class="text-center">
                             <span t-field="o.amount_untaxed"/>
                         </td>
@@ -240,12 +251,18 @@
                 </thead>
             </table>
             <div>
-                <div class="col-4">
-                                
-                                <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
-                                <span  t-field="user.name"/>
-                                
-                            </div>
+                <div class="col-3">
+                 <t t-if="o">
+                    <t t-if="'sign_signature' in o.user_id">
+                        <t t-set="user_signature" t-value="o.user_id.sudo().sign_signature"/>
+                    </t>
+                </t>
+                <span>
+                   
+                    <img t-if="user_signature" t-att-src="image_data_uri(user_signature)" style="max-height: 70px;" alt="Firma"/>
+                     <span t-esc="o.user_id.name"/>
+                </span>
+                </div>
                 <div>
                      <br/>
                     <strong><span>Observaciones:</span></strong>

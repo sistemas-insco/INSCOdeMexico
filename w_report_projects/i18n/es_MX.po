@@ -225,7 +225,7 @@ msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Condic
 #. module: w_report_projects
 #: model_terms:ir.ui.view,arch_db:w_report_projects.equipment_delivery_template
 msgid "<strong><span>Description and identification code</span></strong>"
-msgstr "<strong><span>descripción y código de identificación</span></strong>"
+msgstr "<strong><spanDescripción y código de identificación</span></strong>"
 
 #. module: w_report_projects
 #: model:ir.model.fields,field_description:w_report_projects.field_project_task__brought_by

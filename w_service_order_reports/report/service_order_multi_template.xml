@@ -15,7 +15,7 @@
             </t>
         </t>
         <div class="header">
-            <div class="text-muted text-right">
+            <div class="text-muted" style="text-align: right;">
                 page <span class="page"/> to <span class="topage"/>
             </div>
             <div class="row" style="margin-top: 1px;">
@@ -228,16 +228,7 @@
                                     <strong><span style="font-size: 14px;">Realizado por: </span></strong>
                                     <spad t-esc="user.name"/>
                                     <div class="col-4">
-                                        <t t-if="o">
-                                        <t t-if="'sign_signature' in user">
-                                            <t t-set="user_signature" t-value="user.sudo().sign_signature"/>
-                                        </t>
-                                    </t>
-                                    <span>
-                                       
-                                        <img t-if="user_signature" t-att-src="image_data_uri(user_signature)" style="max-height: 55px;" alt="Firma"/>
-                                         
-                                    </span>
+                                        <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/>
                                     </div>
                                     <!-- <span t-field="user.sign_signature" t-options-widget="&quot;image&quot;"/> -->
                                      <!-- <img t-if="user.sign_signature" t-att-src="image_data_uri(user.sign_signature)" style="max-height: 50px;" alt="Logo"/> -->
@@ -287,7 +278,7 @@
                 <div name="main_table_zone" style="margin-top: 10px;">
                     <t t-set="services_data" t-value="docs._context.get('service_types', [])" />
                     <span t-esc="service_data" />
-                    <table class="table table-sm o_main_table">
+                    <table class="table table-borderless">
                         <thead>
                             <tr style="background-color: #75baff;">
                                 <th style="font-size: 11px;">Type service</th>

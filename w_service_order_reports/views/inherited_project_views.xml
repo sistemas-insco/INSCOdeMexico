@@ -18,7 +18,7 @@
             <field name="inherit_id" ref="project.view_task_tree2" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='project_id']" position="after">
-                    <field name="certificate_number" optional="show"/>
+                    <field name="certificate_number" optional="show" readonly="1"/>
                     <field name="service_order" string ="ORDEN DE SERVICIO" optional="show"/>
                      <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
                     <field name="observations_report_equipment_reception" optional="show"/>
@@ -47,7 +47,7 @@
                     <page string = "Bitacora Tecnica">
                          <group col="2">  
                             <group string="Datos Generales del servicio">
-                                <field name="certificate_number"/>
+                                <field name="certificate_number" readonly="1"/>
                                 <field name="date_ingreso_lab" readonly="1"/>
                                 <field name="number_piezas" readonly="1"/>
                                 <field name="numero_serie" readonly="1"/>

@@ -29,7 +29,7 @@
                             <td rowspan="2" class="text-center" style="border: 2px solid black;">
                             <strong>
                             <span>MANUAL DE ASEGURAMIENTO DE LA CALIDAD<br/><br/>
-                            Recolección y entrega de items
+                            Recolección y entrega de ítems
                             </span></strong></td>
                             <td class="text-center" style="border: 2px solid black;">
                                 <span t-esc="o.company_id.codification_equipment_delivery_2"/>
@@ -45,15 +45,15 @@
             </div>
             <br></br>
             <div align="center">
-                <table style="width:80%">
+                <table class="table table-borderless" style="width:80%">
                     <tr>
-                        <td align="center">Entrega de items y documentos</td>
+                        <td align="center">Entrega de ítems y documentos</td>
                     </tr>
                 </table>
             </div>
             <br/>
             <div>
-                <table>
+                <table class="table table-borderless">
                     <tr>
                         <td style="width:20%;">Customer name: &amp;nbsp;</td>
                         <td align="left" style="width:80%; border-bottom: 2px solid black;"><span t-esc="o.partner_id.name"/></td>
@@ -173,7 +173,7 @@
                     </t>
                 </t>
                 <div class="header">
-                    <div class="text-muted text-right">
+                    <div class="text-muted" style="text-align: right;">
                         page <span class="page"/> to <span class="topage"/>
                     </div>
                     <div class="row" style="margin-top: 1px;">

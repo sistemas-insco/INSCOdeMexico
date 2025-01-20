@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//field[@name='tag_ids']" position="after">
-                        <field name="certificate_number"/>
+                        <field name="certificate_number" readonly="1"/>
                 </xpath>
 
                 <notebook position="inside">

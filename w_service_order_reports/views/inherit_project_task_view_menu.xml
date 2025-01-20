@@ -112,7 +112,7 @@
                 <header>
                 <button name="open_certificate_wizard_temperatura" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
-                <field name="certificate_number"  readonly="1"/>
+                <field name="certificate_number"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -155,9 +155,8 @@
                 <tree string="Tree Humedad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_humedad" string="Asignar Informe Humedad" type="object" class="btn-primary"/>
-                <button name="open_certificate_wizard_temperatura" string="Asignar Informe Temperatura" type="object" class="btn-primary"/>
                 </header>
-                <field name="certificate_number" readonly="1"/>
+                <field name="certificate_number"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -255,7 +254,7 @@
                 <header>
                 <button name="open_certificate_wizard_kaye" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
-                <field name="certificate_number" readonly="1"/>
+                <field name="certificate_number"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -299,7 +298,7 @@
                 <header>
                 <button name="open_certificate_wizard_volumen" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
-                <field name="certificate_number"  readonly="1"/>
+                <field name="certificate_number"/>
                 <field name="service_order" string="ORDEN DE SERVICIO" readonly="1"/> 
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -343,7 +342,7 @@
                 <header>
                 <button name="open_certificate_wizard_electrica" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
-                <field name="certificate_number" readonly="1"/>
+                <field name="certificate_number"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>

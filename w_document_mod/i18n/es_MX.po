@@ -131,41 +131,6 @@ msgid "<strong class=\"mr16\">CFDI Related:</strong>"
 msgstr "<strong class=\"mr16\">CFDI Relacionado</strong>"
 
 
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">IVA:</span></strong>"
-msgstr ""
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notes and Comments</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Notas y comentarios</span></strong>"
-
-
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Subtotal Lab.:</span></strong>"
-msgstr ""
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Subtotal:</span></strong>"
-msgstr ""
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Total:</span></strong>"
-msgstr ""
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Unique Discount:</span></strong>"
-msgstr "<strong><span style=\"font-family:'arialfont'; font-size: 14px;\">Descuento único:</span></strong>"
-
-
-
 #. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.insco_external_layout_standard
 msgid "<strong><span style=\"font-family:'arialfont'; font-size: 15px;\">#Folio:</span></strong>"
@@ -210,11 +175,6 @@ msgstr "Reporte de Facturas"
 #: model_terms:ir.ui.view,arch_db:w_document_mod.res_config_settings_view_form
 msgid "Add the file with extension (.pdf) to feed it to the odoo sales report. If you add a file without extension or a different extension to a pdf file, the sales report will not be printed."
 msgstr "Agregue un archivo de extensión(.pdf) para fucionar con el reporte de ventas. Si agregua un archivo sin extensión o con una extensión diferente a (.pdf), el reporte de ventas no sera generado."
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "Amount"
-msgstr "Importe"
 
 #. module: w_document_mod
 #: model:ir.model.fields,field_description:w_document_mod.field_sale_order__attention_of
@@ -263,11 +223,6 @@ msgid "DESCRIPTION"
 msgstr "DESCRIPCIÓN"
 
 #. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "Description"
-msgstr "Descripción"
-
-#. module: w_document_mod
 #: model:ir.model.fields,field_description:w_document_mod.field_report_account_report_invoice_with_payments__display_name
 #: model:ir.model.fields,field_description:w_document_mod.field_report_sale_report_saleorder__display_name
 msgid "Display Name"
@@ -292,13 +247,6 @@ msgstr "Contenido del archivo"
 #: model:ir.model.fields,field_description:w_document_mod.field_res_config_settings__filename_terms
 msgid "Filename Terms"
 msgstr "Nombre del archivo"
-
-#. module: w_document_mod
-#: model:ir.model.fields,field_description:w_document_mod.field_report_account_report_invoice_with_payments__id
-#: model:ir.model.fields,field_description:w_document_mod.field_report_sale_report_saleorder__id
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "ID"
-msgstr ""
 
 #. module: w_document_mod
 #: model:ir.model,name:w_document_mod.model_account_invoice
@@ -329,11 +277,6 @@ msgid "Observations"
 msgstr "Observaciones"
 
 #. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "PCDT"
-msgstr ""
-
-#. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
 msgid "PRICE"
 msgstr "PRECIO"
@@ -342,11 +285,6 @@ msgstr "PRECIO"
 #: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
 msgid "PRODUCT KEY"
 msgstr "CveProdSer"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "Pre Unit"
-msgstr "Prec. Unitario"
 
 #. module: w_document_mod
 #: model:ir.model.fields,field_description:w_document_mod.field_product_product__process
@@ -368,11 +306,6 @@ msgstr "Plantilla de producto"
 #: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_invoice_document_with_payments
 msgid "QUANTITY"
 msgstr "CANTIDAD"
-
-#. module: w_document_mod
-#: model_terms:ir.ui.view,arch_db:w_document_mod.inherit_report_saleorder_document
-msgid "Quantity"
-msgstr "Cantidad"
 
 #. module: w_document_mod
 #: model_terms:ir.ui.view,arch_db:w_document_mod.insco_account_external_layout_standard
