@@ -55,6 +55,7 @@
                                 <field name="marca_equipo" readonly="1"/>
                                 <field name="modelo_euipo" readonly="1"/>
                                 <field name="date_calibracion" readonly="1"/>
+                                <field name="estado_service_lab" readonly="1"/>
                                
                             </group >
                             <group string="Datos Generales del servicio">
@@ -74,6 +75,7 @@
                             <group string="Datos MED">
                                 <field name="tipo_servicio_med" readonly="1"/>
                                 <field name="getion_rieesgo_med" readonly="1"/>
+                                <field name="estado_service_lab_med" readonly="1"/>
                             </group>
                         </group>  
                     </page>

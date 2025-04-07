@@ -92,12 +92,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>
             </field>
         </record>
@@ -137,12 +137,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>
@@ -181,12 +181,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>
@@ -202,6 +202,7 @@
                 </header>
                 <field name="certificate_number"/>
                 <field name="getion_rieesgo_med" optional="show" />
+                <field name="plan_maestro_calificacion" optional="show"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
@@ -235,12 +236,12 @@
                 <field name="tipo_servicio_med" optional="show"/>
                 <!-- <field name="tiempo_asignado_med" optional="show"/> -->
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>
@@ -279,12 +280,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>
@@ -323,12 +324,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab" optional="show"/>
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>
@@ -367,12 +368,12 @@
                 <field name="tipo_mantenimiento_equipo" optional="show"/>
                 <field name="tiempo_entrega" optional="show"/>
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
+                <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
                 <field name="company_id" invisible="1"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                <field name="date_proxima_calibracion" optional="show"/>
                 </tree>  
             </field>
         </record>

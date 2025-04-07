@@ -211,6 +211,18 @@
             <field name="company_id" eval="False"/>
         </record>
 
+        <record id="sequence_lab_med_matriz_plan_maestro_calificacion" model="ir.sequence">
+            <field name="name">Numero plan maestro de calificacion med Matriz PV</field>
+            <field name="code">sequence.lab.med.matriz.plan.maestro.calificacion</field>
+            <field name="active">TRUE</field>
+            <field name="prefix"></field>
+            <field name="suffix">ME/%(year)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
        
         <!-- secuencias laborarotio kaye Matriz -->
         <record id="sequence_lab_kaye_matriz_certificado_calibracion" model="ir.sequence">

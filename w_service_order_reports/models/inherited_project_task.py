@@ -392,6 +392,12 @@ class ProjectTask(models.Model):
         default='N/A'
     )
 
+    plan_maestro_calificacion = fields.Char(
+        string="PLAN MAESTRO DE CALIFICACIÓN",
+        tracking=True,
+        default='N/A'
+    )
+
     # date_inicio_med = fields.Date(string='FECHA DE INICIO MED'
 
     # )
@@ -467,6 +473,9 @@ class ProjectTask(models.Model):
                                         ('CF', 'CF'),
                                         ('CI CO CF', 'CI CO CF'),
                                         ('CD CI CO CF', 'CD CI CO CF'),
+                                        ('CI', 'CI'),
+                                        ('CO', 'CO'),
+                                        ('CD', 'CD'),
                                         ('CaracterizaciónCM ', 'Caracterización CM'),
                                         ('MonitoreoMT', 'Monitoreo MT'),
                                         ('Fallo electrico', 'Fallo electrico'),
