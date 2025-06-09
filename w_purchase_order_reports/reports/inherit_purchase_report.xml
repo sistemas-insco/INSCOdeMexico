@@ -46,13 +46,15 @@
                         </tr>
                         <tr>
                             <td rowspan="3" >
-                                <strong><span style="font-family:'arialfont'; font-size: 12px;">
-                                        INSCO DE MEXICO SA DE CV <br></br>
-                                        DOMICILIO DE LA EMPRESA: <br></br>
-                                        Av. Ingenieros Militares No. 111-B,<br></br>
-                                        Col. Lomas de Sotelo, 11200, CDMX<br></br>
-                                        R.F.C. IME930930UPA<br></br>
-                                </span></strong>
+                                <strong><div class="text-right" t-field="o.company_id"/>
+                                    <div t-field="o.picking_type_id.warehouse_id.partner_id" 
+                                          t-options='{
+                                            "widget": "contact", 
+                                            "fields": ["address"], 
+                                            "no_marker": True
+                                          }'/>
+                             
+                                    <span t-field="o.company_id.vat"/></strong>
                             </td>
                         </tr>
                     </table>
@@ -89,7 +91,7 @@
         <div class="footer o_standard_footer">
             <div class="row">
                 <div class="col-12" style="text-align: right;">
-                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.09</span>
+                    <span style="font-family:'arialfont'; font-size: 14px;"> FA.G.14.07.10</span>
                 </div>
             </div>
         </div>
