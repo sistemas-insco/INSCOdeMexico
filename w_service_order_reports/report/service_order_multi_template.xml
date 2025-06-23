@@ -39,14 +39,15 @@
         </div>
 
         <div class="footer">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12 mb4 text-left">
                     <strong><span style="font-size: 14px;">Special requirements:</span></strong>
                     <span t-if="o.especial_requiriments"><span style="font-size: 14px;" t-esc="o.especial_requiriments"/></span>
                 </div>
-            </div>
+            </div> -->
             <br></br>
-
+            <br></br>
+            <br></br>
             <!-- <div class="row-12" style="border-bottom: 24px solid #75baff;">
             </div> -->
 <!-- 
@@ -296,19 +297,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="services_data" t-as="serv">
-                                <td style="width:50%;">
-                                    <span style="font-size: 11px;"><t t-esc="serv['service']"/> (from <t t-esc="serv['origin']" />)<!--<br t-esc="serv['description']"/> --></span>
-                                </td>
-                               <!--  <td style="width:20%;">
-                                </td> -->
-                                <td style="width:30%;">
-                                    <!-- <span style="font-size: 11px;" t-if="serv['product_id'].process" t-esc="serv['product_id'].process"/> -->
-                                    <span style="font-size: 11px;" t-if="serv['product_id'].x_studio_etiquetas" t-esc="serv['product_id'].x_studio_etiquetas"/>
-                                </td>
-                            </tr>
+                            <t t-foreach="services_data" t-as="serv">
+                                <!-- Fila principal de la tarea -->
+                                <tr>
+                                    <td style="width:50%;">
+                                        <span style="font-size: 11px;">
+                                            <t t-esc="serv['service']"/> (from <t t-esc="serv['origin']" />)
+                                        </span>
+                                    </td>
+                                    <td style="width:30%;">
+                                        <span style="font-size: 11px;" t-if="serv['product_id'].x_studio_etiquetas"
+                                              t-esc="serv['product_id'].x_studio_etiquetas"/>
+                                    </td>
+                                </tr>
+
+                                <!-- Fila opcional con requisitos especiales -->
+                                <t t-if="serv['requiriments']">
+                                    <tr>
+                                        <td colspan="2" style="font-size: 11px; padding-top: 3px; page-break-inside: avoid;">
+                                        <strong>Requisitos especiales:</strong><br/>
+                                        <span t-esc="serv['requiriments']"/>
+                                    </td>
+                                    </tr>
+                                </t>
+                            </t>
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </t>

@@ -828,6 +828,7 @@ class ProjectTask(models.Model):
         service_types = [
             {
                 'service': task.sale_line_id.name,
+                'requiriments': task.especial_requiriments,
                 'product_id': task.sale_line_id.product_id,
                 'origin': task.service_order,
                 'qty': task.sale_line_id.product_uom_qty,
