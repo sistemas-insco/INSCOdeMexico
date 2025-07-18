@@ -56,4 +56,3 @@ class ProductProduct(models.Model):
         string='Process',
         index=True
     )
-

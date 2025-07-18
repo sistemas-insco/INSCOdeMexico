@@ -375,7 +375,12 @@
                             </div>
                             <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
                                 <div class="col-12">
-                                    <b><strong>FOLIO FISCAL<span t-esc="o.l10n_mx_edi_cfdi_uuid"/><span t-if="o.state == 'cancel'">Factura Cancelada</span></strong></b>
+                                    <b><span>FOLIO FISCAL:</span></b>
+                                </div>
+                            </div>
+                            <div class="row" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+                                <div class="col-12">
+                                    <b><span t-esc="o.l10n_mx_edi_cfdi_uuid"/><span t-if="o.state == 'cancel'">Factura Cancelada</span></b>
                                 </div>
                             </div>
                             <br></br>
@@ -392,7 +397,7 @@
                         </div>
                         <div class="col-3">
                             <table class="table table-sm">
-                                <tr>
+                                <!-- <tr>
                                     <td class="text-left" style="background-color: #FFFFFF;">
                                         <strong>Subtotal</strong>
                                     </td>
@@ -400,7 +405,7 @@
                                         <span t-esc="amount_without_discount"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td class="text-left" style="background-color: #FFFFFF;">
                                         <strong>Descuento</strong>

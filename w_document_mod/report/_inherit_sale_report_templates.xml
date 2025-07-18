@@ -203,7 +203,7 @@
                     <t t-call="w_document_mod.insco_spacing"/>
                     <t t-call="w_document_mod.insco_spacing"/>
                     <t t-call="w_document_mod.insco_spacing"/>
-                    <strong><span style="font-family:'arialfont'; font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong>
+                    <!-- <strong><span style="font-family:'arialfont'; font-size: 20px;"><t t-esc="'de México, S. A. DE C. V'"/></span></strong> -->
                 </div>
                 <div class="col-2 text-center" name="moto">
                     <strong><span style="font-family:'arialfont'; font-size: 18px;"><t t-esc="'Cotización'"/></span></strong>
@@ -224,7 +224,7 @@
                     <span t-esc="company.vat"/>
                 </div>
                 <div class="col-4 text-center">
-                    <span t-esc="'inscomex.com'"/>
+                    <span t-esc="'www.inscomex.com'"/>
                 </div>
                 <div class="col-4 text-center">
                     <span style="font-family:'arialfont'; font-size: 14px;" t-esc="o.company_id.codification_sale_order_report"/>
@@ -385,7 +385,7 @@
             <div class="col" style="page-break-inside: avoid;"/>
             <div class="row-12">
                 <div class="col-12 text-center">
-                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Notas y comentarios</span></strong>
+                    <strong><span style="font-family:'arialfont'; font-size: 14px;">Términos y condiciones</span></strong>
                 </div>
                 <div class="row">
                     <div class="col-12">
