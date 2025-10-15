@@ -77,7 +77,6 @@
                 <field name="number_piezas" optional="show"/>
                 <field name="clasificacion_equipo" optional="show" />
                 <field name="numero_id" optional="show"/>
-                <field name="date_limpieza" optional="show" />
                 <field name="date_det_vol_final" optional="show" />
                 <field name="date_calibracion" optional="show"/>
                 <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
@@ -123,7 +122,6 @@
                 <field name="number_piezas" optional="show"/>
                 <field name="clasificacion_equipo" optional="show" />
                 <field name="numero_id" optional="show"/>
-                <field name="date_limpieza" optional="show" />
                 <field name="date_calibracion" optional="show"/>
                 <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
                 <field name="supervisor_lab" widget="many2one_avatar_user" optional="show" />
@@ -167,7 +165,6 @@
                 <field name="number_piezas" optional="show"/>
                 <field name="clasificacion_equipo" optional="show" />
                 <field name="numero_id" optional="show"/>
-                <field name="date_limpieza" optional="show" />
                 <field name="date_calibracion" optional="show"/>
                 <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
                 <field name="supervisor_lab" widget="many2one_avatar_user" optional="show"/>
@@ -266,7 +263,6 @@
                 <field name="number_piezas" optional="show"/>
                 <field name="clasificacion_equipo" optional="show" />
                 <field name="numero_id" optional="show"/>
-                <field name="date_limpieza" optional="show" />
                 <field name="date_calibracion" optional="show"/>
                 <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
                 <field name="supervisor_lab" widget="many2one_avatar_user" optional="show"/>
@@ -354,7 +350,6 @@
                 <field name="number_piezas" optional="show"/>
                 <field name="clasificacion_equipo" optional="show" />
                 <field name="numero_id" optional="show"/>
-                <field name="date_limpieza" optional="show" />
                 <field name="date_calibracion" optional="show"/>
                 <field name="user_ids" string ="ASIGNADO A" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" />
                 <field name="supervisor_lab" widget="many2one_avatar_user"/>

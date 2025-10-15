@@ -120,7 +120,7 @@ class ProjectTask(models.Model):
     )
 
     number_piezas = fields.Integer(
-        string='NÚMERO DE PIEZAS',
+        string='Num. piezas/ puntos',
         help='Este campo es para el laboratorio de Masa ya que un juego pude tener barias pieza',
         default='1'
     )
@@ -340,14 +340,16 @@ class ProjectTask(models.Model):
 
 
     codificasion = fields.Selection([
-                                        ('FA.G.12.11.09', 'FA.G.12.11.10'),
-                                        ('FA.G.12.12.09', 'FA.G.12.12.10'),
-                                        ('FA.G.12.13.09', 'FA.G.12.13.10'),
-                                        ('FA.G.12.14.09', 'FA.G.12.14.10'),
-                                        ('FA.G.12.15.09', 'FA.G.12.15.10'),
-                                        ('FA.G.12.16.09', 'FA.G.12.16.10'),
-                                        ('FA.G.12.17.09', 'FA.G.12.17.10'),
-                                        ('FA.G.12.18.09', 'FA.G.12.18.10')],
+                                        ('FA.G.12.11.09', 'FA.G.12.11.10-obsoleta'),
+                                        ('FA.G.12.12.09', 'FA.G.12.12.10-obsoleta'),
+                                        ('FA.G.12.13.09', 'FA.G.12.13.10-obsoleta'),
+                                        ('FA.G.12.14.09', 'FA.G.12.14.10-obsoleta'),
+                                        ('FA.G.12.15.09', 'FA.G.12.15.10-obsoleta'),
+                                        ('FA.G.12.16.09', 'FA.G.12.16.10-obsoleta'),
+                                        ('FA.G.12.17.09', 'FA.G.12.17.10-obsoleta'),
+                                        ('FA.G.12.18.09', 'FA.G.12.18.10-obsoleta'),
+                                        ('FA.G.12.03.11', 'FA.G.12.03.11'),
+                                        ('FA.G.12.04.11', 'FA.G.12.04.11')],
                                         string="CODIFICACION PARA ETIQUETAS",tracking=True,copy=False)
 
     motivo_sustitucion_informe = fields.Selection([
@@ -356,7 +358,7 @@ class ProjectTask(models.Model):
                                         ('3', 'Error de laboratorio'),
                                         ('4', 'Error del área comercial'),
                                         ('5', 'Error de recepción de ítems')],
-                                        string="MOTIVO DE SUSTITUCIÓN DE INFORME ",default='1' ,tracking=True)
+                                        string="SUSTITUCIÓN",default='1' ,tracking=True)
 
 
     #campo para sacar y graficar por ASIGNADO A
