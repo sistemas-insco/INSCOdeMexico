@@ -62,16 +62,7 @@
         <field name="perm_read" eval="1"/>
     </record>
 
-    <!-- <record model="ir.rule" id="ver_su_dispositivo">
-        <field name="name">Ver su dispocitivos </field>
-        <field name="model_id" ref="model_team_computer"/>
-        <field name="domain_force">[('empleado_id','=',user.id)]</field>
-        <field name="groups" eval="[(4, ref('group_sistemas_usuarios'))]"/>
-        <field name="perm_create" eval="1"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_unlink" eval="1"/>
-        <field name="perm_read" eval="1"/>
-    </record> -->
+
 
 
 

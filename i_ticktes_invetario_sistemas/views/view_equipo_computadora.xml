@@ -3,32 +3,37 @@
     <data>
 
 
-        <record model="ir.ui.view" id="i_ticktes_invetario_sistemas_view_kanban_equipo">
+        <record id="i_ticktes_invetario_sistemas_view_kanban_equipo" model="ir.ui.view">
             <field name="name">i.ticktes.invetario.sistemas.view.kanban_equipo</field>
             <field name="model">team.computer</field>
             <field name="arch" type="xml">
-                <kanban class="o_kanban_mobile">
-                     <field name="name"/>
+                <kanban class="o_kanban_mobile o_kanban_view">
+                    <field name="name"/>
                     <field name="image"/>
+                    <field name="marca"/>
+                    <field name="modelo"/>
+                    <field name="estado"/>
+
                     <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
+                        <t t-name="card">
+                            <!-- Caja principal del kanban -->
+                            <div class="o_kanban_record oe_kanban_global_click">
+                                <!-- Imagen del equipo -->
                                 <div class="o_kanban_image">
-                                    <field name="image" nolabel="1" widget="image" class="oe_right oe_avatar"/>
-                                    <!-- <img t-att-src="kanban_image('team.computer', 'image', record.image.raw_value)"/> -->
+                                    <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
                                 </div>
-                                <div class="o_kanban_record_top mb16">
-                                    <div class="o_kanban_record_headings mt4">
-                                        <strong class="o_kanban_record_title"><!-- <span><t t-esc="record.partner_id.value"/></span> --></strong>
-                                    </div>
-                                    <strong><field name="marca"/></strong>
-                                </div>
-                                <div class="o_kanban_record_bottom">
-                                    <div class="oe_kanban_bottom_left">
-                                        <field name="modelo"/>
-                                    </div>
-                                    <div class="oe_kanban_bottom_right">
-                                        <field name="estado" widget="label_selection"/>
+
+                                <!-- Contenido del registro -->
+                                <div class="o_kanban_details">
+                                    <div class="o_kanban_primary_bottom">
+                                        <strong class="o_kanban_title">
+                                            <t t-esc="record.name.value"/>
+                                        </strong>
+                                        <div class="o_kanban_secondary_info mt-2">
+                                            <span><b>Marca:</b> <t t-esc="record.marca.value or '-'"/></span><br/>
+                                            <span><b>Modelo:</b> <t t-esc="record.modelo.value or '-'"/></span><br/>
+                                            <span><b>Estado:</b> <t t-esc="record.estado.value or '-'"/></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +41,7 @@
                     </templates>
                 </kanban>
             </field>
-        </record>
+    </record>
 
 
        <!--  vista lista -->
@@ -44,13 +49,13 @@
             <field name="name">i.ticktes.invetario.sistemas.view.tree.eqipo</field>
             <field name="model">team.computer</field>
             <field name="arch" type="xml">
-                <tree string="Tree name">
+                <list string="Tree name">
                 <field name="name"/>
                 <field name="empleado_id"/>
                 <field name="tipo_equipo"/>
                 <field name="direccion_mac"/>
                 <field name="direccion_ip"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -106,27 +111,16 @@
                 </group>
             </group>
                  </sheet>
-                 <div class="oe_chatter">
-                     <field name="message_follower_ids" widget="mail_followers"/>
-                     <field name="activity_ids" widget="mail_activity"/>
-                     <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
-                 </div>
+                 <chatter reload_on_follower="True"/>
                 </form>
             </field>
         </record>
 
 
-       <!--  <act_window
-            id="action_menu_computer"
-            name="EQUIPOS"
-            res_model="team.computer"
-            view_mode="kanban,list,form"
-        /> -->
-
         <record id="action_menu_computer" model="ir.actions.act_window">
             <field name="name">EQUIPOS</field>
             <field name="res_model">team.computer</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,list,form</field>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
                 Create a new

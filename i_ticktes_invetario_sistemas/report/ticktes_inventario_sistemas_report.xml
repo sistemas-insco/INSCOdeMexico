@@ -33,16 +33,6 @@
         </record>
         
 
-     <!--    <report
-            id="i_entrega_equipo"
-            string="Entrega de equipo"
-            model="team.computer"
-            report_type="qweb-pdf"
-            name="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
-            file="i_ticktes_invetario_sistemas.reporte_equipo_entrega"
-            paperformat="paper_format_report_entrega_equipo"
-        /> -->
-
 
     <record id="i_entrega_equipo" model="ir.actions.report">
         <field name="name">Entrega de equipo</field>
@@ -56,16 +46,6 @@
         <field name="binding_type">report</field>
     </record>
 
-
-       <!--  <report
-            id="i_mantenimiento_equipo"
-            string="matenimiento"
-            model="team.computer_tiket"
-            report_type="qweb-pdf"
-            name="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
-            file="i_ticktes_invetario_sistemas.report_mantenimiento_equipo"
-            paperformat="paper_format_report_matenimiento_equipo"
-        /> -->
 
 
     <record id="i_mantenimiento_equipo" model="ir.actions.report">

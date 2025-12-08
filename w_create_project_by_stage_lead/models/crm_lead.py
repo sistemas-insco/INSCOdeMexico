@@ -61,7 +61,7 @@ class CrmLead(models.Model):
     project_id = fields.Many2one(
         'project.project',
         string = 'Project',
-        help = _('Project related to this opportunity.'),
+        help = ('Project related to this opportunity.'),
         tracking=True
     )
 
@@ -71,9 +71,9 @@ class CrmStage(models.Model):
 
     create_project = fields.Boolean("Create project?")
     privacy_visibility = fields.Selection([
-            ('followers', _('On invitation only')),
-            ('employees', _('Visible by all employees')),
-            ('portal', _('Visible by following customers')),
+            ('followers', ('On invitation only')),
+            ('employees', ('Visible by all employees')),
+            ('portal', ('Visible by following customers')),
         ],
         string='Privacy', required=True,
         default='employees',

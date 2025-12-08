@@ -33,23 +33,6 @@ class VacacionesId(models.Model):
 										('11', 'De 31 a 35 años')],
 										default='1', tracking=True,string='Años de antiguedad',groups="hr.group_hr_user")
 
-	# años_antiguedad = fields.Selection([
-	# 									('1', '1'),
-	# 									('2', '2'),
-	# 									('3', '3'),
-	# 									('4', '4'),
-	# 									('de 5 a 9 años', 'De 5 a 9 años'),
-	# 									('de 10 a 14 años', 'De 10 a 14 años'),
-	# 									('de 15 a 19 años', 'De 15 a 19 años'),
-	# 									('de 20 a 24 años', 'De 20 a 24 años'),
-	# 									('de 25 a 29 años', 'De 25 a 29 años')],
-	# 									default='1', tracking=True,string='Años de antiguedad',groups="hr.group_hr_user")
-	
-
-
-	# @api.onchange('años_antiguedad')
-	# def dias_vacaciones_retantes(self):
-	# 	self.dias_vacaciones_restantes = vacaciones_dias
 
 
 	@api.onchange('anios_antiguedad')

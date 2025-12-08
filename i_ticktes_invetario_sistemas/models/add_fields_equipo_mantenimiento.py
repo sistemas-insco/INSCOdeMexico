@@ -43,12 +43,20 @@ class tiketComputer(models.Model):
 
 
 
-	@api.model
-	def create(self, vals):
+	# @api.model
+	# def create(self, vals):
+	# 		if vals.get('name', _('New')) == _('New'):
+	# 			vals['name'] = self.env['ir.sequence'].next_by_code('team.computer_tiket.sequence') or _('New')
+	# 		result= super(tiketComputer, self).create(vals)
+	# 		return result
+
+	@api.model_create_multi
+	def create(self, vals_list):
+		for vals in vals_list:
 			if vals.get('name', _('New')) == _('New'):
 				vals['name'] = self.env['ir.sequence'].next_by_code('team.computer_tiket.sequence') or _('New')
-			result= super(tiketComputer, self).create(vals)
-			return result
+		result = super(tiketComputer, self).create(vals_list)
+		return result
 
 
 	def solictud_abierto(self):
@@ -66,28 +74,40 @@ class tiketComputer(models.Model):
 #action_quotation_sent
 
 	def action_ticket_send(self):
+    #Abre el asistente de envío de correo para tickets del área de sistemas
 		self.ensure_one()
-		template_id = self.env.ref('i_ticktes_invetario_sistemas.tikcet_card_email_template').id
-		#template_id = self._find_mail_template()
+
 		lang = self.env.context.get('lang')
-		template = self.env['mail.template'].browse(template_id)
-		if template.lang:
-			lang = template._render_template(template.lang, 'team.computer_tiket', self.ids[0])
+		template = self.env.ref('i_ticktes_invetario_sistemas.tikcet_card_email_template',raise_if_not_found=False)
+
 		ctx = {
 			'default_model': 'team.computer_tiket',
-			'default_res_id': self.ids[0],
-			'default_use_template': bool(template_id),
-			'default_template_id': template_id,
+			'default_res_ids': self.ids,  # en v18 sí se usa plural
 			'default_composition_mode': 'comment',
-			'mark_so_as_sent': True,
-			# 'custom_layout': "mail.mail_notification_paynow",
+			'default_email_layout_xmlid': 'mail.mail_notification_layout_with_responsible_signature',
+			'email_notification_allow_footer': True,
 			'proforma': self.env.context.get('proforma', False),
+			}
+
+    # --- Para registro único ---
+		ctx.update({
 			'force_email': True,
-			'model_description': self.with_context(lang=lang).name,
-		}
+			'model_description': self.with_context(lang=lang).name or 'Ticket',})
+
+    # --- Cargar plantilla si existe ---
+		if template:
+			ctx.update({
+				'default_template_id': template.id,
+				'mark_so_as_sent': True,
+			})
+			if template.lang:
+				lang = template._render_lang(self.ids)[self.id]
+
+    # --- Cambiar estado si está en nuevo ---
 		if self.estado_tipo == 'nuevo':
 			self.write({'estado_tipo': 'enviado'})
-		return {
+
+		action = {
 			'type': 'ir.actions.act_window',
 			'view_mode': 'form',
 			'res_model': 'mail.compose.message',
@@ -95,4 +115,18 @@ class tiketComputer(models.Model):
 			'view_id': False,
 			'target': 'new',
 			'context': ctx,
-        }
+		}
+
+    # Si la empresa no tiene layout configurado (igual que sale.order)
+		if (
+			self.env.context.get('check_document_layout')
+			and not self.env.context.get('discard_logo_check')
+			and self.env.is_admin()
+			and not self.env.company.external_report_layout_id
+		):
+			layout_action = self.env['ir.actions.report']._action_configure_external_report_layout(action)
+			action.pop('close_on_report_download', None)
+			layout_action['context']['dialog_size'] = 'extra-large'
+			return layout_action
+
+		return action

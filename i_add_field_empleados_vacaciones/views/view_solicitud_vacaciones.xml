@@ -18,49 +18,44 @@
     </record>
 
 
- <!--Calendar view de vaciones-->
-    <record id="i_add_fields_empleados_view_calendae_vacaciones" model="ir.ui.view">
-   <field name="name">i.add.fields.empleados.view.calendae.vacaciones</field>
-   <field name="model">solicitud.vacaciones</field>
-   <field name="arch" type="xml">
-       <calendar string="Books" date_start="fecha_inicio" date_stop="fecha_fin" color="state" quick_add="false" mode="month"
-           event_open_popup="1">
-           <field name="empleado_id"/>
-           <field name="state"/>
-           <field name="solicitud_tipo"/>
-           <!-- <field name="empleado_id" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_small"/> -->
-       </calendar>
-   </field>
-</record>
-
-
 
 
      <!--kanban view de vacaciones-->
-        <record model="ir.ui.view" id="i_add_fields_empleados_view_kanban_vacaciones">
+        <record id="i_add_fields_empleados_view_kanban_vacaciones" model="ir.ui.view">
             <field name="name">i.add.fields.empleados.view.kanban.vacaciones</field>
             <field name="model">solicitud.vacaciones</field>
             <field name="arch" type="xml">
-                <kanban class="o_kanban_mobile" default_group_by="solicitud_tipo" >
-                    <field name="empleado_id" readonly = "1"/>
+                <kanban class="o_kanban_mobile o_kanban_view" default_group_by="solicitud_tipo">
+                    <field name="empleado_id" readonly="1"/>
                     <field name="departamento_id"/>
-                    <field name="state" readonly = "1"/>
-                    <field name="solicitud_tipo" readonly = "1"/>
+                    <field name="state" readonly="1"/>
+                    <field name="solicitud_tipo" readonly="1"/>
+                    <field name="name"/>
+
                     <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
-                                <div class="o_kanban_record_top mb16">
-                                    <div class="o_kanban_record_headings mt4">
-                                        <strong class="o_kanban_record_title"><!-- <span><t t-esc="record.partner_id.value"/></span> --></strong>
+                        <t t-name="card">
+                            <div class="o_kanban_record oe_kanban_global_click">
+                                <!-- Encabezado del registro -->
+                                <div class="o_kanban_header">
+                                    <div class="o_kanban_title">
+                                        <strong>
+                                            <t t-esc="record.name.value or 'Sin número'"/>
+                                        </strong>
                                     </div>
-                                    <strong><field name="empleado_id"/></strong>
+                                    <!-- Badge para estado -->
+                                    <div class="o_kanban_status badge bg-info text-white text-capitalize">
+                                        <t t-esc="record.state.value or 'N/A'"/>
+                                    </div>
                                 </div>
-                                <div class="o_kanban_record_bottom">
-                                    <!-- <div class="oe_kanban_bottom_left text-muted">
-                                        <span><t t-esc="record.name.value"/> <t t-esc="record.date_order.value"/></span>
-                                    </div> -->
-                                    <div class="oe_kanban_bottom_right">
-                                        <field name="name"/>
+
+                                <!-- Detalles del registro -->
+                                <div class="o_kanban_details mt-2">
+                                    <div class="o_kanban_primary_bottom">
+                                        <div class="o_kanban_secondary_info">
+                                            <p><b>Empleado:</b> <t t-esc="record.empleado_id.value or '-'"/></p>
+                                            <p><b>Departamento:</b> <t t-esc="record.departamento_id.value or '-'"/></p>
+                                            <p><b>Tipo de Solicitud:</b> <t t-esc="record.solicitud_tipo.value or '-'"/></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -70,14 +65,12 @@
             </field>
         </record>
 
-
-
         <!--tree view de vaciones-->
         <record model="ir.ui.view" id="i_add_fields_empleados_view_tree_vacaciones">
             <field name="name">i.add.fields.empleados.view.tree.vacaciones</field>
             <field name="model">solicitud.vacaciones</field>
             <field name="arch" type="xml">
-                <tree string="Tree Vacaciones">
+                <list string="Tree Vacaciones">
                 <field name="empleado_id" />
                 <field name="departamento_id"/>
                 <field name="fecha_inicio"/>
@@ -85,7 +78,7 @@
                  <field name="solicitud_tipo"/>
                  <field name="numero_dias_solicitaso" sum = " TotalP "/>
                 <field name="state"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -99,8 +92,8 @@
 
                     <header>
                 <button name="action_solicitud_send" string="Enviar solicitud" type="object"/>
-                <button name="solictud_aprovada" string="Aprobado" states="por aprobar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
-                <button name="solictud_cancelada" string="Cancelar" states="por aprobar" groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" type="object" class="btn-primary"/>
+                <button name="solictud_aprovada" string="Aprobado"  type="object" class="btn-primary"  groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" invisible="state in ['aprobado', 'cancelado']"/>
+                <button name="solictud_cancelada" string="Cancelar"  type="object"  groups="i_add_field_empleados_vacaciones.group_vacaiones_manager" class="btn-primary" invisible="state in ['aprobado', 'cancelado']"/>
 
                         <field name="state"
                                 widget="statusbar"
@@ -108,8 +101,7 @@
                     </header>
 
                 <sheet>
-                     <!--banda de archivado-->
-            <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                     
             <div class="oe_title">  
                 <h1>Solicitud de Vacaciones o Permisos</h1>
                 <h3><field name="name" /></h3>  
@@ -118,7 +110,7 @@
 
                 <group string="Datos del empleado ">
                  <field name="user_id"/>
-                <field name="empleado_id"/>
+                <field name="empleado_id" readonly="state in ['aprobado', 'cancelado']"/>
                 <field name="departamento_id"/>
                  <field name="usuario_responsable"/>
                 <field name="dias_vacaciones"/>
@@ -126,10 +118,10 @@
 
 
                 <group string="Datos de la solicitud ">
-                <field name="solicitud_tipo"/>
+                <field name="solicitud_tipo" readonly="state in ['aprobado', 'cancelado']"/>
                 <field name="fecha_inicio"/>
                 <field name="fecha_fin"/>
-                <field name="numero_dias_solicitaso"/>
+                <field name="numero_dias_solicitaso" readonly="state in ['aprobado', 'cancelado']"/>
                 </group>
 
                 <group>
@@ -138,28 +130,16 @@
 
             </group>
                  </sheet>
-                 <div class="oe_chatter">
-                     <field name="message_follower_ids" widget="mail_followers"/>
-                     <field name="activity_ids" widget="mail_activity"/>
-                     <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
-                 </div>
+                 <chatter reload_on_follower="True"/>
                 </form>
             </field>
         </record>
-
-       <!--  <act_window
-            id="action_menu_vacaciones"
-            name="Permisos"
-            res_model="solicitud.vacaciones"
-            view_mode="kanban,list,form,calendar"
-        /> -->
-
 
         <record id="action_menu_vacaciones" model="ir.actions.act_window">
             <field name="name">Permisos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">solicitud.vacaciones</field>
-            <field name="view_mode">kanban,list,form,calendar</field>
+            <field name="view_mode">list,form,kanban</field>
            
         </record>
 
