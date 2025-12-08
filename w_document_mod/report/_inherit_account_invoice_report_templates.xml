@@ -10,7 +10,7 @@
 
     <template id="insco_account_external_layout_standard">
         <t t-set="get_addr" t-value="get_addr"/>
-        <t t-set="cfdi_vals" t-value="o._l10n_mx_edi_decode_cfdi()"/>  <!-- se agrega linea para crear el QR del la factura -->
+        <t t-set="cfdi_vals" t-value="o._l10n_mx_edi_get_extra_common_report_values()"/>  <!-- se agrega linea para crear el QR del la factura -->
         <t t-if="not o" t-set="o" t-value="doc"/>
         <t t-if="not company">
             <!-- Multicompany -->
@@ -82,10 +82,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-1"/>
-                <div t-if="cfdi_vals.get('sello')" class="barcode col-2">
-                        <img alt="Barcode" t-att-src="'/report/barcode/?barcode_type=QR&amp;value=%s&amp;width=125&amp;height=125' % quote_plus('https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?' + keep_query(re=o.l10n_mx_edi_cfdi_supplier_rfc, rr=o.l10n_mx_edi_cfdi_customer_rfc,tt='%.*f' % (o.currency_id.decimal_places, o.l10n_mx_edi_cfdi_amount), id=o.l10n_mx_edi_cfdi_uuid)+ '&amp;fe=%s' % quote_plus(cfdi_vals['sello'][-8:], 'utf-8', 'strict', '=/').replace('%2B', '+'))"/>
-                    </div> 
+                <!-- <div class="col-1"/> -->
+
+                <div t-if="cfdi_vals.get('barcode_src')" class="barcode col-3 text-center">
+                    <img alt="Barcode" t-att-src="cfdi_vals.get('barcode_src')"/>
+                </div> 
                 
                 <div class="col-2 text-right">
                     <div class="row"/>
@@ -231,18 +232,18 @@
                 <table class="table table-sm o_main_table" name="invoice_line_table" style="font-size: 12px;min-height: 400px !important;">
                     <thead>
                         <tr style="background-color: #808080; color: white;">
-                            <th class="text-center">CÓDIGO</th>
-                            <th class="text-center">CveProdSer</th>
-                            <th class="text-center">DESCRIPCIÓN</th>
-                            <th class="text-center">U.MEDIDA</th>
-                            <th class="text-center">CANTIDAD</th>
-                            <th class="text-center">PRECIO</th>
-                            <th t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                            <th class="text-center" style="color: white;">CÓDIGO</th>
+                            <th class="text-center" style="color: white;">CveProdSer</th>
+                            <th class="text-center" style="color: white;">DESCRIPCIÓN</th>
+                            <th class="text-center" style="color: white;">U.MEDIDA</th>
+                            <th class="text-center" style="color: white;">CANTIDAD</th>
+                            <th class="text-center" style="color: white;">PRECIO</th>
+                            <th class="text-center" style="color: white;" t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                 <span>DESCUENTO</span>
                                 <t t-set="colspan" t-value="colspan+1"/>
                             </th>
-                            <th class="text-center">IVA IMPUESTO</th>
-                            <th class="text-center">IMPORTE</th>
+                            <th class="text-center" style="color: white;">IVA IMPUESTO</th>
+                            <th class="text-center" style="color: white;">IMPORTE</th>
                         </tr>
                     </thead>
                     <tbody class="invoice_tbody">
@@ -359,7 +360,7 @@
                                     <b><span t-esc="o.l10n_mx_edi_payment_method_id.code"/> <span t-esc="o.l10n_mx_edi_payment_method_id.name" /></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 10px;">
-                                    <b><span t-if="o.payment_method" t-esc="o.payment_method"/></b>
+                                    <b><span t-esc="o.l10n_mx_edi_payment_policy"/></b>
                                 </div>
                                 <div class="col-4" style="padding-bottom: 10px;">
                                     <b><!-- <span t-if="o.l10n_mx_edi_partner_bank_id.acc_number" t-esc="o.l10n_mx_edi_partner_bank_id.acc_number" /> --></b>
@@ -396,76 +397,72 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <table class="table table-sm">
-                                <!-- <tr>
-                                    <td class="text-left" style="background-color: #FFFFFF;">
-                                        <strong>Subtotal</strong>
-                                    </td>
-                                    <td class="text-left">
-                                        <span t-esc="amount_without_discount"
-                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
-                                    </td>
-                                </tr> -->
+                        <table class="table table-sm" style="width: 100%;">
+
+                            <t t-set="currency" t-value="o.currency_id"/>
+                            <t t-set="tax_totals" t-value="o.tax_totals"/>
+                            <t t-set="same_tax_base" t-value="tax_totals.get('same_tax_base')"/>
+                            
+                            <tr>
+                                <td class="text-left" style="background-color: #FFFFFF;">
+                                    <strong>Subtotal</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed"
+                                          t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                </td>
+                            </tr>
+
+                            <t t-set="discount_amount" t-value="amount_without_discount - o.amount_untaxed"/>
+                            <t t-if="discount_amount != 0">
                                 <tr>
                                     <td class="text-left" style="background-color: #FFFFFF;">
                                         <strong>Descuento</strong>
                                     </td>
                                     <td class="text-right">
-                                        <span t-esc="amount_without_discount - o.amount_untaxed"
-                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        <span t-out="discount_amount"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td class="text-right" style="background-color: #EEECE0;">
-                                        <strong>New Subtotal</strong>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-esc="o.amount_untaxed"
-                                            t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
-                                    </td>
-                                </tr> -->
+                            </t>
 
-                               <!--  <t t-foreach="o.amount_by_group" t-as="amount_by_group">
-                                    <tr>
-                                        <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
-                                            <td class="text-right" style="background-color: #EEECE0;">
-                                                <strong><span t-esc="amount_by_group[0]"/></strong>
+                            <t t-if="tax_totals and tax_totals.get('subtotals')">
+                                <t t-foreach="tax_totals.get('subtotals')" t-as="subtotal">
+                                    
+                                    <t t-foreach="subtotal.get('tax_groups')" t-as="tax_group">
+                                        <tr class="o_taxes">
+                                            
+                                            <td style="background-color: #FFFFFF;">
+                                                <t t-if="same_tax_base or tax_group['display_base_amount'] is None">
+                                                    <span class="text-nowrap" t-out="tax_group['group_name']"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span t-out="tax_group['group_name']"/>
+                                                    <span> en </span>
+                                                    <span class="text-nowrap" t-out="tax_group['display_base_amount']" 
+                                                        t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                </t>
                                             </td>
-                                            <td class="text-right o_price_total">
-                                                <span t-esc="amount_by_group[3]" />
+                                            
+                                            <td class="text-end o_price_total">
+                                                <span class="text-nowrap" t-out="tax_group['tax_amount']" 
+                                                    t-options='{"widget": "monetary", "display_currency": currency}'/>
                                             </td>
-                                        </t>
-                                        <t t-else="">
-                                            <td class="text-right" style="background-color: #EEECE0;">
-                                                <span t-esc="amount_by_group[0]"/>
-                                            </td>
-                                            <td class="text-right o_price_total">
-                                                <span t-esc="amount_by_group[3]"/>
-                                            </td>
-                                        </t>
-                                    </tr>
-                                </t> -->
+                                        </tr>
+                                    </t>
+                                </t>
+                            </t>
 
-
-
-                               <!--  <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
-                                    <t t-call="account.document_tax_totals"/> -->
-                                    <t t-set="tax_totals" t-value="o.tax_totals"/>
-                                    <t t-call="account.document_tax_totals"/>
-
-
-
-
-                                <!-- <tr>
-                                    <td class="text-right" style="background-color: #EEECE0;">
-                                        <strong>TOTAL</strong>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-field="o.amount_total"/>
-                                    </td>
-                                </tr> -->
-                            </table>
-                        </div>
+                            <tr style="font-size: 14px; background-color: #808080; color: white;">
+                                <td class="text-left">
+                                    <strong>TOTAL</strong>
+                                </td>
+                                <td class="text-right">
+                                    <strong><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": currency}'/></strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                     </div>
                     <div t-if="o.observations" class="row" style="background-color: #808080;color: white;margin-left: 1px;margin-right: 1px;margin-bottom: 10px;">
                         <div class="col col-12" style="font-size: 12px;">

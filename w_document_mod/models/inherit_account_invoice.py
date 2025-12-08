@@ -1,72 +1,78 @@
 from odoo import models, fields, api
 import base64
+# Ya no es necesario directamente para cadena, ya que ahora lo maneja la lógica central de Odoo
+# from odoo.tools import xslt
+# CFDI_XSLT_CADENA_TFD = 'l10n_mx_edi/data/xslt/3.3/cadenaoriginal_TFD_1_1.xslt'
 
-CFDI_XSLT_CADENA_TFD = 'l10n_mx_edi/data/xslt/3.3/cadenaoriginal_TFD_1_1.xslt'
 
-
-class AccountInvoice(models.Model):
+class AccountMove(models.Model): # Se cambió el nombre de AccountInvoice a AccountMove para mayor claridad, ya que el modelo es account.move.
     _inherit = 'account.move'
 
     observations = fields.Text(
         string='Observaciones'
     )
+    # Los campos a continuación se calcularán utilizando los métodos estándar de Odoo V18
+    # Obtendremos todos los valores CFDI de una sola llamada a _l10n_mx_edi_get_extra_invoice_report_values()
+    # Y luego asignarlas.
+
+    # Estos campos pueden permanecer como campos Char
     sello_cfdi = fields.Char(
-        compute="_compute_cfdi_values"
+        string="Sello CFDI",
+        compute="_compute_custom_cfdi_values", # Se cambió el nombre del método de cálculo para evitar conflictos
+        store=False, # Marcar como Falso si no necesita almacenarlos en la base de datos para mejorar el rendimiento
     )
     sello_sat = fields.Char(
-        compute="_compute_cfdi_values"
+        string="Sello SAT",
+        compute="_compute_custom_cfdi_values",
+        store=False,
     )
     cfdi_cadena = fields.Char(
-        compute='_compute_cfdi_values'
+        string="Cadena Original",
+        compute='_compute_custom_cfdi_values',
+        store=False,
     )
     payment_method = fields.Char(
-        compute="_compute_cfdi_values",
-        string='Metodo pago'
+        string='Método de Pago CFDI', # Clarified string
+        compute="_compute_custom_cfdi_values",
+        store=False,
     )
-
     serial_number = fields.Char(
-        compute='_compute_cfdi_values'
+        string='Número de Serie del Certificado',
+        compute='_compute_custom_cfdi_values',
+        store=False,
     )
 
+    # En Odoo V18, debes utilizar principalmente  _l10n_mx_edi_get_extra_common_report_values()
+    # ó _l10n_mx_edi_get_extra_invoice_report_values() Para obtener datos CFDI.
+    # The _get_l10n_mx_edi_cadena El método ya no es necesario ya que la cadena es parte del diccionario estándar devuelto por los métodos de Odoo.
+    # Entonces este método se puede eliminar.
 
-    @api.model
-    def _get_l10n_mx_edi_cadena(self):
-        self.ensure_one()
-        # get the xslt path
-        xslt_path = CFDI_XSLT_CADENA_TFD
-        # get the cfdi as eTree
-        try:
-            cfdi = base64.decodestring(self.l10n_mx_edi_cfdi)
-            cfdi = self.l10n_mx_edi_get_xml_etree(cfdi)
-            cfdi = self.l10n_mx_edi_get_tfd_etree(cfdi)
-            return self.l10n_mx_edi_generate_cadena(xslt_path, cfdi)
-        except Exception as e:
-            print(e)
-
-
-
-    @api.depends('edi_document_ids')
-    def _compute_cfdi_values(self):
-        res = super(AccountInvoice, self)._compute_cfdi_values()
+    @api.depends('l10n_mx_edi_cfdi_attachment_id', 'l10n_mx_edi_cfdi_state')
+    def _compute_custom_cfdi_values(self):
+        # Iteraremos a través de los registros para aplicar cálculos.
         for record in self:
-            attachment_id = record._l10n_mx_edi_decode_cfdi()
-            
-            # record.l10n_mx_edi_cfdi_uuid = attachment_id.get('uuid')
-            # record.l10n_mx_edi_cfdi_supplier_rfc = attachment_id.get('supplier_rfc')
-            # record.l10n_mx_edi_cfdi_customer_rfc = attachment_id.get('customer_rfc')
-            # record.l10n_mx_edi_cfdi_amount = attachment_id.get('amount_total')
-            record.sello_sat = attachment_id.get('sello_sat')
+            # Utilice el método estándar de Odoo V18 para obtener todos los valores del informe
+            # Este método ya maneja la decodificación del XML CFDI
+            cfdi_report_values = record._l10n_mx_edi_get_extra_invoice_report_values()
 
-            #certificate = attachment_id.get('noCertificado', attachment_id.get('NoCertificado'))
-            #record.serial_number = certificate
-            record.serial_number = attachment_id.get('certificate_number')
-            record.sello_cfdi = attachment_id.get('sello', attachment_id.get('Sello', 'No identificado'))
-            cfdi_cadena = record._get_l10n_mx_edi_cadena()
-            record.cfdi_cadena = attachment_id.get('cadena')
-            record.payment_method = attachment_id.get('payment_method')
-        return res
+            if cfdi_report_values:
+                record.sello_sat = cfdi_report_values.get('sello_sat')
+                record.serial_number = cfdi_report_values.get('certificate_number')
+                record.sello_cfdi = cfdi_report_values.get('sello') # 'sello' es la clave en V18
+                record.cfdi_cadena = cfdi_report_values.get('cadena') # 'cadena' es la clave en V18
+                record.payment_method = cfdi_report_values.get('payment_way') # 'payment_way'  en V18 es el método formateado
+            else:
+                # Establecer valores predeterminados/vacíos si no se encuentran datos CFDI
+                record.sello_sat = False
+                record.serial_number = False
+                record.sello_cfdi = False
+                record.cfdi_cadena = False
+                record.payment_method = False
 
+    # Este método sigue siendo en gran medida el mismo, ya que se ocupa de los campos de dirección del socio.
+    # que suelen ser estables.
     def get_address_partner(self):
+        self.ensure_one()
         return {
             'colony': self.partner_id.l10n_mx_edi_colony or '',
             'city': self.partner_id.city or '',
@@ -76,19 +82,20 @@ class AccountInvoice(models.Model):
             'number2': self.partner_id.street_number2 or '',
             'vat': self.partner_id.vat or '',
             'phone': self.partner_id.phone or '',
-            'state': self.partner_id.state_id.name if self.partner_id.state_id.name else '',
-            'fiscal_regime': self.partner_id.l10n_mx_edi_fiscal_regime or ''}
+            'state': self.partner_id.state_id.name if self.partner_id.state_id else '', # Compruebe primero el state_id
+            'fiscal_regime': self.partner_id.l10n_mx_edi_fiscal_regime or ''
+        }
 
-
-
-
+    # Este método sigue siendo en gran medida el mismo.
     def get_cfdi_related_1(self):
         self.ensure_one()
-        if not self.l10n_mx_edi_origin:
+        # En V18, no se utiliza l10n_mx_edi_origin para documentos relacionados cambia a l10n_mx_edi_cfdi_origin, 
+        # por lo que con este cambio debería funcionar bien.
+        if not self.l10n_mx_edi_cfdi_origin:
             return {}
-        origin = self.l10n_mx_edi_origin.split('|')
+        origin = self.l10n_mx_edi_cfdi_origin.split('|')
         uuids = origin[1].split(',') if len(origin) > 1 else []
         return {
             'type': origin[0],
             'related': [u.strip() for u in uuids],
-            }
+        }

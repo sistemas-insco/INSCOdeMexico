@@ -38,23 +38,21 @@ class AccountInvoiceReport(models.AbstractModel):
 
 
     def get_taxes(self, line):
-        taxes = line.tax_ids
         result = []
+        if not line.tax_ids:
+            return result
+
+        taxes = line.tax_ids.compute_all(
+            price_unit=line.price_unit,
+            quantity=line.quantity,
+            product=line.product_id,
+            partner=line.move_id.partner_id,
+            currency=line.move_id.currency_id
+        )['taxes']
+
         for tax in taxes:
-            result.extend(
-                [
-                    (
-                        tax.description or tax.name,
-                        tax._compute_amount(
-                            line.price_subtotal,
-                            line.price_unit,
-                            line.quantity,
-                            line.product_id,
-                            #line.invoice_id.partner_id
-                        )
-                    )
-                ]
-            )
+            result.append((tax['name'], tax['amount']))
+
         return result
 
     @api.model

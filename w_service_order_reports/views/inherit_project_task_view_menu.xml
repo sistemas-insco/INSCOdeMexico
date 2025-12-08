@@ -62,7 +62,7 @@
             <field name="model">project.task</field>
             <field name="priority" eval="90"/>
             <field name="arch" type="xml">
-                <tree string="Tree Masa" multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Masa" multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_masa" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -93,11 +93,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                  <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -107,7 +107,7 @@
             <field name="name">w.inherit.project.task.view.tree.temperatura</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Temperatura"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Temperatura"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_temperatura" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -137,11 +137,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -150,7 +150,7 @@
             <field name="name">w.inherit.project.task.view.tree.humedad</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Humedad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Humedad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_humedad" string="Asignar Informe Humedad" type="object" class="btn-primary"/>
                 </header>
@@ -180,11 +180,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -193,7 +193,7 @@
             <field name="name">w.inherit.project.task.view.tree.med</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Med"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab_med=='CANCELADO'">
+                <list string="Tree Med"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab_med=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_med" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -235,11 +235,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -248,7 +248,7 @@
             <field name="name">w.inherit.project.task.view.tree.kaye</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_kaye" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -278,11 +278,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -291,7 +291,7 @@
             <field name="name">w.inherit.project.task.view.tree.volumen</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Volumen"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Volumen"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_volumen" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -322,11 +322,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab" optional="show"/>
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -335,7 +335,7 @@
             <field name="name">w.inherit.project.task.view.tree.electrica</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Kaye"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <header>
                 <button name="open_certificate_wizard_electrica" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
@@ -365,11 +365,11 @@
                 <field name="lugar_service" widget="badge" decoration-success="lugar_service == 'LAB'" decoration-danger="lugar_service == 'SITIO'" optional="show"/>
                 <field name="date_proxima_calibracion" optional="show"/>
                 <field name="observations_lab"  optional="show" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -378,7 +378,7 @@
             <field name="name">w.inherit.project.task.view.tree.calidad</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Calidad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
+                <list string="Tree Calidad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <field name="certificate_number" readonly="1"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO"/>
                 <field name="fecha_revision_cotizacion" optional="show"/>
@@ -395,12 +395,12 @@
                 <field name="dias_entre_fechas_cotizacion_ingreso_lab" optional="show"/>
                 <field name="sucursal_lab" optional="show"/>
                 <field name="lugar_service" optional="show"/>
-                 <field name="company_id" invisible="1"/>
+                 <field name="company_id" column_invisible="True"/>
                 <field name="motivo_sustitucion_informe" optional="show"/>
                 <field name="urgencia_del_servicio" widget="badge" decoration-success="urgencia_del_servicio == 'ordinario'" decoration-danger="urgencia_del_servicio == 'urgente'" optional="show"/>
                  <field name="observations_lab" readonly="1"  optional="show" />
                  <field name="estado_service_lab_med" readonly="1" optional="show"/>
-                </tree>  
+                </list>  
             </field>
         </record>
 
@@ -409,7 +409,7 @@
             <field name="name">w.inherit.project.task.view.tree.etiquetas</field>
             <field name="model">project.task</field>
             <field name="arch" type="xml">
-                <tree string="Tree Etiquetas"  multi_edit="1" editable="bottom">
+                <list string="Tree Etiquetas"  multi_edit="1" editable="bottom">
                 <field name="certificate_number" readonly="1"/>
                 <field name="calibrado_por_lab" readonly="1" widget="many2one_avatar_user" optional="show"/>
                 <field name="numero_serie"/>
@@ -419,8 +419,8 @@
                 <field name="date_proxima_calibracion_opcional"/>
                 <field name="date_proxima_calibracion"/>
                 <field name="codificasion"/>
-                 <field name="company_id" invisible="1"/>
-                </tree>  
+                 <field name="company_id" column_invisible="True"/>
+                </list>  
             </field>
         </record>
 
@@ -428,9 +428,9 @@
         <record id="action_menu_masa_tree" model="ir.actions.act_window">
             <field name="name">MASA</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_masa"/>
-            <field name="domain">[('display_project_id','ilike',' Servicio Masa'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Masa'),("service_order","!=",False)]</field>
             <!-- <field name="domain">['|',('user_ids','=',uid),('manager_id','=',uid),('service_order','=',True)]</field> -->
             <field name="help" type="html">
 
@@ -523,9 +523,9 @@
         <record id="action_menu_temperatura" model="ir.actions.act_window">
             <field name="name">TEMPERATURA</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_temperatura"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Temperatura'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Temperatura'),("service_order","!=",False)]</field>
             <!-- <field name="domain">['|',('user_ids','=',uid),('manager_id','=',uid)]</field> -->
             <field name="help" type="html">
                     <body>
@@ -617,9 +617,9 @@
         <record id="action_menu_humedad" model="ir.actions.act_window">
             <field name="name">HUMEDAD</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_humedad"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Humedad'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Humedad'),("service_order","!=",False)]</field>
             <field name="help" type="html">
                  <body>
 
@@ -710,9 +710,9 @@
         <record id="action_menu_med" model="ir.actions.act_window">
             <field name="name">MED</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_med"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Mediciones Especiales'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Especiales'),("service_order","!=",False)]</field>
             <field name="help" type="html">
                  <body>
 
@@ -803,9 +803,9 @@
         <record id="action_menu_kaye" model="ir.actions.act_window">
             <field name="name">KAYE</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_kaye"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Kaye'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Kaye'),("service_order","!=",False)]</field>
             <field name="help" type="html">
                  <body>
 
@@ -896,9 +896,9 @@
         <record id="action_menu_volumen" model="ir.actions.act_window">
             <field name="name">VOLUMEN</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_volumen"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Volumen'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Volumen'),("service_order","!=",False)]</field>
             <field name="help" type="html">
                  <body>
 
@@ -989,9 +989,9 @@
         <record id="action_menu_electrica" model="ir.actions.act_window">
             <field name="name">ELECTRICA</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_electrica"/>
-            <field name="domain">[('display_project_id','ilike','Servicio Electrica'),("service_order","!=",False)]</field>
+            <field name="domain">[('project_id','ilike','Electrica'),("service_order","!=",False)]</field>
             <field name="help" type="html">
                  <body>
 
@@ -1082,7 +1082,7 @@
         <record id="action_menu_calidad" model="ir.actions.act_window">
             <field name="name">CALIDAD</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree,form,graph,activity</field>
+            <field name="view_mode">list,form,graph,activity</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_calidad"/>
             <field name="domain">[("service_order","!=",False)]</field>
              <field name="help" type="html">
@@ -1176,7 +1176,7 @@
         <record id="action_menu_etiquetas" model="ir.actions.act_window">
             <field name="name">ETIQUETAS</field>
             <field name="res_model">project.task</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">list</field>
             <field name="view_id" ref="w_inherit_project_task_view_tree_etiquetas"/>
             <field name="domain">[("service_order","!=",False),("certificate_number","!=",False),("date_calibracion","!=",False),("date_proxima_calibracion","!=",False)]</field>
             <field name="help" type="html">
