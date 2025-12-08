@@ -28,25 +28,7 @@ class CertificateWizard(models.TransientModel):
                                         ('Y', 'Sucursal Mérida'),
                                         ('B', 'Sucursal Bajío')],
                                         default='M', string='Lugar donde se realizaron las mediciones')
-    # tipo_lab = fields.Selection([
-    #                                     ('M', 'Masa'),
-    #                                     ('T', 'Temperatura'),
-    #                                     ('H', 'Huemedad'),
-    #                                     ('MED', 'MED'),
-    #                                     ('K', 'Kaye'),
-    #                                     ('E', 'Electrica'),
-    #                                     ('V', 'Volumen')],
-    #                                     default='CCM', string='Lugar donde se realizaron las mediciones')
-    
-    # @api.model
-    # def default_get(self, fields):
-    #     defaults = super(CertificateWizard, self).default_get(fields)
-    #     task_ids = self.env.context.get('active_ids')
-    #     task_objs = self.env['project.task'].browse(task_ids)
-    #     prefix = task_objs[0].certificate_number.split('.')[0]
-    #     suffix = task_objs[0].certificate_number.split('.')[-1]
-    #     defaults.update({'prefix': prefix, 'suffix': suffix})
-    #     return defaults
+
 
 
     # Funcion que asigna numero de secuencia o infome para el laboratorio de Masa#

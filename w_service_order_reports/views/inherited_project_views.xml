@@ -6,7 +6,7 @@
             <field name="model">project.task</field>
             <field name="inherit_id" ref="project.view_task_form2" />
             <field name="arch" type="xml">
-                <xpath expr="//group[field/@name='date_deadline']" position="inside">
+                <xpath expr="//group[field/@name='certificate_number']" position="inside">
                     <field name="service_order"/>
                     <field name="invoice_number" />
                 </xpath>

@@ -48,16 +48,6 @@
         </record>
 
 
-       <!--  <report
-            id="w_equipment_delivery"
-            string="Equipment delivery"
-            model="project.task"
-            report_type="qweb-pdf"
-            name="w_report_projects.report_equipment_delivery"
-            file="w_report_projects.report_equipment_delivery"
-            paperformat="paper_format_report_equipment_delivery"
-        /> -->
-
         <record id="w_equipment_delivery" model="ir.actions.report">
         <field name="name">Equipment delivery</field>
         <field name="model">project.task</field>
@@ -73,15 +63,6 @@
 
 
 
-      <!--   <report
-            id="w_order_service"
-            string="Order service"
-            model="project.task"
-            report_type="qweb-pdf"
-            name="w_report_projects.w_main_report_serice_order"
-            file="w_report_projects.w_main_report_serice_order"
-            paperformat="paper_format_report_service_order"
-        /> -->
 
         <record id="w_order_service" model="ir.actions.report">
         <field name="name">Order service</field>
@@ -98,16 +79,6 @@
 
 
 
-       <!--  <report 
-            id="w_reception_equipment"
-            string="Reception equipment"
-            model="project.task"
-            report_type="qweb-pdf"
-            name="w_report_projects.w_reception_equipment_report"
-            file="w_report_projects.w_reception_equipment_report"
-            paperformat="paper_format_report_reception_equipment"
-        />
- -->
         <record id="w_reception_equipment" model="ir.actions.report">
         <field name="name">Reception equipment</field>
         <field name="model">project.task</field>

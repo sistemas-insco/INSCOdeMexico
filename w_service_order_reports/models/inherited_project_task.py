@@ -127,53 +127,6 @@ class ProjectTask(models.Model):
 
     clasificacion_equipo = fields.Many2one('item.clasificacion',string="CLASIFICACIÓN",tracking=True,copy=True)
 
-    # clasificacion_equipo = fields.Selection([
-    #                                     ('E1', 'E1'),
-    #                                     ('E2', 'E2'),
-    #                                     ('F1', 'F1'),
-    #                                     ('F2', 'F2'),
-    #                                     ('M1', 'M1'),
-    #                                     ('M2', 'M2'),
-    #                                     ('M3', 'M3'),
-    #                                     ('1', '1'),
-    #                                     ('2', '2'),
-    #                                     ('3', '3'),
-    #                                     ('4', '4'),
-    #                                     ('5', '5'),
-    #                                     ('6', '6'),
-    #                                     ('7', '7'),
-    #                                     ('ONN', 'ONN'),
-    #                                     ('I', 'I'),
-    #                                     ('II', 'II'),
-    #                                     ('III', 'III'),
-    #                                     ('RTDS', 'RTDS'),
-    #                                     ('ESTUDIOS', 'ESTUDIOS'),
-    #                                     ('TLV', 'TLV'),
-    #                                     ('TC', 'TC'),
-    #                                     ('TLD', 'TLD'),
-    #                                     ('PIP MON', 'PIP MON'),
-    #                                     ('PIP MUL', 'PIP MUL'),
-    #                                     ('VAISALA', 'VAISALA'),
-    #                                     ('TERMOHIGRO', 'TERMOHIGRO'),
-    #                                     ('HIGRO', 'HIGRO'),
-    #                                     ('AVS', 'AVS'),
-    #                                     ('VAL', 'VAL'),
-    #                                     ('IME', 'IME'),
-    #                                     ('BAÑO', 'BAÑO'),
-    #                                     ('VERIGO', 'VERIGO'),
-    #                                     ('REFRIGERADOR', 'REFRIGERADOR'),
-    #                                     ('MUFLA', 'MUFLA'),
-    #                                     ('CÁMARACLIM', 'CAMARA CLIM'),
-    #                                     ('ALMACEN', 'ALMACEN'),
-    #                                     ('AUTOCLAVE', 'AUTOCLAVE'),
-    #                                     ('TRANSPORTE', 'TRANSPORTE'),
-    #                                     ('BAÑOMARIA', 'BAÑO MARIA'),
-    #                                     ('UREFRIG', 'U.REFRIG'),
-    #                                     ('INCUBADORA', 'INCUBADORA'),
-    #                                     ('CONGELADOR', 'CONGELADOR'),
-    #                                     ('HORNO', 'HORNO'),
-    #                                     ('OTRO', 'OTRO')],
-    #                                     string="CLASIFICACIÓN",tracking=True,copy=True)
 
     numero_id = fields.Char(
         string='IDENTIFICACIÓN',
@@ -265,16 +218,7 @@ class ProjectTask(models.Model):
                                             default='ordinario',
     )
 
-    # tipo_mantenimiento_equipo = fields.Selection([
-    #                                     ('AJUSTE', 'AJUSTE'),
-    #                                     ('REVISION', 'REVISIÓN'),                                   
-    #                                     ('MANTENIMIENTOPRE', 'MANTENIMIENTO PRE'),
-    #                                     ('MANTENIMIENTOCOR', 'MANTENIMIENTO COR'),
-    #                                     ('REPARACION', 'REPARACIÓN'),
-    #                                     ('SOLICITUDDECORRECCION', 'SOLICITUD DE CORRECIÓN'),#eliminar
-    #                                     ('N/A', 'N/A')],
-    #                                     string='TIPO DE MANTENIMINETO',default='N/A',
-    # )
+
 
     tipo_mantenimiento_equipo = fields.Selection([
                                         ('AJUSTE', 'Ajuste'),
@@ -400,26 +344,6 @@ class ProjectTask(models.Model):
         default='N/A'
     )
 
-    # date_inicio_med = fields.Date(string='FECHA DE INICIO MED'
-
-    # )
-
-    # date_termino_med = fields.Date(string='FECHA DE TERMINO MED'
-
-    # )
-    # date_entrega_med = fields.Date(string='FECHA DE ENTREGA MED.'
-
-    # )
-    # date_programada_entrega = fields.Date(string='FECHA PROGRAMADA DE ENTREGA MED.',
-    #     #compute='_compute_date_entrega_med',
-
-    # )
-    # tiempo_entrega_med = fields.Integer(string='TIEMPO DE ENTREGA MED',
-    #     #compute='_compute_num_dias_date_termino_med_date_entrega_med',
-
-    # )
-
-    # tiempo_asignado_med = fields.Integer(string='TIEMPO ASIGNADO MED')
 
 
 
@@ -436,31 +360,7 @@ class ProjectTask(models.Model):
                                         string='ESTATUS MED', default='N/A'
     )
 
-    # tipo_mantenimiento_med = fields.Selection([                                   
-    #                                         ('MANTENIMIENTOPRE', 'MANTENIMIENTO PRE'),
-    #                                         ('MANTENIMIENTOCOR', 'MANTENIMIENTO COR'),
-    #                                         ('N/A', 'N/A')],
-    #                                         string='TIPO DE MANTENIMIENTO MED', default='N/A'
-    # )
 
-
-
-
-
-    # clasificacion_equipo_med = fields.Selection([
-    #                                         ('REFRIGERADOR', 'REFRIGERADOR'),
-    #                                         ('MUFLA', 'MUFLA'),
-    #                                         ('CÁMARACLIM', 'CAMARA CLIM'),
-    #                                         ('ALMACEN', 'ALMACEN'),
-    #                                         ('AUTOCLAVE', 'AUTOCLAVE'),
-    #                                         ('TRANSPORTE', 'TRANSPORTE'),
-    #                                         ('BAÑOMARIA', 'BAÑO MARIA'),
-    #                                         ('UREFRIG', 'U.REFRIG'),
-    #                                         ('INCUBADORA', 'INCUBADORA'),
-    #                                         ('CONGELADOR', 'CONGELADOR'),
-    #                                         ('HORNO', 'HORNO'),
-    #                                         ('OTRO', 'OTRO')],
-    #                                         string="CLASIFICACIÓN MED",tracking=True,copy=False)
 
 
 
@@ -507,7 +407,14 @@ class ProjectTask(models.Model):
         datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
         datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
         datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
-        datetime(2025, 12, 25).date(), # Navidad
+        datetime(2025, 12, 25).date(), # Navidad----------
+        datetime(2026, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2026, 2, 2).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2026, 3, 16).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2026, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2026, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2026, 11, 16).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2026, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_delivery:
@@ -540,7 +447,14 @@ class ProjectTask(models.Model):
         datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
         datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
         datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
-        datetime(2025, 12, 25).date(), # Navidad
+        datetime(2025, 12, 25).date(), # Navidad--------
+        datetime(2026, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2026, 2, 2).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2026, 3, 16).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2026, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2026, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2026, 11, 16).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2026, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_reception and registro.date_service_order:
@@ -573,7 +487,14 @@ class ProjectTask(models.Model):
         datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
         datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
         datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
-        datetime(2025, 12, 25).date(), # Navidad
+        datetime(2025, 12, 25).date(), # Navidad-----
+        datetime(2026, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2026, 2, 2).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2026, 3, 16).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2026, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2026, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2026, 11, 16).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2026, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.fecha_revision_cotizacion and registro.date_ingreso_lab:
@@ -606,7 +527,14 @@ class ProjectTask(models.Model):
         date(2025, 5, 1),   # 1 de mayo: Día del Trabajo
         date(2025, 9, 16),   # 16 de septiembre: Día de la Independencia
         date(2025, 11, 17), # 18 de noviembre: revolucion mexicana
-        date(2025, 12, 25), # Navidad
+        date(2025, 12, 25), # Navidad----
+        date(2026, 1, 1),   # 1 de enero: Año Nuevo
+        date(2026, 2, 2),   # Por el Día de la Constitución Mexicana.
+        date(2026, 3, 16),  #Conmemoración del natalicio de Benito Juárez.
+        date(2026, 5, 1),   # 1 de mayo: Día del Trabajo
+        date(2026, 9, 16),   # 16 de septiembre: Día de la Independencia
+        date(2026, 11, 16), # 18 de noviembre: revolucion mexicana
+        date(2026, 12, 25), # Navidad
         ]
         for registro in self:
             if registro.date_ingreso_lab and registro.tiempo_entrega:
@@ -645,7 +573,14 @@ class ProjectTask(models.Model):
         datetime(2025, 5, 1).date(),   # 1 de mayo: Día del Trabajo
         datetime(2025, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
         datetime(2025, 11, 17).date(), # 18 de noviembre: revolucion mexicana
-        datetime(2025, 12, 25).date(), # Navidad
+        datetime(2025, 12, 25).date(), # Navidad------
+        datetime(2026, 1, 1).date(),   # 1 de enero: Año Nuevo
+        datetime(2026, 2, 2).date(),   # Por el Día de la Constitución Mexicana.
+        datetime(2026, 3, 16).date(),  #Conmemoración del natalicio de Benito Juárez.
+        datetime(2026, 5, 1).date(),   # 1 de mayo: Día del Trabajo
+        datetime(2026, 9, 16).date(),   # 16 de septiembre: Día de la Independencia
+        datetime(2026, 11, 16).date(), # 18 de noviembre: revolucion mexicana
+        datetime(2026, 12, 25).date(), # Navidad
         ]
         for registro in self:
             if registro.date_ingreso_lab and registro.date_entrega_lab_real:
@@ -675,56 +610,6 @@ class ProjectTask(models.Model):
                 primer_usuario = tarea.user_ids[0]  # Seleccionar el primer usuario
                 tarea.primer_usuario = primer_usuario
 
-
-#-----------------------Metodos para la bitacora de Medicones especiales--------------------#
-
-    #este metodo calcula la fecha programada de entrega de el lab de meciicones especiales  
-    # @api.depends('date_termino_med', 'tiempo_asignado_med')
-    # def _compute_date_entrega_med(self):
-    #     dias_no_habiles = [
-    #     date(2023, 1, 1),   # Año Nuevo
-    #     date(2023, 2, 6),   # Dia de la constitucion Méxica
-    #     date(2023, 3, 20),  # Natalicio de benitojuares
-    #     date(2023, 5, 1),   # Día del trabajo
-    #     date(2023, 9, 16),  # Día de la Independencia de México.
-    #     date(2023, 11, 20), # Día de la revolucion
-    #     date(2023, 12, 25), # Navidad
-    #     ]
-    #     for registro in self:
-    #         if registro.date_termino_med and registro.tiempo_asignado_med:
-    #             fecha_entrega = registro.date_termino_med
-    #             dias_entrega = registro.tiempo_asignado_med
-    #             while dias_entrega > 0:
-    #                 fecha_entrega += timedelta(days=1)
-    #                 if fecha_entrega.weekday() < 5 and fecha_entrega not in dias_no_habiles:
-    #                     dias_entrega -= 1
-    #             registro.date_programada_entrega = fecha_entrega
-    #         else:
-    #             registro.date_programada_entrega = False
-
-    # esta funcion cuenta los dias despues del termino de del servicio en campo y la fecha de entrega 
-    # @api.depends('date_termino_med', 'date_entrega_med')
-    # def _compute_num_dias_date_termino_med_date_entrega_med(self):
-    #     dias_no_habiles = [
-    #     date(2023, 1, 1),   # Año Nuevo
-    #     date(2023, 2, 6),   # Dia de la constitucion Méxica
-    #     date(2023, 3, 20),  # Natalicio de benitojuares
-    #     date(2023, 5, 1),   # Día del trabajo
-    #     date(2023, 9, 16),  # Día de la Independencia de México.
-    #     date(2023, 11, 20), # Día de la revolucion
-    #     date(2023, 12, 25), # Navidad
-    #     ]
-    #     for registro in self:
-    #         if registro.date_termino_med and registro.date_entrega_med:
-    #             date_termino_med = registro.date_termino_med
-    #             date_entrega_med = registro.date_entrega_med
-    #             diferencia = date_entrega_med - date_termino_med
-    #             dias = diferencia.days + 1  # Se agrega 1 para incluir la fecha final
-    #             #dias_no_habiles = [d.day for d in dias_no_habiles]  # Convertir objetos fecha a enteros (días)
-    #             dias_habiles = [d for d in range(dias) if (date_termino_med + timedelta(d)).weekday() < 5 and (date_termino_med + timedelta(d)).day not in dias_no_habiles]
-    #             registro.tiempo_entrega_med = len(dias_habiles)
-    #         else:
-    #             registro.tiempo_entrega_med = 0
 
 #-----------------------Metodos para visualizar las ventanas de los wizard para los numeros de informe--------#
 

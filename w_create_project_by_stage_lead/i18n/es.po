@@ -46,20 +46,6 @@ msgstr "Departamento"
 msgid "Display Name"
 msgstr "Nombre a Mostrar"
 
-#. module: w_create_project_by_stage_lead
-#: model:ir.model.fields,help:w_create_project_by_stage_lead.field_crm_stage_privacy_visibility
-msgid "Holds visibility of the tasks or issues that belong to the current project:\n"
-"- On invitation only: Employees may only see the followed project, tasks or issues\n"
-"- Visible by all employees: Employees may see all project, tasks or issues\n"
-"- Visible by following customers: employees see everything;\n"
-"   if website is activated, portal users may see project, tasks or issues followed by\n"
-"   them or by someone of their company\n"
-""
-msgstr "Mantiene la visibilidad de las tareas o incidencias que pertenezcan al proyecto actual:\n"
-"- Solo invitación: los empleados pueden solo ver el proyecto seguido, tareas o incidencias\n"
-"- Visible por todos los empleados: los empleados pueden ver todo el proyecto, tareas o incidencias\n"
-"- Visible por todos los clientes: los empleades lo ven todo; si la web está activada, los usuarios del portal pueden ver el proyecto, tareas o incidencias seguidas por ellos o por alguien de la compañía\n"
-""
 
 #. module: w_create_project_by_stage_lead
 #: model:ir.model.fields,field_description:w_create_project_by_stage_lead.field_crm_stage_default_task_id

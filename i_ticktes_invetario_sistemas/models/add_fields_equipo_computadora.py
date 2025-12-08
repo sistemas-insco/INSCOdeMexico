@@ -88,9 +88,17 @@ class customComputer(models.Model):
 
 
 
-	@api.model
-	def create(self,vals):
+	# @api.model
+	# def create(self,vals):
+	# 		if vals.get('name', _('New')) == _('New'):
+	# 			vals['name'] = self.env['ir.sequence'].next_by_code('team.computer.sequence') or _('New')
+	# 		result= super(customComputer, self).create(vals)
+	# 		return result
+
+	@api.model_create_multi
+	def create(self, vals_list):
+		for vals in vals_list:
 			if vals.get('name', _('New')) == _('New'):
 				vals['name'] = self.env['ir.sequence'].next_by_code('team.computer.sequence') or _('New')
-			result= super(customComputer, self).create(vals)
-			return result
+		result = super(customComputer, self).create(vals_list)
+		return result
