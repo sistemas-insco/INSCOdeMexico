@@ -103,6 +103,13 @@ class ProjectTask(models.Model):
         tracking=True
     )
 
+    version_informe = fields.Char(
+        string='VERSION DEL INFORME',
+        help='Es un indicador del numero de correcciones que se realiza al informe',
+        default='00',
+        tracking=True
+    )
+
     marca_equipo = fields.Many2one('item.marca',
         string='MARCA',
         help='Marca del equipo a calibrar'
@@ -336,6 +343,11 @@ class ProjectTask(models.Model):
         string="GESTION DE RIESGOS",
         tracking=True,
         default='N/A'
+    )
+
+    certificado_calificacion_med = fields.Char(
+        string="CERTIFICADO DE CALIFICACION",
+        tracking=True
     )
 
     plan_maestro_calificacion = fields.Char(

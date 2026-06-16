@@ -36,7 +36,7 @@ Service Order Reports for INSCO.
     'author': "WEDOO ©",
     'website': "https://wedoo.tech",
     'category': 'Sales',
-    'version': '1.0',
+    'version': '1.1',
     'depends': [
         'base',
         'web',

@@ -20,7 +20,8 @@ class CertificateWizard(models.TransientModel):
                                         ('RS', 'Reporte de servicio, que puede ser de revisión, mantenimiento o reparación'),
                                         ('RM', 'Reporte de Monitoreo'),
                                         ('PV', 'Plan Maestros de Calificación'),
-                                        ('GR', 'Gestión de riesgo')],
+                                        ('GR', 'Gestión de riesgo'),
+                                        ('CQ', 'Certificado de Calificación')],
                                         default='CC', string='codificación a certificados o reportes')
     lugar_lab = fields.Selection([
                                         ('M', 'Laboratorio Matriz'),
@@ -167,6 +168,13 @@ class CertificateWizard(models.TransientModel):
                     certificate_number = "{}{}{}".format(self.tipo_documento,self.lugar_lab, sequence.next_by_id())
                     task.certificate_number = certificate_number
             else:raise ValidationError("El tipo de  laboratorio no se encuentra valido para tu sucursal")
+        elif self.tipo_documento == 'CQ':
+            if self.lugar_lab == 'M':
+                for task in task_objs:
+                    sequence = self.env.ref('w_service_order_reports.sequence_lab_med_matriz_certificado_calificacion')
+                    certificate_number = "{}{}{}".format(self.tipo_documento,self.lugar_lab, sequence.next_by_id())
+                    task.certificado_calificacion_med = certificate_number
+            else:raise ValidationError("El tipo de  laboratorio no se encuentra valido para tu sucursal")
         else: raise ValidationError("El tipo de documento no se encuentra valido para tu laboratorio")
 
 
@@ -219,6 +227,13 @@ class CertificateWizard(models.TransientModel):
             if self.lugar_lab == 'M':
                 for task in task_objs:
                     sequence = self.env.ref('w_service_order_reports.sequence_lab_electrica_matriz_certificado_calibracion')
+                    certificate_number = "{}{}{}".format(self.tipo_documento,self.lugar_lab, sequence.next_by_id())
+                    task.certificate_number = certificate_number
+            else:raise ValidationError("El tipo de  laboratorio no se encuentra valido para tu sucursal")
+        elif self.tipo_documento == 'RS':
+            if self.lugar_lab == 'M':
+                for task in task_objs:
+                    sequence = self.env.ref('w_service_order_reports.sequence_lab_electrica_matriz_reporte_servicio')
                     certificate_number = "{}{}{}".format(self.tipo_documento,self.lugar_lab, sequence.next_by_id())
                     task.certificate_number = certificate_number
             else:raise ValidationError("El tipo de  laboratorio no se encuentra valido para tu sucursal")

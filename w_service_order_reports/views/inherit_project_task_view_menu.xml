@@ -67,6 +67,7 @@
                 <button name="open_certificate_wizard_masa" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -112,6 +113,7 @@
                 <button name="open_certificate_wizard_temperatura" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -155,6 +157,7 @@
                 <button name="open_certificate_wizard_humedad" string="Asignar Informe Humedad" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -198,8 +201,10 @@
                 <button name="open_certificate_wizard_med" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="certificado_calificacion_med"/>
                 <field name="getion_rieesgo_med" optional="show" />
                 <field name="plan_maestro_calificacion" optional="show"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="descripcion_linea_ventas" string ="DESCRIPCIÓN" optional="show" />
@@ -253,6 +258,7 @@
                 <button name="open_certificate_wizard_kaye" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -296,6 +302,7 @@
                 <button name="open_certificate_wizard_volumen" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string="ORDEN DE SERVICIO" readonly="1"/> 
                 <field name="partner_id" string ="CLIENTE"  readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -340,6 +347,7 @@
                 <button name="open_certificate_wizard_electrica" string="Asignar Informe" type="object" class="btn-primary"/>
                 </header>
                 <field name="certificate_number"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO" readonly="1"/>
                 <field name="partner_id" string ="CLIENTE" readonly="1"/>
                 <field name="date_ingreso_lab" optional="show"/>
@@ -380,6 +388,7 @@
             <field name="arch" type="xml">
                 <list string="Tree Calidad"  multi_edit="1" editable="bottom" decoration-danger="estado_service_lab=='CANCELADO'">
                 <field name="certificate_number" readonly="1"/>
+                <field name="version_informe"/>
                 <field name="service_order" string ="ORDEN DE SERVICIO"/>
                 <field name="fecha_revision_cotizacion" optional="show"/>
                 <field name="fecha_envio_facturar" optional="show"/>
