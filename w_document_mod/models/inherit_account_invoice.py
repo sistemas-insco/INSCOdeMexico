@@ -14,6 +14,11 @@ class AccountMove(models.Model): # Se cambió el nombre de AccountInvoice a Acco
     fecha_estimada_pago = fields.Date(
         string='Fecha Estimada de Pago',tracking=True
     )
+    partner_contact_id_fac = fields.Many2one(
+            'res.partner',
+            string='Contacto de factura',
+            domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+            help="Contacto al que se le envia la factura.")
     # Los campos a continuación se calcularán utilizando los métodos estándar de Odoo V18
     # Obtendremos todos los valores CFDI de una sola llamada a _l10n_mx_edi_get_extra_invoice_report_values()
     # Y luego asignarlas.
