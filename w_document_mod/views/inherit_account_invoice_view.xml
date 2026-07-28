@@ -11,6 +11,9 @@
                         <field name="observations"/>
                     </group>
                 </xpath>
+                <xpath expr="//field[@name='l10n_mx_edi_usage']" position="after">
+                        <field name="fecha_estimada_pago"/>
+                </xpath>
             </field>
         </record>
 

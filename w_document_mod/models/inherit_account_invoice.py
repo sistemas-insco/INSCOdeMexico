@@ -11,6 +11,9 @@ class AccountMove(models.Model): # Se cambió el nombre de AccountInvoice a Acco
     observations = fields.Text(
         string='Observaciones'
     )
+    fecha_estimada_pago = fields.Date(
+        string='Fecha Estimada de Pago',tracking=True
+    )
     # Los campos a continuación se calcularán utilizando los métodos estándar de Odoo V18
     # Obtendremos todos los valores CFDI de una sola llamada a _l10n_mx_edi_get_extra_invoice_report_values()
     # Y luego asignarlas.
